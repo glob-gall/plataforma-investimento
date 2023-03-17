@@ -2,22 +2,24 @@ FROM python:3.10 AS base
 ENV LANG C.UTF-8
 
 ENV BASEDIR /usr/app
-ENV EXTERNALDIR ../../../plataforma-back
+ENV EXTERNALDIR .
 
 WORKDIR ${BASEDIR}
-EXPOSE ${PORT}
+
+COPY ${EXTERNALDIR} .
 
 ADD ${EXTERNALDIR}/requirements.apt /tmp/requirements.apt
 ADD ${EXTERNALDIR}/requirements.pip /tmp/requirements.pip
 
 RUN apt-get update && \
-    apt-get install -y $(cat /tmp/requirements.apt)
+    apt-get install -y $(cat requirements.apt)
 
-RUN pip install -r /tmp/requirements.pip
+RUN pip install -r requirements.pip
 
+EXPOSE ${PORT}
 
 FROM base as development
-    ENTRYPOINT [ "/usr/app/Dockerfile_entrypoint.sh" ]
-    ENV PORT 80
+ENV PORT 8000
+EXPOSE ${PORT}
 
 FROM base as production

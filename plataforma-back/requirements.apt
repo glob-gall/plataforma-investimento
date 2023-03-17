@@ -1,5 +1,2 @@
 python
-python-pip
-python-dev
-python-psycopg2
-postgresql-client 
+python3-pip

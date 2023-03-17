@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./plataforma-back
+      dockerfile: ../iac/plataforma-back/app/Dockerfile
+      target: development
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./plataforma-back:/usr/app
+    command: python manage.py runserver 0.0.0.0:8000

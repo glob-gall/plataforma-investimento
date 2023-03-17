@@ -1,3 +1,2 @@
 #!/bin/bash
-
-./manage.py runserver
+python manage.py runserver
