@@ -1,0 +1,16 @@
+name: Frontend Test
+on:
+    pull_request:
+        branches:
+        - main
+        folders:
+        - plataforma-front
+jobs:
+    frontend-test:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Build and test
+          run: |
+            docker-compose build
+#            docker-compose run --rm frontend npm run test

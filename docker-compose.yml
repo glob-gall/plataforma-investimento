@@ -1,6 +1,8 @@
 version: '3.8'
 services:
   backend:
+    hostname: plataforma-back.docker
+    container_name: plataforma-back
     build:
       context: ./plataforma-back
       dockerfile: ../iac/plataforma-back/app/Dockerfile
@@ -9,4 +11,32 @@ services:
       - "8000:8000"
     volumes:
       - ./plataforma-back:/usr/app
-    command: python manage.py runserver 0.0.0.0:8000
+
+  frontend:
+    hostname: plataforma-front.docker
+    container_name: plataforma-front
+    build:
+        context: ./plataforma-front
+        dockerfile: ../iac/plataforma-front/app/Dockerfile
+        target: development
+    ports:
+        - "3000:3000"
+    volumes:
+        - ./plataforma-front:/usr/app
+        - /usr/app/node_modules
+
+  postgres:
+    hostname: plataforma-postgres.docker
+    container_name: plataforma-postgres
+    image: postgres:13.2
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: plataforma
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:
+    driver: local

@@ -1,0 +1,16 @@
+name: Backend Test
+on:
+    pull_request:
+        branches:
+        - main
+        folders:
+        - plataforma-back
+jobs:
+    backend-test:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Build and test
+          run: |
+            docker-compose build
+            docker-compose run --rm backend python manage.py test
