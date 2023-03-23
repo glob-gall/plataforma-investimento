@@ -1,3 +1,2 @@
-export interface LoginTemplateProps { 
-    
-}
+export interface LoginContainerArgs{}
+export interface LoginTemplateProps {}
