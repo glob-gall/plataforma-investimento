@@ -11,9 +11,6 @@ COPY ${EXTERNALDIR} .
 ADD ${EXTERNALDIR}/requirements.apt /tmp/requirements.apt
 ADD ${EXTERNALDIR}/requirements.pip /tmp/requirements.pip
 
-RUN apt-get update && \
-    apt-get install -y $(cat requirements.apt)
-
 RUN pip install -r requirements.pip
 
 EXPOSE ${PORT}
