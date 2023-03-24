@@ -13,7 +13,6 @@ const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           <TextField label="Email" variant="outlined" />
           <TextField label="Senha" variant="outlined" />
   
-          <Button variant="contained">Contained</Button>
         </Stack>
       </Container>
     )
