@@ -5,29 +5,35 @@ from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 from .serializers import UsuarioSerializer 
 from .models import Usuario
-# Create your views here.
-# class RegisterView(APIView):
-#   def post(self, request):
+import hashlib
+
 @api_view(['POST'])
 def register_user(request):
-    serializer = UsuarioSerializer(data = request.data)
-    serializer.is_valid(raise_exception = True)
-    serializer.save()
-    
-    return Response(serializer.data)
+  request.data['password'] = hashlib.sha256(request.data['password'].encode('utf-8')).hexdigest()
+  print(request.data['password'])
+  serializer = UsuarioSerializer(data = request.data)
+  serializer.is_valid(raise_exception = True)
+  
+  
+  serializer.save()
+  return Response(serializer.data)
     
 @api_view(['POST'])
 def login_user(request):
   email = request.data['email']
-  password = request.data['password']
-  
-  print(email)
-  print(password)
-  
+  password = hashlib.sha256(request.data['password'].encode('utf-8')).hexdigest() 
   usuario = Usuario.objects.filter(email=email).first()
-  if usuario is None:
+ 
+  userNotFound = usuario is None
+  passwordDontMatch = password != usuario.password
+  if userNotFound or passwordDontMatch:
     raise AuthenticationFailed('Credenciais incorretas')
-  if not usuario.check_password(password):
-    raise AuthenticationFailed('Credenciais incorretas')
-  return Response(usuario)
+    
+  
+  return Response({
+    'id': usuario.id,
+    'email': usuario.email,
+    'name': usuario.name,
+    'password': usuario.password,
+  })
     
