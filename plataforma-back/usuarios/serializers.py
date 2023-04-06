@@ -6,16 +6,15 @@ from .models import Usuario
 class UsuarioSerializer(serializers.ModelSerializer):
   class Meta:
     model = Usuario
-    fields = ['id','name','email','password']
+    fields = ['id','name','email','password','birth']
     extra_kwargs = {
       'password':{'write_only': True}
     }
     def create(self,validated_data):
-      # hashedPassword = hashlib.sha256(validated_data['password'].encode('utf-8'))
-      # print('hash:',hashedPassword )
       user = Usuario.objects.create(
         email = validated_data['email'],
         name = validated_data['name'],
-        password = validated_data['password'],#hashedPassword,
+        password = validated_data['password'],
+        birth = validated_data['birth'],
       )
       return user
