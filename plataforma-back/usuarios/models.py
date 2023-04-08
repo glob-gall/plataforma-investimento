@@ -10,4 +10,4 @@ class Usuario(AbstractUser):
   username = None
   
   USERNAME_FIELD = 'email'
-  REQUIRED_FIELDS = []
+  REQUIRED_FIELDS = ['name','password','birth']
