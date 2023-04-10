@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+//import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateField } from '@mui/x-date-pickers/DateField';
@@ -132,9 +132,7 @@ export default function SignUp() {
             
 
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DemoContainer components={['DateField']}>
                     <DateField label="Basic date field" />
-                </DemoContainer>
             </LocalizationProvider>
 
           </Box>
