@@ -5,7 +5,7 @@ services:
     container_name: plataforma-back
     build:
       context: ./plataforma-back
-      dockerfile: ../iac/plataforma-back/app/Dockerfile
+      dockerfile: Dockerfile
       target: development
     ports:
       - "8000:8000"
@@ -17,7 +17,7 @@ services:
     container_name: plataforma-front
     build:
         context: ./plataforma-front
-        dockerfile: ../iac/plataforma-front/app/Dockerfile
+        dockerfile: Dockerfile
         target: development
     ports:
         - "3000:3000"
