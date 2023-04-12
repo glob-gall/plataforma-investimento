@@ -5,6 +5,7 @@ class MovimentacoesSerializer(serializers.ModelSerializer):
   class Meta:
     model = Movimentacoes
     fields = [
+      'id',
       'description',
       'date',
       'value',

@@ -5,6 +5,6 @@ from . import views
 from . import views
 
 urlpatterns = [
-    path('criar/', views.register_movimentacao),
-    path('', views.MovimentacaoView.as_view()),
+    path('', views.movimentacoes_view),
+    path('<int:pk>/', views.movimentacoes_delete),
 ]
