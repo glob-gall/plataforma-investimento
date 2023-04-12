@@ -8,7 +8,7 @@ from usuarios.models import Usuario
 from .models import Movimentacoes
 from .serializers import MovimentacoesSerializer
 # from rest_framework.views import APIView
-from rest_framework.exceptions import AuthenticationFailed
+from rest_framework.exceptions import AuthenticationFailed, NotFound
 from rest_framework import status
 
 
@@ -41,7 +41,9 @@ def delete(request,pk, format=None):
     if not findedUser:
       raise AuthenticationFailed('Usuario precia estar logado!')
     
-    movimentacao = self.get_object(pk)
+    movimentacao = Movimentacoes.objects.filter(id=pk).first()
+    if not movimentacao:
+      raise NotFound('Movimentacao não encontrada')
     movimentacao.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
 
