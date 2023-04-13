@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    # 'corsheaders'
     'usuarios',
+    'movimentacoes',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,5 @@ AUTH_USER_MODEL = 'usuarios.Usuario'
 
 # CORS_ORIGIN_ALLOW_ALL= True
 # CORS_ALLOW_CREDENTIALS = True
+
+REST_FRAMEWORK = {'DEFAULT_SCHEMA_CLASS':'rest_framework.schemas.coreapi.AutoSchema' }
