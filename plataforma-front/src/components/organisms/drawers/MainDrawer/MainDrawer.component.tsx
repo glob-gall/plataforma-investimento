@@ -67,13 +67,13 @@ const MainDrawerComponent = () => {
     const [open, setOpen] = React.useState(true);
 
     const handleDrawerClose = () => {
-        setOpen(false);
+        setOpen(!open);
     };
     return(
         <Drawer variant="permanent" open={open}>
             <DrawerHeader>
                 <IconButton onClick={handleDrawerClose}>
-                    {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                    {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                 </IconButton>
             </DrawerHeader>
             <Divider />
