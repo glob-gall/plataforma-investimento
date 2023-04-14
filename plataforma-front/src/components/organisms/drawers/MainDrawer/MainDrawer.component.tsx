@@ -12,6 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import React from "react";
+import {AccountBalance, Home, PointOfSale} from "@mui/icons-material";
 
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -63,8 +64,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const MainDrawerComponent = () => {
-    const theme = useTheme();
     const [open, setOpen] = React.useState(true);
+
+
+    const drawerOptions = [
+        { name: 'Início', icon: () => <Home />, action: () => null},
+        { name: 'Instituições', icon: () => <AccountBalance />, action: () => null},
+        { name: 'Movimentações', icon: () => <PointOfSale />, action: () => null},
+    ]
 
     const handleDrawerClose = () => {
         setOpen(!open);
@@ -78,14 +85,15 @@ const MainDrawerComponent = () => {
             </DrawerHeader>
             <Divider />
             <List>
-                {['Início', 'Instituições', 'Movimentações'].map((text, index) => (
-                    <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+                {drawerOptions.map(({name, icon, action}, index) => (
+                    <ListItem key={name + index} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
                                 justifyContent: open ? 'initial' : 'center',
                                 px: 2.5,
                             }}
+                            onClick={action}
                         >
                             <ListItemIcon
                                 sx={{
@@ -94,9 +102,9 @@ const MainDrawerComponent = () => {
                                     justifyContent: 'center',
                                 }}
                             >
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                {icon()}
                             </ListItemIcon>
-                            <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary={name} sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
                 ))}
