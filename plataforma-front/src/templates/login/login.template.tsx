@@ -9,6 +9,7 @@ import {
     Typography,
 } from '@mui/material'
 import * as TemplateContainer from './login.container';
+import * as Styles from './login.styles';
 import {LoadingButton} from "@mui/lab";
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -19,28 +20,28 @@ const LoginTemplate: React.FC<LoginTemplateProps> = () => {
     return (
         <TemplateContainer.LoginContainer>
             {({ loading, showError, error, actions }) => (
-                <Grid container component="main" sx={{ height: '100vh' }}>
-                    <Grid
-                        component="video"
-                        muted
-                        autoPlay
-                        loop
-                        xs={false}
-                        sm={4}
-                        md={7}
-                        sx={{
-                            objectFit: 'cover'
-                        }}
-                    >
-                        <source src={actions.randomBackground()} type="video/mp4"/>
-                    </Grid>
-                    <Grid item xs={12} sm={8} md={5} elevation={6} square>
+                <Grid container component="main" sx={{ height: '100vh', width: '100%' }}>
+                        <Styles.VideoContainer
+                            component="video"
+                            muted
+                            autoPlay
+                            loop
+                            xs={8}
+                            sx={{
+                                objectFit: 'cover'
+                            }}
+                        >
+                            <source src={actions.randomBackground()} type="video/mp4"/>
+                        </Styles.VideoContainer>
+                    <Grid item xs px={3} py={5} >
                         <Box
                             sx={{
                                 marginTop: 8,
+                                width: '100%',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'center',
+                                justifyContent: 'flex-start',
                             }}
                         >
                             <Typography component="h1" variant="h5">
