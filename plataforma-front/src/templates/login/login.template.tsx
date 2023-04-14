@@ -10,6 +10,9 @@ import {
 } from '@mui/material'
 import * as TemplateContainer from './login.container';
 import {LoadingButton} from "@mui/lab";
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DateField } from '@mui/x-date-pickers/DateField';
 
 const LoginTemplate: React.FC<LoginTemplateProps> = () => {
 
@@ -68,6 +71,16 @@ const LoginTemplate: React.FC<LoginTemplateProps> = () => {
                                     id="password"
                                     autoComplete="current-password"
                                 />
+
+                                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                    <DateField label="Data de Nascimento" 
+                                    required
+                                    format="DD-MM-YYYY"
+                                    />
+                                </LocalizationProvider>
+
+
+
                                 <Snackbar open={showError} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} autoHideDuration={3000} onClose={actions.hideErrors}>
                                     <Alert severity="error">{error}</Alert>
                                 </Snackbar>
