@@ -1,140 +1,143 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-
-//import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import React from 'react'
+import { RegisterTemplateProps } from './register.types'
+import {
+    Box,
+    Grid,
+    Link, Snackbar,
+    Alert,
+    TextField,
+    Typography,
+} from '@mui/material'
+import * as TemplateContainer from './register.container';
+import * as Styles from './register.styles';
+import {LoadingButton} from "@mui/lab";
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateField } from '@mui/x-date-pickers/DateField';
 
-function Copyright(props: any) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
+const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
+
+    return (
+        <TemplateContainer.RegisterContainer>
+            {({ loading, showError, error, actions }) => (
+                <Grid container component="main" sx={{ height: '100vh', width: '100%' }}>
+                        <Styles.VideoContainer
+                            component="video"
+                            muted
+                            autoPlay
+                            loop
+                            xs={8}
+                            sx={{
+                                objectFit: 'cover'
+                            }}
+                        >
+                            <source src={actions.randomBackground()} type="video/mp4"/>
+                        </Styles.VideoContainer>
+                    <Grid item xs px={3} py={5} >
+                        <Box
+                            sx={{
+                                marginTop: 8,
+                                width: '100%',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'flex-start',
+                            }}
+                        >
+                            <Typography component="h1" variant="h5">
+                                Oink!
+                            </Typography>
+                            <Typography>
+                                Registre-se agora na nossa plataforma.    
+                            </Typography>
+                            <Box component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={actions.submit}>
+                              <div>
+
+                                <TextField
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    id="name"
+                                    label="Nome"
+                                    name="name"
+                                    type="text"
+                                    autoComplete="name"
+                                    autoFocus
+                                    />
+
+                                <TextField
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    id="last_name"
+                                    label="Sobrenome"
+                                    name="last_name"
+                                    type="text"
+                                    autoComplete="last_name"
+                                    autoFocus
+                                    />
+
+                              </div>
+
+                                <TextField
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    id="email"
+                                    label="Email"
+                                    name="email"
+                                    type="email"
+                                    autoComplete="email"
+                                    autoFocus
+                                />
+                                <TextField
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    name="password"
+                                    label="Senha"
+                                    type="password"
+                                    id="password"
+                                    autoComplete="current-password"
+                                />
+
+                                <TextField
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    name="password_confirmation "
+                                    label="Confirmação de senha"
+                                    type="password"
+                                    id="password_confirmation"
+                                />
+                                <Box sx={{mt:2}}>
+                                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                    <DateField label="Data de Nascimento" 
+                                    required
+                                    format="DD-MM-YYYY"
+                                    />
+                                </LocalizationProvider>
+                                </Box>                                 
+
+                                <Snackbar open={showError} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} autoHideDuration={3000} onClose={actions.hideErrors}>
+                                    <Alert severity="error">{error}</Alert>
+                                </Snackbar>
+                                <LoadingButton
+                                    fullWidth
+                                    type="submit"
+                                    variant="contained"
+                                    loading={loading}
+                                    sx={{ mt: 3, mb: 2 }}
+                                >
+                                    Registrar
+                                </LoadingButton>
+                            </Box>
+                        </Box>
+                    </Grid>
+                </Grid>
+            )}
+        </TemplateContainer.RegisterContainer>
+    )
 }
 
-
-export default function SignUp() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
-
-  
-
-  return (
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="Quero receber notificações por email"
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign Up
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-            
-
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DateField label="Basic date field" />
-            </LocalizationProvider>
-
-          </Box>
-        </Box>
-        <Copyright sx={{ mt: 5 }} />
-      </Container>
-  );
-}
+export default RegisterTemplate

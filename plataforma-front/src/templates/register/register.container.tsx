@@ -1,11 +1,11 @@
 import {ContainerWithProps} from "@/@common/types/container.types";
-import {LoginContainerArgs} from "@/templates/login/login.types";
+import {RegisterContainerArgs} from "@/templates/register/register.types";
 import React from "react";
 import { useRouter } from 'next/router'
 import {AuthService} from "@/services/auth/auth.service";
 
 
-export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) => {
+export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArgs>) => {
 
     const [loading, setLoading] = React.useState<boolean>(false)
     const [error, setError] = React.useState<string | null>(null)
