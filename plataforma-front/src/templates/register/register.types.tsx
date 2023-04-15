@@ -12,4 +12,6 @@ export interface RegisterContainerArgs{
 export interface RegisterTemplateProps {
     email?: string;
     password?: string;
+    firstname?: string;
+    lastname?: string;
 }

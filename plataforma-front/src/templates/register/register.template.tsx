@@ -51,33 +51,46 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                 Registre-se agora na nossa plataforma.    
                             </Typography>
                             <Box component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={actions.submit}>
-                              <div>
+                               
+                                <Box
+                                sx={{
+                                    marginTop: 2,
+                                    width: '100%',
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    justifyContent: 'flex-start',
+                                    gap:2,
+                                }}
+                                 >
 
-                                <TextField
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    id="name"
-                                    label="Nome"
-                                    name="name"
-                                    type="text"
-                                    autoComplete="name"
-                                    autoFocus
-                                    />
+                                 
+                            
+                                    <TextField
+                                        margin="normal"
+                                        required
+                                        fullWidth
+                                        id="first_name"
+                                        label="Nome"
+                                        name="first_name"
+                                        type="text"
+                                        autoComplete="first_name"
+                                        autoFocus
+                                        />
 
-                                <TextField
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    id="last_name"
-                                    label="Sobrenome"
-                                    name="last_name"
-                                    type="text"
-                                    autoComplete="last_name"
-                                    autoFocus
-                                    />
+                                    <TextField
+                                        margin="normal"
+                                        required
+                                        fullWidth
+                                        id="last_name"
+                                        label="Sobrenome"
+                                        name="last_name"
+                                        type="text"
+                                        autoComplete="last_name"
+                                        autoFocus
+                                        />
 
-                              </div>
+                                </Box>
 
                                 <TextField
                                     margin="normal"
@@ -90,33 +103,47 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                     autoComplete="email"
                                     autoFocus
                                 />
-                                <TextField
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    name="password"
-                                    label="Senha"
-                                    type="password"
-                                    id="password"
-                                    autoComplete="current-password"
-                                />
 
-                                <TextField
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    name="password_confirmation "
-                                    label="Confirmação de senha"
-                                    type="password"
-                                    id="password_confirmation"
-                                />
-                                <Box sx={{mt:2}}>
-                                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                    <DateField label="Data de Nascimento" 
-                                    required
-                                    format="DD-MM-YYYY"
+                                <Box
+                                sx={{
+                                    marginTop: 2,
+                                    width: '100%',
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    justifyContent: 'flex-start',
+                                    gap:2,
+                                }}
+                                 >
+                                    <TextField
+                                        margin="normal"
+                                        required
+                                        fullWidth
+                                        name="password"
+                                        label="Senha"
+                                        type="password"
+                                        id="password"
+                                        autoComplete="current-password"
                                     />
-                                </LocalizationProvider>
+
+                                    <TextField
+                                        margin="normal"
+                                        required
+                                        fullWidth
+                                        name="password_confirmation "
+                                        label="Confirmação"
+                                        type="password"
+                                        id="password_confirmation"
+                                    />
+                                </Box>
+
+                                <Box sx={{mt:2}}>
+                                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                        <DateField label="Data de Nascimento" 
+                                        required
+                                        format="DD-MM-YYYY"
+                                        />
+                                    </LocalizationProvider>
                                 </Box>                                 
 
                                 <Snackbar open={showError} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} autoHideDuration={3000} onClose={actions.hideErrors}>
