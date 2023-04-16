@@ -140,8 +140,12 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                 <Box sx={{mt:2}}>
                                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                                         <DateField label="Data de Nascimento" 
+                                        name="birth"
                                         required
-                                        format="DD-MM-YYYY"
+                                        //format="DD-MM-YYYY"
+                                        format="YYYY-MM-DD"
+                                        disableFuture
+                                        minDate={new Date('1900-01-01')} // definindo a data mínima permitida
                                         />
                                     </LocalizationProvider>
                                 </Box>                                 

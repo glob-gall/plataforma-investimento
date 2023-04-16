@@ -14,4 +14,5 @@ export interface RegisterTemplateProps {
     password?: string;
     firstname?: string;
     lastname?: string;
+    birth?: string;
 }

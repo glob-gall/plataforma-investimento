@@ -35,7 +35,13 @@ export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArg
         const data = new FormData(e.currentTarget);
         setLoading(true);
         try{
-            await authService.login(data.get('email') as string, data.get('password') as string);
+
+            const firstname = data.get('first_name') as string;
+            const lastname = data.get('last_name') as string;
+            const fullname = firstname + ' ' + lastname; 
+            await authService.register(data.get('email') as string,fullname,
+            data.get('password') as string, data.get('birth') as string);
+            
             await router.replace('/dashboard')
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
