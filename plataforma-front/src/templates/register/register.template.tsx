@@ -142,8 +142,8 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                         <DateField label="Data de Nascimento" 
                                         name="birth"
                                         required
-                                        //format="DD-MM-YYYY"
-                                        format="YYYY-MM-DD"
+                                        format="DD-MM-YYYY"
+                                        //format="YYYY-MM-DD"
                                         disableFuture
                                         minDate={new Date('1900-01-01')} // definindo a data mínima permitida
                                         />

@@ -38,9 +38,12 @@ export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArg
 
             const firstname = data.get('first_name') as string;
             const lastname = data.get('last_name') as string;
-            const fullname = firstname + ' ' + lastname; 
+            const fullname = firstname + ' ' + lastname;
+            //DDMMYYYY TO YYYYMMDD
+            const birth = (data.get('birth') as string).split('-').reverse().join('-');
+           
             await authService.register(data.get('email') as string,fullname,
-            data.get('password') as string, data.get('birth') as string);
+            data.get('password') as string, birth);
             
             await router.replace('/dashboard')
         }catch(err: unknown){
