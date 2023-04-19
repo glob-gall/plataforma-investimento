@@ -29,10 +29,13 @@ def login_user(request):
   usuario = Usuario.objects.filter(email=email).first()
  
   userNotFound = usuario is None
-  passwordDontMatch = password != usuario.password
-  if userNotFound or passwordDontMatch:
+  if userNotFound:
     raise AuthenticationFailed('Credenciais incorretas')
-  
+
+  passwordDontMatch = password != usuario.password
+  if passwordDontMatch:
+    raise AuthenticationFailed('Credenciais incorretas')
+
   payload = {
     'id':usuario.id,
     # 'name':usuario.name,
