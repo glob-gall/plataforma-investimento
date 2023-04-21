@@ -70,7 +70,7 @@ class UsuarioView(APIView):
     serializer = UsuarioSerializer(usuario)
     return Response(serializer.data)
 
-def confirmEmailView(View,token,id):
+def confirmEmailView(View,token):
   try:
     objeto_token = get_object_or_404(Token,token=token)
     usuario = objeto_token.usuario
