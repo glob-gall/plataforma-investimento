@@ -1,19 +1,21 @@
-import DashboardTemplate from "@/templates/dashboard/dashboard.template";
-import {NextPage} from "next";
+import Box from "@mui/material/Box";
 import MainHeaderComponent from "@organisms/headers/MainHeader/MainHeader.component";
 import MainDrawerComponent from "@organisms/drawers/MainDrawer/MainDrawer.component";
+import DashboardTemplate from "@templates/dashboard/dashboard.template";
 import React from "react";
-import Box from "@mui/material/Box";
+import InstituicoesTemplate from "@templates/instituicoes/instituicoes.template";
 
 
-const DashboardPage: NextPage = () => {
+const InstituicoesPage = () => {
+
     return(
         <Box sx={{ display: 'flex', mt: 16, ml: 4, width: "100%" }}>
             <MainHeaderComponent/>
             <MainDrawerComponent/>
-            <DashboardTemplate/>
+            <InstituicoesTemplate/>
         </Box>
     )
+
 }
 
-export default DashboardPage
+export default InstituicoesPage;

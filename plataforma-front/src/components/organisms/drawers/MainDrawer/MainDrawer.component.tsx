@@ -13,6 +13,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import React from "react";
 import {AccountBalance, Home, PointOfSale} from "@mui/icons-material";
+import {useRouter} from "next/router";
 
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -64,12 +65,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const MainDrawerComponent = () => {
-    const [open, setOpen] = React.useState(true);
+    const router = useRouter();
+    const [open, setOpen] = React.useState(false);
 
 
     const drawerOptions = [
-        { name: 'Início', icon: () => <Home />, action: () => null},
-        { name: 'Instituições', icon: () => <AccountBalance />, action: () => null},
+        { name: 'Início', icon: () => <Home />, action: () => router.push('/dashboard')},
+        { name: 'Instituições', icon: () => <AccountBalance />, action: () => router.push('/instituicoes') },
         { name: 'Movimentações', icon: () => <PointOfSale />, action: () => null},
     ]
 
