@@ -1,11 +1,11 @@
 import {ContainerWithProps} from "@/@common/types/container.types";
-import {LoginContainerArgs} from "@/templates/login/login.types";
+import {RegisterContainerArgs} from "@/templates/register/register.types";
 import React from "react";
 import { useRouter } from 'next/router'
 import {AuthService} from "@/services/auth/auth.service";
 
 
-export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) => {
+export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArgs>) => {
 
     const [loading, setLoading] = React.useState<boolean>(false)
     const [error, setError] = React.useState<string | null>(null)
@@ -35,7 +35,16 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
         const data = new FormData(e.currentTarget);
         setLoading(true);
         try{
-            await authService.login(data.get('email') as string, data.get('password') as string);
+
+            const firstname = data.get('first_name') as string;
+            const lastname = data.get('last_name') as string;
+            const fullname = firstname + ' ' + lastname;
+            //DDMMYYYY TO YYYYMMDD
+            const birth = (data.get('birth') as string).split('-').reverse().join('-');
+           
+            await authService.register(data.get('email') as string,fullname,
+            data.get('password') as string, birth);
+            
             await router.replace('/dashboard')
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment

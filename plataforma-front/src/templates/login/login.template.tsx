@@ -69,6 +69,7 @@ const LoginTemplate: React.FC<LoginTemplateProps> = () => {
                                     id="password"
                                     autoComplete="current-password"
                                 />
+
                                 <Snackbar open={showError} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} autoHideDuration={3000} onClose={actions.hideErrors}>
                                     <Alert severity="error">{error}</Alert>
                                 </Snackbar>
@@ -87,7 +88,7 @@ const LoginTemplate: React.FC<LoginTemplateProps> = () => {
                                     </Link>
                                 </Grid>
                                 <Grid item>
-                                    <Link href="#" variant="body2">
+                                    <Link href="/register" variant="body2">
                                         {"Ainda não tem uma conta? Cadastre-se"}
                                     </Link>
                                 </Grid>
