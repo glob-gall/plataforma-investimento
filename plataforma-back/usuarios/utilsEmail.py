@@ -15,7 +15,7 @@ def enviar_email_confirmacao(usuario):
     assunto = "Confirmação de conta"
     mensagem = f'Olá {usuario.data["name"]},\n\n'\
     f'Clique no link abaxo para confirmar sua conta: \n\n'\
-    f'{settings.SITE_URL}/confirmar_conta/{tokenCreate}/{usuario.data["id"]}\n\n' \
+    f'{settings.SITE_URL}/confirmar_conta/{tokenCreate}\n\n' \
     f'Obrigado!!'
 
     remetente = settings.EMAIL_HOST_USER
