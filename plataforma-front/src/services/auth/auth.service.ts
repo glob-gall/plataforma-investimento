@@ -16,10 +16,4 @@ export class AuthService {
     async register(email: string, name:string, password: string, birth:string){
         return await this._api.post('/register/', {email, name, password, birth});
     }
-/*
-        email = validated_data['email'],
-        name = validated_data['name'],
-        password = validated_data['password'],
-        birth = validated_data['birth'],
-        */
 }
