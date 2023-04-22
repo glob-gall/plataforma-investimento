@@ -1,4 +1,4 @@
-import { Button, Container, Stack, TextField, Typography } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 
 export default function Home() {
   return (
@@ -6,4 +6,13 @@ export default function Home() {
       <Typography>Index</Typography>
     </Container>
   )
+}
+
+export async function getServerSideProps() {
+    return {
+        redirect: {
+            destination: '/login',
+            permanent: true
+        }
+    }
 }

@@ -3,7 +3,7 @@ import { RegisterTemplateProps } from './register.types'
 import {
     Box,
     Grid,
-    Link, Snackbar,
+    Snackbar,
     Alert,
     TextField,
     Typography,
