@@ -14,6 +14,7 @@ from .models import Usuario
 from .utilsEmail import enviar_email_confirmacao
 
 
+from utils.getUserPayload import get_user_payload
 
 SECRET= 'SECRET'
 
@@ -36,10 +37,13 @@ def login_user(request):
   usuario = Usuario.objects.filter(email=email).first()
  
   userNotFound = usuario is None
-  passwordDontMatch = password != usuario.password
-  if userNotFound or passwordDontMatch:
+  if userNotFound:
     raise AuthenticationFailed('Credenciais incorretas')
-  
+
+  passwordDontMatch = password != usuario.password
+  if passwordDontMatch:
+    raise AuthenticationFailed('Credenciais incorretas')
+
   payload = {
     'id':usuario.id,
     # 'name':usuario.name,
@@ -57,14 +61,7 @@ def login_user(request):
 class UsuarioView(APIView):
   def get(self,request):
     token = request.META.get('HTTP_AUTHORIZATION')
-    if not token:
-      raise AuthenticationFailed('Não autorizado')
-    
-    token = str.replace(str(token), 'Bearer ', '')
-    try:
-      payload = jwt.decode(token,SECRET,algorithms=['HS256'])
-    except jwt.ExpiredSignatureError:
-      raise AuthenticationFailed('Não autorizado')
+    payload = get_user_payload(token)
     
     usuario = Usuario.objects.filter(id = payload['id']).first()
     serializer = UsuarioSerializer(usuario)

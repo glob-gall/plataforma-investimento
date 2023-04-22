@@ -11,7 +11,8 @@ class Usuario(AbstractUser):
   is_email_verified = models.BooleanField(default=False)
   
   USERNAME_FIELD = 'email'
-  REQUIRED_FIELDS = []
+  REQUIRED_FIELDS = ['name','password','birth']
+
 class Token(models.Model):
   usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
   token = models.CharField(max_length=100)
