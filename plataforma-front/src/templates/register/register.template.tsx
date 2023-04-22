@@ -7,6 +7,7 @@ import {
     Alert,
     TextField,
     Typography,
+    Link,
 } from '@mui/material'
 import * as TemplateContainer from './register.container';
 import * as Styles from './register.styles';
