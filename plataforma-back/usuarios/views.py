@@ -45,10 +45,14 @@ def login_user(request):
   }  
   
   token = jwt.encode(payload,SECRET, algorithm='HS256')#.decode('utf-8')
-  
   return Response({
     'jwt':token,
-    'user': usuario
+    'user': {
+      'id':usuario.id,
+      'name':usuario.name,
+      'email':usuario.email,
+      'birth':usuario.birth
+    }
   })
 
 class UsuarioView(APIView):
