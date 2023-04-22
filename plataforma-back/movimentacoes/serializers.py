@@ -9,5 +9,6 @@ class MovimentacoesSerializer(serializers.ModelSerializer):
       'description',
       'date',
       'value',
-      'usuario'
+      'usuario',
+      'instituicao'
     ]
