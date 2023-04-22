@@ -4,6 +4,7 @@ import MainHeaderComponent from "@organisms/headers/MainHeader/MainHeader.compon
 import MainDrawerComponent from "@organisms/drawers/MainDrawer/MainDrawer.component";
 import React from "react";
 import Box from "@mui/material/Box";
+import {withAuthSSR} from "@hocs/withAuthSSR";
 
 
 const DashboardPage: NextPage = () => {
@@ -16,4 +17,10 @@ const DashboardPage: NextPage = () => {
     )
 }
 
-export default DashboardPage
+export default DashboardPage;
+
+export const getServerSideProps = withAuthSSR(async () => {
+    return {
+        props: {}
+    }
+})

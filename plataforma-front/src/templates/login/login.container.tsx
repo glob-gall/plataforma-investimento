@@ -1,8 +1,11 @@
 import {ContainerWithProps} from "@/@common/types/container.types";
-import {LoginContainerArgs} from "@/templates/login/login.types";
+import {LoginContainerArgs, LoginFormData} from "@/templates/login/login.types";
 import React from "react";
 import { useRouter } from 'next/router'
 import {AuthService} from "@/services/auth/auth.service";
+import {setCookie} from "nookies";
+import nookiesConfig from "@config/nookies.config";
+import {TOKEN_KEY} from "@constants/constants";
 
 
 export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) => {
@@ -30,12 +33,12 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
         setError(null);
     }
 
-    const submit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const data = new FormData(e.currentTarget);
+    const submit = async (data: LoginFormData) => {
+        const { email, password } = data;
         setLoading(true);
         try{
-            await authService.login(data.get('email') as string, data.get('password') as string);
+            const { data } = await authService.login(email as string, password as string);
+            setCookie(null, TOKEN_KEY, data.jwt, nookiesConfig)
             await router.replace('/dashboard')
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment

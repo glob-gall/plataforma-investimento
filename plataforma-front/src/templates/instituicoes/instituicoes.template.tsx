@@ -25,7 +25,7 @@ const InstituicoesTemplate = () => {
                         [1,2,3,4,5,6].map((item, index) => (
                             <Grid my={2} sm={2} md={4} key={index}>
                                 <Card sx={{ maxWidth: 320 }}>
-                                    <CardActionArea>
+                                    <CardActionArea onClick={() => setFormOpen(true)}>
                                         <CardMedia
                                             component="img"
                                             height="140"

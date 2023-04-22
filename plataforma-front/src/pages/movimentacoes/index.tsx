@@ -3,6 +3,7 @@ import MainHeaderComponent from "@organisms/headers/MainHeader/MainHeader.compon
 import MainDrawerComponent from "@organisms/drawers/MainDrawer/MainDrawer.component";
 import MovimentacoesTemplate from "@templates/movimentacoes/movimentacoes.template";
 import React from "react";
+import {withAuthSSR} from "@hocs/withAuthSSR";
 
 const MovimentacoesPage = () => {
     return(
@@ -15,3 +16,9 @@ const MovimentacoesPage = () => {
 }
 
 export default MovimentacoesPage;
+
+export const getServerSideProps = withAuthSSR(async () => {
+    return {
+        props: {}
+    }
+});

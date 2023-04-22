@@ -1,4 +1,7 @@
 import { Container, Typography } from '@mui/material'
+import {TOKEN_KEY} from "@constants/constants";
+import {parseCookies} from "nookies";
+import {GetServerSidePropsContext} from "next";
 
 export default function Home() {
   return (
@@ -8,10 +11,21 @@ export default function Home() {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+
+    const { [TOKEN_KEY]: token } = parseCookies(context);
+    if(!token) {
+        return {
+            redirect: {
+                destination: '/login',
+                permanent: false
+            }
+        }
+    }
+
     return {
         redirect: {
-            destination: '/login',
+            destination: '/dashboard',
             permanent: true
         }
     }

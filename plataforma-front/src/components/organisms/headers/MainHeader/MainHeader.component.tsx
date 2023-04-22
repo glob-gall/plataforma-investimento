@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 import Box from "@mui/material/Box";
 import {Avatar, Menu, MenuItem} from "@mui/material";
 import {useRouter} from "next/router";
+import {destroyCookie} from "nookies";
+import {TOKEN_KEY} from "@constants/constants";
 
 
 const MainHeaderComponent = () => {
@@ -20,6 +22,7 @@ const MainHeaderComponent = () => {
 
     function logout(){
         router.push('/login');
+        destroyCookie(null, TOKEN_KEY, { path: '/' })
     }
 
     const menuOptions = [
