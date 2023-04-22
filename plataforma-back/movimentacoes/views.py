@@ -13,7 +13,7 @@ from rest_framework import status
 
 
 def get_movimentacoes_by_usuario(request):
-    payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
+    payload = request.auth_payload
     movimentacoes = Movimentacoes.objects.filter(usuario = payload['id'])
     serializer = MovimentacoesSerializer(movimentacoes,many=True)
     
@@ -23,7 +23,7 @@ def get_movimentacoes_by_usuario(request):
     
 
 def register_movimentacao(request):
-  payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
+  payload = request.auth_payload
   findedUser = Usuario.objects.filter(id = payload['id']).first()
   data = request.data
   data['usuario'] = findedUser.id
@@ -36,7 +36,7 @@ def register_movimentacao(request):
 
 
 def delete(request,pk, format=None):
-    payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
+    payload = request.auth_payload
     findedUser = Usuario.objects.filter(id = payload['id']).first()
     if not findedUser:
       raise AuthenticationFailed('Usuario precia estar logado!')
