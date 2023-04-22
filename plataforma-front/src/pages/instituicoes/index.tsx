@@ -3,6 +3,7 @@ import MainHeaderComponent from "@organisms/headers/MainHeader/MainHeader.compon
 import MainDrawerComponent from "@organisms/drawers/MainDrawer/MainDrawer.component";
 import React from "react";
 import InstituicoesTemplate from "@templates/instituicoes/instituicoes.template";
+import {withAuthSSR} from "@hocs/withAuthSSR";
 
 
 const InstituicoesPage = () => {
@@ -18,3 +19,9 @@ const InstituicoesPage = () => {
 }
 
 export default InstituicoesPage;
+
+export const getServerSideProps = withAuthSSR(async () => {
+    return {
+        props: {}
+    }
+});
