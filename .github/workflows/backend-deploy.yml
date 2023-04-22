@@ -1,10 +1,5 @@
 name: Backend Deploy
 on:
-  merge:
-    branches:
-      - master
-    folders:
-      - plataforma-back/**
   push:
     branches:
       - master
