@@ -162,6 +162,9 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                 >
                                     Registrar
                                 </LoadingButton>
+                                <Link href="/login" variant="body2">
+                                        {"Já tem uma conta? Entre"}
+                                </Link>
                             </Box>
                         </Box>
                     </Grid>

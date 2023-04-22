@@ -49,7 +49,7 @@ export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArg
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
-            setError(err.response.data.detail)
+            setError(err.response.data.email)
             setShowError(true);
         }finally {
             setLoading(false);
