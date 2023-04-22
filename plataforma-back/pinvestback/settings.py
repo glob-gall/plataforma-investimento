@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'movimentacoes',
     'drf_yasg',
     'middlewares',
+    'instituicoes',
 ]
 
 MIDDLEWARE = [
