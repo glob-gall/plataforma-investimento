@@ -6,13 +6,11 @@ on:
         description: 'Log level'
         required: true
         default: 'warning'
-      tags:
-        description: 'backend'
-  push:
-    branches:
-      - master
-    folders:
-      - plataforma-back/**
+#  push:
+#    branches:
+#      - master
+#    folders:
+#      - plataforma-back/**
 jobs:
   deploy:
     name: Deploy app

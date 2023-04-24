@@ -9,13 +9,11 @@ on:
         description: 'Log level'
         required: true
         default: 'warning'
-      tags:
-        description: 'backend'
-  push:
-    branches:
-      - master
-    folders:
-      - plataforma-front/**
+#  push:
+#    branches:
+#      - master
+#    folders:
+#      - plataforma-front/**
 jobs:
   deploy:
     runs-on: ubuntu-latest
