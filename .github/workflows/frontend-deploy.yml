@@ -9,16 +9,17 @@ on:
         description: 'Log level'
         required: true
         default: 'warning'
-      tags:
-        description: 'backend'
-  push:
-    branches:
-      - master
-    folders:
-      - plataforma-front/**
+#  push:
+#    branches:
+#      - master
+#    folders:
+#      - plataforma-front/**
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plataforma-front
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
