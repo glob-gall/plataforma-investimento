@@ -19,6 +19,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plataforma-front
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
