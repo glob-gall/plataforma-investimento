@@ -44,7 +44,7 @@ const MainHeaderComponent = () => {
                     </Typography>
                 </Box>
                 <Box>
-                    <Avatar src="/static/images/avatar/1.jpg" onClick={handleClick}/>
+                    <Avatar src="" onClick={handleClick}/>
                     <Menu
                         id="user-menu"
                         aria-labelledby="user-menu-btn"

@@ -1,5 +1,13 @@
 name: Backend Deploy
 on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'backend'
   push:
     branches:
       - master
