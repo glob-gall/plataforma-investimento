@@ -1,4 +1,4 @@
-import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
+import { styled, Theme, CSSObject } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
@@ -9,8 +9,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import React from "react";
 import {AccountBalance, Home, PointOfSale} from "@mui/icons-material";
 import {useRouter} from "next/router";
@@ -72,7 +70,7 @@ const MainDrawerComponent = () => {
     const drawerOptions = [
         { name: 'Início', icon: () => <Home />, action: () => router.push('/dashboard')},
         { name: 'Instituições', icon: () => <AccountBalance />, action: () => router.push('/instituicoes') },
-        { name: 'Movimentações', icon: () => <PointOfSale />, action: () => null},
+        { name: 'Movimentações', icon: () => <PointOfSale />, action: () => router.push('/movimentacoes')},
     ]
 
     const handleDrawerClose = () => {

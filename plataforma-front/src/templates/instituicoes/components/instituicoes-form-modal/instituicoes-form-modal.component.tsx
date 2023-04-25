@@ -4,6 +4,7 @@ import {
     InstituicoesFormModalProps
 } from "@templates/instituicoes/components/instituicoes-form-modal/instituicoes-form-modal.types";
 import {LoadingButton} from "@mui/lab";
+import {Close} from "@mui/icons-material";
 
 
 const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onClose }) => {
@@ -41,11 +42,17 @@ const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onC
             aria-labelledby="instituicoes-form-modal-title"
         >
             <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                    Adicionar instituição
-                </Typography>
-                <Box>
+                <Box sx={{ width: '100%', alignItems: 'center', justifyContent: 'space-between', display: 'flex' }}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                        Adicionar instituição
+                    </Typography>
+                    <Box onClick={onClose} sx={{ cursor: 'pointer', width: 32, height: 32 }}>
+                        <Close />
+                    </Box>
+                </Box>
+                <Box mt={4}>
                     <TextField
+                        fullWidth
                         select
                         label="Instituição"
                         defaultValue="itau"
@@ -56,14 +63,15 @@ const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onC
                             </MenuItem>
                         ))}
                     </TextField>
-                    <Box>
-                        <TextField placeholder={'Nome de referência'}/>
+                    <Box mt={2}>
+                        <TextField fullWidth placeholder={'Nome de referência'}/>
                     </Box>
-                    <Box>
-                        <TextField placeholder={'Agência'}/>
+                    <Box mt={2}>
+                        <TextField sx={{ marginRight: 2 }} placeholder={'Agência'}/>
                         <TextField placeholder={'Conta'}/>
                     </Box>
-                    <Box>
+                    <Box mt={2} sx={{ justifyContent: 'flex-end', display: 'flex' }}>
+                        <LoadingButton sx={{ marginRight: 2 }} variant="contained" color="error" onClick={() => onClose()}>Excluir</LoadingButton>
                         <LoadingButton variant="contained" onClick={() => onClose()}>Salvar</LoadingButton>
                     </Box>
                 </Box>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { LoginTemplateProps } from './login.types'
+import {LoginFormData, LoginTemplateProps} from './login.types'
 import {
     Box,
     Grid,
@@ -11,8 +11,11 @@ import {
 import * as TemplateContainer from './login.container';
 import * as Styles from './login.styles';
 import {LoadingButton} from "@mui/lab";
+import { useForm } from "react-hook-form";
 
 const LoginTemplate: React.FC<LoginTemplateProps> = () => {
+
+    const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>();
 
     return (
         <TemplateContainer.LoginContainer>
@@ -47,27 +50,35 @@ const LoginTemplate: React.FC<LoginTemplateProps> = () => {
                             <Typography>
                                 Chegou a hora de organizar suas finanças em um só lugar.
                             </Typography>
-                            <Box component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={actions.submit}>
+                            <Box component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={handleSubmit(actions.submit)}>
                                 <TextField
                                     margin="normal"
                                     required
                                     fullWidth
                                     id="email"
                                     label="Email"
-                                    name="email"
                                     type="email"
                                     autoComplete="email"
                                     autoFocus
+                                    {...register("email", {
+                                        required: true,
+                                        pattern: {
+                                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                            message: "E-mail inválido"
+                                        }
+                                    })}
+                                    aria-invalid={errors.email ? "true" : "false"}
                                 />
                                 <TextField
                                     margin="normal"
                                     required
                                     fullWidth
-                                    name="password"
                                     label="Senha"
                                     type="password"
                                     id="password"
                                     autoComplete="current-password"
+                                    {...register("password", { required: true })}
+                                    aria-invalid={errors.password ? "true" : "false"}
                                 />
 
                                 <Snackbar open={showError} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} autoHideDuration={3000} onClose={actions.hideErrors}>

@@ -3,7 +3,7 @@ export interface LoginContainerArgs{
     showError: boolean;
     error: string | null;
     actions: {
-        submit: (e: React.FormEvent<HTMLFormElement>) => void;
+        submit: (data: LoginFormData) => void;
         setError: (error: string | null) => void;
         hideErrors: () => void;
         randomBackground: () => string;
@@ -12,4 +12,9 @@ export interface LoginContainerArgs{
 export interface LoginTemplateProps {
     email?: string;
     password?: string;
+}
+
+export interface LoginFormData {
+    email: string;
+    password: string;
 }
