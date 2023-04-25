@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from usuarios.contas.models import Contas
 from usuarios.models import Usuario
 from instituicoes.models import Instituicoes
 # Create your models here.
@@ -14,6 +15,6 @@ class Movimentacoes(models.Model):
   value = models.DecimalField(decimal_places=2, max_digits=100)
   # tipo = models.ForeignKey(TiposMovimentacoes,on_delete=models.CASCADE)
   usuario = models.ForeignKey(Usuario, on_delete= models.CASCADE)
-  instituicao = models.ForeignKey(Instituicoes, on_delete= models.CASCADE)
-  
-  REQUIRED_FIELDS = ['date','value','usuario','instituicao']
+  conta = models.ForeignKey(Contas, on_delete= models.CASCADE)
+
+  REQUIRED_FIELDS = ['date','value','usuario','conta']
