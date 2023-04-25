@@ -3,10 +3,11 @@ import { RegisterTemplateProps } from './register.types'
 import {
     Box,
     Grid,
-    Link, Snackbar,
+    Snackbar,
     Alert,
     TextField,
     Typography,
+    Link,
 } from '@mui/material'
 import * as TemplateContainer from './register.container';
 import * as Styles from './register.styles';
