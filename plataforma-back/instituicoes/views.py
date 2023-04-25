@@ -13,6 +13,13 @@ from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 
 class InstituicoesView(APIView):
+
+    @staticmethod
+    def associar_usuario(usuario, instituicao):
+        usuario = Usuario.objects.filter(id=usuario).first()
+        usuario.instituicoes.add(instituicao)
+        usuario.save()
+
     def get(self, _):
         instituicoes = Instituicoes.objects.all()
         serializer = InstituicoesSerializer(instituicoes, many=True)
@@ -22,17 +29,12 @@ class InstituicoesView(APIView):
     def associar_instituicao_usuario(request, pk):
         user = request.auth_payload
         instituicao = Instituicoes.objects.filter(id=pk).first()
-        usuario = Usuario.objects.filter(id=user['id']).first()
 
         if not instituicao:
             return HttpResponseNotFound("Instituição não encontrada")
 
-        usuario.instituicoes.add(instituicao)
-        usuario.save()
-
-        serializer = UsuarioSerializer(usuario)
+        serializer = UsuarioSerializer(InstituicoesView.associar_usuario(user['id'], instituicao))
         return Response(serializer.data)
-        return  Response(serializer.data)
 
 
         

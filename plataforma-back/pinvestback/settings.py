@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'middlewares',
     'instituicoes',
+    'usuarios.contas',
 ]
 
 MIDDLEWARE = [
@@ -89,7 +90,7 @@ DATABASES = {
         'NAME': 'plataforma',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'postgres',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }

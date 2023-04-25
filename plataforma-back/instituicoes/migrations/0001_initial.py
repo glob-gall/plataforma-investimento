@@ -17,8 +17,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Instituicoes',
             fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
                 ('nome', models.CharField(max_length=255, default='')),
-                ('codigo', models.IntegerField(null=True)),
+                ('codigo', models.IntegerField(blank=True, null=True)),
                 ('ispb', models.CharField(max_length=10, default='')),
             ],
         ),
