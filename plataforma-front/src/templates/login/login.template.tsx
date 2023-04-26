@@ -43,6 +43,9 @@ const LoginTemplate: React.FC<LoginTemplateProps> = () => {
                                 justifyContent: 'flex-start',
                             }}
                         >
+                            <Box>
+                                <img src="/assets/img/logo.png" alt="logo"/>
+                            </Box>
                             <Typography component="h1" variant="h5">
                                 Oink!
                             </Typography>
