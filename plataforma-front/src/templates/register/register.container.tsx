@@ -1,7 +1,6 @@
 import {ContainerWithProps} from "@/@common/types/container.types";
 import {RegisterContainerArgs} from "@/templates/register/register.types";
 import React from "react";
-import { useRouter } from 'next/router'
 import {AuthService} from "@/services/auth/auth.service";
 import {useAuth} from "@hooks/auth/use-auth.hook";
 
@@ -11,8 +10,6 @@ export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArg
     const [loading, setLoading] = React.useState<boolean>(false)
     const [error, setError] = React.useState<string | null>(null)
     const [showError, setShowError] = React.useState<boolean>(false)
-
-    const router = useRouter()
 
     const authService = new AuthService();
 

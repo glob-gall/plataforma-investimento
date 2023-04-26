@@ -1,4 +1,3 @@
-import { Container, Typography } from '@mui/material'
 import {TOKEN_KEY, USER_KEY} from "@constants/constants";
 import {parseCookies} from "nookies";
 import {GetServerSidePropsContext} from "next";

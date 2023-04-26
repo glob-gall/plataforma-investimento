@@ -1,5 +1,5 @@
 import React from 'react'
-import {LoginFormData, LoginTemplateProps} from './login.types'
+import {LoginTemplateProps} from './login.types'
 import {
     Alert,
     Box,

@@ -4,16 +4,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Box from "@mui/material/Box";
 import {Avatar, Menu, MenuItem} from "@mui/material";
-import {useRouter} from "next/router";
-import {destroyCookie} from "nookies";
-import {TOKEN_KEY} from "@constants/constants";
 import {useAuth} from "@hooks/auth/use-auth.hook";
 
 
 const MainHeaderComponent = () => {
     const { actions } = useAuth();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const router = useRouter();
     const menuOpened = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);

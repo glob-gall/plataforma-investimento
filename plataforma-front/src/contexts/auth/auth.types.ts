@@ -1,4 +1,5 @@
 import {Actions, ContextType} from "@contexts/context.types";
+import React from "react";
 
 export interface User {
     id: string
@@ -25,7 +26,7 @@ export interface AuthContextActions {
     logout(): Promise<void>
 }
 
-export interface AuthContextValues extends ContextType<AuthContextStates, AuthContextActions> {}
+export type AuthContextValues = ContextType<AuthContextStates, AuthContextActions>
 
 export enum AUTH_ACTIONS {
     GET_ACTION = 'GET/AUTH',

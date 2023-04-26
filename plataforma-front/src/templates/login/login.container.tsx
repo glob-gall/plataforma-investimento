@@ -1,11 +1,6 @@
 import {ContainerWithProps} from "@/@common/types/container.types";
 import {LoginContainerArgs, LoginFormData} from "@/templates/login/login.types";
 import React from "react";
-import { useRouter } from 'next/router'
-import {AuthService} from "@/services/auth/auth.service";
-import {setCookie} from "nookies";
-import nookiesConfig from "@config/nookies.config";
-import {TOKEN_KEY, USER_KEY} from "@constants/constants";
 import {useAuth} from "@hooks/auth/use-auth.hook";
 
 
