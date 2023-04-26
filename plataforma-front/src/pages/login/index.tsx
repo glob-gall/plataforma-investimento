@@ -14,7 +14,7 @@ export default Login;
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
     const { [USER_KEY]: user } = parseCookies(ctx);
-    
+
     return {
         props: {
           user: user ? JSON.parse(user) : null
