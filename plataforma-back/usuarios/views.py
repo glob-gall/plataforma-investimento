@@ -60,7 +60,8 @@ def login_user(request):
       'name':usuario.name,
       'email':usuario.email,
       'birth':usuario.birth,
-      'is_active':usuario.is_active
+      'is_active':usuario.is_active,
+      'is_email_verified':usuario.is_email_verified,
     }
   })
 

@@ -5,7 +5,8 @@ import { useRouter } from 'next/router'
 import {AuthService} from "@/services/auth/auth.service";
 import {setCookie} from "nookies";
 import nookiesConfig from "@config/nookies.config";
-import {TOKEN_KEY} from "@constants/constants";
+import {TOKEN_KEY, USER_KEY} from "@constants/constants";
+import {useAuth} from "@hooks/auth/use-auth.hook";
 
 
 export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) => {
@@ -14,9 +15,7 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
     const [error, setError] = React.useState<string | null>(null)
     const [showError, setShowError] = React.useState<boolean>(false)
 
-    const router = useRouter()
-
-    const authService = new AuthService();
+    const { actions } = useAuth();
 
     const randomBackground = () => {
         const backgrounds = [
@@ -37,9 +36,7 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
         const { email, password } = data;
         setLoading(true);
         try{
-            const { data } = await authService.login(email as string, password as string);
-            setCookie(null, TOKEN_KEY, data.jwt, nookiesConfig)
-            await router.replace('/dashboard')
+            await actions?.login(email, password);
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore

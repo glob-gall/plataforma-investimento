@@ -7,9 +7,11 @@ import {Avatar, Menu, MenuItem} from "@mui/material";
 import {useRouter} from "next/router";
 import {destroyCookie} from "nookies";
 import {TOKEN_KEY} from "@constants/constants";
+import {useAuth} from "@hooks/auth/use-auth.hook";
 
 
 const MainHeaderComponent = () => {
+    const { actions } = useAuth();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const router = useRouter();
     const menuOpened = Boolean(anchorEl);
@@ -21,8 +23,7 @@ const MainHeaderComponent = () => {
     };
 
     function logout(){
-        router.push('/login');
-        destroyCookie(null, TOKEN_KEY, { path: '/' })
+        actions?.logout();
     }
 
     const menuOptions = [

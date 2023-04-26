@@ -3,10 +3,11 @@ import {RegisterContainerArgs} from "@/templates/register/register.types";
 import React from "react";
 import { useRouter } from 'next/router'
 import {AuthService} from "@/services/auth/auth.service";
+import {useAuth} from "@hooks/auth/use-auth.hook";
 
 
 export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArgs>) => {
-
+    const { actions: authActions } = useAuth();
     const [loading, setLoading] = React.useState<boolean>(false)
     const [error, setError] = React.useState<string | null>(null)
     const [showError, setShowError] = React.useState<boolean>(false)
@@ -45,7 +46,7 @@ export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArg
             await authService.register(data.get('email') as string,fullname,
             data.get('password') as string, birth);
             
-            await router.replace('/dashboard')
+            await authActions?.login(data.get('email') as string, data.get('password') as string);
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
