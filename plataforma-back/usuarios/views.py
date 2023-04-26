@@ -1,12 +1,19 @@
 # from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+from django.views import View
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 from .serializers import UsuarioSerializer 
-from .models import Usuario
+from .models import Token, Usuario
 import hashlib
 import jwt, datetime
+from .models import Usuario
+from .utilsEmail import enviar_email_confirmacao
+
+
 from utils.getUserPayload import get_user_payload
 
 SECRET= 'SECRET'
@@ -20,6 +27,7 @@ def register_user(request):
   
   
   serializer.save()
+  enviar_email_confirmacao(serializer)
   return Response(serializer.data)
     
 @api_view(['POST'])
@@ -51,7 +59,8 @@ def login_user(request):
       'id':usuario.id,
       'name':usuario.name,
       'email':usuario.email,
-      'birth':usuario.birth
+      'birth':usuario.birth,
+      'is_active':usuario.is_active
     }
   })
 
@@ -63,5 +72,15 @@ class UsuarioView(APIView):
     usuario = Usuario.objects.filter(id = payload['id']).first()
     serializer = UsuarioSerializer(usuario)
     return Response(serializer.data)
-  
-  
+
+def confirmEmailView(View,token):
+  try:
+    objeto_token = get_object_or_404(Token,token=token)
+    usuario = objeto_token.usuario
+    if(objeto_token.token == token):
+      usuario.is_email_verified = True
+      usuario.save()
+      return HttpResponse("Email confirmado com sucesso")
+  except:
+    return HttpResponse("Não foi possivel confirmar o email")
+
