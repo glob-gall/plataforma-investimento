@@ -1,4 +1,4 @@
-import {Grid, MenuItem, Modal, TextField, Typography} from "@mui/material";
+import {MenuItem, Modal, TextField, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import {
     InstituicoesFormModalProps

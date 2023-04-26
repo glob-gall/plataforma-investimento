@@ -9,7 +9,7 @@
  - Alan Marques
  - Emica Costa
  - Felipe Pinheiro
- - Luis Galleguilos
+ - Luis Galleguillos
  - Pablo Sena
 ```
 
