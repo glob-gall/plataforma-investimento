@@ -1,11 +1,12 @@
 
 def formatMsg(key,value):
-  if  value == 'Este Campo É Obrigatório.':
-    return {'message': value.replace("Este Campo", key)}
-  elif value == 'Insira Um Endereço De Email Válido.':
-    return {'message': "Insira Um Endereço De Email Válido."}
+  val = value.lower()
+  if  val == 'este campo é obrigatório.':
+    return {'message': val.replace("este campo", key)}
+  elif val == 'insira um endereço de email válido.':
+    return {'message': "Insira um endereço de email válido."}
   
-  return {'message': {key:value}}
+  return {'message': {key:val}}
 
 
 def formatErrors(errors:dict):
