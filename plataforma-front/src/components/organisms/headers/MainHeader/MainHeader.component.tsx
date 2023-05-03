@@ -50,14 +50,6 @@ const MainHeaderComponent = () => {
                         anchorEl={anchorEl}
                         open={menuOpened}
                         onClose={handleClose}
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'left',
-                        }}
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'left',
-                        }}
                     >
                         {
                             menuOptions.map((option, index) => (

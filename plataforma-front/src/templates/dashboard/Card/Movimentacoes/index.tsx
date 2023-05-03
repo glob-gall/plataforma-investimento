@@ -1,20 +1,29 @@
+import handeEmoji from '@/utils/emojis/handEmoji'
+import PigEmoji from '@/utils/emojis/pigEmoji'
 import { Button, Grid } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 function CardMovimentacoes() {
-
+  const [emoji,setEmoji] = useState('')
+  const [hand,setHand] = useState('')
+  
+  useEffect(()=>{
+    setEmoji(PigEmoji()+PigEmoji())
+    setHand(handeEmoji())
+  },[setEmoji])
   return (
     <Grid container>
       <Grid container>
         <Grid item style={{ marginRight: 'auto' }}>
           <Grid container direction="column">
             <Grid item>
-              <Typography variant="h4">👋 Bem vindo, {'aaa'}!</Typography>
+              <Typography variant="h4">{hand} Bem vindo, {'aaa'}!</Typography>
             </Grid>
             <Grid item>
               <Typography paragraph>
-                Seus problemas financeiros acabaram! 🐷💰
+                Seus problemas financeiros acabaram! {emoji}
               </Typography>
             </Grid>
           </Grid>

@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Avatar, Button, Card } from '@mui/material'
 import * as Styled from './profile.styles'
 import { useAuth } from '@/hooks/auth/use-auth.hook'
 import { ProfileTemplateProps } from './profile.types'
+import PigEmoji from '@/utils/emojis/pigEmoji'
+
 
 const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
   const { user } = useAuth()
   console.log({user});
+  const [emoji,setEmoji] = useState('')
+  
+  useEffect(()=>{
+    setEmoji(PigEmoji())
+  },[setEmoji])
   
 
   return (
@@ -15,7 +22,7 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
       <Card variant="outlined" style={{ marginRight: 50 }}>
         <Styled.ProfileContainer>
         <Avatar sx={{ bgcolor: "#aaa",width: 156, height: 156 }}>LF</Avatar>
-        <Styled.Username variant='h4'>🐽 Luís Felipe Galleguillos Campos</Styled.Username>
+        <Styled.Username variant='h4'>{emoji} Luís Felipe Galleguillos Campos</Styled.Username>
 
           <Styled.ProfileForm>
           <Styled.Input
