@@ -14,6 +14,8 @@ from .serializers import UsuarioSerializer,LoginSerializer
 from .models import Token, Usuario
 from .utilsEmail import enviar_email_confirmacao
 from utils.getUserPayload import get_user_payload
+from utils.errors import formatErrors 
+
 
 SECRET= 'SECRET'
 
@@ -30,7 +32,7 @@ def register_user(request):
     serializer.is_valid(raise_exception = True)
     serializer.save()
   except:
-    return Response({'errors':serializer.errors})
+    return Response(formatErrors(serializer.errors))
   
   # enviar_email_confirmacao(serializer)
   return Response(serializer.data)
@@ -41,7 +43,7 @@ def login_user(request):
   try:
     serializer.is_valid(raise_exception = True)
   except:
-    return Response({'errors':serializer.errors})
+    return Response(formatErrors(serializer.errors))
   
   email = request.data['email']
   password = hashlib.sha256(request.data['password'].encode('utf-8')).hexdigest() 
