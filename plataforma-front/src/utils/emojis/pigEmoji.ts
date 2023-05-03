@@ -1,8 +1,8 @@
 
 
-function PigEmoji(){
-  const pigEmojis = ['🐖','🐽','🐷','🐗','🪙','💰','💵']
+function pigEmoji(){
+  const pigEmojis = ['🐖','🐽','🐷','🐗']
   return pigEmojis[Math.floor(Math.random() * pigEmojis.length)] 
 }
 
-export default PigEmoji
+export default pigEmoji

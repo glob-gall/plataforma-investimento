@@ -1,5 +1,7 @@
 import handeEmoji from '@/utils/emojis/handEmoji'
-import PigEmoji from '@/utils/emojis/pigEmoji'
+import moneyEmoji from '@/utils/emojis/moneyEmoji'
+import pigEmoji from '@/utils/emojis/pigEmoji'
+
 import { Button, Grid } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Link from 'next/link'
@@ -10,7 +12,7 @@ function CardMovimentacoes() {
   const [hand,setHand] = useState('')
   
   useEffect(()=>{
-    setEmoji(PigEmoji()+PigEmoji())
+    setEmoji(pigEmoji()+moneyEmoji())
     setHand(handeEmoji())
   },[setEmoji])
   return (

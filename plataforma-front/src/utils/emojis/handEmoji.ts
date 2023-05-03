@@ -1,13 +1,13 @@
 
 
 function handeEmoji(){
-  const pigEmojis = [
+  const handEmojis = [
     '✌️','🫶','👋',
     '🤙','🔥','👍',
     '🤝','🤟','🖖',
     '🫰',
   ]
-  return pigEmojis[Math.floor(Math.random() * pigEmojis.length)] 
+  return handEmojis[Math.floor(Math.random() * handEmojis.length)] 
 }
 
 export default handeEmoji

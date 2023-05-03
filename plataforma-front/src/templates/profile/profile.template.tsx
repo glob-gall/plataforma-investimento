@@ -4,7 +4,7 @@ import { Avatar, Button, Card } from '@mui/material'
 import * as Styled from './profile.styles'
 import { useAuth } from '@/hooks/auth/use-auth.hook'
 import { ProfileTemplateProps } from './profile.types'
-import PigEmoji from '@/utils/emojis/pigEmoji'
+import pigMoneyEmoji from '@/utils/emojis/pigMoneyEmoji'
 
 
 const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
@@ -13,7 +13,7 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
   const [emoji,setEmoji] = useState('')
   
   useEffect(()=>{
-    setEmoji(PigEmoji())
+    setEmoji(pigMoneyEmoji())
   },[setEmoji])
   
 
