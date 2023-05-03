@@ -1,11 +1,8 @@
 import { Button, Grid } from '@mui/material'
 import Typography from '@mui/material/Typography'
-import { useAuth } from '@/hooks/auth/use-auth.hook'
 import Link from 'next/link'
 
 function CardMovimentacoes() {
-  const { user } = useAuth()
-  console.log({ user })
 
   return (
     <Grid container>
@@ -13,7 +10,7 @@ function CardMovimentacoes() {
         <Grid item style={{ marginRight: 'auto' }}>
           <Grid container direction="column">
             <Grid item>
-              <Typography variant="h4">👋 Bem vindo, {user?.name}!</Typography>
+              <Typography variant="h4">👋 Bem vindo, {'aaa'}!</Typography>
             </Grid>
             <Grid item>
               <Typography paragraph>
