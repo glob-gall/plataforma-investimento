@@ -1,6 +1,7 @@
 import { Button, Grid } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { useAuth } from '@/hooks/auth/use-auth.hook'
+import Link from 'next/link'
 
 function CardMovimentacoes() {
   const { user } = useAuth()
@@ -10,12 +11,25 @@ function CardMovimentacoes() {
     <Grid container>
       <Grid container>
         <Grid item style={{ marginRight: 'auto' }}>
-          <Typography variant="h4">👋 Bem vindo, {user?.name}!</Typography>
+          <Grid container direction="column">
+            <Grid item>
+              <Typography variant="h4">👋 Bem vindo, {user?.name}!</Typography>
+            </Grid>
+            <Grid item>
+              <Typography paragraph>
+                Seus problemas financeiros acabaram! 🐷💰
+              </Typography>
+            </Grid>
+          </Grid>
+        
+        
         </Grid>
         <Grid item>
           <Grid container spacing={1}>
             <Grid item>
-              <Button variant="text">ver extrato</Button>
+              <Link href="/movimentacoes">
+                <Button variant="text">ver extrato</Button>
+              </Link>
             </Grid>
             <Grid item>
               <Button variant="contained">Nova movimentação</Button>
@@ -24,13 +38,9 @@ function CardMovimentacoes() {
         </Grid>
       </Grid>
 
-      <Grid container>
-        <Grid item>
-          <Typography paragraph>
-            Seus problemas financeiros acabaram! 🐷💰
-          </Typography>
-        </Grid>
-      </Grid>
+      {/* <Grid container>
+        
+      </Grid> */}
 
       <Grid container spacing={3} style={{ marginTop: 12 }}>
         <Grid item style={{ marginRight: 'auto' }} />
