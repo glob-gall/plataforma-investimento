@@ -34,7 +34,7 @@ def register_user(request):
   except:
     return Response(formatErrors(serializer.errors))
   
-  # enviar_email_confirmacao(serializer)
+  enviar_email_confirmacao(serializer)
   return Response(serializer.data)
     
 @api_view(['POST'])

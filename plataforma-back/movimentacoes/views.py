@@ -12,26 +12,19 @@ from utils.getUserPayload import get_user_payload
 
 def get_movimentacoes_by_usuario(request):
     payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
+    queryset = Movimentacoes.objects.filter(usuario = payload['id'])
+    
+    dates = request.query_params.get('range')
+    orderby = request.query_params.get('orderby')
+    if dates:
+      [dateMin,dateMax] = dates.split(',')
+      queryset=queryset.filter(date__range=[dateMin, dateMax])
+    if orderby:
+      queryset=queryset.order_by(orderby)
+      
 
-    dates = request.query_params.get('date__range')
-    movimentacoes=[]
     
-    [dateMin,dateMax] = dates.split(',')
-    print(f'{dateMin} - {dateMax}')
-
-    if (dateMin and dateMax):
-      movimentacoes = Movimentacoes.objects.filter(
-        usuario = payload['id'],
-        date__range=[dateMin, dateMax]
-      )
-    else: 
-      movimentacoes = Movimentacoes.objects.filter(usuario = payload['id'])
-    
-    
-    
-    serializer = MovimentacoesSerializer(movimentacoes,many=True)
-    
-    
+    serializer = MovimentacoesSerializer(queryset,many=True)    
     return Response(serializer.data)
 
 
