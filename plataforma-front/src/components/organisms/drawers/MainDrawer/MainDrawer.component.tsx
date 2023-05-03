@@ -12,6 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import React from "react";
 import {AccountBalance, Home, PointOfSale} from "@mui/icons-material";
 import {useRouter} from "next/router";
+import { Tooltip } from '@mui/material';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -95,6 +96,7 @@ const MainDrawerComponent = () => {
                             }}
                             onClick={action}
                         >
+                            <Tooltip title={name} placement="right">
                             <ListItemIcon
                                 sx={{
                                     minWidth: 0,
@@ -104,6 +106,7 @@ const MainDrawerComponent = () => {
                             >
                                 {icon()}
                             </ListItemIcon>
+                            </Tooltip>
                             <ListItemText primary={name} sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
