@@ -1,8 +1,7 @@
 import React from 'react'
-import Box from '@mui/material/Box'
 
-import { Avatar, Button, Card, Container, Grid, TextField, Typography } from '@mui/material'
-
+import { Avatar, Button, Card } from '@mui/material'
+import * as Styled from './profile.styles'
 import { useAuth } from '@/hooks/auth/use-auth.hook'
 import { ProfileTemplateProps } from './profile.types'
 
@@ -12,14 +11,14 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
   
 
   return (
-    <Container>
+    <Styled.Container>
       <Card variant="outlined" style={{ marginRight: 50 }}>
-        <Box component="main" sx={{ p: 3 }}>
+        <Styled.ProfileContainer>
         <Avatar sx={{ bgcolor: "#aaa",width: 156, height: 156 }}>LF</Avatar>
-        <Typography variant='h5'>🐽 Luís Felipe Galleguillos Campos</Typography>
+        <Styled.Username variant='h4'>🐽 Luís Felipe Galleguillos Campos</Styled.Username>
 
-        <Grid container>
-          <TextField
+          <Styled.ProfileForm>
+          <Styled.Input
             margin="normal"
             required
             fullWidth
@@ -27,7 +26,7 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
             type="name"
             id="name"
           />
-          <TextField
+          <Styled.Input
             margin="normal"
             required
             fullWidth
@@ -35,7 +34,7 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
             type="email"
             id="email"
           />
-          <TextField
+          <Styled.Input
             margin="normal"
             required
             fullWidth
@@ -43,7 +42,7 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
             type="birth"
             id="birth"
           />
-          <TextField
+          <Styled.Input
             margin="normal"
             required
             fullWidth
@@ -51,12 +50,18 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
             type="email-verified"
             id="email-verified"
           />
-          <Button variant='contained' disabled>Salvar</Button>
-          <Typography >Usuário desde 02/04/2023</Typography>
-        </Grid>
-        </Box>
+
+          <Styled.ButtonContainer>
+            <Button variant='contained' disabled>Salvar</Button>
+            <Styled.UserCreatedDate style={{color:'#858A8F'}}>
+              Usuário desde 02/04/2023
+            </Styled.UserCreatedDate>
+          </Styled.ButtonContainer>
+          </Styled.ProfileForm>
+
+        </Styled.ProfileContainer>
       </Card>
-    </Container>
+    </Styled.Container>
   )
 }
 
