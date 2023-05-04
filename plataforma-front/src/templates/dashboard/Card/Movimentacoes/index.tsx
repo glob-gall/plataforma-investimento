@@ -6,11 +6,14 @@ import { Button, Grid } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import {useAuth} from "@hooks/auth/use-auth.hook";
 
 function CardMovimentacoes() {
   const [emoji,setEmoji] = useState('')
   const [hand,setHand] = useState('')
-  
+
+  const { user } = useAuth()
+
   useEffect(()=>{
     setEmoji(pigEmoji()+moneyEmoji())
     setHand(handeEmoji())
@@ -21,7 +24,7 @@ function CardMovimentacoes() {
         <Grid item style={{ marginRight: 'auto' }}>
           <Grid container direction="column">
             <Grid item>
-              <Typography variant="h4">{hand} Bem vindo, {'aaa'}!</Typography>
+              <Typography variant="h4">{hand} Bem vindo, {user?.name}!</Typography>
             </Grid>
             <Grid item>
               <Typography paragraph>

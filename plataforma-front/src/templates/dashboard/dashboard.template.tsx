@@ -7,10 +7,6 @@ import CardMovimentacoes from './Card/Movimentacoes'
 import { useAuth } from '@/hooks/auth/use-auth.hook'
 
 const DashboardTemplate: React.FC<DashboardTemplateProps> = () => {
-  const { user } = useAuth()
-  console.log({user});
-  
-
   return (
     <Container>
       <Card variant="outlined" style={{ marginRight: 50 }}>

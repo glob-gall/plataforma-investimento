@@ -22,7 +22,7 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
       <Card variant="outlined" style={{ marginRight: 50 }}>
         <Styled.ProfileContainer>
         <Avatar sx={{ bgcolor: "#aaa",width: 156, height: 156 }}>LF</Avatar>
-        <Styled.Username variant='h4'>{emoji} Luís Felipe Galleguillos Campos</Styled.Username>
+        <Styled.Username variant='h4'>{emoji} {user?.name}</Styled.Username>
 
           <Styled.ProfileForm>
           <Styled.Input
