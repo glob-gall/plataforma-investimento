@@ -38,11 +38,15 @@ def delete(request,pk, format=None):
     payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
     findedUser = Usuario.objects.filter(id = payload['id']).first()
     if not findedUser:
-      return Response({'errors':{'credenciais':['O usuário precia estar logado!']}})
+      return Response({'errors':[
+        {'credenciais':['O usuário precia estar logado!']}
+      ]})
     
     movimentacao = Movimentacoes.objects.filter(id=pk).first()
     if not movimentacao:
-      return Response({'errors':{'movimentacao':['Movimentacao não encontrada']}})
+      return Response({'errors':[
+        {'movimentacao':['Movimentacao não encontrada']}
+      ]})
     movimentacao.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
 
