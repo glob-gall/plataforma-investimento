@@ -1,45 +1,70 @@
-# from django.shortcuts import render
+import jwt, datetime
+import hashlib
+
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+from django.views import View
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
-from .serializers import UsuarioSerializer 
+
 from .models import Usuario
-import hashlib
-import jwt, datetime
+from .serializers import UsuarioSerializer,LoginSerializer
+from .models import Token, Usuario
+from .utilsEmail import enviar_email_confirmacao
 from utils.getUserPayload import get_user_payload
+from utils.errors import formatErrors 
+
 
 SECRET= 'SECRET'
 
 @api_view(['POST'])
 def register_user(request):
-  request.data['password'] = hashlib.sha256(request.data['password'].encode('utf-8')).hexdigest()
-  print(request.data['password'])
+  try:
+    request.data['password'] = hashlib.sha256(request.data['password'].encode('utf-8')).hexdigest()
+  except KeyError:
+    pass
+    
   serializer = UsuarioSerializer(data = request.data)
-  serializer.is_valid(raise_exception = True)
   
+  try:
+    serializer.is_valid(raise_exception = True)
+    serializer.save()
+  except:
+    return Response(formatErrors(serializer.errors))
   
-  serializer.save()
+  # enviar_email_confirmacao(serializer)
   return Response(serializer.data)
     
 @api_view(['POST'])
 def login_user(request):
+  serializer = LoginSerializer(data=request.data)
+  try:
+    serializer.is_valid(raise_exception = True)
+  except:
+    return Response(formatErrors(serializer.errors))
+  
   email = request.data['email']
   password = hashlib.sha256(request.data['password'].encode('utf-8')).hexdigest() 
   usuario = Usuario.objects.filter(email=email).first()
- 
-  userNotFound = usuario is None
-  if userNotFound:
-    raise AuthenticationFailed('Credenciais incorretas')
+  
+  if not usuario:
+    raise AuthenticationFailed({
+      'errors':[
+        {'message':'Credenciais incorretas'}
+      ]
+    })
 
-  passwordDontMatch = password != usuario.password
-  if passwordDontMatch:
-    raise AuthenticationFailed('Credenciais incorretas')
+  if password != usuario.password:
+    raise AuthenticationFailed({
+      'errors':[
+        {'message':'Credenciais incorretas'}
+      ]
+    })
 
   payload = {
     'id':usuario.id,
-    # 'name':usuario.name,
-    # 'email':usuario.email,
     'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60000),#41 dias(1k)
     'iat': datetime.datetime.utcnow()
   }  
@@ -51,7 +76,10 @@ def login_user(request):
       'id':usuario.id,
       'name':usuario.name,
       'email':usuario.email,
-      'birth':usuario.birth
+      'birth':usuario.birth,
+      'is_active':usuario.is_active,
+      'is_email_verified':usuario.is_email_verified,
+
     }
   })
 
@@ -60,7 +88,19 @@ class UsuarioView(APIView):
     payload = request.auth_payload
     
     usuario = Usuario.objects.filter(id = payload['id']).first()
+    if not usuario:
+      return Response({'teste':'false'})
     serializer = UsuarioSerializer(usuario)
     return Response(serializer.data)
-  
-  
+
+def confirmEmailView(View,token):
+  try:
+    objeto_token = get_object_or_404(Token,token=token)
+    usuario = objeto_token.usuario
+    if(objeto_token.token == token):
+      usuario.is_email_verified = True
+      usuario.save()
+      return HttpResponse("Email confirmado com sucesso")
+  except:
+    return HttpResponse("Não foi possivel confirmar o email")
+

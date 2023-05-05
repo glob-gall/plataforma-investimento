@@ -15,6 +15,5 @@ class Movimentacoes(models.Model):
   value = models.DecimalField(decimal_places=2, max_digits=100)
   # tipo = models.ForeignKey(TiposMovimentacoes,on_delete=models.CASCADE)
   usuario = models.ForeignKey(Usuario, on_delete= models.CASCADE)
-  conta = models.ForeignKey(Contas, on_delete= models.CASCADE)
-
-  REQUIRED_FIELDS = ['date','value','usuario','conta']
+  
+  REQUIRED_FIELDS = ['date','value','usuario']

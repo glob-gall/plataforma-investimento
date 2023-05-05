@@ -4,15 +4,16 @@ from django.shortcuts import render
 from django.http import HttpResponseBadRequest
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import status
+
 from instituicoes.models import Instituicoes
 from usuarios.contas.models import Contas
 from utils.getUserPayload import get_user_payload
 from usuarios.models import Usuario
 from .models import Movimentacoes
 from .serializers import MovimentacoesSerializer
-# from rest_framework.views import APIView
-from rest_framework.exceptions import AuthenticationFailed, NotFound
-from rest_framework import status
+from usuarios.models import Usuario
+from utils.getUserPayload import get_user_payload
 
 
 def get_movimentacoes_by_usuario(request):
@@ -23,25 +24,17 @@ def get_movimentacoes_by_usuario(request):
     return Response(serializer.data)
 
 
-    
-
 def register_movimentacao(request):
   payload = request.auth_payload
   data = request.data
-
-  findedUser = Usuario.objects.filter(id = payload['id']).first()
-  data['usuario'] = findedUser
-
-  conta = Contas.objects.filter(id=data.get('conta'), usuario__id = payload.get('id')).first()
-
-  if not conta:
-    return HttpResponseBadRequest('Conta não vinculada a este usuário')
- 
-  serializer = MovimentacoesSerializer(data = data)
-  serializer.is_valid(raise_exception = True)
-
-  data['conta'] = conta
-  serializer.create(data)
+  data['usuario'] = findedUser.id
+  
+  serializer = MovimentacoesSerializer(data = request.data)
+  try:
+    serializer.is_valid(raise_exception = True)
+    serializer.save()
+  except:
+    return Response({'errors':serializer.errors})
   
   return Response(serializer.data)
 
@@ -50,11 +43,15 @@ def delete(request,pk, format=None):
     payload = request.auth_payload
     findedUser = Usuario.objects.filter(id = payload['id']).first()
     if not findedUser:
-      raise AuthenticationFailed('Usuario precia estar logado!')
+      return Response({'errors':[
+        { 'message': 'O usuário precia estar logado!' }
+      ]})
     
     movimentacao = Movimentacoes.objects.filter(id=pk).first()
     if not movimentacao:
-      raise NotFound('Movimentacao não encontrada')
+      return Response({'errors':[
+        {'message': 'Movimentacao não encontrada' }
+      ]})
     movimentacao.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
 

@@ -9,6 +9,7 @@ import '../styles/global.css'
 import apiConfig from "@config/api.config";
 import {parseCookies} from "nookies";
 import {TOKEN_KEY} from "@constants/constants";
+import ContextComposer from "@contexts/context.composer";
 
 const theme = createTheme({
     palette: {
@@ -45,8 +46,11 @@ if( typeof window !== 'undefined' ) {
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <ContextComposer user={pageProps.user}>
+          <ThemeProvider theme={theme}>
+              <Component {...pageProps} />
+          </ThemeProvider>
+      </ContextComposer>
+
   )
 }
