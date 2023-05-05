@@ -39,13 +39,13 @@ def delete(request,pk, format=None):
     findedUser = Usuario.objects.filter(id = payload['id']).first()
     if not findedUser:
       return Response({'errors':[
-        {'credenciais':['O usuário precia estar logado!']}
+        { 'message': 'O usuário precia estar logado!' }
       ]})
     
     movimentacao = Movimentacoes.objects.filter(id=pk).first()
     if not movimentacao:
       return Response({'errors':[
-        {'movimentacao':['Movimentacao não encontrada']}
+        {'message': 'Movimentacao não encontrada' }
       ]})
     movimentacao.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
