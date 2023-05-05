@@ -5,7 +5,7 @@ import datetime
 class Usuario(AbstractUser):
   name = models.CharField(max_length=255)
   birth = models.DateField(default=datetime.date.today)
-  email = models.CharField(max_length=255, unique=True)
+  email = models.EmailField(max_length=255, unique=True)
   password = models.CharField(max_length=255)
   username = None
   is_email_verified = models.BooleanField(default=False)
