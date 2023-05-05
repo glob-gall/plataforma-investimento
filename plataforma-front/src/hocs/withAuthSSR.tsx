@@ -10,11 +10,11 @@ export const withAuthSSR = (callbackGetServerSideProps: GetServerSideProps) => {
         if(!token || !parsedUser.is_email_verified) {
             return {
                 redirect: {
-                    destination: '/',
+                    destination: '/login',
                     permanent: false
                 }
             }
         }
-        return callbackGetServerSideProps(context);
+        return await callbackGetServerSideProps(context);
     }
 }
