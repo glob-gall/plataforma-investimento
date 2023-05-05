@@ -13,6 +13,9 @@ import React from "react";
 import {AccountBalance, Home, PointOfSale} from "@mui/icons-material";
 import {useRouter} from "next/router";
 import { Tooltip } from '@mui/material';
+import Zoom from '@mui/material/Zoom';
+
+
 
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -87,29 +90,29 @@ const MainDrawerComponent = () => {
             <Divider />
             <List>
                 {drawerOptions.map(({name, icon, action}, index) => (
-                    <ListItem key={name + index} disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                            onClick={action}
-                        >
-                            <Tooltip title={name} placement="right">
-                            <ListItemIcon
+                    <Tooltip title={name} placement="right" arrow TransitionComponent={Zoom} disableHoverListener={open}>
+                        <ListItem key={name + index} disablePadding sx={{ display: 'block' }}>
+                            <ListItemButton
                                 sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
+                                    minHeight: 48,
+                                    justifyContent: open ? 'initial' : 'center',
+                                    px: 2.5,
                                 }}
+                                onClick={action}
                             >
-                                {icon()}
-                            </ListItemIcon>
-                            </Tooltip>
-                            <ListItemText primary={name} sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    </ListItem>
+                                <ListItemIcon
+                                    sx={{
+                                        minWidth: 0,
+                                        mr: open ? 3 : 'auto',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    {icon()}
+                                </ListItemIcon>
+                                <ListItemText primary={name} sx={{ opacity: open ? 1 : 0 }} />
+                            </ListItemButton>
+                        </ListItem>
+                    </Tooltip>
                 ))}
             </List>
             <Divider />
