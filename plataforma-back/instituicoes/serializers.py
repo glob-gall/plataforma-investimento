@@ -7,6 +7,7 @@ class InstituicoesSerializer(serializers.ModelSerializer):
     fields = [
       'id',
       'nome',
+      'thumb',
       'codigo',
       'ispb',
     ]

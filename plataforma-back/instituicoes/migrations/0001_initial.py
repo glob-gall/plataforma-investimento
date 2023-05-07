@@ -19,6 +19,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
                 ('nome', models.CharField(max_length=255, default='')),
+                ('thumb', models.CharField(default='', null=True)),
                 ('codigo', models.IntegerField(blank=True, null=True)),
                 ('ispb', models.CharField(max_length=10, default='')),
             ],

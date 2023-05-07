@@ -21,7 +21,7 @@ class InstituicoesView(APIView):
         usuario.save()
 
     def get(self, _):
-        instituicoes = Instituicoes.objects.all()
+        instituicoes = Instituicoes.objects.all().order_by('nome')
         serializer = InstituicoesSerializer(instituicoes, many=True)
         return Response(serializer.data)
     
