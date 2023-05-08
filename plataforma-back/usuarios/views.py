@@ -34,7 +34,7 @@ def register_user(request):
   except:
     return Response(formatErrors(serializer.errors))
   
-  # enviar_email_confirmacao(serializer)
+  enviar_email_confirmacao(serializer)
   return Response(serializer.data)
     
 @api_view(['POST'])
@@ -82,6 +82,18 @@ def login_user(request):
 
     }
   })
+
+@api_view(['POST'])
+def confirmEmail(request):
+  try:
+    if request.user:
+        usuario = request.user
+  except:
+      return HttpResponse("Usuário não encontrado")
+
+  
+  enviar_email_confirmacao(serializer)
+  return Response(serializer.data)
 
 class UsuarioView(APIView):
   def get(self,request):
