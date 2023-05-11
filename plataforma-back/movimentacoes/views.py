@@ -1,9 +1,15 @@
 from django.shortcuts import render
 
+# Create your views here.
+from django.http import HttpResponseBadRequest
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
+from instituicoes.models import Instituicoes
+from usuarios.contas.models import Contas
+from utils.getUserPayload import get_user_payload
+from usuarios.models import Usuario
 from .models import Movimentacoes
 from .serializers import MovimentacoesSerializer
 from usuarios.models import Usuario
@@ -11,8 +17,9 @@ from utils.getUserPayload import get_user_payload
 
 
 def get_movimentacoes_by_usuario(request):
-    payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
-    queryset = Movimentacoes.objects.filter(usuario = payload['id'])
+    payload = request.auth_payload
+    movimentacoes = Movimentacoes.objects.filter(usuario = payload['id']).select_related('conta')
+    serializer = MovimentacoesSerializer(movimentacoes,many=True)
     
     dates = request.query_params.get('range')
     orderby = request.query_params.get('orderby')
@@ -29,8 +36,7 @@ def get_movimentacoes_by_usuario(request):
 
 
 def register_movimentacao(request):
-  payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
-  findedUser = Usuario.objects.filter(id = payload['id']).first()
+  payload = request.auth_payload
   data = request.data
   data['usuario'] = findedUser.id
   
@@ -45,17 +51,17 @@ def register_movimentacao(request):
 
 
 def delete(request,pk, format=None):
-    payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
+    payload = request.auth_payload
     findedUser = Usuario.objects.filter(id = payload['id']).first()
     if not findedUser:
       return Response({'errors':[
-        {'credenciais':['O usuário precia estar logado!']}
+        { 'message': 'O usuário precia estar logado!' }
       ]})
     
     movimentacao = Movimentacoes.objects.filter(id=pk).first()
     if not movimentacao:
       return Response({'errors':[
-        {'movimentacao':['Movimentacao não encontrada']}
+        {'message': 'Movimentacao não encontrada' }
       ]})
     movimentacao.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
