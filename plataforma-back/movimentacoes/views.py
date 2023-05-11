@@ -21,6 +21,17 @@ def get_movimentacoes_by_usuario(request):
     movimentacoes = Movimentacoes.objects.filter(usuario = payload['id']).select_related('conta')
     serializer = MovimentacoesSerializer(movimentacoes,many=True)
     
+    dates = request.query_params.get('range')
+    orderby = request.query_params.get('orderby')
+    if dates:
+      [dateMin,dateMax] = dates.split(',')
+      queryset=queryset.filter(date__range=[dateMin, dateMax])
+    if orderby:
+      queryset=queryset.order_by(orderby)
+      
+
+    
+    serializer = MovimentacoesSerializer(queryset,many=True)    
     return Response(serializer.data)
 
 

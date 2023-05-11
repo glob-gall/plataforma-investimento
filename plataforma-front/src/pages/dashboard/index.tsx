@@ -1,13 +1,15 @@
 import DashboardTemplate from "@/templates/dashboard/dashboard.template";
-import {NextPage} from "next";
+import {GetServerSidePropsContext, NextPage} from "next";
 import MainHeaderComponent from "@organisms/headers/MainHeader/MainHeader.component";
 import MainDrawerComponent from "@organisms/drawers/MainDrawer/MainDrawer.component";
 import React from "react";
 import Box from "@mui/material/Box";
-import {withAuthSSR} from "@hocs/withAuthSSR";
+import { USER_KEY } from "@/constants/constants";
+import { parseCookies } from "nookies";
+import { User } from "@/contexts/auth/auth.types";
 
 
-const DashboardPage: NextPage = () => {
+const DashboardPage: NextPage<{ user?: User }> = () => {
     return(
         <Box sx={{ display: 'flex', mt: 16, ml: 4, width: "100%" }}>
             <MainHeaderComponent/>
@@ -19,8 +21,12 @@ const DashboardPage: NextPage = () => {
 
 export default DashboardPage;
 
-export const getServerSideProps = withAuthSSR(async () => {
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+    const { [USER_KEY]: user } = parseCookies(ctx);
+
     return {
-        props: {}
+        props: {
+          user: user ? JSON.parse(user) : null
+        }
     }
-})
+}

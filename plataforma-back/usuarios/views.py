@@ -34,7 +34,7 @@ def register_user(request):
   except:
     return Response(formatErrors(serializer.errors))
   
-  # enviar_email_confirmacao(serializer)
+  enviar_email_confirmacao(serializer)
   return Response(serializer.data)
     
 @api_view(['POST'])
@@ -92,6 +92,23 @@ class UsuarioView(APIView):
       return Response({'teste':'false'})
     serializer = UsuarioSerializer(usuario)
     return Response(serializer.data)
+
+  def put(self,request):
+    token = request.META.get('HTTP_AUTHORIZATION')
+    payload = get_user_payload(token)
+    usuario = Usuario.objects.filter(id = payload['id']).first()
+    if not usuario:
+      return Response({'errors':[
+        {'credenciais':['O usuário precia estar logado!']}
+      ]})
+    
+    usuario.name = request.data['name']
+    usuario.birth = request.data['birth']
+    serializer = UsuarioSerializer(usuario,data=usuario)
+    if serializer.is_valid():
+      serializer.save()
+      return Response(serializer.data)
+    return Response(formatErrors(serializer.errors))
 
 def confirmEmailView(View,token):
   try:
