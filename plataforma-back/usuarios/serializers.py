@@ -1,11 +1,14 @@
 from rest_framework import serializers
+
+from instituicoes.serializers import InstituicoesSerializer
 from .models import Usuario
 # import hashlib
 
 class UsuarioSerializer(serializers.ModelSerializer):
+  instituicoes = InstituicoesSerializer(many=True, read_only=True)
   class Meta:
     model = Usuario
-    fields = ['id','name','email','password','birth']
+    fields = ['id','name','email','password','birth','instituicoes']
     extra_kwargs = {
       'password':{'write_only': True}
     }
