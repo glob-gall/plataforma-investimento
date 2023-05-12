@@ -33,7 +33,8 @@ def register_user(request):
     serializer.is_valid(raise_exception = True)
     serializer.save()
   except:
-    return Response(formatErrors(serializer.errors))
+    return Response(formatErrors(serializer.errors),status=status.HTTP_400_BAD_REQUEST)
+  
   
   enviar_email_confirmacao(serializer)
   return Response(serializer.data)

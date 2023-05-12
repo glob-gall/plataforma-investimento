@@ -1,13 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import {useForm} from "react-hook-form";
 
-import { Alert, Avatar, Card, Snackbar } from '@mui/material'
+import { Avatar, Card } from '@mui/material'
 import * as Styled from './profile.styles'
 import { useAuth } from '@/hooks/auth/use-auth.hook'
 import { EditUserFormData, ProfileTemplateProps } from './profile.types'
 import pigMoneyEmoji from '@/utils/emojis/pigMoneyEmoji'
 import {UserService} from "@/services/user/user.service";
 import { LoadingButton } from '@mui/lab';
+import { useErrorHandler } from '@/hooks/errorHandler/use-errorHandler.hook';
 
 const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
   const userService = new UserService()
@@ -15,10 +16,6 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
   const [emoji,setEmoji] = useState('')
   const [loading,setLoading] = useState(false)
   const [isFormChanged,setIsFormChanged]=useState(false)
-
-  const [error, setError] = React.useState<string | null>(null)
-  const [showError, setShowError] = React.useState<boolean>(false)
-
 
   const { register,handleSubmit,watch } = useForm({
     defaultValues: {
@@ -29,22 +26,18 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
     }
   })
 
-  const hideErrors = () => {
-    setShowError(false);
-    setError(null);
-  }
+  const {handleSetErrors} = useErrorHandler()
 
   const onSubmit = useCallback(async (data:EditUserFormData)=>{
     setLoading(true)
     try{
       await userService.put(data)
     }catch(err: any){
-      setError(err.response.data.detail)
-      setShowError(true);
+      handleSetErrors(err)
   }finally {
       setLoading(false);
   }
-  },[userService])
+  },[userService,handleSetErrors])
 
   useEffect(()=>{
     setEmoji(pigMoneyEmoji())
@@ -124,15 +117,6 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
 
         </Styled.ProfileContainer>
       </Card>
-
-      <Snackbar
-        open={showError}
-        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-        autoHideDuration={3000}
-        onClose={hideErrors}
-      >
-        <Alert severity="error">{error}</Alert>
-      </Snackbar>
     </Styled.Container>
   )
 }
