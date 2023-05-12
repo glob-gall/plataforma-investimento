@@ -21,7 +21,7 @@ export const Username = styled(Typography)`
 export const Input = styled(TextField)`
     
 `
-export const ProfileForm = styled.div`
+export const ProfileForm = styled.form`
     max-width: 360px;
 `
 export const ButtonContainer = styled.div`

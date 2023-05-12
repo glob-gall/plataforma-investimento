@@ -93,22 +93,30 @@ class UsuarioView(APIView):
     serializer = UsuarioSerializer(usuario)
     return Response(serializer.data)
 
-  def put(self,request):
+  def put(self, request):
     token = request.META.get('HTTP_AUTHORIZATION')
     payload = get_user_payload(token)
     usuario = Usuario.objects.filter(id = payload['id']).first()
-    if not usuario:
-      return Response({'errors':[
-        {'credenciais':['O usuário precia estar logado!']}
-      ]})
-    
-    usuario.name = request.data['name']
-    usuario.birth = request.data['birth']
-    serializer = UsuarioSerializer(usuario,data=usuario)
+
+    data={}
+    try:
+      data['name'] = request.data['name'] 
+    except:
+      data['name'] = usuario.name
+    try:
+      data['birth'] = request.data['birth'] 
+    except:
+      data['birth'] = usuario.birth
+
+    data['email'] = usuario.email
+    data['password'] = usuario.password
+    serializer = UsuarioSerializer(usuario, data=data)
+
     if serializer.is_valid():
       serializer.save()
       return Response(serializer.data)
-    return Response(formatErrors(serializer.errors))
+    return Response(serializer.errors)
+
 
 def confirmEmailView(View,token):
   try:

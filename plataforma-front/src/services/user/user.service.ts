@@ -1,5 +1,6 @@
 import {AxiosInstance} from "axios";
 import defaultApi from "@config/api.config";
+import { EditUserFormData } from "@/templates/profile/profile.types";
 
 export class UserService {
 
@@ -11,6 +12,10 @@ export class UserService {
 
     async get(){
         return await this._api.get('/usuario');
+    }
+
+    async put(data:EditUserFormData){
+        return await this._api.put('/usuario/',data)
     }
 
 }
