@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
+from rest_framework import status
 
 from .models import Usuario
 from .serializers import UsuarioSerializer,LoginSerializer
@@ -115,7 +116,7 @@ class UsuarioView(APIView):
     if serializer.is_valid():
       serializer.save()
       return Response(serializer.data)
-    return Response(serializer.errors)
+    return Response(formatErrors(serializer.errors),status=status.HTTP_400_BAD_REQUEST)
 
 
 def confirmEmailView(View,token):

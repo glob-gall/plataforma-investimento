@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import {useForm} from "react-hook-form";
 
-import { Avatar, Card } from '@mui/material'
+import { Alert, Avatar, Card, Snackbar } from '@mui/material'
 import * as Styled from './profile.styles'
 import { useAuth } from '@/hooks/auth/use-auth.hook'
 import { EditUserFormData, ProfileTemplateProps } from './profile.types'
@@ -16,6 +16,9 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
   const [loading,setLoading] = useState(false)
   const [isFormChanged,setIsFormChanged]=useState(false)
 
+  const [error, setError] = React.useState<string | null>(null)
+  const [showError, setShowError] = React.useState<boolean>(false)
+
 
   const { register,handleSubmit,watch } = useForm({
     defaultValues: {
@@ -26,10 +29,21 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
     }
   })
 
+  const hideErrors = () => {
+    setShowError(false);
+    setError(null);
+  }
+
   const onSubmit = useCallback(async (data:EditUserFormData)=>{
     setLoading(true)
-    await userService.put(data)
-    setLoading(false)
+    try{
+      await userService.put(data)
+    }catch(err: any){
+      setError(err.response.data.detail)
+      setShowError(true);
+  }finally {
+      setLoading(false);
+  }
   },[userService])
 
   useEffect(()=>{
@@ -110,6 +124,15 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
 
         </Styled.ProfileContainer>
       </Card>
+
+      <Snackbar
+        open={showError}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        autoHideDuration={3000}
+        onClose={hideErrors}
+      >
+        <Alert severity="error">{error}</Alert>
+      </Snackbar>
     </Styled.Container>
   )
 }
