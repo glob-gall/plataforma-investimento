@@ -35,8 +35,11 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
-            setError(err.response.data.detail)
-            setShowError(true);
+            const { response: { data }} = err;
+            data.errors?.map((error) => {
+                setError(error.message)
+                setShowError(true)
+            })
         }finally {
             setLoading(false);
         }
