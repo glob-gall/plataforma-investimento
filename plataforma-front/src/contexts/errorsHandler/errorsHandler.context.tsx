@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import {Error, ErrorHandlerState, ProviderProps} from './errorsHandler.types'
-import { Alert } from "@mui/material";
 import * as Styles from './errorsHandler.styles'
 export const ErrorHandlerContext = React.createContext<ErrorHandlerState>({} as ErrorHandlerState)
 
@@ -28,13 +27,13 @@ export const ErrorHandlerProvider: React.FC<ProviderProps> = ({ children }) => {
         {children}
       <Styles.ErrorContainer>
         {error?.errors.length>0 && error?.errors.map((err,index) => (
-          <Alert 
+          <Styles.ErrorCard 
             severity="error" 
             onClose={()=>clearErrors(index)}
             key={`${index}-msg`}
           >
             {err.message}
-          </Alert>
+          </Styles.ErrorCard>
         ))}
       </Styles.ErrorContainer>
     </ErrorHandlerContext.Provider>

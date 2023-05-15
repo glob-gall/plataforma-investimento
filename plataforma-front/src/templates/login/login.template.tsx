@@ -1,6 +1,6 @@
 import React from 'react'
 import { LoginTemplateProps } from './login.types'
-import { Alert, Box, Grid, Snackbar, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import * as TemplateContainer from './login.container'
 import * as Styles from './login.styles'
 import LoginForm from '@templates/login/components/login-form/login-form.component'
@@ -12,7 +12,7 @@ const LoginTemplate: React.FC<LoginTemplateProps> = () => {
 
   return (
     <TemplateContainer.LoginContainer>
-      {({ loading, showError, error, actions }) => (
+      {({ loading, actions }) => (
         <Grid
           container
           component="main"
@@ -55,14 +55,14 @@ const LoginTemplate: React.FC<LoginTemplateProps> = () => {
               ) : (
                 <LoginForm onSubmit={actions.submit} loading={loading} />
               )}
-              <Snackbar
+              {/* <Snackbar
                 open={showError}
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
                 autoHideDuration={3000}
                 onClose={actions.hideErrors}
               >
                 <Alert severity="error">{error}</Alert>
-              </Snackbar>
+              </Snackbar> */}
             </Box>
           </Grid>
         </Grid>

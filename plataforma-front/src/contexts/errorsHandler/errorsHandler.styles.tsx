@@ -1,8 +1,9 @@
+import { Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 export const ErrorContainer = styled('main')`
   position: absolute;
-  top: 10px;
+  top: 0;
   
 
   display: flex;
@@ -12,4 +13,11 @@ export const ErrorContainer = styled('main')`
 
   left: 50%;
   transform: translate(-50%, 0);
+
+  width: 420px;
+  max-width: 90%;
 `;
+
+export const ErrorCard = styled(Alert)`
+  margin-top: 10px;
+`
