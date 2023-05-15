@@ -1,5 +1,5 @@
 import React from 'react'
-import { RegisterTemplateProps } from './register.types'
+import {RegisterFormData, RegisterTemplateProps} from './register.types'
 import {
     Box,
     Grid,
@@ -12,9 +12,11 @@ import * as Styles from './register.styles';
 import {LoadingButton} from "@mui/lab";
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DateField } from '@mui/x-date-pickers/DateField';
+import {Controller, useForm} from "react-hook-form";
 
 const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
+
+    const { register, control, getValues, handleSubmit, formState: { errors } } = useForm<RegisterFormData>();
 
     return (
         <TemplateContainer.RegisterContainer>
@@ -25,7 +27,7 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                             muted
                             autoPlay
                             loop
-                            xs={8}
+                            xs={7}
                             sx={{
                                 objectFit: 'cover'
                             }}
@@ -47,10 +49,10 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                 Oink!
                             </Typography>
                             <Typography>
-                                Registre-se agora na nossa plataforma.    
+                                Registre-se agora na nossa plataforma.
                             </Typography>
-                            <Box component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={actions.submit}>
-                               
+                            <Box component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1, width: '95%' }} onSubmit={handleSubmit(actions.submit)}>
+
                                 <Box
                                 sx={{
                                     marginTop: 2,
@@ -63,17 +65,24 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                 }}
                                  >
 
-                                 
-                            
+
+
                                     <TextField
                                         margin="normal"
                                         required
                                         fullWidth
-                                        id="first_name"
                                         label="Nome"
-                                        name="first_name"
                                         type="text"
                                         autoComplete="first_name"
+                                        error={!!errors.first_name}
+                                        helperText={errors.first_name?.message}
+                                        {...register("first_name", {
+                                            required: "Este campo é obrigatório.",
+                                            minLength: {
+                                                value: 3,
+                                                message: "O nome deve ter no mínimo 3 caracteres"
+                                            }
+                                        })}
                                         autoFocus
                                         />
 
@@ -81,12 +90,19 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                         margin="normal"
                                         required
                                         fullWidth
-                                        id="last_name"
                                         label="Sobrenome"
-                                        name="last_name"
                                         type="text"
                                         autoComplete="last_name"
                                         autoFocus
+                                        error={!!errors.last_name}
+                                        helperText={errors.last_name?.message}
+                                        {...register("last_name", {
+                                            required: "Este campo é obrigatório.",
+                                            minLength: {
+                                                value: 3,
+                                                message: "O sobrenome deve ter no mínimo 3 caracteres"
+                                            }
+                                        })}
                                         />
 
                                 </Box>
@@ -95,12 +111,20 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                     margin="normal"
                                     required
                                     fullWidth
-                                    id="email"
                                     label="Email"
-                                    name="email"
                                     type="email"
                                     autoComplete="email"
                                     autoFocus
+                                    error={!!errors.email}
+                                    helperText={errors.email?.message}
+                                    {...register("email", {
+                                            required: "Este campo é obrigatório.",
+                                            pattern: {
+                                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                                message: "Digite um email válido"
+                                            }
+                                        }
+                                    )}
                                 />
 
                                 <Box
@@ -118,36 +142,79 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                         margin="normal"
                                         required
                                         fullWidth
-                                        name="password"
                                         label="Senha"
                                         type="password"
                                         id="password"
+                                        error={!!errors.password}
+                                        helperText={errors.password?.message}
                                         autoComplete="current-password"
+                                        {...register("password", {
+                                            required: "Este campo é obrigatório.",
+                                            minLength: {
+                                                value: 6,
+                                                message: "A deve ter no mínimo 6 caracteres"
+                                            }
+                                        })
+                                        }
                                     />
 
                                     <TextField
                                         margin="normal"
                                         required
                                         fullWidth
-                                        name="password_confirmation "
                                         label="Confirmação"
                                         type="password"
                                         id="password_confirmation"
+                                        error={!!errors.password_confirmation}
+                                        helperText={errors.password_confirmation?.message}
+                                        {...register("password_confirmation", {
+                                            required: "Este campo é obrigatório.",
+                                            minLength: {
+                                                value: 6,
+                                                message: "A senha deve ter no mínimo 6 caracteres"
+                                            },
+                                            validate: (value) => {
+                                                const { password } = getValues();
+                                                return password === value || "As senhas devem ser iguais";
+                                            }
+                                        })
+                                        }
                                     />
                                 </Box>
 
                                 <Box sx={{mt:2}}>
-                                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                        <DateField label="Data de Nascimento" 
+                                    <Controller
                                         name="birth"
-                                        required
-                                        format="DD-MM-YYYY"
-                                        //format="YYYY-MM-DD"
-                                        disableFuture
-                                        minDate={new Date('1900-01-01')} // definindo a data mínima permitida
-                                        />
-                                    </LocalizationProvider>
-                                </Box>                                 
+                                        control={control}
+                                        rules={{
+                                            required: "Este campo é obrigatório.",
+                                            validate: (value) => {
+                                                if(isNaN(value as unknown as number)) return "Digite uma data válida"
+                                                const date = value;
+                                                const today = new Date();
+                                                if(date < new Date('1900-01-01')) return "A data de nascimento deve ser posterior a 01/01/1900";
+                                                if(date > today) return "A data de nascimento deve ser anterior a data atual";
+                                                return true;
+                                            }
+                                        }}
+                                        render={({ field }) => (
+                                            <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                                <Styles.DateInput
+                                                           label="Data de Nascimento"
+                                                           required
+                                                           format="DD-MM-YYYY"
+                                                           name={"birth"}
+                                                           disableFuture
+                                                           value={field.value}
+                                                           error={!!errors.birth}
+                                                           onChange={(date) => field.onChange(date.$d)}
+                                                           helperText={errors.birth?.message}
+                                                />
+                                            </LocalizationProvider>
+                                            )}
+                                    />
+
+                                </Box>
                                 <LoadingButton
                                     fullWidth
                                     type="submit"

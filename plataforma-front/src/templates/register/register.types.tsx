@@ -1,7 +1,7 @@
 export interface RegisterContainerArgs{
     loading: boolean;
     actions: {
-        submit: (e: React.FormEvent<HTMLFormElement>) => void;
+        submit: (data: RegisterFormData) => Promise<void>;
         randomBackground: () => string;
     }
 }
@@ -11,4 +11,13 @@ export interface RegisterTemplateProps {
     firstname?: string;
     lastname?: string;
     birth?: string;
+}
+
+export interface RegisterFormData {
+    email: string;
+    password: string;
+    password_confirmation: string;
+    first_name: string;
+    last_name: string;
+    birth: Date
 }
