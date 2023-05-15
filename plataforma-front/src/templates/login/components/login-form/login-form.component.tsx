@@ -19,15 +19,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading }) => {
                 label="Email"
                 type="email"
                 autoComplete="email"
+                error={!!errors.email}
+                helperText={errors.email?.message}
                 autoFocus
                 {...register("email", {
-                    required: true,
+                    required: "O campo e-mail é obrigatório.",
                     pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                         message: "E-mail inválido"
                     }
                 })}
-                aria-invalid={errors.email ? "true" : "false"}
             />
             <TextField
                 margin="normal"
@@ -36,9 +37,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading }) => {
                 label="Senha"
                 type="password"
                 id="password"
+                error={!!errors.password}
+                helperText={errors.password?.message}
                 autoComplete="current-password"
-                {...register("password", { required: true })}
-                aria-invalid={errors.password ? "true" : "false"}
+                {...register("password", {
+                    required: "O campo senha é obrigatório.",
+                    minLength: {
+                        value: 6,
+                        message: "A senha deve ter no mínimo 6 caracteres."
+                    }
+                })}
             />
             <LoadingButton
                 fullWidth
