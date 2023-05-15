@@ -1,7 +1,8 @@
 import { Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-export const ErrorContainer = styled('main')`
+export const ErrorContainer = styled('div')`
+  z-index: 1101;
   position: absolute;
   top: 0;
   
