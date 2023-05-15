@@ -1,11 +1,7 @@
 export interface RegisterContainerArgs{
     loading: boolean;
-    showError: boolean;
-    error: string | null;
     actions: {
         submit: (data: RegisterFormData) => Promise<void>;
-        setError: (error: string | null) => void;
-        hideErrors: () => void;
         randomBackground: () => string;
     }
 }

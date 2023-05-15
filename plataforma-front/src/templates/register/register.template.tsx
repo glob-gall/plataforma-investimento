@@ -3,8 +3,6 @@ import {RegisterFormData, RegisterTemplateProps} from './register.types'
 import {
     Box,
     Grid,
-    Snackbar,
-    Alert,
     TextField,
     Typography,
     Link,
@@ -22,7 +20,7 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
 
     return (
         <TemplateContainer.RegisterContainer>
-            {({ loading, showError, error, actions }) => (
+            {({ loading, actions }) => (
                 <Grid container component="main" sx={{ height: '100vh', width: '100%' }}>
                         <Styles.VideoContainer
                             component="video"
@@ -217,10 +215,6 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                     />
 
                                 </Box>
-
-                                <Snackbar open={showError} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} autoHideDuration={3000} onClose={actions.hideErrors}>
-                                    <Alert severity="error">{error}</Alert>
-                                </Snackbar>
                                 <LoadingButton
                                     fullWidth
                                     type="submit"

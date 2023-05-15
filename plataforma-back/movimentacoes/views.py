@@ -14,15 +14,17 @@ from .models import Movimentacoes
 from .serializers import MovimentacoesSerializer
 from usuarios.models import Usuario
 from utils.getUserPayload import get_user_payload
-
+from utils.errors import formatErrors
 
 def get_movimentacoes_by_usuario(request):
     payload = request.auth_payload
-    movimentacoes = Movimentacoes.objects.filter(usuario = payload['id']).select_related('conta')
+    movimentacoes = Movimentacoes.objects.filter(usuario = payload['id'])
+    # movimentacoes = Movimentacoes.objects.filter(usuario = payload['id']).select_related('conta')
     serializer = MovimentacoesSerializer(movimentacoes,many=True)
     
     dates = request.query_params.get('range')
     orderby = request.query_params.get('orderby')
+    queryset=None
     if dates:
       [dateMin,dateMax] = dates.split(',')
       queryset=queryset.filter(date__range=[dateMin, dateMax])
@@ -37,15 +39,21 @@ def get_movimentacoes_by_usuario(request):
 
 def register_movimentacao(request):
   payload = request.auth_payload
+  findedUser = Usuario.objects.filter(id = payload['id']).first()
+  if not findedUser:
+    return Response({'errors':[
+      { 'message': 'O usuário precia estar logado!' }
+    ]})
+
   data = request.data
   data['usuario'] = findedUser.id
-  
   serializer = MovimentacoesSerializer(data = request.data)
+  
   try:
     serializer.is_valid(raise_exception = True)
     serializer.save()
   except:
-    return Response({'errors':serializer.errors})
+    return Response(formatErrors(serializer.errors),status=status.HTTP_400_BAD_REQUEST)
   
   return Response(serializer.data)
 

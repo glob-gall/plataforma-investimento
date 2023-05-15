@@ -90,7 +90,7 @@ const MainDrawerComponent = () => {
             <Divider />
             <List>
                 {drawerOptions.map(({name, icon, action}, index) => (
-                    <Tooltip title={name} placement="right" arrow TransitionComponent={Zoom} disableHoverListener={open}>
+                    <Tooltip title={name} placement="right" arrow TransitionComponent={Zoom} disableHoverListener={open} key={`${name}-${index}`}>
                         <ListItem key={name + index} disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
                                 sx={{
