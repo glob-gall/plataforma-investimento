@@ -51,14 +51,19 @@ const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onC
                         <Close />
                     </Box>
                 </Box>
-                <Box mt={4} component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={handleSubmit(onSubmit)}>
+                <Box mt={4} component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={handleSubmit(onSubmit, () => console.log(errors))}>
                     <TextField
                         fullWidth
                         select
                         label="Instituição"
                         defaultValue={formData?.instituicao || ''}
                         disabled={!!formData?.instituicao}
-                        {...register("instituicao", { required: true, valueAsNumber: true })}
+                        error={!!errors.instituicao}
+                        helperText={errors.instituicao?.message}
+                        {...register("instituicao", {
+                            required: "Escolha uma instituição",
+                            valueAsNumber: true
+                        })}
                     >
                         {instituicoes?.map(({ id, nome }, index) => (
                             <MenuItem key={`${id}-${index}`} value={id}>
@@ -69,8 +74,11 @@ const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onC
                     <Box mt={2}>
                         <TextField
                             fullWidth
+                            defaultValue={formData?.descricao || ''}
+                            error={!!errors.descricao}
+                            helperText={errors.descricao?.message}
                             placeholder={'Nome de referência'}
-                            {...register("descricao", { required: true, maxLength: {
+                            {...register("descricao", { required: "Nome é obrigatório.", maxLength: {
                                     value: 20,
                                     message: 'Digite no máximo 20 caracteres.'
                                 } })}
@@ -81,27 +89,63 @@ const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onC
                             sx={{ marginRight: 2 }}
                             defaultValue={formData?.agencia || ''}
                             placeholder={'Agência'}
-                            {...register('agencia', { required: true, maxLength: 6, minLength: 4, pattern: {
-                                    value: /^[0-9]*$/,
-                                    message: 'Somente números'
-                                } })}
+                            error={!!errors.agencia}
+                            helperText={errors.agencia?.message}
+                            {...register('agencia',
+                                {
+                                    required: "Agência é obrigatório.",
+                                    maxLength: {
+                                        value: 6,
+                                        message: 'Agência deve ter no máximo 6 dígitos.'
+                                    },
+                                    minLength: {
+                                        value: 4,
+                                        message: 'Agência deve ter no mínimo 4 dígitos.'
+                                    },
+                                    pattern: {
+                                        value: /^[0-9]*$/,
+                                        message: 'Somente números.'
+                                    }
+                            })}
                         />
                         <TextField
                             sx={{ marginRight: 2 }}
+                            error={!!errors.numero}
+                            helperText={errors.numero?.message}
                             placeholder={'Conta'}
                             defaultValue={formData?.numero || ''}
-                            {...register('numero', {required:true, maxLength: 10, minLength: 4, pattern: {
+                            {...register('numero', {
+                                required:"Conta é obrigatório.",
+                                maxLength: {
+                                    value: 10,
+                                    message: 'Conta deve ter no máximo 10 dígitos.'
+                                },
+                                minLength: {
+                                    value: 4,
+                                    message: 'Conta deve ter no mínimo 4 dígitos.'
+                                },
+                                pattern: {
                                     value: /^[0-9]*$/,
                                     message: 'Somente números'
-                                }})}
+                                }
+                            })}
                         />
                         <TextField
                             placeholder={'Digito'}
+                            error={!!errors.digito}
+                            helperText={errors.digito?.message}
                             defaultValue={formData?.digito || ''}
-                            {...register('digito', { required: true, maxLength: 3, minLength: 1, pattern: {
+                            {...register('digito', {
+                                required: "Dígito é obrigatório.",
+                                maxLength: {
+                                    value: 1,
+                                    message: 'Dígito deve ter no máximo 1 dígito.'
+                                },
+                                pattern: {
                                     value: /^[0-9]*$/,
                                     message: 'Somente números'
-                                } }) }
+                                }
+                            }) }
                         />
                     </Box>
                     <Box mt={6} sx={{ justifyContent: 'flex-end', display: 'flex' }}>
