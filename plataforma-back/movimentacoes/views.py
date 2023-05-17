@@ -1,7 +1,4 @@
-from django.shortcuts import render
 
-# Create your views here.
-from django.http import HttpResponseBadRequest
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -90,3 +87,24 @@ def movimentacoes_view(request):
 def movimentacoes_delete(request,pk):
   if request.method == 'DELETE':
     return delete(request,pk)
+
+
+@api_view(['GET'])
+def movimentacoes_saldos(request):
+  payload = request.auth_payload
+  movimentacoes = Movimentacoes.objects.filter(usuario = payload['id'])
+  
+  total=0
+  entradas=0
+  saidas=0
+  for m in movimentacoes:
+    total+= m.value
+    if m.value < 0:
+      saidas-= m.value
+    else:
+      entradas+= m.value
+  return Response({
+    'total':total,
+    'entradas':entradas,
+    'saidas':saidas,
+    })

@@ -6,3 +6,11 @@ export interface MovimentacoesInterface {
     usuario: number;
     conta?: number;
 }
+
+export interface Saldos {
+    total:number
+    entradas:number
+    saidas:number
+  }
+
+export type Nullable<T> = T | null;

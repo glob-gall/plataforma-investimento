@@ -1,6 +1,6 @@
 import {AxiosInstance} from "axios";
 import defaultApi from "@config/api.config";
-import { MovimentacoesInterface } from "./movimentacoes.interface";
+import { MovimentacoesInterface, Saldos } from "./movimentacoes.interface";
 // import {
 //     InstituicoesFormData
 // } from "@templates/instituicoes/components/instituicoes-form-modal/instituicoes-form-modal.types";
@@ -23,6 +23,9 @@ export class MovimentacoesService {
 
     async get():Promise<{data:MovimentacoesInterface[]}>{
         return this._api.get('/movimentacao');
+    }
+    async getSaldo():Promise<{data:Saldos}>{
+        return this._api.get('/movimentacao/saldos/');
     }
 
 }
