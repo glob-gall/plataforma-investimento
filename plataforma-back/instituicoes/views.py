@@ -32,7 +32,7 @@ class InstituicoesView(APIView):
         instituicao = Instituicoes.objects.filter(id=pk).first()
 
         if not instituicao:
-            return ResponseError('Instituião não encontrada')
+            return ResponseError('Instituição não encontrada')
 
         serializer = UsuarioSerializer(InstituicoesView.associar_usuario(user['id'], instituicao))
         return Response(serializer.data)
