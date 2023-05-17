@@ -37,27 +37,27 @@ def register_movimentacao(request):
   if not findedUser:
     return ResponseError('O usuário precia estar logado.')
   
-  dataId = None
-  if(request.data['conta']):
-    dataId = request.data['conta']
-    findedAccount = Contas.objects.filter(id =dataId).first()
+  
+  findedAccount = None
+  contaId = request.data.get('conta')
+  if(contaId):
+    findedAccount = Contas.objects.filter(id =contaId).first()
     if not findedAccount:
       return ResponseError('A conta informada não pertence ao usuário logado.')
     if findedUser.pk != findedAccount.usuario.pk:
       return ResponseError('A conta informada não pertence ao usuário logado.')
-    dataId = findedAccount.pk
-  
+    
   data = request.data
-  data['usuario'] = findedUser.id
-  if dataId:
-    data['conta'] = dataId
-  serializer = MovimentacoesSerializer(data = data)
+  data['usuario'] = findedUser.pk
+  if findedAccount:
+    data['conta'] = findedAccount.pk
+  serializer = MovimentacoesSerializer(data=data)
   
   try:
     serializer.is_valid(raise_exception = True)
     serializer.save()
   except:
-    return Response(formatErrors(serializer.errors),status=status.HTTP_400_BAD_REQUEST)
+    return ResponseError(formatErrors(serializer.errors))
   
   return Response(serializer.data)
 

@@ -12,13 +12,16 @@ def formatMsg(key,value):
 
 
 def formatErrors(errors:dict):
-  msgs = []
-  
-  for key,value in errors.items():
-    msg = formatMsg(key,value[0].title())
-    msgs.append(msg)
+  try:
+    msgs = []
     
-  return {'errors':msgs}
+    for key,value in errors.items():
+      msg = formatMsg(key,value[0].title())
+      msgs.append(msg)
+      
+    return {'errors':msgs}
+  except:
+    return ResponseError('Ocorreu um erro inesperado :(',status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 def strToErr(errors):
