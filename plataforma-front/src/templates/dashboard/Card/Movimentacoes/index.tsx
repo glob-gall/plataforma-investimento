@@ -5,14 +5,66 @@ import pigEmoji from '@/utils/emojis/pigEmoji'
 import { Button, Grid } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import {useAuth} from "@hooks/auth/use-auth.hook";
+import { MovimentacoesService } from '@/services/movimentacoes/movimentacoes.service'
+import { MovimentacoesInterface } from '@/services/movimentacoes/movimentacoes.interface'
 
+type Nullable<T> = T | null;
+interface Saldos {
+  total:number
+  entradas:number
+  saidas:number
+}
 function CardMovimentacoes() {
+  const { user } = useAuth()
   const [emoji,setEmoji] = useState('')
   const [hand,setHand] = useState('')
+  const [saldos,setSaldos] = useState<Saldos>({
+    entradas:0,
+    saidas:0,
+    total:0
+  })
+  let movimentacoesService:Nullable<MovimentacoesService> = null
 
-  const { user } = useAuth()
+  useEffect(()=>{
+    movimentacoesService = new MovimentacoesService()
+  },[])
+  
+  const movimentacaoToSaldo = useCallback((movimentacoes:MovimentacoesInterface[])=>{
+    const saldos:Saldos = {
+      entradas:0,
+      saidas:0,
+      total:0
+    }
+    movimentacoes.forEach( m => {
+      if (Number(m.value) < 0){
+        saldos.saidas-= Number(m.value)
+      }else{
+        saldos.entradas+= Number(m.value)
+      }
+    })
+    saldos.total+= saldos.entradas - saldos.saidas
+    return saldos
+  },[])
+  
+  useEffect(()=>{
+    const loadMovimentacoes = async ()=>{
+      if (!movimentacoesService) return
+      try {
+        const {data} = await movimentacoesService.get()
+        const saldos = movimentacaoToSaldo(data)
+        setSaldos(saldos)
+      } catch (error) {
+        console.log({error});
+      }
+    }
+    loadMovimentacoes()
+  },[movimentacoesService,movimentacaoToSaldo])
+  
+  useEffect(()=>{
+    console.log({saldos});
+  },[saldos])
 
   useEffect(()=>{
     setEmoji(pigEmoji()+moneyEmoji())
@@ -59,7 +111,7 @@ function CardMovimentacoes() {
         <Grid item direction="column">
           <Typography variant="caption">saldo atual</Typography>
           <Typography variant="h6" style={{ fontWeight: 'bold' }}>
-            R$ 152,20
+            R$ {saldos.total}
           </Typography>
         </Grid>
         <Grid item direction="column">
@@ -68,7 +120,7 @@ function CardMovimentacoes() {
             variant="h6"
             style={{ fontWeight: 'bold', color: '#03AF0C' }}
           >
-            R$ 352,20
+            R$ {saldos.entradas}
           </Typography>
         </Grid>
         <Grid item direction="column">
@@ -77,7 +129,7 @@ function CardMovimentacoes() {
             variant="h6"
             style={{ fontWeight: 'bold', color: '#E40050' }}
           >
-            R$ 200,00
+            R$ {saldos.saidas}
           </Typography>
         </Grid>
       </Grid>

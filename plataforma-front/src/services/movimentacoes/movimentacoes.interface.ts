@@ -1,7 +1,8 @@
-export interface InstituicoesInterface {
+export interface MovimentacoesInterface {
     id: number;
-    nome: string;
-    thumb?: string;
-    codigo: number;
-    ispb: string;
+    description: string;
+    date: Date;
+    value: number;
+    usuario: number;
+    conta?: number;
 }
