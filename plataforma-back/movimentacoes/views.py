@@ -108,3 +108,35 @@ def movimentacoes_saldos(request):
     'entradas':entradas,
     'saidas':saidas,
     })
+
+
+def getSaldoConta(movimentacoes):
+  saldo=0
+  for m in movimentacoes:
+      saldo+= m.value
+  return saldo
+  
+@api_view(['GET'])
+def movimentacoes_saldos_by_conta(request):
+  payload = request.auth_payload
+
+  contas = Contas.objects.filter(usuario__id = payload['id']).all()
+  
+  saldoContas=[]
+  for conta in contas:
+    conta.pk
+    movimentacoesDaConta = Movimentacoes.objects.filter(conta = conta.pk)
+
+    saldo=getSaldoConta(movimentacoesDaConta)
+    saldoContas.append({
+      'conta':conta.descricao,
+      'saldo':saldo
+    })
+
+  movimentacoesSemConta = Movimentacoes.objects.filter(conta = None,usuario__id = payload['id'])
+  saldoContas.append({
+      'conta':'outros',
+      'saldo':getSaldoConta(movimentacoesSemConta)
+    })
+  
+  return Response(saldoContas)

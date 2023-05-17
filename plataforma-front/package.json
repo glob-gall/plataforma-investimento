@@ -32,10 +32,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
+    "react-swipeable-views": "^0.14.0",
     "styled-components": "^5.3.9",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "victory": "^36.6.10"
   },
   "devDependencies": {
+    "@types/react-swipeable-views": "^0.13.1",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "eslint-config-prettier": "^8.7.0",
