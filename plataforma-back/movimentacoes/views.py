@@ -6,33 +6,30 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
-from instituicoes.models import Instituicoes
+
 from usuarios.contas.models import Contas
-from utils.getUserPayload import get_user_payload
+from usuarios.contas.serializers import ContasSerializer
+
 from usuarios.models import Usuario
 from .models import Movimentacoes
 from .serializers import MovimentacoesSerializer
 from usuarios.models import Usuario
-from utils.getUserPayload import get_user_payload
-from utils.errors import formatErrors
+
+from utils.errors import formatErrors,ResponseError
 
 def get_movimentacoes_by_usuario(request):
     payload = request.auth_payload
-    movimentacoes = Movimentacoes.objects.filter(usuario = payload['id'])
-    # movimentacoes = Movimentacoes.objects.filter(usuario = payload['id']).select_related('conta')
-    serializer = MovimentacoesSerializer(movimentacoes,many=True)
-    
+    queryset = Movimentacoes.objects.filter(usuario = payload['id'])
+
     dates = request.query_params.get('range')
     orderby = request.query_params.get('orderby')
-    queryset=None
+
     if dates:
       [dateMin,dateMax] = dates.split(',')
       queryset=queryset.filter(date__range=[dateMin, dateMax])
     if orderby:
       queryset=queryset.order_by(orderby)
       
-
-    
     serializer = MovimentacoesSerializer(queryset,many=True)    
     return Response(serializer.data)
 
@@ -41,13 +38,23 @@ def register_movimentacao(request):
   payload = request.auth_payload
   findedUser = Usuario.objects.filter(id = payload['id']).first()
   if not findedUser:
-    return Response({'errors':[
-      { 'message': 'O usuário precia estar logado!' }
-    ]})
-
+    return ResponseError('O usuário precia estar logado.')
+  
+  dataId = None
+  if(request.data['conta']):
+    dataId = request.data['conta']
+    findedAccount = Contas.objects.filter(id =dataId).first()
+    if not findedAccount:
+      return ResponseError('A conta informada não pertence ao usuário logado.')
+    if findedUser.pk != findedAccount.usuario.pk:
+      return ResponseError('A conta informada não pertence ao usuário logado.')
+    dataId = findedAccount.pk
+  
   data = request.data
   data['usuario'] = findedUser.id
-  serializer = MovimentacoesSerializer(data = request.data)
+  if dataId:
+    data['conta'] = dataId
+  serializer = MovimentacoesSerializer(data = data)
   
   try:
     serializer.is_valid(raise_exception = True)
@@ -62,15 +69,11 @@ def delete(request,pk, format=None):
     payload = request.auth_payload
     findedUser = Usuario.objects.filter(id = payload['id']).first()
     if not findedUser:
-      return Response({'errors':[
-        { 'message': 'O usuário precia estar logado!' }
-      ]})
+      return ResponseError('O usuário precia estar logado!')
     
     movimentacao = Movimentacoes.objects.filter(id=pk).first()
     if not movimentacao:
-      return Response({'errors':[
-        {'message': 'Movimentacao não encontrada' }
-      ]})
+      return ResponseError('Movimentação não encontrada')
     movimentacao.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
 
