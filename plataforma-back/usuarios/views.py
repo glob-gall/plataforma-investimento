@@ -1,5 +1,5 @@
 import jwt, datetime
-import hashlib
+import hashlibpip 
 
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
@@ -92,8 +92,8 @@ def confirmEmail(request):
       return HttpResponse("Usuário não encontrado")
 
   
-  enviar_email_confirmacao(serializer)
-  return Response(serializer.data)
+  enviar_email_confirmacao(usuario)
+  return Response(usuario.data)
 
 class UsuarioView(APIView):
   def get(self,request):
