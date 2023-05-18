@@ -1,41 +1,65 @@
 from django.shortcuts import render
 
+# Create your views here.
+from django.http import HttpResponseBadRequest
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
+from instituicoes.models import Instituicoes
+from usuarios.contas.models import Contas
+from utils.getUserPayload import get_user_payload
+from usuarios.models import Usuario
 from .models import Movimentacoes
 from .serializers import MovimentacoesSerializer
 from usuarios.models import Usuario
 from utils.getUserPayload import get_user_payload
-
+from utils.errors import formatErrors
 
 def get_movimentacoes_by_usuario(request):
-    payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
+    payload = request.auth_payload
     movimentacoes = Movimentacoes.objects.filter(usuario = payload['id'])
+    # movimentacoes = Movimentacoes.objects.filter(usuario = payload['id']).select_related('conta')
     serializer = MovimentacoesSerializer(movimentacoes,many=True)
     
+    dates = request.query_params.get('range')
+    orderby = request.query_params.get('orderby')
+    queryset=None
+    if dates:
+      [dateMin,dateMax] = dates.split(',')
+      queryset=queryset.filter(date__range=[dateMin, dateMax])
+    if orderby:
+      queryset=queryset.order_by(orderby)
+      
+
+    
+    serializer = MovimentacoesSerializer(queryset,many=True)    
     return Response(serializer.data)
 
 
 def register_movimentacao(request):
-  payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
+  payload = request.auth_payload
   findedUser = Usuario.objects.filter(id = payload['id']).first()
+  if not findedUser:
+    return Response({'errors':[
+      { 'message': 'O usuário precia estar logado!' }
+    ]})
+
   data = request.data
   data['usuario'] = findedUser.id
-  
   serializer = MovimentacoesSerializer(data = request.data)
+  
   try:
     serializer.is_valid(raise_exception = True)
     serializer.save()
   except:
-    return Response({'errors':serializer.errors})
+    return Response(formatErrors(serializer.errors),status=status.HTTP_400_BAD_REQUEST)
   
   return Response(serializer.data)
 
 
 def delete(request,pk, format=None):
-    payload = get_user_payload(request.META.get('HTTP_AUTHORIZATION'))
+    payload = request.auth_payload
     findedUser = Usuario.objects.filter(id = payload['id']).first()
     if not findedUser:
       return Response({'errors':[

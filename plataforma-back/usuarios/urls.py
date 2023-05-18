@@ -16,4 +16,5 @@ urlpatterns = [
     path('usuario/', views.UsuarioView.as_view()),
     path('confirmEmail/', views.confirmEmail),
     path('confirmar_conta/<token>/',views.confirmEmailView),
+    path('usuario/contas/', include("usuarios.contas.urls"))
 ]

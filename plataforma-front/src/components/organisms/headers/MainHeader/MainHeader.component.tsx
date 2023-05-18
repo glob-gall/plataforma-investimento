@@ -5,9 +5,11 @@ import Typography from '@mui/material/Typography';
 import Box from "@mui/material/Box";
 import {Avatar, Menu, MenuItem} from "@mui/material";
 import {useAuth} from "@hooks/auth/use-auth.hook";
+import { useRouter } from 'next/router';
 
 
 const MainHeaderComponent = () => {
+    const router = useRouter();
     const { actions } = useAuth();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const menuOpened = Boolean(anchorEl);
@@ -23,7 +25,7 @@ const MainHeaderComponent = () => {
     }
 
     const menuOptions = [
-        { name: 'Perfil', action: () => null},
+        { name: 'Perfil', action: () => router.push('/profile')},
         { name: 'Sair', action: () => logout()},
     ]
 
@@ -48,14 +50,6 @@ const MainHeaderComponent = () => {
                         anchorEl={anchorEl}
                         open={menuOpened}
                         onClose={handleClose}
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'left',
-                        }}
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'left',
-                        }}
                     >
                         {
                             menuOptions.map((option, index) => (

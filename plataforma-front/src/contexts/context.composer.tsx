@@ -1,6 +1,7 @@
 import {ContextComposerProps} from "@contexts/context.types";
 import {AuthProvider} from "@contexts/auth/auth.context";
 import React from "react";
+import { ErrorHandlerProvider } from "./errorsHandler/errorsHandler.context";
 
 const ContextComposer: React.FC<ContextComposerProps> = ({
     children,
@@ -9,7 +10,9 @@ const ContextComposer: React.FC<ContextComposerProps> = ({
     return (
         <>
             <AuthProvider user={user}>
-                {children}
+                <ErrorHandlerProvider>
+                    {children}
+                </ErrorHandlerProvider>
             </AuthProvider>
         </>
     )

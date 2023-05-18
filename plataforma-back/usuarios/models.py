@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 import datetime
+
+from instituicoes.models import Instituicoes
+
 # Create your models here.
 class Usuario(AbstractUser):
   name = models.CharField(max_length=255)
@@ -10,6 +13,8 @@ class Usuario(AbstractUser):
   username = None
   is_email_verified = models.BooleanField(default=False)
   
+  instituicoes = models.ManyToManyField(Instituicoes)
+
   USERNAME_FIELD = 'email'
   REQUIRED_FIELDS = ['name','password','birth']
 

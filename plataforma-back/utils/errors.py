@@ -6,7 +6,7 @@ def formatMsg(key,value):
   elif val == 'insira um endereço de email válido.':
     return {'message': "Insira um endereço de email válido."}
   
-  return {'message': {key:val}}
+  return {'message':  f'{key} - {val}'}
 
 
 def formatErrors(errors:dict):

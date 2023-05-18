@@ -1,11 +1,7 @@
 export interface LoginContainerArgs{
     loading: boolean;
-    showError: boolean;
-    error: string | null;
     actions: {
         submit: (data: LoginFormData) => void;
-        setError: (error: string | null) => void;
-        hideErrors: () => void;
         randomBackground: () => string;
     }
 }

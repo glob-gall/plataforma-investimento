@@ -2,13 +2,13 @@ import {ContainerWithProps} from "@/@common/types/container.types";
 import {LoginContainerArgs, LoginFormData} from "@/templates/login/login.types";
 import React from "react";
 import {useAuth} from "@hooks/auth/use-auth.hook";
+import { useErrorHandler } from "@/hooks/errorHandler/use-errorHandler.hook";
 
 
 export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) => {
 
     const [loading, setLoading] = React.useState<boolean>(false)
-    const [error, setError] = React.useState<string | null>(null)
-    const [showError, setShowError] = React.useState<boolean>(false)
+    const {handleSetErrors} = useErrorHandler()
 
     const { actions } = useAuth();
 
@@ -22,10 +22,6 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
         return backgrounds[Math.floor(Math.random() * backgrounds.length)]
     }
 
-    const hideErrors = () => {
-        setShowError(false);
-        setError(null);
-    }
 
     const submit = async (data: LoginFormData) => {
         const { email, password } = data;
@@ -35,8 +31,7 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
-            setError(err.response.data.detail)
-            setShowError(true);
+            handleSetErrors(err)
         }finally {
             setLoading(false);
         }
@@ -44,12 +39,8 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
 
     return props.children({
         loading,
-        showError,
-        error,
         actions: {
             submit,
-            setError,
-            hideErrors,
             randomBackground
         }
     })

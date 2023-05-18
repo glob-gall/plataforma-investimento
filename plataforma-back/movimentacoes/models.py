@@ -1,6 +1,8 @@
 from django.db import models
 import datetime
-from usuarios.models import Usuario 
+from usuarios.contas.models import Contas
+from usuarios.models import Usuario
+from instituicoes.models import Instituicoes
 # Create your models here.
 # Create your models here.
 

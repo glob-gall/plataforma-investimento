@@ -1,13 +1,29 @@
 import {MenuItem, Modal, TextField, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import {
+    InstituicoesFormData,
     InstituicoesFormModalProps
 } from "@templates/instituicoes/components/instituicoes-form-modal/instituicoes-form-modal.types";
 import {LoadingButton} from "@mui/lab";
 import {Close} from "@mui/icons-material";
+import {useForm} from "react-hook-form";
+import {useEffect} from "react";
 
 
-const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onClose }) => {
+const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onClose, onDelete, formData, instituicoes, onSubmit, loading }) => {
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<InstituicoesFormData>();
+
+    useEffect(() => {
+        if(formData) reset(formData);
+        else reset({
+            instituicao: 1,
+            descricao: '',
+            agencia: '',
+            numero: '',
+            digito: '',
+        })
+    }, [formData, open])
 
     const style = {
         position: 'absolute',
@@ -19,21 +35,6 @@ const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onC
         boxShadow: 24,
         p: 4,
     };
-
-    const institucoes = [
-        {
-            value: 'itau',
-            label: 'Itaú',
-        },
-        {
-            value: 'bradesco',
-            label: 'Bradesco',
-        },
-        {
-            value: 'santander',
-            label: 'Santander',
-        },
-    ];
 
     return(
         <Modal
@@ -50,29 +51,106 @@ const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onC
                         <Close />
                     </Box>
                 </Box>
-                <Box mt={4}>
+                <Box mt={4} component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={handleSubmit(onSubmit, () => console.log(errors))}>
                     <TextField
                         fullWidth
                         select
                         label="Instituição"
-                        defaultValue="itau"
+                        defaultValue={formData?.instituicao || ''}
+                        disabled={!!formData?.instituicao}
+                        error={!!errors.instituicao}
+                        helperText={errors.instituicao?.message}
+                        {...register("instituicao", {
+                            required: "Escolha uma instituição",
+                            valueAsNumber: true
+                        })}
                     >
-                        {institucoes.map(({ value, label }, index) => (
-                            <MenuItem key={value + index} value={value}>
-                                {label}
+                        {instituicoes?.map(({ id, nome }, index) => (
+                            <MenuItem key={`${id}-${index}`} value={id}>
+                                {nome}
                             </MenuItem>
                         ))}
                     </TextField>
                     <Box mt={2}>
-                        <TextField fullWidth placeholder={'Nome de referência'}/>
+                        <TextField
+                            fullWidth
+                            defaultValue={formData?.descricao || ''}
+                            error={!!errors.descricao}
+                            helperText={errors.descricao?.message}
+                            placeholder={'Nome de referência'}
+                            {...register("descricao", { required: "Nome é obrigatório.", maxLength: {
+                                    value: 20,
+                                    message: 'Digite no máximo 20 caracteres.'
+                                } })}
+                        />
                     </Box>
                     <Box mt={2}>
-                        <TextField sx={{ marginRight: 2 }} placeholder={'Agência'}/>
-                        <TextField placeholder={'Conta'}/>
+                        <TextField
+                            sx={{ marginRight: 2 }}
+                            defaultValue={formData?.agencia || ''}
+                            placeholder={'Agência'}
+                            error={!!errors.agencia}
+                            helperText={errors.agencia?.message}
+                            {...register('agencia',
+                                {
+                                    required: "Agência é obrigatório.",
+                                    maxLength: {
+                                        value: 6,
+                                        message: 'Agência deve ter no máximo 6 dígitos.'
+                                    },
+                                    minLength: {
+                                        value: 4,
+                                        message: 'Agência deve ter no mínimo 4 dígitos.'
+                                    },
+                                    pattern: {
+                                        value: /^[0-9]*$/,
+                                        message: 'Somente números.'
+                                    }
+                            })}
+                        />
+                        <TextField
+                            sx={{ marginRight: 2 }}
+                            error={!!errors.numero}
+                            helperText={errors.numero?.message}
+                            placeholder={'Conta'}
+                            defaultValue={formData?.numero || ''}
+                            {...register('numero', {
+                                required:"Conta é obrigatório.",
+                                maxLength: {
+                                    value: 10,
+                                    message: 'Conta deve ter no máximo 10 dígitos.'
+                                },
+                                minLength: {
+                                    value: 4,
+                                    message: 'Conta deve ter no mínimo 4 dígitos.'
+                                },
+                                pattern: {
+                                    value: /^[0-9]*$/,
+                                    message: 'Somente números'
+                                }
+                            })}
+                        />
+                        <TextField
+                            placeholder={'Digito'}
+                            error={!!errors.digito}
+                            helperText={errors.digito?.message}
+                            defaultValue={formData?.digito || ''}
+                            {...register('digito', {
+                                required: "Dígito é obrigatório.",
+                                maxLength: {
+                                    value: 1,
+                                    message: 'Dígito deve ter no máximo 1 dígito.'
+                                },
+                                pattern: {
+                                    value: /^[0-9]*$/,
+                                    message: 'Somente números'
+                                }
+                            }) }
+                        />
                     </Box>
-                    <Box mt={2} sx={{ justifyContent: 'flex-end', display: 'flex' }}>
-                        <LoadingButton sx={{ marginRight: 2 }} variant="contained" color="error" onClick={() => onClose()}>Excluir</LoadingButton>
-                        <LoadingButton variant="contained" onClick={() => onClose()}>Salvar</LoadingButton>
+                    <Box mt={6} sx={{ justifyContent: 'flex-end', display: 'flex' }}>
+                        <LoadingButton sx={{ marginRight: 2 }} variant="contained" color="error" onClick={onDelete} loading={loading}>Excluir</LoadingButton>
+                        <LoadingButton variant="contained" type="submit" loading={loading}>Salvar</LoadingButton>
                     </Box>
                 </Box>
             </Box>
