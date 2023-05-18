@@ -96,8 +96,7 @@ class UsuarioView(APIView):
     return Response(serializer.data)
 
   def put(self, request):
-    token = request.META.get('HTTP_AUTHORIZATION')
-    payload = get_user_payload(token)
+    payload = request.auth_payload
     usuario = Usuario.objects.filter(id = payload['id']).first()
 
     data={}

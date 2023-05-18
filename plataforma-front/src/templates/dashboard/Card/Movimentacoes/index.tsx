@@ -7,12 +7,37 @@ import Typography from '@mui/material/Typography'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import {useAuth} from "@hooks/auth/use-auth.hook";
+import { MovimentacoesService } from '@/services/movimentacoes/movimentacoes.service'
+import { Nullable, Saldos } from '@/services/movimentacoes/movimentacoes.interface'
+
 
 function CardMovimentacoes() {
+  const { user } = useAuth()
   const [emoji,setEmoji] = useState('')
   const [hand,setHand] = useState('')
+  const [saldos,setSaldos] = useState<Saldos>({
+    entradas:0,
+    saidas:0,
+    total:0
+  })
+  let movimentacoesService:Nullable<MovimentacoesService> = null
 
-  const { user } = useAuth()
+  useEffect(()=>{
+    movimentacoesService = new MovimentacoesService()
+  },[])
+  
+  useEffect(()=>{
+    const loadMovimentacoes = async ()=>{
+      if (!movimentacoesService) return
+      try {
+        const {data} = await movimentacoesService.getSaldo()
+        setSaldos(data)
+      } catch (error) {
+        console.log({error});
+      }
+    }
+    loadMovimentacoes()
+  },[movimentacoesService])
 
   useEffect(()=>{
     setEmoji(pigEmoji()+moneyEmoji())
@@ -59,7 +84,7 @@ function CardMovimentacoes() {
         <Grid item direction="column">
           <Typography variant="caption">saldo atual</Typography>
           <Typography variant="h6" style={{ fontWeight: 'bold' }}>
-            R$ 152,20
+            R$ {saldos.total?.toFixed(2)}
           </Typography>
         </Grid>
         <Grid item direction="column">
@@ -68,7 +93,7 @@ function CardMovimentacoes() {
             variant="h6"
             style={{ fontWeight: 'bold', color: '#03AF0C' }}
           >
-            R$ 352,20
+            R$ {saldos.entradas?.toFixed(2)}
           </Typography>
         </Grid>
         <Grid item direction="column">
@@ -77,7 +102,7 @@ function CardMovimentacoes() {
             variant="h6"
             style={{ fontWeight: 'bold', color: '#E40050' }}
           >
-            R$ 200,00
+            R$ {saldos.saidas?.toFixed(2)}
           </Typography>
         </Grid>
       </Grid>

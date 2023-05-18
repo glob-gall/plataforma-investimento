@@ -2,18 +2,24 @@ import React from 'react'
 import { DashboardTemplateProps } from '@/templates/dashboard/dashboard.types'
 import Box from '@mui/material/Box'
 
-import { Card, Container } from '@mui/material'
+import { Container } from '@mui/material'
 import CardMovimentacoes from './Card/Movimentacoes'
-import { useAuth } from '@/hooks/auth/use-auth.hook'
+import GraficosCard from './Card/Graficos'
+
+import * as Styles from './dashboard.styles'
 
 const DashboardTemplate: React.FC<DashboardTemplateProps> = () => {
   return (
     <Container>
-      <Card variant="outlined" style={{ marginRight: 50 }}>
+      <Styles.Card variant="outlined" style={{ marginRight: 50 }}>
         <Box component="main" sx={{ p: 3 }}>
           <CardMovimentacoes />
         </Box>
-      </Card>
+      </Styles.Card>
+      <Styles.Card variant="outlined" >
+          <GraficosCard />
+      </Styles.Card>
+
     </Container>
   )
 }

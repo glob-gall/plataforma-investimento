@@ -2,15 +2,16 @@
 # Create your views here.
 from django.http import HttpResponseNotFound
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 
+from utils.errors import ResponseError
 from usuarios.models import Usuario
 from usuarios.serializers import UsuarioSerializer
 
 from .models import Instituicoes
 from .serializers import InstituicoesSerializer
 
-from rest_framework.decorators import api_view
-from rest_framework.views import APIView
 
 class InstituicoesView(APIView):
 
@@ -31,7 +32,7 @@ class InstituicoesView(APIView):
         instituicao = Instituicoes.objects.filter(id=pk).first()
 
         if not instituicao:
-            return HttpResponseNotFound("Instituição não encontrada")
+            return ResponseError('Instituição não encontrada')
 
         serializer = UsuarioSerializer(InstituicoesView.associar_usuario(user['id'], instituicao))
         return Response(serializer.data)
