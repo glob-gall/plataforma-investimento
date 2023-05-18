@@ -7,7 +7,7 @@ from rest_framework.exceptions import AuthenticationFailed
 class AuthMiddleware(MiddlewareMixin):    
 
     __HEADER__ = 'HTTP_AUTHORIZATION'
-    __OPEN_URIS__ = [('POST', '/api/login/'), ('POST', '/api/register/')]
+    __OPEN_URIS__ = [('POST', '/api/login/'), ('POST', '/api/register/'), ('GET', '/swagger/')]
 
     @staticmethod
     def __is_open(method, uri):
