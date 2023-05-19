@@ -1,3 +1,5 @@
+from rest_framework.response import Response
+from rest_framework import status
 
 def formatMsg(key,value):
   val = value.lower()
@@ -17,3 +19,15 @@ def formatErrors(errors:dict):
     msgs.append(msg)
     
   return {'errors':msgs}
+
+
+def strToErr(errors):
+  errs=[]
+  for err in errors:
+    errs.append({'message':err})
+  return {'errors':errs}
+  
+def ResponseError(err,status=status.HTTP_400_BAD_REQUEST):
+  if(type(err) is list):
+    return Response(strToErr(err),status=status)
+  return Response({'errors':{'message':err}},status=status)

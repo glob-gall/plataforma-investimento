@@ -7,4 +7,5 @@ from . import views
 urlpatterns = [
     path('', views.movimentacoes_view),
     path('<int:pk>/', views.movimentacoes_delete),
+    path('saldos/', views.movimentacoes_saldos),
 ]
