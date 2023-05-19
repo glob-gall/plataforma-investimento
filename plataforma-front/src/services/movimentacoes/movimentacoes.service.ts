@@ -1,6 +1,9 @@
 import {AxiosInstance} from "axios";
 import defaultApi from "@config/api.config";
 import { MovimentacoesInterface, SaldoConta, Saldos } from "./movimentacoes.interface";
+import {
+    MovimentacoesFormData
+} from "@templates/movimentacoes/components/movimentacoes-form-modal/movimentacoes-form-modal.types";
 // import {
 //     InstituicoesFormData
 // } from "@templates/instituicoes/components/instituicoes-form-modal/instituicoes-form-modal.types";
@@ -13,7 +16,11 @@ export class MovimentacoesService {
         this._api = api;
     }
 
-    async create(id: number, data: MovimentacoesInterface){
+    async create(data: MovimentacoesFormData){
+        return this._api.post('/movimentacao/', data);
+    }
+
+    async update(id: number, data: MovimentacoesFormData){
         return this._api.put(`/movimentacao/${id}/`, data);
     }
 
