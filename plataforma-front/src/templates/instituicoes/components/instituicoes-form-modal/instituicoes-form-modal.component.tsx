@@ -51,7 +51,7 @@ const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onC
                         <Close />
                     </Box>
                 </Box>
-                <Box mt={4} component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={handleSubmit(onSubmit, () => console.log(errors))}>
+                <Box mt={4} component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={handleSubmit(onSubmit)}>
                     <TextField
                         fullWidth
                         select
