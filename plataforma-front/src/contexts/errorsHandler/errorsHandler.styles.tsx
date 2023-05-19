@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 
 export const ErrorContainer = styled('div')`
   z-index: 1101;
-  position: absolute;
+  position: fixed;
   top: 0;
   
 

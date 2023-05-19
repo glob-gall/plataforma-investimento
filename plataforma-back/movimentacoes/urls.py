@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.movimentacoes_view),
     path('<int:pk>/', views.movimentacoes_delete),
     path('saldos/', views.movimentacoes_saldos),
+    path('saldos/distribuicao-saldo/', views.movimentacoes_saldos_by_conta),
 ]
