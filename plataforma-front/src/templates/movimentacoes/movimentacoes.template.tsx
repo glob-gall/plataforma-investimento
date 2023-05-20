@@ -11,7 +11,7 @@ import {
     Tooltip,
     Typography
 } from "@mui/material";
-import {Add, Delete, Edit, Payments} from "@mui/icons-material";
+import {Add, Delete, Payments} from "@mui/icons-material";
 import React from "react";
 import * as Containers from "./movimentacoes.container";
 import MovimentacoesFormModal
@@ -39,7 +39,6 @@ const columns = [
 
 const MovimentacoesTemplate = (props) => {
     return (
-        <>
         <Containers.MovimentacoesContainer {...props}>
             {({
                   loading,
@@ -95,10 +94,6 @@ const MovimentacoesTemplate = (props) => {
                                                                 {
                                                                     column.id === 'actions' && (
                                                                         <>
-                                                                            <IconButton aria-label="Editar" size="small" onClick={() => {
-                                                                                actions.setFormData(row);
-                                                                                actions.setFormOpen(true);
-                                                                            }}><Edit/></IconButton>
                                                                             <IconButton aria-label="Excluir" color="error" size="small" onClick={() => {
                                                                                 actions.setFormData(row);
                                                                                 actions.setDeleteDialogOpen(true);
@@ -120,7 +115,7 @@ const MovimentacoesTemplate = (props) => {
                                 </Table>
                                 {
                                     loading && Array(10).fill(0).map((_, index) => (
-                                            <Box mt={index == 0 ? 0 : 1}>
+                                            <Box mt={index == 0 ? 0 : 1} key={index}>
                                                 <Skeleton variant="rectangular" height={40} width="100%" />
                                             </Box>
                                         )
@@ -155,7 +150,6 @@ const MovimentacoesTemplate = (props) => {
                 </>
                 )}
         </Containers.MovimentacoesContainer>
-        </>
     )
 }
 

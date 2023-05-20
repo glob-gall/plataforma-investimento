@@ -7,8 +7,24 @@ export interface InstituicoesTemplateProps {
     instituicoes: InstituicoesInterface[];
 }
 
+export interface Instituicao {
+    codigo: number
+    id:number
+    ispb:string
+    nome:string
+    thumb:string
+}
+export interface Conta {
+    id:number
+    agencia:string
+    descricao:string
+    digito:number
+    numero:string
+    instituicao:Instituicao
+}
+
 export interface InstituicoesContainerArgs {
-    instituicoesFromUser: any;
+    instituicoesFromUser: Conta[];
     loading: boolean;
     formOpen: boolean;
     formData: InstituicoesFormData | null;
@@ -16,7 +32,7 @@ export interface InstituicoesContainerArgs {
         onModalSubmit: (data: InstituicoesFormData) => void;
         setFormOpen: (value: boolean) => void;
         setFormData: (value: InstituicoesFormData | null) => void;
-        addFormData: (item: InstituicoesInterface) => void;
+        addFormData: (item: Conta) => void;
         onModalDelete: () => void;
     }
 }

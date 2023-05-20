@@ -1,4 +1,4 @@
-import {Button, Card, CardActionArea, CardContent, CardMedia, Skeleton, Grid, Typography} from "@mui/material";
+import {Button, Skeleton, Grid, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import {Add} from "@mui/icons-material";
 import InstituicoesFormModal
@@ -6,6 +6,9 @@ import InstituicoesFormModal
 import React from "react";
 import {InstituicoesTemplateProps} from "@templates/instituicoes/instituicoes.types";
 import * as Containers from '@templates/instituicoes/instituicoes.container';
+import InstituicaoCard from "./components/InstituicaoCard/InstituicaoCard.template copy";
+
+import * as Styled from './instituicoes.styles'
 
 const InstituicoesTemplate: React.FC<InstituicoesTemplateProps> = (props) => {
 
@@ -13,8 +16,8 @@ const InstituicoesTemplate: React.FC<InstituicoesTemplateProps> = (props) => {
         <Containers.InstituicoesContainer>
             {
                 ({ instituicoesFromUser, formOpen, formData, loading, actions }) => (
-                    <>
-                    <Box flex={1}>
+                    <Styled.Container>
+                    <Box>
                         <Box>
                             <Typography variant="h5" gutterBottom>Instituições</Typography>
                             <Typography variant="subtitle1" gutterBottom>Aqui você consegue visualizar todas as instituições vinculadas à sua conta.</Typography>
@@ -26,8 +29,8 @@ const InstituicoesTemplate: React.FC<InstituicoesTemplateProps> = (props) => {
                             </Button>
                         </Box>
                         {
-                            <Box mt={4}>
-                                <Grid container columns={{ xs: 2, sm: 8, md: 16 }}>
+                            <Box>
+                                <Styled.CardContainer container spacing={2}>
                                     {
                                         !loading && instituicoesFromUser.length === 0 &&
                                         <Box>
@@ -36,35 +39,15 @@ const InstituicoesTemplate: React.FC<InstituicoesTemplateProps> = (props) => {
                                     }
                                     {
                                         !loading ?
-                                        instituicoesFromUser.map((item: any) => (
-                                            <Grid my={2} sm={2} md={4} key={`${item.id}-${item.instituicao?.nome}`} width="100%">
-                                                <Card sx={{ maxWidth: 320, minWidth: 320 }}>
-                                                    <CardActionArea onClick={() => {
-                                                        actions.setFormOpen(true)
-                                                        actions.addFormData(item)
-                                                    }}>
-                                                        <CardMedia
-                                                            component="img"
-                                                            height="140"
-                                                            image={item.instituicao?.thumb || 'https://via.placeholder.com/300x200'}
-                                                        />
-                                                        <CardContent>
-                                                            <Typography gutterBottom variant="h6" component="div">
-                                                                {item.instituicao?.nome}
-                                                            </Typography>
-                                                            <Typography variant="body2" color="text.secondary">
-                                                                Referência: {item.descricao}
-                                                            </Typography>
-                                                            <Typography variant="body2" color="text.secondary">
-                                                                Agência: {item.agencia}
-                                                            </Typography>
-                                                            <Typography variant="body2" color="text.secondary">
-                                                                Conta: {item.conta} - {item.digito}
-                                                            </Typography>
-                                                        </CardContent>
-                                                    </CardActionArea>
-                                                </Card>
-                                            </Grid>
+                                        instituicoesFromUser.map((item) => (
+                                            <InstituicaoCard
+                                                key={`${item.id}-${item.instituicao?.nome}`}
+                                                conta={item}
+                                                onClick={() => {
+                                                    actions.setFormOpen(true)
+                                                    actions.addFormData(item)
+                                                }}
+                                            />
                                         ))
                                         :
                                         Array(8).fill("").map((_, index) => (
@@ -73,7 +56,7 @@ const InstituicoesTemplate: React.FC<InstituicoesTemplateProps> = (props) => {
                                             </Grid>
                                         ))
                                     }
-                                </Grid>
+                                </Styled.CardContainer>
                             </Box>
                         }
                     </Box>
@@ -86,8 +69,7 @@ const InstituicoesTemplate: React.FC<InstituicoesTemplateProps> = (props) => {
                         onSubmit={actions.onModalSubmit}
                         instituicoes={props.instituicoes}
                     />
-                </>
-
+                </Styled.Container>
                 )
             }
         </Containers.InstituicoesContainer>
