@@ -92,6 +92,9 @@ def movimentacoes_delete(request,pk):
 @api_view(['GET'])
 def movimentacoes_saldos(request):
   payload = request.auth_payload
+  findedUser = Usuario.objects.filter(id = payload['id']).first()
+  if not findedUser:
+    return ResponseError('O usuário precia estar logado.')
   movimentacoes = Movimentacoes.objects.filter(usuario = payload['id'])
   
   total=0
@@ -119,6 +122,9 @@ def getSaldoConta(movimentacoes):
 @api_view(['GET'])
 def movimentacoes_saldos_by_conta(request):
   payload = request.auth_payload
+  findedUser = Usuario.objects.filter(id = payload['id']).first()
+  if not findedUser:
+    return ResponseError('O usuário precia estar logado.')
 
   contas = Contas.objects.filter(usuario__id = payload['id']).all()
   
@@ -140,3 +146,34 @@ def movimentacoes_saldos_by_conta(request):
     })
   
   return Response(saldoContas)
+
+
+@api_view(['GET'])
+def movimentacoes_saldos_by_categoria(request):
+  payload = request.auth_payload
+  findedUser = Usuario.objects.filter(id = payload['id']).first()
+  if not findedUser:
+    return ResponseError('O usuário precia estar logado.')
+  
+  Movimentacoes.objects.filter(usuario__id = payload['id'])
+  categorias = Movimentacoes.Categoria.choices
+  
+  saldoCategorias=[]
+  for categoria in categorias:
+    movimentacoesCategoria = Movimentacoes.objects.filter(categoria=categoria[0])
+    saldo=0
+    for movimentacao in movimentacoesCategoria:
+      saldo+= movimentacao.value
+    saldoCategorias.append({
+      'categoria':categoria[1],
+      'saldo':saldo,
+    })
+
+  
+  return Response(saldoCategorias)
+
+
+@api_view(['GET'])
+def movimentacoes_categorias(request):
+  categorias = Movimentacoes.Categoria.choices
+  return Response(categorias)

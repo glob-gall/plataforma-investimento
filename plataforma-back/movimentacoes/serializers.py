@@ -12,5 +12,6 @@ class MovimentacoesSerializer(serializers.ModelSerializer):
       'date',
       'value',
       'usuario',
-      'conta'
+      'conta',
+      'categoria'
     ]
