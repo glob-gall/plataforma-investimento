@@ -57,7 +57,7 @@ def register_movimentacao(request):
     serializer.is_valid(raise_exception = True)
     serializer.save()
   except:
-    return ResponseError(formatErrors(serializer.errors))
+    return Response(formatErrors(serializer.errors))
   
   return Response(serializer.data)
 

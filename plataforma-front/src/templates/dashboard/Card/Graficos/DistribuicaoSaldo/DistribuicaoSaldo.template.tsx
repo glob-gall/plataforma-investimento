@@ -1,18 +1,13 @@
-import { Nullable } from "@/services/movimentacoes/movimentacoes.interface"
+import { Nullable, SaldoConta } from "@/services/movimentacoes/movimentacoes.interface"
 import { MovimentacoesService } from "@/services/movimentacoes/movimentacoes.service"
 import { useEffect, useState } from "react"
 import { VictoryPie } from "victory"
 import * as Styled from './DistribuicaoSaldo.styles'
 import { Skeleton } from "@mui/material"
 
-
-interface graphData {
-  x:string,
-  y:number
-}
 function DistribuicaoSaldo() {
   let movimentacoesService:Nullable<MovimentacoesService> = null
-  const [saldos,setSaldos] = useState<graphData[]>([])
+  const [saldos,setSaldos] = useState<SaldoConta[]>([])
   const [loading,setLoading] = useState(true)
   useEffect(()=>{
     movimentacoesService = new MovimentacoesService()
@@ -24,10 +19,10 @@ function DistribuicaoSaldo() {
       if (!movimentacoesService) return
       try {
         const {data} = await movimentacoesService.getDistricuicaoSaldo()
-        const newSaldos = data.map(s => ({
-          x:`${s.conta} - R$ ${s.saldo.toFixed(2)}`,
-          y:s.saldo
-        })).filter(g => g.y>0)
+        const newSaldos = data.map(({conta,saldo}) => ({
+          saldo,
+          conta: `${conta} - R$ ${saldo}`
+        })).filter(s => s.saldo > 0)
 
         setSaldos(newSaldos)
       } catch (error) {
@@ -44,9 +39,11 @@ function DistribuicaoSaldo() {
   return (
     <Styled.Container>
       <VictoryPie
-      colorScale='qualitative'
-      data={saldos}
-    />
+        colorScale='qualitative'
+        data={saldos}
+        x="conta"
+        y="saldo"
+      />
     </Styled.Container>
   )
 }
