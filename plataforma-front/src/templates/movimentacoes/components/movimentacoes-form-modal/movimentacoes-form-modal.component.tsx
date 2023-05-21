@@ -8,6 +8,7 @@ import {
     MovimentacoesFormData,
     MovimentacoesFormModalProps
 } from "@templates/movimentacoes/components/movimentacoes-form-modal/movimentacoes-form-modal.types";
+import { categoriasMOCK } from "@/services/movimentacoes/categorias.mock";
 
 
 const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({ open, onClose, formData, onSubmit, loading, formParams }) => {
@@ -60,9 +61,9 @@ const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({ open, o
                                 valueAsNumber: true
                             })}
                         >
-                            {[{id:1, nome: 'Outros'}, {id:2, nome: "Alimentação"}]?.map(({ id, nome }, index) => (
-                                <MenuItem key={`${id}-${index}`} value={id}>
-                                    {nome}
+                            {categoriasMOCK.map(({ key,label }, index) => (
+                                <MenuItem key={`${index}-${key}`} value={key}>
+                                    {label}
                                 </MenuItem>
                             ))}
                         </TextField>

@@ -1,6 +1,6 @@
 import {AxiosInstance} from "axios";
 import defaultApi from "@config/api.config";
-import { MovimentacoesInterface, SaldoCategoria, SaldoConta, Saldos } from "./movimentacoes.interface";
+import { Categoria, MovimentacoesInterface, SaldoCategoria, SaldoConta, Saldos } from "./movimentacoes.interface";
 import {
     MovimentacoesFormData
 } from "@templates/movimentacoes/components/movimentacoes-form-modal/movimentacoes-form-modal.types";
@@ -39,6 +39,9 @@ export class MovimentacoesService {
     }
     async getMovimentacoesCategorias():Promise<{data:SaldoCategoria[]}>{
         return this._api.get('/movimentacao/saldos/distribuicao-categoria/');
+    }
+    async getCategorias():Promise<Categoria[]>{
+        return this._api.get('/movimentacao/categorias/');
     }
 
 }

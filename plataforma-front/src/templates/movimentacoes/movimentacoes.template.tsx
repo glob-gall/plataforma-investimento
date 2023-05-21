@@ -24,8 +24,8 @@ const columns = [
     { id: 'type', label: 'Tipo', minWidth: 24, maxWidth: 24, align: 'left' },
     { id: 'date', label: 'Data', minWidth: 24, align: 'left', format: (value: string) => formatDatetimeToDateString(value) || '-' },
     { id: 'description', label: `Descrição`, minWidth: 24, format: (value: string) => value || '-'},
-    { id: 'category', label: 'Categoria', minWidth: 24, format: (value: string) => value || '-' },
-    { id: 'source', label: 'Conta', minWidth: 24, format: (value: string) => value || '-'},
+    { id: 'categoria', label: 'Categoria', minWidth: 24, format: (value: string) => value || '-' },
+    { id: 'conta', label: 'Conta', minWidth: 24, format: (value: string) => value || '-'},
     {
         id: 'value',
         label: 'Valor',
