@@ -176,4 +176,13 @@ def movimentacoes_saldos_by_categoria(request):
 @api_view(['GET'])
 def movimentacoes_categorias(request):
   categorias = Movimentacoes.Categoria.choices
-  return Response(categorias)
+  
+  formatedCategorias=[]
+  for c in categorias:
+    formated = {
+      'key':c[0],
+      'label':c[1]
+    }
+    formatedCategorias.append(formated)
+  
+  return Response(formatedCategorias)
