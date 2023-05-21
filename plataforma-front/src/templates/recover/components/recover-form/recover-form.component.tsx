@@ -4,6 +4,7 @@ import React from "react";
 import {RecoverFormProps} from "@templates/recover/components/recover-form/recover-form.types";
 import {useForm} from "react-hook-form";
 import {RecoverFormData} from "@templates/recover/recover.types";
+import {Typography} from '@mui/material'
 
 
 const RecoverForm: React.FC<RecoverFormProps> = ({ onSubmit, loading }) => {
@@ -11,6 +12,8 @@ const RecoverForm: React.FC<RecoverFormProps> = ({ onSubmit, loading }) => {
 
     return(
         <Box component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={handleSubmit(onSubmit)}>
+            {/* <Typography variant="h5" textAlign="center">Vamos recuperar sua senha!</Typography> */}
+            <Typography variant="subtitle1" textAlign="center" mt={2}>Siga as instruções enviadas no endereço de e-mail cadastrado e altere a sua senha.</Typography>
             <TextField
                 margin="normal"
                 required

@@ -50,11 +50,12 @@ const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
               <Typography>
                 Chegou a hora de organizar suas finanças em um só lugar.
               </Typography>
-              {user && !user.is_email_verified ? (
+              <RecoverForm onSubmit={actions.submit} loading={loading} />
+              {/* {user && !user.is_email_verified ? ( // São dois formulários : um para passar o email que o código ( ou link ) será enviado e outro para mudar a senha 
                 <ConfirmEmail />
               ) : (
                 <RecoverForm onSubmit={actions.submit} loading={loading} />
-              )}
+              )} */}
               {/* <Snackbar
                 open={showError}
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
