@@ -5,6 +5,7 @@ import * as TemplateContainer from './recover.container'
 import * as Styles from './recover.styles'
 import RecoverForm from '@templates/recover/components/recover-form/recover-form.component'
 import ConfirmEmail from '@templates/recover/components/confirm-email/confirm-email.component'
+import NewPasswordForm from '@templates/recover/components/new-password-form/new-password-form.component'
 import { useAuth } from '@hooks/auth/use-auth.hook'
 
 const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
@@ -33,7 +34,7 @@ const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
           <Grid item xs px={3} py={5}>
             <Box
               sx={{
-                marginTop: 8,
+                marginTop: 2,
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -48,8 +49,9 @@ const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
                 Oink!
               </Typography>
               <Typography>
-                Chegou a hora de organizar suas finanças em um só lugar.
+                Vamos te ajudar a recuperar a sua senha.
               </Typography>
+              {/* <NewPasswordForm onSubmit={actions.submit} loading={loading} /> */}
               <RecoverForm onSubmit={actions.submit} loading={loading} />
               {/* {user && !user.is_email_verified ? ( // São dois formulários : um para passar o email que o código ( ou link ) será enviado e outro para mudar a senha 
                 <ConfirmEmail />

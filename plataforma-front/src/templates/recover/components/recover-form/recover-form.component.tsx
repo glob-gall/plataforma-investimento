@@ -43,7 +43,7 @@ const RecoverForm: React.FC<RecoverFormProps> = ({ onSubmit, loading }) => {
                 Enviar
             </LoadingButton>
             <Grid item xs>
-                <Link href="#/login" variant="body2">
+                <Link href="/login" variant="body2">
                     Voltar ao Login
                 </Link>
             </Grid>
