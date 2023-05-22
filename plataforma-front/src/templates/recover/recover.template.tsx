@@ -9,7 +9,7 @@ import NewPasswordForm from '@templates/recover/components/new-password-form/new
 import { useAuth } from '@hooks/auth/use-auth.hook'
 
 const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
-  const { user } = useAuth()
+  //const { user } = useAuth()
 
   return (
     <TemplateContainer.RecoverContainer>
@@ -51,8 +51,8 @@ const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
               <Typography>
                 Vamos te ajudar a recuperar a sua senha.
               </Typography>
-              {/* <NewPasswordForm onSubmit={actions.submit} loading={loading} /> */}
-              <RecoverForm onSubmit={actions.submit} loading={loading} />
+              <NewPasswordForm onSubmit={actions.submit} loading={loading} />
+              {/* <RecoverForm onSubmit={actions.submit} loading={loading} /> */}
               {/* {user && !user.is_email_verified ? ( // São dois formulários : um para passar o email que o código ( ou link ) será enviado e outro para mudar a senha 
                 <ConfirmEmail />
               ) : (

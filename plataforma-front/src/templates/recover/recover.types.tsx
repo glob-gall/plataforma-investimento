@@ -12,6 +12,8 @@ export interface RecoverTemplateProps {
 
 export interface RecoverFormData {
     email: string;
+}
+export interface NewPasswordFormData {
     password: string;
     password_confirmation: string;
 }
