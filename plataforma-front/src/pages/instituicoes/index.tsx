@@ -26,12 +26,13 @@ const InstituicoesPage: NextPage<{ instituicoes: InstituicoesInterface[] }> = (p
 
 export default InstituicoesPage;
 
-export const getServerSideProps: GetServerSideProps = withAuthSSR(async (ctx) => {
-    const { [TOKEN_KEY]: token } = parseCookies(ctx);
+export const getServerSideProps: GetServerSideProps = withAuthSSR(async ({ user, context}) => {
+    const { [TOKEN_KEY]: token } = parseCookies(context);
     const instituicoesService = new InstituicoesService(api(token));
     const { data: instituicoes } = await instituicoesService.get();
     return {
         props: {
+            user,
             instituicoes
         }
     }

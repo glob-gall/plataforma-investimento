@@ -21,12 +21,13 @@ const MovimentacoesPage = (props) => {
 
 export default MovimentacoesPage;
 
-export const getServerSideProps = withAuthSSR(async (ctx) => {
-    const { [TOKEN_KEY]: token } = parseCookies(ctx);
+export const getServerSideProps = withAuthSSR(async ({ user, context }) => {
+    const { [TOKEN_KEY]: token } = parseCookies(context);
     const instituicoesService = new InstituicoesService(api(token));
     const { data: accounts } = await instituicoesService.getAddedToUser();
     return {
         props: {
+            user,
             accounts
         }
     }

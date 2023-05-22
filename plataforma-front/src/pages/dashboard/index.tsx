@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import { USER_KEY } from "@/constants/constants";
 import { parseCookies } from "nookies";
 import { User } from "@/contexts/auth/auth.types";
+import { withAuthSSR } from "@/hocs/withAuthSSR";
 
 
 const DashboardPage: NextPage<{ user?: User }> = () => {
@@ -21,12 +22,11 @@ const DashboardPage: NextPage<{ user?: User }> = () => {
 
 export default DashboardPage;
 
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-    const { [USER_KEY]: user } = parseCookies(ctx);
+export const getServerSideProps = withAuthSSR(async ({ user }) => {
 
     return {
         props: {
-          user: user ? JSON.parse(user) : null
+            user
         }
     }
-}
+})
