@@ -154,12 +154,11 @@ def movimentacoes_saldos_by_categoria(request):
   if not findedUser:
     return ResponseError('O usuário precia estar logado.')
   
-  Movimentacoes.objects.filter(usuario__id = payload['id'])
   categorias = Movimentacoes.Categoria.choices
   
   saldoCategorias=[]
   for categoria in categorias:
-    movimentacoesCategoria = Movimentacoes.objects.filter(categoria=categoria[0])
+    movimentacoesCategoria = Movimentacoes.objects.filter(categoria=categoria[0],usuario=payload['id'])
     saldo=0
     for movimentacao in movimentacoesCategoria:
       saldo+= movimentacao.value
