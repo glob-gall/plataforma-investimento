@@ -5,11 +5,10 @@ from rest_framework import status
 
 
 from usuarios.contas.models import Contas
-from usuarios.contas.serializers import ContasSerializer
 
 from usuarios.models import Usuario
 from .models import Movimentacoes
-from .serializers import MovimentacoesSerializer
+from .serializers import MovimentacoesSerializer,MovimentacoesContasSerializer
 from usuarios.models import Usuario
 
 from utils.errors import formatErrors,ResponseError
@@ -27,7 +26,7 @@ def get_movimentacoes_by_usuario(request):
     if orderby:
       queryset=queryset.order_by(orderby)
       
-    serializer = MovimentacoesSerializer(queryset,many=True)    
+    serializer = MovimentacoesContasSerializer(queryset,many=True)    
     return Response(serializer.data)
 
 
