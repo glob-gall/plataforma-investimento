@@ -15,3 +15,16 @@ class MovimentacoesSerializer(serializers.ModelSerializer):
       'conta',
       'categoria'
     ]
+class MovimentacoesContasSerializer(serializers.ModelSerializer):
+  conta = ContasSerializer(many=False, read_only=True)
+  class Meta:
+    model = Movimentacoes
+    fields = [
+      'id',
+      'description',
+      'date',
+      'value',
+      'usuario',
+      'conta',
+      'categoria'
+    ]

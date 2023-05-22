@@ -9,10 +9,13 @@ export const ErrorHandlerProvider: React.FC<ProviderProps> = ({ children }) => {
 
   function handleSetErrors(err:any){
     console.log(err?.response);
-    if(!err?.response?.data) return
+    if(!err?.response?.data?.errors){
+      setErrors(state => ({errors:[...state.errors,{message:'Ocorreu um erro inesperado! :('}]}))
+    }else{
+      const error:Error = err.response.data
+      setErrors(state => ({errors:[...error.errors,...state.errors]}))
+    }
 
-    const error:Error = err.response.data
-    setErrors(state => ({errors:[...error.errors,...state.errors]}))
   }
   function clearErrors(index:number){
     console.log(index);
