@@ -1,10 +1,14 @@
 import {AxiosInstance} from "axios";
 import defaultApi from "@config/api.config";
+import { MovimentacoesInterface, SaldoConta, Saldos } from "./movimentacoes.interface";
 import {
-    InstituicoesFormData
-} from "@templates/instituicoes/components/instituicoes-form-modal/instituicoes-form-modal.types";
+    MovimentacoesFormData
+} from "@templates/movimentacoes/components/movimentacoes-form-modal/movimentacoes-form-modal.types";
+// import {
+//     InstituicoesFormData
+// } from "@templates/instituicoes/components/instituicoes-form-modal/instituicoes-form-modal.types";
 
-export class InstituicoesService {
+export class MovimentacoesService {
 
     private _api: AxiosInstance;
 
@@ -12,24 +16,26 @@ export class InstituicoesService {
         this._api = api;
     }
 
-    async getAddedToUser(){
-        return this._api.get('/usuario/contas');
+    async create(data: MovimentacoesFormData){
+        return this._api.post('/movimentacao/', data);
     }
 
-    async addToUser(data: InstituicoesFormData){
-        return this._api.post('/usuario/contas/', data);
+    async update(id: number, data: MovimentacoesFormData){
+        return this._api.put(`/movimentacao/${id}/`, data);
     }
 
-    async updateToUser(id: number, data: InstituicoesFormData){
-        return this._api.put(`/usuario/contas/${id}/`, data);
+    async delete(id: number){
+        return this._api.delete(`/movimentacao/${id}/`);
     }
 
-    async deleteToUser(id: number){
-        return this._api.delete(`/usuario/contas/${id}/`);
+    async get():Promise<{data:MovimentacoesInterface[]}>{
+        return this._api.get('/movimentacao');
     }
-
-    async get(){
-        return this._api.get('/instituicoes');
+    async getSaldo():Promise<{data:Saldos}>{
+        return this._api.get('/movimentacao/saldos/');
+    }
+    async getDistricuicaoSaldo():Promise<{data:SaldoConta[]}>{
+        return this._api.get('/movimentacao/saldos/distribuicao-saldo/');
     }
 
 }
