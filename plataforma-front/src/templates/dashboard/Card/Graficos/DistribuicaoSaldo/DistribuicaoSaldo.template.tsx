@@ -34,11 +34,12 @@ function DistribuicaoSaldo() {
   },[movimentacoesService])
 
   if(loading) return (
-    <Skeleton variant="circular" width={600} height={600} />
+    <Skeleton variant="circular" width={500} height={500} />
   )
   return (
     <Styled.Container>
       <VictoryPie
+        width={760}
         colorScale='qualitative'
         data={saldos}
         x="conta"
