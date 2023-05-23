@@ -27,7 +27,7 @@ export const RecoverContainer = (props: ContainerWithProps<RecoverContainerArgs>
         const { email } = data;
         setLoading(true);
         try{
-            //await actions?.recover(email);
+            await actions?.recover(email);
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore

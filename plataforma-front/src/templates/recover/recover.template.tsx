@@ -9,7 +9,7 @@ import NewPasswordForm from '@templates/recover/components/new-password-form/new
 import { useAuth } from '@hooks/auth/use-auth.hook'
 
 const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
-  //const { user } = useAuth()
+  const { user } = useAuth()
 
   return (
     <TemplateContainer.RecoverContainer>

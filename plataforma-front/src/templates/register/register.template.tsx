@@ -1,18 +1,10 @@
 import React from 'react'
 import {RegisterFormData, RegisterTemplateProps} from './register.types'
-import {
-    Box,
-    Grid,
-    TextField,
-    Typography,
-    Link,
-} from '@mui/material'
+import RegisterForm from '@templates/register/register-form/register-form.component'
+import {Grid} from '@mui/material'
 import * as TemplateContainer from './register.container';
 import * as Styles from './register.styles';
-import {LoadingButton} from "@mui/lab";
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import {Controller, useForm} from "react-hook-form";
+import {useForm} from "react-hook-form";
 
 const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
 
@@ -34,7 +26,10 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                         >
                             <source src={actions.randomBackground()} type="video/mp4"/>
                         </Styles.VideoContainer>
-                    <Grid item xs px={3} py={5} >
+
+                        <RegisterForm onSubmit={actions.submit} loading={loading} />
+
+                    {/* <Grid item xs px={3} py={5} >
                         <Box
                             sx={{
                                 marginTop: 8,
@@ -229,7 +224,8 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = () => {
                                 </Link>
                             </Box>
                         </Box>
-                    </Grid>
+                    </Grid> */}
+
                 </Grid>
             )}
         </TemplateContainer.RegisterContainer>
