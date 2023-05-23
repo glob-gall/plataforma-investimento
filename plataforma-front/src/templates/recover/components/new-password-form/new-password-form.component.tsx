@@ -1,12 +1,12 @@
 import { Box, Grid, Link, TextField } from '@mui/material'
 import { LoadingButton } from '@mui/lab'
 import React from 'react'
-import { RecoverFormProps } from '@templates/recover/components/new-password-form/new-password-form.types'
+import { NewPasswordFormProps } from '@templates/recover/components/new-password-form/new-password-form.types'
 import { useForm } from 'react-hook-form'
 import { NewPasswordFormData } from '@templates/recover/recover.types'
 import { Typography } from '@mui/material'
 
-const NewPasswordForm: React.FC<RecoverFormProps> = ({ onSubmit, loading }) => {
+const NewPasswordForm: React.FC<NewPasswordFormProps> = ({ onSubmit, loading }) => {
   const {
     register,
     handleSubmit,
