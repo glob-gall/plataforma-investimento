@@ -9,11 +9,28 @@ import {
   TableHead,
   TablePagination,
   TableRow,
+  TextField,
   Tooltip,
   Typography,
 } from '@mui/material'
-import { Add, Delete, Payments } from '@mui/icons-material'
-import React from 'react'
+import {
+  Add,
+  Checkroom,
+  CreditCard,
+  Delete,
+  DirectionsCar,
+  Fastfood,
+  Flight,
+  House,
+  Kayaking,
+  LocalHospital,
+  MenuBook,
+  MoreHoriz,
+  Payments,
+  Search,
+  Work,
+} from '@mui/icons-material'
+import React, { ReactElement } from 'react'
 import * as Containers from './movimentacoes.container'
 import MovimentacoesFormModal from '@templates/movimentacoes/components/movimentacoes-form-modal/movimentacoes-form-modal.component'
 import DeleteDialog from '@organisms/dialogs/delete-dialog/delete-dialog.component'
@@ -39,7 +56,7 @@ const columns = [
     id: 'categoria',
     label: 'Categoria',
     minWidth: 24,
-    format: (value: string) => value || '-',
+    format: (value: string) => renderCategoryIcon(value) || '-',
   },
   {
     id: 'conta',
@@ -66,6 +83,29 @@ const columns = [
   },
 ]
 
+const renderCategoryIcon = (type: string) => {
+  return (
+    <Tooltip title={type}>
+      {({
+        OUTROS: <MoreHoriz color="primary" />,
+        CONTAS: <CreditCard color="primary" />,
+        COMIDA: <Fastfood color="primary" />,
+        ALUGUEL: <House color="primary" />,
+        ESTUDOS: <MenuBook color="primary" />,
+        ROUPAS: <Checkroom color="primary" />,
+        CASA: <House color="primary" />,
+        MEDICO: <LocalHospital color="primary" />,
+        ENTRETENIMENTO: <Kayaking color="primary" />,
+        SALARIO: <Payments color="primary" />,
+        TRABALHO: <Work color="primary" />,
+        TRANSPORTE: <DirectionsCar color="primary" />,
+        CLIENTE: <Payments color="primary" />,
+        VIAGEM: <Flight color="primary" />,
+      }[type] as ReactElement) || null}
+    </Tooltip>
+  )
+}
+
 const MovimentacoesTemplate = (props) => {
   return (
     <Containers.MovimentacoesContainer {...props}>
@@ -80,25 +120,40 @@ const MovimentacoesTemplate = (props) => {
       }) => (
         <>
           <Box flex={1}>
-            <Box>
-              <Typography variant="h5" gutterBottom>
-                Movimentações
-              </Typography>
-              <Typography variant="subtitle1" gutterBottom>
-                Aqui você consegue visualizar todas as movimentações de sua
-                conta
-              </Typography>
-              <Button
-                variant="outlined"
-                startIcon={<Add />}
-                onClick={() => {
-                  actions.setFormData(null)
-                  actions.setFormOpen(true)
-                }}
-              >
-                Adicionar movimentação
-              </Button>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <Box>
+                <Typography variant="h5" gutterBottom>
+                  Movimentações
+                </Typography>
+                <Typography variant="subtitle1" gutterBottom>
+                  Aqui você consegue visualizar todas as movimentações de sua
+                  conta
+                </Typography>
+                <Button
+                  variant="outlined"
+                  startIcon={<Add />}
+                  onClick={() => {
+                    actions.setFormData(null)
+                    actions.setFormOpen(true)
+                  }}
+                >
+                  Adicionar movimentação
+                </Button>
+              </Box>
+              <Box mr={8}>
+                <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                  <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                  <TextField label="Buscar movimentação" variant="standard" />
+                </Box>
+              </Box>
             </Box>
+
             <Box flex={1}>
               <TableContainer sx={{ width: '100%' }}>
                 <Table stickyHeader aria-label="sticky table">
@@ -183,9 +238,12 @@ const MovimentacoesTemplate = (props) => {
               <TablePagination
                 rowsPerPageOptions={[10, 25, 100]}
                 labelRowsPerPage={'Movimentações por página'}
+                labelDisplayedRows={({ from, to, count }) =>
+                  `${from}-${to} de ${count}`
+                }
                 component="div"
                 count={movimentacoes.length}
-                rowsPerPage={1}
+                rowsPerPage={10}
                 page={1}
                 onPageChange={() => null}
                 onRowsPerPageChange={() => null}
