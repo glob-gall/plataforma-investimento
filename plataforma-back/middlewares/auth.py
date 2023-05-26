@@ -7,10 +7,14 @@ from rest_framework.exceptions import AuthenticationFailed
 class AuthMiddleware(MiddlewareMixin):    
 
     __HEADER__ = 'HTTP_AUTHORIZATION'
-    __OPEN_URIS__ = [('POST','/api/usuario/resetpassword/'),('POST', '/api/login/'), ('POST', '/api/register/'), ('GET', '/swagger/')]
+    __OPEN_URIS__ = [('POST', '/api/login/'), ('POST', '/api/register/'), ('GET', '/swagger/')]
+    __OPEN_URIS_WITH_PARAMS_ = ['/confirmar_conta','/api/usuario/resetpassword/']
 
     @staticmethod
     def __is_open(method, uri):
+        for open in AuthMiddleware.__OPEN_URIS_WITH_PARAMS_:
+            if open in uri:
+                return True
         return (method, uri,) in AuthMiddleware.__OPEN_URIS__
 
     def process_view(_, request, *args):
