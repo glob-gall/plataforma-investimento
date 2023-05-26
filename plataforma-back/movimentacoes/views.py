@@ -69,6 +69,18 @@ def editar_movimentacao(request,pk,format=None):
   movimentacao = Movimentacoes.objects.filter(id=pk).first()
 
   data={}
+  findedAccount = None
+  contaId = request.data.get('conta')
+  if(contaId):
+    data['conta'] =contaId
+    findedAccount = Contas.objects.filter(id =contaId).first()
+    if not findedAccount:
+      return ResponseError('A conta informada não pertence ao usuário logado.')
+    if findedUser.pk != findedAccount.usuario.pk:
+      return ResponseError('A conta informada não pertence ao usuário logado.')
+  else:
+    data['conta'] = movimentacao.conta.pk
+
   try:
     data['description'] = request.data['description'] 
   except:
@@ -81,10 +93,6 @@ def editar_movimentacao(request,pk,format=None):
     data['value'] = request.data['value'] 
   except:
     data['value'] = movimentacao.value
-  try:
-    data['conta'] = request.data['conta'] 
-  except:
-    data['conta'] = movimentacao.conta.pk
   try:
     data['categoria'] = request.data['categoria'] 
   except:
