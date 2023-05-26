@@ -60,6 +60,44 @@ def register_movimentacao(request):
   
   return Response(serializer.data)
 
+def editar_movimentacao(request,pk,format=None):
+  payload = request.auth_payload
+  findedUser = Usuario.objects.filter(id = payload['id']).first()
+  if not findedUser:
+    return ResponseError('O usuário precia estar logado.')
+  
+  movimentacao = Movimentacoes.objects.filter(id=pk).first()
+
+  data={}
+  try:
+    data['description'] = request.data['description'] 
+  except:
+    data['description'] = movimentacao.description
+  try:
+    data['date'] = request.data['date'] 
+  except:
+    data['date'] = movimentacao.date
+  try:
+    data['value'] = request.data['value'] 
+  except:
+    data['value'] = movimentacao.value
+  try:
+    data['conta'] = request.data['conta'] 
+  except:
+    data['conta'] = movimentacao.conta.pk
+  try:
+    data['categoria'] = request.data['categoria'] 
+  except:
+    data['categoria'] = movimentacao.categoria
+
+  data['usuario'] = movimentacao.usuario.pk
+  serializer = MovimentacoesSerializer(movimentacao, data=data)
+
+  if serializer.is_valid():
+    serializer.save()
+    return Response(serializer.data)
+  return Response(formatErrors(serializer.errors),status=status.HTTP_400_BAD_REQUEST)
+
 
 def delete(request,pk, format=None):
     payload = request.auth_payload
@@ -82,10 +120,12 @@ def movimentacoes_view(request):
     return get_movimentacoes_by_usuario(request)
     
     
-@api_view(['DELETE'])
-def movimentacoes_delete(request,pk):
+@api_view(['DELETE','PUT'])
+def movimentacoes_edit_delete(request,pk):
   if request.method == 'DELETE':
     return delete(request,pk)
+  if request.method == 'PUT':
+    return editar_movimentacao(request,pk)
 
 
 @api_view(['GET'])
