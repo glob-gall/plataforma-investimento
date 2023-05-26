@@ -1,5 +1,6 @@
 export interface RecoverContainerArgs{
     loading: boolean;
+    submitted:boolean;
     actions: {
         submit: (data: RecoverFormData) => void;
         randomBackground: () => string;

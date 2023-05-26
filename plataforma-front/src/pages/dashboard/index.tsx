@@ -14,7 +14,7 @@ const DashboardPage: NextPage<{ user?: User }> = () => {
         <Box sx={{ display: 'flex', mt: 16, ml: 4, width: "100%" }}>
             <MainHeaderComponent/>
             <MainDrawerComponent/>
-            <DashboardTemplate/>
+            {/* <DashboardTemplate/> */}
         </Box>
     )
 }

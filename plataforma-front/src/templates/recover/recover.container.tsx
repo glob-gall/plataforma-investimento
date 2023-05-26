@@ -3,15 +3,16 @@ import {RecoverContainerArgs, RecoverFormData} from "@/templates/recover/recover
 import React from "react";
 import {useAuth} from "@hooks/auth/use-auth.hook";
 import { useErrorHandler } from "@/hooks/errorHandler/use-errorHandler.hook";
+import { UserService } from "@/services/user/user.service";
 
 
 export const RecoverContainer = (props: ContainerWithProps<RecoverContainerArgs>) => {
 
     const [loading, setLoading] = React.useState<boolean>(false)
     const {handleSetErrors} = useErrorHandler()
+    const [submitted, setSubmitted]= React.useState<boolean>(false)
 
-    const { actions } = useAuth();
-
+    const userService = new UserService();
     const randomBackground = () => {
         const backgrounds = [
             '/assets/video/home/home.mp4',
@@ -27,7 +28,8 @@ export const RecoverContainer = (props: ContainerWithProps<RecoverContainerArgs>
         const { email } = data;
         setLoading(true);
         try{
-            await actions?.recover(email);
+            await userService.recoverPassword(email);
+            setSubmitted(true)
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
@@ -39,6 +41,7 @@ export const RecoverContainer = (props: ContainerWithProps<RecoverContainerArgs>
 
     return props.children({
         loading,
+        submitted,
         actions: {
             submit,
             randomBackground
