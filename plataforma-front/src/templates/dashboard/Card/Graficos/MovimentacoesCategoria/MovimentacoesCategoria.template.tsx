@@ -3,7 +3,9 @@ import { MovimentacoesService } from "@/services/movimentacoes/movimentacoes.ser
 import { useEffect, useState } from "react"
 import { VictoryAxis, VictoryBar, VictoryChart } from "victory"
 import * as Styled from './MovimentacoesCategoria.styles'
-import { Skeleton } from "@mui/material"
+import { Divider, List, ListItem, ListItemIcon, ListItemText, Skeleton } from "@mui/material"
+import Empty from "@/components/organisms/Empty/empty.component"
+import { Payments } from "@mui/icons-material"
 
 
 function MovimentacoesCategoria() {
@@ -34,11 +36,19 @@ function MovimentacoesCategoria() {
   if(loading) return (
     <Skeleton variant="circular" width={'90%'} height={'90%'} />
   )
+  if(saldos.length===0) return (
+    <Empty text="Você ainda não tem nenhum saldo!"/>
+   )
+
   return (
     <Styled.Container>
 
-        <VictoryChart domainPadding={10}>
-          <VictoryBar name="Bar-1"
+        <VictoryChart 
+          domainPadding={10}
+          width={760}
+        >
+          <VictoryBar 
+            name="Bar-1"
             style={{ data: { fill: "grey"} }}
             labels={({datum}) => `R$ ${Math.abs(datum.saldo).toFixed(2)}`}
             data={saldos}
@@ -48,6 +58,22 @@ function MovimentacoesCategoria() {
           <VictoryAxis crossAxis={false}/>
         </VictoryChart>
 
+        <List dense={false}>
+        {saldos.map(saldo => (
+          <>
+            <Divider />
+              <ListItem>
+                <ListItemIcon>
+                  <Payments />
+                </ListItemIcon>
+                <ListItemText
+                  primary={`${saldo.categoria} - R$ ${saldo.saldo.toFixed(2)}`}
+                />
+              </ListItem>
+          </>
+        ))}
+        <Divider />
+      </List>
     </Styled.Container>
   )
 }
