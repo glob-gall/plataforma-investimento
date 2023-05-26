@@ -138,8 +138,6 @@ def reset_password_request(request):
         email = data.get('email')
         objeto_token = get_object_or_404(Usuario,email=email)
         usuario = objeto_token 
-        # usuario = Usuario.objects.get(email=email)
-        print(usuario )
         if usuario:
           try:
             enviar_email_recuperacao_senha(usuario,email)
@@ -161,7 +159,7 @@ def reset_password_confirm(request):
             usuario = objeto_code.usuario
             if usuario:
                 # Atualizar a senha do usuário
-                print(usuario.password)
+                password = hashlib.sha256(password.encode('utf-8')).hexdigest()
                 usuario.password = password
                 usuario.save()
                 return HttpResponse("Senha alterada com sucesso")

@@ -36,9 +36,7 @@ def enviar_email_recuperacao_senha(usuario,email):
         remetente = settings.EMAIL_HOST_USER
         destinatrio = [email]
         usuario_objeto = Usuario.objects.get(email = usuario.email)
-        print("Antes do reset")
         ResetPasswordCode.objects.create(usuario = usuario_objeto, resetPasswordCode = tokenCreate)
-        print("Apos o reset")
         send_mail(assunto, mensagem, remetente, destinatrio)
     except Exception as e: 
         print(str(e))
