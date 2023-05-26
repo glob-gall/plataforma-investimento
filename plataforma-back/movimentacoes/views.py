@@ -19,12 +19,15 @@ def get_movimentacoes_by_usuario(request):
 
     dates = request.query_params.get('range')
     orderby = request.query_params.get('orderby')
+    description = request.query_params.get('description')
 
     if dates:
       [dateMin,dateMax] = dates.split(',')
       queryset=queryset.filter(date__range=[dateMin, dateMax])
     if orderby:
       queryset=queryset.order_by(orderby)
+    if description:
+      queryset=queryset.filter(description__contains=description)
       
     serializer = MovimentacoesContasSerializer(queryset,many=True)    
     return Response(serializer.data)
