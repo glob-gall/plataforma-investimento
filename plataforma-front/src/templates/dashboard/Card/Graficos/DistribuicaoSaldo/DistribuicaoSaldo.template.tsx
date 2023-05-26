@@ -23,7 +23,7 @@ function DistribuicaoSaldo() {
         const {data} = await movimentacoesService.getDistricuicaoSaldo()
         const newSaldos = data.map(({conta,saldo}) => ({
           saldo,
-          conta: `${conta} - R$ ${saldo}`
+          conta: `${conta} - R$ ${saldo.toFixed(2)}`
         })).filter(s => s.saldo > 0)
 
         setSaldos(newSaldos)
