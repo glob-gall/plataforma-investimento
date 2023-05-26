@@ -3,7 +3,9 @@ import { MovimentacoesService } from "@/services/movimentacoes/movimentacoes.ser
 import { useEffect, useState } from "react"
 import { VictoryPie } from "victory"
 import * as Styled from './DistribuicaoSaldo.styles'
-import { Skeleton } from "@mui/material"
+import { Divider, List, ListItem, ListItemIcon, ListItemText, Skeleton } from "@mui/material"
+import Empty from "@/components/organisms/Empty/empty.component"
+import { Payments } from "@mui/icons-material"
 
 function DistribuicaoSaldo() {
   let movimentacoesService:Nullable<MovimentacoesService> = null
@@ -36,6 +38,10 @@ function DistribuicaoSaldo() {
   if(loading) return (
     <Skeleton variant="circular" width={500} height={500} />
   )
+  if(saldos.length===0) return (
+   <Empty text="Você ainda não tem nenhum saldo!"/>
+  )
+  
   return (
     <Styled.Container>
       <VictoryPie
@@ -45,6 +51,23 @@ function DistribuicaoSaldo() {
         x="conta"
         y="saldo"
       />
+      
+      <List dense={false}>
+        {saldos.map(saldo => (
+          <>
+            <Divider />
+              <ListItem>
+                <ListItemIcon>
+                  <Payments />
+                </ListItemIcon>
+                <ListItemText
+                  primary={`${saldo.conta}`}
+                />
+              </ListItem>
+          </>
+        ))}
+        <Divider />
+      </List>
     </Styled.Container>
   )
 }
