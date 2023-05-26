@@ -12,7 +12,7 @@ const RecoverForm: React.FC<RecoverFormProps> = ({ onSubmit, loading }) => {
 
     return(
         <Box component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={handleSubmit(onSubmit)}>
-            <Typography variant="subtitle1" textAlign="center" mt={2}>Siga as instruções enviadas no endereço de e-mail cadastrado e altere a sua senha.</Typography>
+            <Typography variant="subtitle1" textAlign="center" mt={2}>Digite seu email cadastrado.</Typography>
             <TextField
                 margin="normal"
                 required

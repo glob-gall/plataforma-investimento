@@ -1,18 +1,19 @@
 import React from 'react'
 import { RecoverTemplateProps } from './recover.types'
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Grid, Link, Typography } from '@mui/material'
 import * as TemplateContainer from './recover.container'
 import * as Styles from './recover.styles'
 import RecoverForm from '@templates/recover/components/recover-form/recover-form.component'
-import ConfirmEmail from '@templates/recover/components/confirm-email/confirm-email.component'
 import NewPasswordForm from '@templates/recover/components/new-password-form/new-password-form.component'
-import { useAuth } from '@hooks/auth/use-auth.hook'
+import { useRouter } from 'next/router'
 
 const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
-
+  const router = useRouter()
+  console.log(router.query)
+  const { token } = router.query
   return (
     <TemplateContainer.RecoverContainer>
-      {({ loading,submitted, actions }) => (
+      {({ loading, submitted, actions }) => (
         <Grid
           container
           component="main"
@@ -33,7 +34,7 @@ const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
           <Grid item xs px={3} py={5}>
             <Box
               sx={{
-                marginTop: 2,
+                marginTop: 5,
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -47,31 +48,25 @@ const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
               <Typography component="h1" variant="h5">
                 Oink!
               </Typography>
-              <Typography>
-                Vamos te ajudar a recuperar a sua senha.
-              </Typography>
-
-              {submitted ? (
-              <Typography>
-              informações no email
-              </Typography>) :
-              <RecoverForm onSubmit={actions.submit} loading={loading} />
-              }
+              <Typography>Vamos te ajudar a recuperar a sua senha.</Typography>
               
-              {/* <NewPasswordForm onSubmit={actions.submit} loading={loading} /> */}
-              {/* {user && !user.is_email_verified ? ( // São dois formulários : um para passar o email que o código ( ou link ) será enviado e outro para mudar a senha 
-                <ConfirmEmail />
+              <Box mt={6}>
+              {token ? (
+              <NewPasswordForm onSubmit={actions.submitRecover} loading={loading} /> ) : 
+              
+              submitted ? (
+                <Typography>Tudo certo! Siga as instruções enviadas no seu email para recuperar sua senha.</Typography>
               ) : (
-                <RecoverForm onSubmit={actions.submit} loading={loading} />
-              )} */}
-              {/* <Snackbar
-                open={showError}
-                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-                autoHideDuration={3000}
-                onClose={actions.hideErrors}
-              >
-                <Alert severity="error">{error}</Alert>
-              </Snackbar> */}
+                <RecoverForm onSubmit={actions.submitMail} loading={loading} />
+              )}
+
+              </Box>
+
+              <Box mt={12}>
+                <Link href="/Login" variant="body2">
+                  {"Voltar ao Login."}
+                </Link>
+              </Box>
             </Box>
           </Grid>
         </Grid>

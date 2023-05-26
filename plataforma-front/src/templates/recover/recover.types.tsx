@@ -2,7 +2,8 @@ export interface RecoverContainerArgs{
     loading: boolean;
     submitted:boolean;
     actions: {
-        submit: (data: RecoverFormData) => void;
+        submitMail: (data: RecoverFormData) => void;
+        submitRecover:(data:NewPasswordFormData)=> void;
         randomBackground: () => string;
     }
 }
@@ -16,5 +17,6 @@ export interface RecoverFormData {
 }
 export interface NewPasswordFormData {
     password: string;
-    password_confirmation: string;
+    confirm_password: string;
+
 }

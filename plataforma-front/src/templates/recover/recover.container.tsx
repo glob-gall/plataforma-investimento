@@ -1,14 +1,16 @@
 import {ContainerWithProps} from "@/@common/types/container.types";
-import {RecoverContainerArgs, RecoverFormData} from "@/templates/recover/recover.types";
+import {NewPasswordFormData, RecoverContainerArgs, RecoverFormData} from "@/templates/recover/recover.types";
 import React from "react";
 import {useAuth} from "@hooks/auth/use-auth.hook";
 import { useErrorHandler } from "@/hooks/errorHandler/use-errorHandler.hook";
 import { UserService } from "@/services/user/user.service";
+import { useRouter } from "next/router";
 
 
 export const RecoverContainer = (props: ContainerWithProps<RecoverContainerArgs>) => {
 
     const [loading, setLoading] = React.useState<boolean>(false)
+    const router = useRouter()
     const {handleSetErrors} = useErrorHandler()
     const [submitted, setSubmitted]= React.useState<boolean>(false)
 
@@ -24,7 +26,7 @@ export const RecoverContainer = (props: ContainerWithProps<RecoverContainerArgs>
     }
 
 
-    const submit = async (data: RecoverFormData) => {
+    const submitMail = async (data: RecoverFormData) => {
         const { email } = data;
         setLoading(true);
         try{
@@ -39,11 +41,27 @@ export const RecoverContainer = (props: ContainerWithProps<RecoverContainerArgs>
         }
     }
 
+    const submitRecover = async (data: NewPasswordFormData) => {
+        const {token} = router.query;
+        try{
+            setLoading(true);
+            await userService.recoverPasswordConfirm({...data, code:token})
+            router.replace('/login')
+        }catch(err: unknown){
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            handleSetErrors(err)
+        }finally {
+            setLoading(false);
+        }
+    }
+
     return props.children({
         loading,
         submitted,
         actions: {
-            submit,
+            submitMail,
+            submitRecover,
             randomBackground
         }
     })

@@ -54,10 +54,10 @@ const NewPasswordForm: React.FC<NewPasswordFormProps> = ({ onSubmit, loading }) 
         fullWidth
         label="Confirmação"
         type="password"
-        id="password_confirmation"
-        error={!!errors.password_confirmation}
-        helperText={errors.password_confirmation?.message}
-        {...register('password_confirmation', {
+        id="confirm_password"
+        error={!!errors.confirm_password}
+        helperText={errors.confirm_password?.message}
+        {...register('confirm_password', {
           required: 'Este campo é obrigatório.',
           minLength: {
             value: 6,
