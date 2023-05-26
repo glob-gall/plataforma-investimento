@@ -51,15 +51,14 @@ const RecoverTemplate: React.FC<RecoverTemplateProps> = () => {
               <Typography>Vamos te ajudar a recuperar a sua senha.</Typography>
               
               <Box mt={6}>
-              {token ? (
-              <NewPasswordForm onSubmit={actions.submitRecover} loading={loading} /> ) : 
-              
-              submitted ? (
-                <Typography>Tudo certo! Siga as instruções enviadas no seu email para recuperar sua senha.</Typography>
-              ) : (
-                <RecoverForm onSubmit={actions.submitMail} loading={loading} />
-              )}
-
+                {token ? (
+                <NewPasswordForm onSubmit={actions.submitRecover} loading={loading} /> ) : 
+                
+                submitted ? (
+                  <Typography>Tudo certo! Siga as instruções enviadas no seu email para recuperar sua senha.</Typography>
+                ) : (
+                  <RecoverForm onSubmit={actions.submitMail} loading={loading} />
+                )}
               </Box>
 
               <Box mt={12}>

@@ -11,13 +11,3 @@ const Recover: NextPage<{ user?: User }> = () => {
 }
 
 export default Recover;
-
-// export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-//     const { [USER_KEY]: user } = parseCookies(ctx);
-
-//     return {
-//         props: {
-//           user: user ? JSON.parse(user) : null
-//         }
-//     }
-// }

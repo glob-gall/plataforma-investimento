@@ -24,7 +24,6 @@ const NewPasswordForm: React.FC<NewPasswordFormProps> = ({ onSubmit, loading }) 
       sx={{ mt: 1 }}
       onSubmit={handleSubmit(onSubmit)}
     >
-      {/* <Typography variant="h5" textAlign="center">Vamos recuperar sua senha!</Typography> */}
       <Typography variant="subtitle1" textAlign="center" mt={2}>
         Escolha sua nova senha.
       </Typography>
