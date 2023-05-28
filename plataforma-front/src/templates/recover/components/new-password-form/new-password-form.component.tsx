@@ -6,7 +6,10 @@ import { useForm } from 'react-hook-form'
 import { NewPasswordFormData } from '@templates/recover/recover.types'
 import { Typography } from '@mui/material'
 
-const NewPasswordForm: React.FC<NewPasswordFormProps> = ({ onSubmit, loading }) => {
+const NewPasswordForm: React.FC<NewPasswordFormProps> = ({
+  onSubmit,
+  loading,
+}) => {
   const {
     register,
     handleSubmit,
@@ -27,7 +30,7 @@ const NewPasswordForm: React.FC<NewPasswordFormProps> = ({ onSubmit, loading }) 
       <Typography variant="subtitle1" textAlign="center" mt={2}>
         Escolha sua nova senha.
       </Typography>
-      
+
       <TextField
         margin="normal"
         required
@@ -37,7 +40,6 @@ const NewPasswordForm: React.FC<NewPasswordFormProps> = ({ onSubmit, loading }) 
         id="password"
         error={!!errors.password}
         helperText={errors.password?.message}
-        
         {...register('password', {
           required: 'Este campo é obrigatório.',
           minLength: {
@@ -78,11 +80,6 @@ const NewPasswordForm: React.FC<NewPasswordFormProps> = ({ onSubmit, loading }) 
       >
         Enviar
       </LoadingButton>
-      <Grid item xs>
-        <Link href="/login" variant="body2">
-          Voltar ao Login
-        </Link>
-      </Grid>
     </Box>
   )
 }
