@@ -19,12 +19,15 @@ def get_movimentacoes_by_usuario(request):
 
     dates = request.query_params.get('range')
     orderby = request.query_params.get('orderby')
+    description = request.query_params.get('description')
 
     if dates:
       [dateMin,dateMax] = dates.split(',')
       queryset=queryset.filter(date__range=[dateMin, dateMax])
     if orderby:
       queryset=queryset.order_by(orderby)
+    if description:
+      queryset=queryset.filter(description__contains=description)
       
     serializer = MovimentacoesContasSerializer(queryset,many=True)    
     return Response(serializer.data)
@@ -60,6 +63,52 @@ def register_movimentacao(request):
   
   return Response(serializer.data)
 
+def editar_movimentacao(request,pk,format=None):
+  payload = request.auth_payload
+  findedUser = Usuario.objects.filter(id = payload['id']).first()
+  if not findedUser:
+    return ResponseError('O usuário precia estar logado.')
+  
+  movimentacao = Movimentacoes.objects.filter(id=pk).first()
+
+  data={}
+  findedAccount = None
+  contaId = request.data.get('conta')
+  if(contaId):
+    data['conta'] =contaId
+    findedAccount = Contas.objects.filter(id =contaId).first()
+    if not findedAccount:
+      return ResponseError('A conta informada não pertence ao usuário logado.')
+    if findedUser.pk != findedAccount.usuario.pk:
+      return ResponseError('A conta informada não pertence ao usuário logado.')
+  else:
+    data['conta'] = movimentacao.conta.pk
+
+  try:
+    data['description'] = request.data['description'] 
+  except:
+    data['description'] = movimentacao.description
+  try:
+    data['date'] = request.data['date'] 
+  except:
+    data['date'] = movimentacao.date
+  try:
+    data['value'] = request.data['value'] 
+  except:
+    data['value'] = movimentacao.value
+  try:
+    data['categoria'] = request.data['categoria'] 
+  except:
+    data['categoria'] = movimentacao.categoria
+
+  data['usuario'] = movimentacao.usuario.pk
+  serializer = MovimentacoesSerializer(movimentacao, data=data)
+
+  if serializer.is_valid():
+    serializer.save()
+    return Response(serializer.data)
+  return Response(formatErrors(serializer.errors),status=status.HTTP_400_BAD_REQUEST)
+
 
 def delete(request,pk, format=None):
     payload = request.auth_payload
@@ -82,10 +131,12 @@ def movimentacoes_view(request):
     return get_movimentacoes_by_usuario(request)
     
     
-@api_view(['DELETE'])
-def movimentacoes_delete(request,pk):
+@api_view(['DELETE','PUT'])
+def movimentacoes_edit_delete(request,pk):
   if request.method == 'DELETE':
     return delete(request,pk)
+  if request.method == 'PUT':
+    return editar_movimentacao(request,pk)
 
 
 @api_view(['GET'])
