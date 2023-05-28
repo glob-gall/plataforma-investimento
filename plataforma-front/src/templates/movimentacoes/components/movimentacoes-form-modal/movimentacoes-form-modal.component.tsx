@@ -169,7 +169,7 @@ const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({
                       disableFuture
                       value={field.value}
                       error={!!errors.date}
-                      onChange={(date) => field.onChange(date.$d)}
+                      onChange={(date) => field.onChange(date._d)}
                       helperText={errors.date?.message}
                     />
                   </LocalizationProvider>
