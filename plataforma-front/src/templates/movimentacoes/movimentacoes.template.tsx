@@ -133,12 +133,12 @@ const renderFilterOptions = (props, handleFilters) => {
           </InputLabel>
           <NativeSelect
             name="tipo"
-            defaultValue={'TODOS'}
+            defaultValue={'all'}
             onChange={(ev) => handleFilters(ev.target.value, 'type')}
           >
-            <option value={'TODAS'}>Todas</option>
-            <option value={10}>Entrada</option>
-            <option value={20}>Saída</option>
+            <option value={'all'}>Todas</option>
+            <option value={'ENTRADA'}>Entrada</option>
+            <option value={'SAIDA'}>Saída</option>
           </NativeSelect>
         </FormControl>
       </Box>
@@ -149,10 +149,10 @@ const renderFilterOptions = (props, handleFilters) => {
           </InputLabel>
           <NativeSelect
             name="categoria"
-            defaultValue={'TODAS'}
+            defaultValue={'all'}
             onChange={(ev) => handleFilters(ev.target.value, 'category')}
           >
-            <option value={'TODAS'}>Todas</option>
+            <option value={'all'}>Todas</option>
             {categoriasMOCK.map((category, index) => (
               <option key={`${category.key}-${index}`} value={category.key}>
                 {category.label}
@@ -168,10 +168,10 @@ const renderFilterOptions = (props, handleFilters) => {
           </InputLabel>
           <NativeSelect
             name="conta"
-            defaultValue={'TODAS'}
+            defaultValue="all"
             onChange={(ev) => handleFilters(ev.target.value, 'account')}
           >
-            <option value={'TODAS'}>Todas</option>
+            <option value={'all'}>Todas</option>
             {props.accounts.map((account, index) => (
               <option key={`${account.id}-${index}`} value={account.id}>
                 {account.descricao}
@@ -185,7 +185,10 @@ const renderFilterOptions = (props, handleFilters) => {
         <Typography>Data de início:</Typography>
         <Box sx={{ gap: 2, display: 'flex' }}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker />
+            <DatePicker
+                format={'DD/MM/YYYY'}
+                onChange={(ev) => handleFilters(ev.$d, 'startDate')}
+            />
           </LocalizationProvider>
         </Box>
       </Box>
@@ -194,7 +197,10 @@ const renderFilterOptions = (props, handleFilters) => {
         <Typography>Data de fim:</Typography>
         <Box sx={{ gap: 2, display: 'flex' }}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker />
+            <DatePicker
+                format={'DD/MM/YYYY'}
+                onChange={(ev) => handleFilters(ev.$d, 'endDate')}
+            />
           </LocalizationProvider>
         </Box>
       </Box>
@@ -255,12 +261,12 @@ const MovimentacoesTemplate = (props) => {
                   Adicionar movimentação
                 </Button>
               </Box>
-              {/* <Box mr={8}>
+              <Box mr={8}>
                 <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                   <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                  <TextField label="Buscar movimentação" variant="standard" />
+                  <TextField label="Buscar movimentação" variant="standard" onChange={(ev) => actions.handleFilters(ev.target.value, 'search')}/>
                 </Box>
-              </Box> */}
+              </Box>
             </Box>
 
             <Box mb={2} mt={2} sx={{ boxShadow: 1 }} p={2}>

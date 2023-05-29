@@ -9,20 +9,21 @@ export const ErrorHandlerContext = React.createContext<ErrorHandlerState>(
 export const ErrorHandlerProvider: React.FC<ProviderProps> = ({ children }) => {
   const [error, setErrors] = useState<Error>({ errors: [] })
 
-  function handleSetErrors(err: any) {
-    if (!err?.response?.data) return
-
-    const error: Error = err.response.data
-    const defaultErrors = [{ message: 'Ocorreu um erro inesperado' }]
-    setErrors((state) => ({
-      errors: [...(error?.errors || defaultErrors), ...state.errors],
-    }))
+  function handleSetErrors(err:any){
+    if(!err?.response?.data?.errors){
+      setErrors(state => ({errors:[...state.errors,{message:'Ocorreu um erro inesperado! :('}]}))
+    }else{
+      const error:Error = err.response.data
+      setErrors(state => ({errors:[...error.errors,...state.errors]}))
+    }
+    setTimeout(()=>{
+      clearErrors(error.errors.length-1);
+    }, 3000);
   }
-  function clearErrors(index: number) {
-    console.log(index)
-
-    setErrors((state) => {
-      return { errors: state.errors.filter((m, i) => i != index) }
+  
+  function clearErrors(index:number){
+    setErrors(state =>{
+      return {errors:state.errors.filter((m, i)=> i != index)}
     })
   }
 
