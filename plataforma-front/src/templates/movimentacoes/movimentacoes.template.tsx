@@ -133,12 +133,12 @@ const renderFilterOptions = (props, handleFilters) => {
           </InputLabel>
           <NativeSelect
             name="tipo"
-            defaultValue={'TODOS'}
+            defaultValue={'all'}
             onChange={(ev) => handleFilters(ev.target.value, 'type')}
           >
-            <option value={'TODAS'}>Todas</option>
-            <option value={10}>Entrada</option>
-            <option value={20}>Saída</option>
+            <option value={'all'}>Todas</option>
+            <option value={'ENTRADA'}>Entrada</option>
+            <option value={'SAIDA'}>Saída</option>
           </NativeSelect>
         </FormControl>
       </Box>
@@ -149,10 +149,10 @@ const renderFilterOptions = (props, handleFilters) => {
           </InputLabel>
           <NativeSelect
             name="categoria"
-            defaultValue={'TODAS'}
+            defaultValue={'all'}
             onChange={(ev) => handleFilters(ev.target.value, 'category')}
           >
-            <option value={'TODAS'}>Todas</option>
+            <option value={'all'}>Todas</option>
             {categoriasMOCK.map((category, index) => (
               <option key={`${category.key}-${index}`} value={category.key}>
                 {category.label}
@@ -168,10 +168,10 @@ const renderFilterOptions = (props, handleFilters) => {
           </InputLabel>
           <NativeSelect
             name="conta"
-            defaultValue={'TODAS'}
+            defaultValue="all"
             onChange={(ev) => handleFilters(ev.target.value, 'account')}
           >
-            <option value={'TODAS'}>Todas</option>
+            <option value={'all'}>Todas</option>
             {props.accounts.map((account, index) => (
               <option key={`${account.id}-${index}`} value={account.id}>
                 {account.descricao}
@@ -260,6 +260,12 @@ const MovimentacoesTemplate = (props) => {
                 >
                   Adicionar movimentação
                 </Button>
+              </Box>
+              <Box mr={8}>
+                <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                  <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                  <TextField label="Buscar movimentação" variant="standard" onChange={(ev) => actions.handleFilters(ev.target.value, 'search')}/>
+                </Box>
               </Box>
             </Box>
 

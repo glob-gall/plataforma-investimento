@@ -5,6 +5,7 @@ import { MovimentacoesContainerArgs } from '@templates/movimentacoes/movimentaco
 import React, { useEffect } from 'react'
 import { InstituicoesFormData } from '@templates/instituicoes/components/instituicoes-form-modal/instituicoes-form-modal.types'
 import { MovimentacoesFormData } from '@templates/movimentacoes/components/movimentacoes-form-modal/movimentacoes-form-modal.types'
+import moment from "moment";
 
 export const MovimentacoesContainer = (
   props: ContainerWithProps<MovimentacoesContainerArgs>
@@ -13,11 +14,12 @@ export const MovimentacoesContainer = (
   const [movimentacoes, setMovimentacoes] = React.useState<any[]>([])
   const [formOpen, setFormOpen] = React.useState(false)
   const [filters, setFilters] = React.useState<any>({
-    type: 'all',
-    category: 'all',
-    account: 'all',
-    startDate: null,
-    endDate: null,
+    type: undefined,
+    category: undefined,
+    search: undefined,
+    account: undefined,
+    startDate: undefined,
+    endDate: undefined,
   })
   const [formParams, setFormParams] = React.useState<any>(null)
   const [deleteDialogOpen, setDeleteDialogOpen] = React.useState(false)
@@ -34,6 +36,7 @@ export const MovimentacoesContainer = (
 
 
   useEffect(() => {
+    if(!moment(filters.startDate).isValid() || !moment(filters.endDate).isValid()) return;
     getMovimentacoes()
   },[filters])
 

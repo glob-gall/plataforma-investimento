@@ -37,14 +37,22 @@ export class MovimentacoesService {
     if(filters.startDate && filters.endDate)
       params.append('range', `${moment(filters.startDate).utc().format()},${moment(filters.endDate).utc().format()}`)
 
-    if(filters.category){
+    if(filters.type && filters.type != 'all'){
+      params.append('tipo', filters.type)
+    }
+
+    if(filters.category && filters.category != 'all'){
         params.append('category', `${filters.category}`)
     }
 
-    if(filters.account){
+    if(filters.account && filters.account != 'all'){
         params.append('account', `${filters.account}`)
     }
-    
+
+    if(filters.search){
+      params.append('description', filters.search)
+    }
+
     return this._api.get('/movimentacao', { params })
   }
   async getSaldo(): Promise<{ data: Saldos }> {
