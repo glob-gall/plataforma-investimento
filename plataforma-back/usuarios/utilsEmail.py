@@ -29,8 +29,7 @@ def enviar_email_recuperacao_senha(usuario,email):
         tokenCreate = secrets.token_urlsafe(8)
         assunto = "Recuperação de senha"
         mensagem = f'Olá {usuario.name},\n\n'\
-        f'Aqui está seu código para recuperar sua senha: {tokenCreate}\n\n'\
-        f'Retorne ao site e insira ele.\n\n' \
+        f'Aqui está o link para recuperar sua senha: {settings.FRONT_URL}/recover/{tokenCreate}\n\n'\
         f'Obrigado!!'
 
         remetente = settings.EMAIL_HOST_USER
