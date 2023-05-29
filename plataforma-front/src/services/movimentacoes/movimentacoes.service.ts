@@ -8,6 +8,7 @@ import {
   Saldos,
 } from './movimentacoes.interface'
 import { MovimentacoesFormData } from '@templates/movimentacoes/components/movimentacoes-form-modal/movimentacoes-form-modal.types'
+import moment from "moment";
 // import {
 //     InstituicoesFormData
 // } from "@templates/instituicoes/components/instituicoes-form-modal/instituicoes-form-modal.types";
@@ -31,8 +32,19 @@ export class MovimentacoesService {
     return this._api.delete(`/movimentacao/${id}/`)
   }
 
-  async get(): Promise<{ data: MovimentacoesInterface[] }> {
+  async get(filters: any): Promise<{ data: MovimentacoesInterface[] }> {
     const params = new URLSearchParams([['orderby', '-date']])
+    if(filters.startDate && filters.endDate)
+      params.append('range', `${moment(filters.startDate).utc().format()},${moment(filters.endDate).utc().format()}`)
+
+    if(filters.category){
+        params.append('category', `${filters.category}`)
+    }
+
+    if(filters.account){
+        params.append('account', `${filters.account}`)
+    }
+    
     return this._api.get('/movimentacao', { params })
   }
   async getSaldo(): Promise<{ data: Saldos }> {

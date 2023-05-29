@@ -16,8 +16,8 @@ export const MovimentacoesContainer = (
     type: 'all',
     category: 'all',
     account: 'all',
-    start_date: null,
-    end_date: null,
+    startDate: null,
+    endDate: null,
   })
   const [formParams, setFormParams] = React.useState<any>(null)
   const [deleteDialogOpen, setDeleteDialogOpen] = React.useState(false)
@@ -32,10 +32,15 @@ export const MovimentacoesContainer = (
     setFormParams({ accounts: props.accounts })
   }, [])
 
+
+  useEffect(() => {
+    getMovimentacoes()
+  },[filters])
+
   const getMovimentacoes = async () => {
     try {
       setLoading(true)
-      const { data } = await movimentacoesService.get()
+      const { data } = await movimentacoesService.get(filters)
       setMovimentacoes(data)
     } catch (err) {
       handleSetErrors(err)

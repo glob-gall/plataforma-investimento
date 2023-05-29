@@ -185,7 +185,10 @@ const renderFilterOptions = (props, handleFilters) => {
         <Typography>Data de início:</Typography>
         <Box sx={{ gap: 2, display: 'flex' }}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker />
+            <DatePicker
+                format={'DD/MM/YYYY'}
+                onChange={(ev) => handleFilters(ev.$d, 'startDate')}
+            />
           </LocalizationProvider>
         </Box>
       </Box>
@@ -194,7 +197,10 @@ const renderFilterOptions = (props, handleFilters) => {
         <Typography>Data de fim:</Typography>
         <Box sx={{ gap: 2, display: 'flex' }}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker />
+            <DatePicker
+                format={'DD/MM/YYYY'}
+                onChange={(ev) => handleFilters(ev.$d, 'endDate')}
+            />
           </LocalizationProvider>
         </Box>
       </Box>
@@ -255,12 +261,6 @@ const MovimentacoesTemplate = (props) => {
                   Adicionar movimentação
                 </Button>
               </Box>
-              {/* <Box mr={8}>
-                <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                  <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                  <TextField label="Buscar movimentação" variant="standard" />
-                </Box>
-              </Box> */}
             </Box>
 
             <Box mb={2} mt={2} sx={{ boxShadow: 1 }} p={2}>

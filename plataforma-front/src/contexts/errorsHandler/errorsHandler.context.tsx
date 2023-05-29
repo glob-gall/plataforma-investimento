@@ -8,18 +8,17 @@ export const ErrorHandlerProvider: React.FC<ProviderProps> = ({ children }) => {
   const [error, setErrors] = useState<Error>({errors:[]})
 
   function handleSetErrors(err:any){
-    console.log(err?.response);
     if(!err?.response?.data?.errors){
       setErrors(state => ({errors:[...state.errors,{message:'Ocorreu um erro inesperado! :('}]}))
     }else{
       const error:Error = err.response.data
       setErrors(state => ({errors:[...error.errors,...state.errors]}))
     }
-
+    setTimeout(()=>{
+      clearErrors(error.errors.length-1);
+    }, 3000);
   }
   function clearErrors(index:number){
-    console.log(index);
-    
     setErrors(state =>{
       return {errors:state.errors.filter((m, i)=> i != index)}
     })
