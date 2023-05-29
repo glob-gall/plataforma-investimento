@@ -12,18 +12,18 @@ services:
     volumes:
       - ./plataforma-back:/usr/app
 
-  # frontend:
-  #   hostname: plataforma-front.docker
-  #   container_name: plataforma-front
-  #   build:
-  #       context: ./plataforma-front
-  #       dockerfile: Dockerfile
-  #       target: development
-  #   ports:
-  #       - "3000:3000"
-  #   volumes:
-  #       - ./plataforma-front:/usr/app
-  #       - /usr/app/node_modules
+  frontend:
+    hostname: plataforma-front.docker
+    container_name: plataforma-front
+    build:
+        context: ./plataforma-front
+        dockerfile: Dockerfile
+        target: development
+    ports:
+        - "3000:3000"
+    volumes:
+        - ./plataforma-front:/usr/app
+        - /usr/app/node_modules
 
   postgres:
     hostname: plataforma-postgres.docker
