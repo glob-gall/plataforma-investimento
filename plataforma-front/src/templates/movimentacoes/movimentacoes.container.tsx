@@ -60,6 +60,7 @@ export const MovimentacoesContainer = (
   const onFormSubmit = async (formData: MovimentacoesFormData) => {
     try {
       setLoading(true)
+      console.log(formData)
       if (formData.id) {
         await movimentacoesService.update(formData.id, formData)
       } else {

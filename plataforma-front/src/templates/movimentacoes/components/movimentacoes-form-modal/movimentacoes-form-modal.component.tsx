@@ -31,7 +31,7 @@ const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({
   } = useForm<MovimentacoesFormData>()
 
   useEffect(() => {
-    if (formData) reset(formData)
+    if (formData) reset({...formData, date: moment(formData.date) })
     else
       reset({
         date: moment(),
@@ -90,12 +90,11 @@ const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({
               select
               label="Categoria"
               defaultValue={formData?.categoria || ''}
-              disabled={!!formData?.categoria}
               error={!!errors.categoria}
               helperText={errors.categoria?.message}
               {...register('categoria', {
                 required: 'Escolha uma categoria.',
-                valueAsNumber: true,
+                valueAsNumber: false,
               })}
             >
               {categoriasMOCK.map(({ key, label }, index) => (
@@ -110,8 +109,7 @@ const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({
               fullWidth
               select
               label="Conta"
-              defaultValue={formData?.conta || ''}
-              disabled={!!formData?.conta}
+              defaultValue={formData?.conta?.id || ''}
               error={!!errors.conta}
               helperText={errors.conta?.message}
               {...register('conta', {
@@ -167,7 +165,7 @@ const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({
                       format="DD-MM-YYYY HH:mm"
                       name={'date'}
                       disableFuture
-                      value={field.value}
+                      value={moment(field.value)}
                       error={!!errors.date}
                       onChange={(date) => field.onChange(date._d)}
                       helperText={errors.date?.message}

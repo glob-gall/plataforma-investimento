@@ -18,7 +18,7 @@ export const AuthProvider: React.FC<ProviderProps> = ({ children, user }) => {
     const authService = new AuthService();
 
     async function login(email: string, password: string){
-        const { data: { jwt, user } } = await authService.login(email as string, password as string);
+        const { data: { jwt, user } } = await authService.login(email, password);
         setCookie(null, TOKEN_KEY, jwt, nookiesConfig)
         setCookie(null, USER_KEY, JSON.stringify(user), nookiesConfig)
         dispatch({ type: AUTH_ACTIONS.SAVE_USER, payload: user })
@@ -30,9 +30,9 @@ export const AuthProvider: React.FC<ProviderProps> = ({ children, user }) => {
     }
 
     async function logout(){
-        await router.push('/login');
         destroyCookie(null, TOKEN_KEY, { path: '/' })
         destroyCookie(null, USER_KEY, { path: '/' })
+        await router.push('/login');
     }
 
     const actions = {
