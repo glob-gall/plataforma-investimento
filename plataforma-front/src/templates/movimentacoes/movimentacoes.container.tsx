@@ -54,13 +54,11 @@ export const MovimentacoesContainer = (
 
   const handleFilters = (value, type) => {
     setFilters((prev) => ({ ...prev, [type]: value }))
-    console.log(filters)
   }
 
   const onFormSubmit = async (formData: MovimentacoesFormData) => {
     try {
       setLoading(true)
-      console.log(formData)
       if (formData.id) {
         await movimentacoesService.update(formData.id, formData)
       } else {
