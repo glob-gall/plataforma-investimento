@@ -18,4 +18,14 @@ export class UserService {
         return await this._api.put('/usuario/',data)
     }
 
+    async recoverPassword(email:string){
+        return await this._api.post('/usuario/resetpassword/',{email})
+
+    }
+
+    async recoverPasswordConfirm(data:any){
+        return await this._api.post('/usuario/resetpasswordconfirm/',data)
+
+    }
+
 }
