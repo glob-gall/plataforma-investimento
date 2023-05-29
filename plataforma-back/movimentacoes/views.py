@@ -20,7 +20,7 @@ def get_movimentacoes_by_usuario(request):
     dates = request.query_params.get('range')
     orderby = request.query_params.get('orderby')
     description = request.query_params.get('description')
-    # tipo = request.query_params.get('tipo')
+    tipo = request.query_params.get('tipo')
     categoria = request.query_params.get('category')
     conta = request.query_params.get('account')
 
@@ -35,6 +35,10 @@ def get_movimentacoes_by_usuario(request):
       queryset=queryset.filter(categoria=categoria)
     if conta:
       queryset=queryset.filter(conta=conta)
+    if tipo == 'ENTRADA':
+      queryset=queryset.filter(value__gt=0)
+    if tipo == 'SAIDA':
+      queryset=queryset.filter(value__lt=0)
       
     serializer = MovimentacoesContasSerializer(queryset,many=True)    
     return Response(serializer.data)
