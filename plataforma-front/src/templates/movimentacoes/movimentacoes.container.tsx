@@ -54,7 +54,6 @@ export const MovimentacoesContainer = (
 
   const handleFilters = (value, type) => {
     setFilters((prev) => ({ ...prev, [type]: value }))
-    console.log(filters)
   }
 
   const onFormSubmit = async (formData: MovimentacoesFormData) => {

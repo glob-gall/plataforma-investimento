@@ -17,6 +17,8 @@ export interface MovimentacoesFormData {
   value: number
   date: string | Date | Moment
   type?: string
-  conta?: number
-  categoria: number
+  conta?: {
+    id: number
+  }
+  categoria: string
 }

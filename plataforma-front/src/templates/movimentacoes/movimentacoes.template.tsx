@@ -21,7 +21,7 @@ import {
   Checkroom,
   CreditCard,
   Delete,
-  DirectionsCar,
+  DirectionsCar, Edit,
   Fastfood,
   FilterAlt,
   Flight,
@@ -121,11 +121,13 @@ const renderFilterOptions = (props, handleFilters) => {
     <Box
       sx={{
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-end',
+        justifyContent: 'space-between',
+        flexFlow: 'row',
         width: '100%',
-        gap: 2,
       }}
     >
+      <Box sx={{ display: 'flex', gap: 2}}>
       <Box>
         <FormControl fullWidth>
           <InputLabel variant="standard" htmlFor="uncontrolled-native">
@@ -180,7 +182,9 @@ const renderFilterOptions = (props, handleFilters) => {
           </NativeSelect>
         </FormControl>
       </Box>
+      </Box>
 
+      <Box sx={{ display: 'flex', gap: 4 }}>
       <Box sx={{ display: 'flex', flexFlow: 'column' }}>
         <Typography>Data de início:</Typography>
         <Box sx={{ gap: 2, display: 'flex' }}>
@@ -204,6 +208,8 @@ const renderFilterOptions = (props, handleFilters) => {
           </LocalizationProvider>
         </Box>
       </Box>
+      </Box>
+
     </Box>
   )
 }
@@ -330,6 +336,10 @@ const MovimentacoesTemplate = (props) => {
                                 )}
                                 {column.id === 'actions' && (
                                   <>
+                                    <IconButton aria-label="Editar" size="small" onClick={() => {
+                                      actions.setFormData(row);
+                                      actions.setFormOpen(true);
+                                    }}><Edit/></IconButton>
                                     <IconButton
                                       aria-label="Excluir"
                                       color="error"
