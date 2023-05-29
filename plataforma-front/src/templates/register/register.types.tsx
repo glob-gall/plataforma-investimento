@@ -13,6 +13,11 @@ export interface RegisterTemplateProps {
     birth?: string;
 }
 
+export interface RegisterFormProps{
+    onSubmit: (data: RegisterFormData) => Promise<void>;
+    loading:boolean;
+}
+
 export interface RegisterFormData {
     email: string;
     password: string;

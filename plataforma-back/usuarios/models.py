@@ -21,3 +21,7 @@ class Usuario(AbstractUser):
 class Token(models.Model):
   usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
   token = models.CharField(max_length=100)
+
+class ResetPasswordCode(models.Model):
+  usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+  resetPasswordCode = models.CharField(max_length=100)

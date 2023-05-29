@@ -1,6 +1,6 @@
 import jwt, datetime
 import hashlib
-
+import json
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views import View
@@ -12,10 +12,11 @@ from rest_framework import status
 
 from .models import Usuario
 from .serializers import UsuarioSerializer,LoginSerializer
-from .models import Token, Usuario
-from .utilsEmail import enviar_email_confirmacao
+from .models import Token, Usuario, ResetPasswordCode
+from .utilsEmail import enviar_email_confirmacao, enviar_email_recuperacao_senha
 from utils.getUserPayload import get_user_payload
 from utils.errors import formatErrors 
+from django.utils.crypto import get_random_string
 
 
 SECRET= 'SECRET'
@@ -129,4 +130,41 @@ def confirmEmailView(View,token):
       return HttpResponse("Email confirmado com sucesso")
   except:
     return HttpResponse("Não foi possivel confirmar o email")
+
+def reset_password_request(request):
+    if request.method == 'POST':
+        body_unicode = request.body.decode('utf-8')
+        data = json.loads(body_unicode)
+        email = data.get('email')
+        objeto_token = get_object_or_404(Usuario,email=email)
+        usuario = objeto_token 
+        if usuario:
+          try:
+            enviar_email_recuperacao_senha(usuario,email)
+            return HttpResponse("Email enviado com sucesso")
+          except:
+            return HttpResponse("Erro no envio do email", status=400)
+        else:
+          return HttpResponse("O email digitado não está associado a uma conta", status=400)
+
+def reset_password_confirm(request):
+    if request.method == 'POST':
+        body_unicode = request.body.decode('utf-8')
+        data = json.loads(body_unicode)
+        password = data.get('password')
+        confirm_password = data.get('confirm_password')
+        code = data.get('code') 
+        if password == confirm_password:
+            objeto_code = get_object_or_404(ResetPasswordCode,resetPasswordCode=code)
+            usuario = objeto_code.usuario
+            if usuario:
+                # Atualizar a senha do usuário
+                password = hashlib.sha256(password.encode('utf-8')).hexdigest()
+                usuario.password = password
+                usuario.save()
+                return HttpResponse("Senha alterada com sucesso")
+            else:
+                return HttpResponse("Código invalido", status=400)
+        else:
+            return HttpResponse("As senhas não correspondem", status=400)
 

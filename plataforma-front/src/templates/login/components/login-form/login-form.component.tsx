@@ -58,7 +58,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading }) => {
                 Entrar
             </LoadingButton>
             <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="/recover" variant="body2">
                     Esqueceu sua senha?
                 </Link>
             </Grid>
