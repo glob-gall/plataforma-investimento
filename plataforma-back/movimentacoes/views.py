@@ -20,6 +20,9 @@ def get_movimentacoes_by_usuario(request):
     dates = request.query_params.get('range')
     orderby = request.query_params.get('orderby')
     description = request.query_params.get('description')
+    # tipo = request.query_params.get('tipo')
+    categoria = request.query_params.get('category')
+    conta = request.query_params.get('account')
 
     if dates:
       [dateMin,dateMax] = dates.split(',')
@@ -28,6 +31,10 @@ def get_movimentacoes_by_usuario(request):
       queryset=queryset.order_by(orderby)
     if description:
       queryset=queryset.filter(description__contains=description)
+    if categoria:
+      queryset=queryset.filter(categoria=categoria)
+    if conta:
+      queryset=queryset.filter(conta=conta)
       
     serializer = MovimentacoesContasSerializer(queryset,many=True)    
     return Response(serializer.data)
