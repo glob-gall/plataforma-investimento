@@ -9,7 +9,7 @@ class Movimentacoes(models.Model):
   class Categoria(models.TextChoices):
     OUTROS = 'OUTROS', lazy('Outros')
     COMIDA = 'COMIDA', lazy('Comida')
-    ALUGUEL = 'ALUGUEL', lazy('Alugel')
+    ALUGUEL = 'ALUGUEL', lazy('Aluguel')
     CONTAS = 'CONTAS', lazy('Contas')
     ESTUDOS = 'ESTUDOS', lazy('Estudos')
     ROUPAS = 'ROUPAS', lazy('Roupas')
