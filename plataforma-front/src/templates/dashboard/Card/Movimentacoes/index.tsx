@@ -62,13 +62,13 @@ function CardMovimentacoes() {
         </Grid>
         <Grid item>
           <Grid container spacing={1}>
+            {/* <Grid item>
+                <Button variant="text">ver movimentações</Button>
+              </Grid> */}
             <Grid item>
               <Link href="/movimentacoes">
-                <Button variant="text">ver extrato</Button>
+                <Button variant="contained">Ver movimentações</Button>
               </Link>
-            </Grid>
-            <Grid item>
-              <Button variant="contained">Nova movimentação</Button>
             </Grid>
           </Grid>
         </Grid>

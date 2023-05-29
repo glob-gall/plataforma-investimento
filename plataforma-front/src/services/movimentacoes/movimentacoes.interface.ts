@@ -16,5 +16,13 @@ export interface SaldoConta {
     conta:string
     saldo:number
 }
+export interface SaldoCategoria {
+    categoria:string
+    saldo:number
+}
+export interface Categoria {
+    key:string
+    label:string
+}
 
 export type Nullable<T> = T | null;

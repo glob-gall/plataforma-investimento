@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import TempoGasto from './GastoTempo/GastoTempo.template';
 import DistribuicaoSaldo from './DistribuicaoSaldo/DistribuicaoSaldo.template';
+import MovimentacoesCategoria from './MovimentacoesCategoria/MovimentacoesCategoria.template';
 
 
 
@@ -70,7 +71,7 @@ function GraficosCard() {
         >
           <Tab label="Distribuição do saldo" {...a11yProps(0)} />
           <Tab label="Gastos x Categoria" {...a11yProps(1)}/>
-          <Tab label="Gastos x Tempo" {...a11yProps(2)}/>
+          <Tab label="Gastos x Tempo" {...a11yProps(2)} disabled/>
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -82,7 +83,7 @@ function GraficosCard() {
           <DistribuicaoSaldo/>
         </TabPanel>
         <TabPanel value={1} index={1} dir={theme.direction}>
-          Item Two
+          <MovimentacoesCategoria/>
         </TabPanel>
         <TabPanel value={2} index={2} dir={theme.direction}>
           <TempoGasto/>

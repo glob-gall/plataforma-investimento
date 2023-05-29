@@ -5,8 +5,6 @@ import ProfileTemplate from "@/templates/profile/profile.template";
 
 import React from "react";
 import {withAuthSSR} from "@hocs/withAuthSSR";
-import {USER_KEY} from "@constants/constants";
-import {parseCookies} from "nookies";
 
 const MovimentacoesPage = () => {
     return(
@@ -20,12 +18,10 @@ const MovimentacoesPage = () => {
 
 export default MovimentacoesPage;
 
-export const getServerSideProps = withAuthSSR(async (ctx) => {
-    const { [USER_KEY]: user } = parseCookies(ctx);
-
+export const getServerSideProps = withAuthSSR(async ({user}) => {
     return {
         props: {
-            user: user ? JSON.parse(user) : null
+            user
         }
     }
 });

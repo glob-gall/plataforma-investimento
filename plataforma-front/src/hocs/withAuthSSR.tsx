@@ -1,20 +1,39 @@
-import {GetServerSideProps, GetServerSidePropsContext} from "next";
-import {TOKEN_KEY, USER_KEY} from "@constants/constants";
+import {GetServerSidePropsContext} from "next";
+import {TOKEN_KEY} from "@constants/constants";
 import {parseCookies} from "nookies";
+import { UserService } from "@/services/user/user.service";
+import { api } from "@/config/api.config";
 
 
-export const withAuthSSR = (callbackGetServerSideProps: GetServerSideProps) => {
+export interface CallbackGetServerSideProps {
+    ({context, user}: any): Promise<any>
+}
+
+export const withAuthSSR = (callbackGetServerSideProps: CallbackGetServerSideProps) => {
     return async(context: GetServerSidePropsContext) => {
-        const { [TOKEN_KEY]: token, [USER_KEY]: user } = parseCookies(context);
-        const parsedUser = user ? JSON.parse(user) : null;
-        if(!token || !parsedUser.is_email_verified) {
-            return {
-                redirect: {
-                    destination: '/login',
-                    permanent: false
+        const { [TOKEN_KEY]: token } = parseCookies(context);
+
+        const userService = new UserService(api(token));
+        try{
+            const { data: user } = await userService.get();
+            if(!token || !user?.is_email_verified) {
+                return {
+                    redirect: {
+                        destination: '/login',
+                        permanent: false
+                    }
                 }
             }
+            return await callbackGetServerSideProps({context, user});
+        }catch(err){
+            // return {
+            //     redirect: {
+            //         destination: '/login',
+            //         permanent: false
+            //     }
+            // }
         }
-        return await callbackGetServerSideProps(context);
+
+
     }
 }

@@ -1,15 +1,16 @@
-import { Nullable, SaldoConta } from "@/services/movimentacoes/movimentacoes.interface"
+import { Nullable, SaldoCategoria } from "@/services/movimentacoes/movimentacoes.interface"
 import { MovimentacoesService } from "@/services/movimentacoes/movimentacoes.service"
 import { useEffect, useState } from "react"
-import { VictoryPie } from "victory"
-import * as Styled from './DistribuicaoSaldo.styles'
+import { VictoryAxis, VictoryBar, VictoryChart } from "victory"
+import * as Styled from './MovimentacoesCategoria.styles'
 import { Divider, List, ListItem, ListItemIcon, ListItemText, Skeleton } from "@mui/material"
 import Empty from "@/components/organisms/Empty/empty.component"
 import { Payments } from "@mui/icons-material"
 
-function DistribuicaoSaldo() {
+
+function MovimentacoesCategoria() {
   let movimentacoesService:Nullable<MovimentacoesService> = null
-  const [saldos,setSaldos] = useState<SaldoConta[]>([])
+  const [saldos,setSaldos] = useState<SaldoCategoria[]>([])
   const [loading,setLoading] = useState(true)
   useEffect(()=>{
     movimentacoesService = new MovimentacoesService()
@@ -20,11 +21,8 @@ function DistribuicaoSaldo() {
     const loadMovimentacoes = async ()=>{
       if (!movimentacoesService) return
       try {
-        const {data} = await movimentacoesService.getDistricuicaoSaldo()
-        const newSaldos = data.map(({conta,saldo}) => ({
-          saldo,
-          conta: `${conta} - R$ ${saldo.toFixed(2)}`
-        })).filter(s => s.saldo > 0)
+        const {data} = await movimentacoesService.getMovimentacoesCategorias()
+        const newSaldos = data.filter(s => s.saldo !== 0)
 
         setSaldos(newSaldos)
       } catch (error) {
@@ -36,23 +34,31 @@ function DistribuicaoSaldo() {
   },[movimentacoesService])
 
   if(loading) return (
-    <Skeleton variant="circular" width={500} height={500} />
+    <Skeleton variant="circular" width={'90%'} height={'90%'} />
   )
   if(saldos.length===0) return (
-   <Empty text="Você ainda não tem nenhum saldo!"/>
-  )
-  
+    <Empty text="Você ainda não tem nenhum saldo!"/>
+   )
+
   return (
     <Styled.Container>
-      <VictoryPie
-        width={760}
-        colorScale='qualitative'
-        data={saldos}
-        x="conta"
-        y="saldo"
-      />
-      
-      <List dense={false}>
+
+        <VictoryChart 
+          domainPadding={10}
+          width={760}
+        >
+          <VictoryBar 
+            name="Bar-1"
+            style={{ data: { fill: "grey"} }}
+            labels={({datum}) => `R$ ${Math.abs(datum.saldo).toFixed(2)}`}
+            data={saldos}
+            x="categoria"
+            y="saldo"
+          />
+          <VictoryAxis crossAxis={false}/>
+        </VictoryChart>
+
+        <List dense={false}>
         {saldos.map(saldo => (
           <>
             <Divider />
@@ -61,7 +67,7 @@ function DistribuicaoSaldo() {
                   <Payments />
                 </ListItemIcon>
                 <ListItemText
-                  primary={`${saldo.conta}`}
+                  primary={`${saldo.categoria} - R$ ${saldo.saldo.toFixed(2)}`}
                 />
               </ListItem>
           </>
@@ -72,4 +78,4 @@ function DistribuicaoSaldo() {
   )
 }
 
-export default DistribuicaoSaldo
+export default MovimentacoesCategoria
