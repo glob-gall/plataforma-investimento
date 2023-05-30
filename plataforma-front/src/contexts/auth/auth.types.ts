@@ -24,6 +24,7 @@ export type AuthContextStates = {
 
 export interface AuthContextActions {
   login(email: string, password: string): Promise<void>
+  setUser(user: User): void
   logout(): Promise<void>
 }
 

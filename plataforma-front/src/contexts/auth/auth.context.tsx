@@ -1,4 +1,4 @@
-import {AUTH_ACTIONS, AuthContextValues, ProviderProps} from "@contexts/auth/auth.types";
+import {AUTH_ACTIONS, AuthContextValues, ProviderProps, User} from "@contexts/auth/auth.types";
 import AUTH_INITIAL_VALUE,{authReducer} from "@contexts/auth/auth.reducer";
 import {destroyCookie, setCookie} from "nookies";
 import nookiesConfig from "@config/nookies.config";
@@ -16,6 +16,10 @@ export const AuthProvider: React.FC<ProviderProps> = ({ children, user }) => {
     const [state, dispatch] = React.useReducer(authReducer, AUTH_INITIAL_VALUE(user ?? undefined))
     const router = useRouter();
     const authService = new AuthService();
+
+    async function setUser(user: User){
+        dispatch({ type: AUTH_ACTIONS.SAVE_USER, payload: user })
+    }
 
     async function login(email: string, password: string){
         const { data: { jwt, user } } = await authService.login(email, password);
@@ -36,6 +40,7 @@ export const AuthProvider: React.FC<ProviderProps> = ({ children, user }) => {
     }
 
     const actions = {
+        setUser,
         login,
         logout
     }

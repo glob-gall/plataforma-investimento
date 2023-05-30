@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { Avatar, Box, Card, TextField, Typography } from '@mui/material'
+import { Avatar, Backdrop, Box, Card, TextField, Typography } from '@mui/material'
 import * as Containers from './profile.container'
 import { useAuth } from '@/hooks/auth/use-auth.hook'
-import { ProfileTemplateProps } from './profile.types'
+import { EditUserFormData, ProfileTemplateProps } from './profile.types'
 import { LoadingButton } from '@mui/lab'
 import moment from 'moment'
 
 const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
   const { user } = useAuth()
   const [isFormChanged, setIsFormChanged] = useState<boolean>(false)
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
+  const [avatarPreview, setAvatarPreview] = useState<string | null>(null)
 
-  const { register, handleSubmit, watch } = useForm({
+  const { register, handleSubmit, watch, getValues } = useForm<EditUserFormData>({
     defaultValues: {
       name: user?.name,
       email: user?.email,
@@ -21,15 +23,29 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
     },
   })
 
+  const { ref, ...rest } = register('avatar')
+
   const watchName = watch('name')
   const watchBirth = watch('birth')
+  const watchAvatar = watch('avatar')
+
   useEffect(() => {
-    if (watchName !== user?.name || watchBirth !== user?.birth) {
+    if (watchName !== user?.name || watchBirth !== user?.birth || watchAvatar) {
       setIsFormChanged(true)
     } else {
       setIsFormChanged(false)
     }
-  }, [user, watchBirth, watchName])
+  }, [user, watchBirth, watchName, watchAvatar])
+
+  useEffect(() => {
+    if (watchAvatar && getValues('avatar')[0]) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        setAvatarPreview(reader.result as string)
+      }
+      reader.readAsDataURL(getValues('avatar')[0])
+    }
+  }, [watchAvatar, getValues])
 
   return (
     <Containers.ProfileContainer>
@@ -56,9 +72,16 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
                   flexFlow: 'column',
                 }}
               >
-                <Avatar sx={{ bgcolor: '#aaa', width: 156, height: 156 }}>
-                  LF
-                </Avatar>
+                <Box sx={{ width: 156, height: 156, position: 'relative', cursor: 'pointer' }}>
+                  <Avatar sx={{ bgcolor: '#aaa', width: 156, height: 156 }} src={avatarPreview || `http://localhost:8000/${user?.avatar}`} onClick={() => {
+                    if(fileInputRef.current){
+                      fileInputRef.current.click();
+                    }
+                  }}>
+                    {!user?.avatar && `${user?.name.split(' ')[0]?.substring(0, 1)} ${user?.name.split(' ')[1]?.substring(0, 1)}`}
+                  </Avatar>
+                </Box>
+
                 <Typography variant="h4">
                   {emoji} {user?.name}
                 </Typography>
@@ -93,6 +116,17 @@ const ProfileTemplate: React.FC<ProfileTemplateProps> = () => {
                     id="email"
                     {...register('email', { required: true })}
                     disabled
+                  />
+                  <input
+                    accept="image/*"
+                    id="avatar"
+                    type="file"
+                    hidden
+                    {...rest}
+                    ref={(e) => {
+                      fileInputRef.current = e
+                      ref(e)
+                    }}
                   />
                   <Box flex={1} mt={2}>
                     <LoadingButton

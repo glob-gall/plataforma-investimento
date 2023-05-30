@@ -6,6 +6,7 @@ from instituicoes.models import Instituicoes
 
 # Create your models here.
 class Usuario(AbstractUser):
+  avatar = models.ImageField(upload_to='images/', null=True, blank=True)
   name = models.CharField(max_length=255)
   birth = models.DateField(default=datetime.date.today)
   email = models.EmailField(max_length=255, unique=True)
