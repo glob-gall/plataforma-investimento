@@ -9,6 +9,9 @@ export interface ProfileContainerArgs{
   }
 }
 export interface EditUserFormData {
-  name?: string;
-  birth?: string;
+  avatar: FileList | null;
+  name: string;
+  birth: string;
+  email: string;
+  emailverified: boolean;
 }

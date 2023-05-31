@@ -87,6 +87,9 @@ def login_user(request):
   })
 
 class UsuarioView(APIView):
+  serializer_class = UsuarioSerializer
+  queryset = Usuario.objects.all()
+
   def get(self,request):
     payload = request.auth_payload
     
@@ -112,6 +115,10 @@ class UsuarioView(APIView):
 
     data['email'] = usuario.email
     data['password'] = usuario.password
+    
+    if request.FILES.get('avatar'):
+      data['avatar'] = request.FILES.get('avatar')
+      
     serializer = UsuarioSerializer(usuario, data=data)
 
     if serializer.is_valid():
@@ -167,4 +174,3 @@ def reset_password_confirm(request):
                 return HttpResponse("Código invalido", status=400)
         else:
             return HttpResponse("As senhas não correspondem", status=400)
-

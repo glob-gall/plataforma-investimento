@@ -6,6 +6,7 @@ import pigMoneyEmoji from "@/utils/emojis/pigMoneyEmoji";
 import { watch } from "fs";
 import { useErrorHandler } from "@/hooks/errorHandler/use-errorHandler.hook";
 import { useRouter } from "next/router";
+import { useAuth } from "@/hooks/auth/use-auth.hook";
 
 
 export const ProfileContainer = (props: ContainerWithProps<ProfileContainerArgs>) => {
@@ -13,7 +14,7 @@ export const ProfileContainer = (props: ContainerWithProps<ProfileContainerArgs>
     const [loading, setLoading] = React.useState<boolean>(false)
     const [emoji,setEmoji] = useState<string>('')
 
-    const router = useRouter()
+    const { actions } = useAuth()
 
     const userService = new UserService()
 
@@ -22,9 +23,10 @@ export const ProfileContainer = (props: ContainerWithProps<ProfileContainerArgs>
     const onFormSubmit = useCallback(async (data:EditUserFormData)=>{
       setLoading(true)
       try{
-        await userService.put(data)
-        await router.reload()
+        const { data: user } = await userService.put(data)
+        actions?.setUser(user)
       }catch(err: any){
+        console.log(err)
         handleSetErrors(err)
     }finally {
         setLoading(false);

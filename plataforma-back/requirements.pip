@@ -18,3 +18,4 @@ PyJWT
 drf-yasg
 python-dotenv==0.21.0
 dj-database-url==1.0.0
+pillow

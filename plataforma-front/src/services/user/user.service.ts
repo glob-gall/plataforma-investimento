@@ -15,7 +15,13 @@ export class UserService {
     }
 
     async put(data:EditUserFormData){
-        return await this._api.put('/usuario/',data)
+        const formData = new FormData();
+        for (const key in data) {
+            formData.append(key,data[key])
+        }
+        data.avatar ? formData.append('avatar',data.avatar[0]) : null
+        console.log(formData)
+        return await this._api.put('/usuario/',formData, { headers: { 'Content-Type': 'multipart/form-data' } })
     }
 
     async recoverPassword(email:string){

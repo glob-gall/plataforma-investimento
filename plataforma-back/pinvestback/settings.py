@@ -34,6 +34,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
@@ -148,6 +150,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'usuarios.Usuario'
+
+CKEDITOR_FILENAME_GENERATOR = 'pinvestback.utils.generate_uuid4_filename'
 
 # CORS_ORIGIN_ALLOW_ALL= True
 # CORS_ALLOW_CREDENTIALS = True

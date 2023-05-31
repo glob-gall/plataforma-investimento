@@ -8,7 +8,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
   # instituicoes = InstituicoesSerializer(many=True, read_only=True)
   class Meta:
     model = Usuario
-    fields = ['id','name','email','password','birth', 'is_email_verified', 'date_joined']
+    fields = ['id','name','avatar','email','password','birth', 'is_email_verified', 'date_joined']
     extra_kwargs = {
       'password':{'write_only': True}
     }

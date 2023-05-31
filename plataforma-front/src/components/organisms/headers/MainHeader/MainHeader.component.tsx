@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 
 const MainHeaderComponent = () => {
     const router = useRouter();
-    const { actions } = useAuth();
+    const { actions, user } = useAuth();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const menuOpened = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -43,7 +43,9 @@ const MainHeaderComponent = () => {
                     </Typography>
                 </Box>
                 <Box>
-                    <Avatar src="" onClick={handleClick}/>
+                    <Avatar src={`http://localhost:8000/${user?.avatar}`} onClick={handleClick}>
+                        {!user?.avatar && `${user?.name.split(' ')[0]?.substring(0, 1)} ${user?.name.split(' ')[1]?.substring(0, 1)}`}
+                    </Avatar>
                     <Menu
                         id="user-menu"
                         aria-labelledby="user-menu-btn"
