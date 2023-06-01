@@ -191,7 +191,7 @@ const renderFilterOptions = (props, handleFilters) => {
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
                 format={'DD/MM/YYYY'}
-                onChange={(ev) => handleFilters(ev.$d, 'startDate')}
+                onChange={(ev) => handleFilters(ev?.$d, 'startDate')}
             />
           </LocalizationProvider>
         </Box>
@@ -203,7 +203,7 @@ const renderFilterOptions = (props, handleFilters) => {
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
                 format={'DD/MM/YYYY'}
-                onChange={(ev) => handleFilters(ev.$d, 'endDate')}
+                onChange={(ev) => handleFilters(ev?.$d, 'endDate')}
             />
           </LocalizationProvider>
         </Box>
