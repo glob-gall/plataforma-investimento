@@ -258,10 +258,14 @@ def movimentacoes_saldos_by_tempo(request):
     return k[tipo]
   
   movimentacoesTempoGP=[]
-  for key, value in groupby(movimentacoesTempo, movimentacoesKey):  
+  for key, value in groupby(movimentacoesTempo, movimentacoesKey): 
+    total=0
+    for v in list(value):
+       total+= v['value']
+       
     movimentacoesTempoGP.append({
       tipo:key,
-      'values':list(value)
+      'values':total
     })
   
   movimentacoesTempoGP = sorted(movimentacoesTempoGP, key=movimentacoesKey)
