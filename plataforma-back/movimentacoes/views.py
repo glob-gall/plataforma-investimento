@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
+from itertools import groupby
 
 from usuarios.contas.models import Contas
 
@@ -229,8 +230,41 @@ def movimentacoes_saldos_by_categoria(request):
       'saldo':saldo,
     })
 
+@api_view(['GET'])
+def movimentacoes_saldos_by_tempo(request):
+  payload = request.auth_payload
+  findedUser = Usuario.objects.filter(id = payload['id']).first()
+  if not findedUser:
+    return ResponseError('O usuário precia estar logado.')
   
-  return Response(saldoCategorias)
+  tipoTempos=['day','week','month','year']
+  tipo = request.query_params.get('tipo')
+  if tipo not in tipoTempos:
+    tipo = 'month'
+
+  movimentacoes = Movimentacoes.objects.filter(usuario=payload['id'])
+  
+  movimentacoesTempo=[]
+  for movimentacao in movimentacoes:
+    movimentacoesTempo.append({
+      'year':movimentacao.date.year,
+      'month':f'{movimentacao.date.year}-{movimentacao.date.month}',
+      'day':f'{movimentacao.date.year}-{movimentacao.date.month}-{movimentacao.date.day}',
+      'value':movimentacao.value,
+    })
+  def movimentacoesKey(k):
+    return k[tipo]
+  
+  movimentacoesTempoGP=[]
+  for key, value in groupby(movimentacoesTempo, movimentacoesKey):  
+    movimentacoesTempoGP.append({
+      tipo:key,
+      'values':list(value)
+    })
+  
+  movimentacoesTempoGP = sorted(movimentacoesTempoGP, key=movimentacoesKey)
+  
+  return Response(movimentacoesTempoGP)
 
 
 @api_view(['GET'])
