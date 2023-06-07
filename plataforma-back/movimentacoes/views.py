@@ -256,6 +256,8 @@ def movimentacoes_saldos_by_tempo(request):
     })
   def movimentacoesKey(k):
     return k[tipo]
+  def movimentacoesGPKey(k):
+    return k['key']
   
   movimentacoesTempoGP=[]
   for key, value in groupby(movimentacoesTempo, movimentacoesKey): 
@@ -268,7 +270,7 @@ def movimentacoes_saldos_by_tempo(request):
       'saldo':total
     })
   
-  movimentacoesTempoGP = sorted(movimentacoesTempoGP, key=movimentacoesKey)
+  movimentacoesTempoGP = sorted(movimentacoesTempoGP, key=movimentacoesGPKey)
   
   return Response({
     'tipo':tipo,
