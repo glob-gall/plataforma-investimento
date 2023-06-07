@@ -264,7 +264,7 @@ def movimentacoes_saldos_by_tempo(request):
        total+= v['value']
        
     movimentacoesTempoGP.append({
-      tipo:key,
+      'key':key,
       'saldo':total
     })
   
