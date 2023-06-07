@@ -265,12 +265,15 @@ def movimentacoes_saldos_by_tempo(request):
        
     movimentacoesTempoGP.append({
       tipo:key,
-      'values':total
+      'saldo':total
     })
   
   movimentacoesTempoGP = sorted(movimentacoesTempoGP, key=movimentacoesKey)
   
-  return Response(movimentacoesTempoGP)
+  return Response({
+    'tipo':tipo,
+    'values':movimentacoesTempoGP
+    })
 
 
 @api_view(['GET'])
