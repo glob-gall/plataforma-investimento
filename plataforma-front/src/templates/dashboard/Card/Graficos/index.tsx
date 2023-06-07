@@ -71,7 +71,7 @@ function GraficosCard() {
         >
           <Tab label="Distribuição do saldo" {...a11yProps(0)} />
           <Tab label="Gastos x Categoria" {...a11yProps(1)}/>
-          <Tab label="Gastos x Tempo" {...a11yProps(2)} disabled/>
+          <Tab label="Gastos x Tempo" {...a11yProps(2)}/>
         </Tabs>
       </AppBar>
       <SwipeableViews
