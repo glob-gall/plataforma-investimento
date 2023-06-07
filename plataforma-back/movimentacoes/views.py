@@ -229,6 +229,8 @@ def movimentacoes_saldos_by_categoria(request):
       'categoria':categoria[1],
       'saldo':saldo,
     })
+  
+  return Response(saldoCategorias)
 
 @api_view(['GET'])
 def movimentacoes_saldos_by_tempo(request):
