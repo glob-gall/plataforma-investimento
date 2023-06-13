@@ -10,4 +10,5 @@ class InstituicoesSerializer(serializers.ModelSerializer):
       'thumb',
       'codigo',
       'ispb',
+      'image_link'
     ]

@@ -7,5 +7,6 @@ class Instituicoes(models.Model):
   thumb = models.CharField(blank=True, default='')
   codigo = models.IntegerField(blank=True, null=True)
   ispb = models.CharField(max_length=10, default='')
+  image_link = models.CharField(max_length=1024, default='')
 
   REQUIRED_FIELDS = ['nome','codigo','ispb']
