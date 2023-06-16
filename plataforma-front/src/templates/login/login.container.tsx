@@ -3,6 +3,7 @@ import {LoginContainerArgs, LoginFormData} from "@/templates/login/login.types";
 import React from "react";
 import {useAuth} from "@hooks/auth/use-auth.hook";
 import { useErrorHandler } from "@/hooks/errorHandler/use-errorHandler.hook";
+import { useRouter } from "next/router";
 
 
 export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) => {
@@ -11,6 +12,7 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
     const {handleSetErrors} = useErrorHandler()
 
     const { actions } = useAuth();
+    const router = useRouter();
 
     const randomBackground = () => {
         const backgrounds = [
@@ -28,6 +30,7 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
         setLoading(true);
         try{
             await actions?.login(email, password);
+            await router.reload();
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore

@@ -1,0 +1,136 @@
+import {
+    InvestimentoFormData,
+    InvestimentoFormModalProps
+} from "@templates/investimentos/components/investimento-form-modal/investimento-form-modal.types";
+import {MenuItem, Modal, TextField, Typography} from "@mui/material";
+import Box from "@mui/material/Box";
+import {Close} from "@mui/icons-material";
+import {LoadingButton} from "@mui/lab";
+import React from "react";
+import {Controller, useForm} from "react-hook-form";
+import {LocalizationProvider} from "@mui/x-date-pickers/LocalizationProvider";
+import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
+import * as Styles from "@templates/movimentacoes/components/movimentacoes-form-modal/movimentacoes-form-modal.styles";
+import moment from "moment";
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 800,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+};
+
+export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ open, onClose, onSubmit, loading }) => {
+
+    const { register, handleSubmit, control, formState: { errors } } = useForm<InvestimentoFormData>();
+
+    return(
+        <Modal
+            open={open}
+            onClose={onClose}
+            aria-labelledby="instituicoes-form-modal-title"
+        >
+            <Box sx={style}>
+                <Box sx={{ width: '100%', alignItems: 'center', justifyContent: 'space-between', display: 'flex' }}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                        Adicionar investimento
+                    </Typography>
+                    <Box onClick={onClose} sx={{ cursor: 'pointer', width: 32, height: 32 }}>
+                        <Close />
+                    </Box>
+                </Box>
+                <Box mt={4} component="form" method="post" action="#" noValidate autoComplete="off" sx={{ mt: 1 }} onSubmit={handleSubmit(onSubmit)}>
+                    <Box>
+                        <TextField
+                            fullWidth
+                            select
+                            label="Investimento"
+                            error={!!errors.instituicao}
+                            helperText={errors.instituicao?.message}
+                            {...register("instituicao", {
+                                required: "Escolha um investimento",
+                                valueAsNumber: true
+                            })}
+                        >
+                            {[1,2,3,4].map((_, index) => (
+                                <MenuItem key={`${index}`} value={index}>
+                                    IBOV11 - Ibovespa
+                                </MenuItem>
+                            ))}
+                        </TextField>
+                        <Box mt={2}>
+                            <Typography>Cotação atual: 9,00R$</Typography>
+                        </Box>
+                        <Box mt={2} sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
+                            <TextField
+                                fullWidth
+                                defaultValue={''}
+                                error={!!errors.instituicao}
+                                helperText={errors.instituicao?.message}
+                                placeholder={'Valor de compra'}
+                                {...register("descricao", { required: "Nome é obrigatório.", maxLength: {
+                                        value: 20,
+                                        message: 'Digite no máximo 20 caracteres.'
+                                    } })}
+                            />
+                            <TextField
+                                fullWidth
+                                defaultValue={''}
+                                error={!!errors.instituicao}
+                                helperText={errors.instituicao?.message}
+                                placeholder={'Volume'}
+                                {...register("descricao", { required: "Nome é obrigatório.", maxLength: {
+                                        value: 20,
+                                        message: 'Digite no máximo 20 caracteres.'
+                                    } })}
+                            />
+                        </Box>
+                        <Box mt={2}>
+                            <Controller
+                                name="date"
+                                control={control}
+                                rules={{
+                                    required: 'Este campo é obrigatório.',
+                                    validate: (value) => {
+                                        if (isNaN(value as unknown as number))
+                                            return 'Digite uma data válida'
+                                        const date = value
+                                        const today = new Date()
+                                        if (date < new Date('1900-01-01'))
+                                            return 'A data de movimentação deve ser posterior a 01/01/1900'
+                                        if (date > today)
+                                            return 'A data de movimentação deve ser anterior a data atual'
+                                        return true
+                                    },
+                                }}
+                                render={({ field }) => (
+                                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                        <Styles.DateInput
+                                            label="Data da movimentação"
+                                            required
+                                            format="DD-MM-YYYY HH:mm"
+                                            name={'date'}
+                                            disableFuture
+                                            value={moment(field.value)}
+                                            error={!!errors.date}
+                                            onChange={(date) => field.onChange(date._d)}
+                                            helperText={errors.date?.message}
+                                        />
+                                    </LocalizationProvider>
+                                )}
+                            />
+                        </Box>
+                    </Box>
+                    <Box mt={6} sx={{ justifyContent: 'flex-end', display: 'flex' }}>
+                        <LoadingButton variant="contained" type="submit" loading={loading}>Salvar</LoadingButton>
+                    </Box>
+                </Box>
+            </Box>
+        </Modal>
+    )
+
+}

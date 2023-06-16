@@ -7,7 +7,7 @@ import {
 import {LoadingButton} from "@mui/lab";
 import {Close} from "@mui/icons-material";
 import {useForm} from "react-hook-form";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 
 
 const InstituicoesFormModal: React.FC<InstituicoesFormModalProps> = ({ open, onClose, onDelete, formData, instituicoes, onSubmit, loading }) => {

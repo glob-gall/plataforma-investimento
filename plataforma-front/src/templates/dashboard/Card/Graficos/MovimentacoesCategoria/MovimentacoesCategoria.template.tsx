@@ -39,7 +39,7 @@ function MovimentacoesCategoria() {
   if(saldos.length===0) return (
     <Empty text="Você ainda não tem nenhum saldo!"/>
    )
-
+  console.log(saldos)
   return (
     <Styled.Container>
 
@@ -59,10 +59,9 @@ function MovimentacoesCategoria() {
         </VictoryChart>
 
         <List dense={false}>
-        {saldos.map(saldo => (
-          <>
-            <Divider />
-              <ListItem>
+          <Divider />
+          {saldos.map((saldo,index) => (
+              <ListItem key={index}>
                 <ListItemIcon>
                   <Payments />
                 </ListItemIcon>
@@ -70,7 +69,6 @@ function MovimentacoesCategoria() {
                   primary={`${saldo.categoria} - R$ ${saldo.saldo.toFixed(2)}`}
                 />
               </ListItem>
-          </>
         ))}
         <Divider />
       </List>
