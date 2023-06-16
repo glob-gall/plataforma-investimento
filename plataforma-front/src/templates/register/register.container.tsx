@@ -3,14 +3,14 @@ import {RegisterContainerArgs, RegisterFormData} from "@/templates/register/regi
 import React from "react";
 import {AuthService} from "@/services/auth/auth.service";
 import {useAuth} from "@hooks/auth/use-auth.hook";
-import { useErrorHandler } from "@/hooks/errorHandler/use-errorHandler.hook";
+import { useToastHandler } from "@/hooks/toastHandler/use-toastHandler.hook";
 
 
 export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArgs>) => {
     const { actions: authActions } = useAuth();
     const [loading, setLoading] = React.useState<boolean>(false)
 
-    const {handleSetErrors} = useErrorHandler()
+    const {handleSetErrors} = useToastHandler()
 
 
     const authService = new AuthService();

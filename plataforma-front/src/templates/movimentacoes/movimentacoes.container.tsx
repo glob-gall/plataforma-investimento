@@ -1,5 +1,5 @@
 import { MovimentacoesService } from '@/services/movimentacoes/movimentacoes.service'
-import { useErrorHandler } from '@hooks/errorHandler/use-errorHandler.hook'
+import { useToastHandler } from '@hooks/toastHandler/use-toastHandler.hook'
 import { ContainerWithProps } from '@/@common/types/container.types'
 import { MovimentacoesContainerArgs } from '@templates/movimentacoes/movimentacoes.types'
 import React, { useEffect } from 'react'
@@ -26,7 +26,7 @@ export const MovimentacoesContainer = (
   const [formData, setFormData] = React.useState<InstituicoesFormData | null>(
     null
   )
-  const { handleSetErrors } = useErrorHandler()
+  const { handleSetErrors } = useToastHandler()
   const movimentacoesService = new MovimentacoesService()
 
   useEffect(() => {
