@@ -37,7 +37,7 @@ const rows = [
 
 ]
 
-const InvestimentoMovimentacoesModal: React.FC<InvestimentoMovimentacoesProps> = ({ open, onClose, loading }) => {
+const InvestimentoMovimentacoesModal: React.FC<InvestimentoMovimentacoesProps> = ({ details, onDelete, open, onClose, loading }) => {
     return (
         <Modal
             open={open}
@@ -66,18 +66,20 @@ const InvestimentoMovimentacoesModal: React.FC<InvestimentoMovimentacoesProps> =
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {rows.map((row) => (
+                                {details.map(({ id, investimento, volume, valor_compra, data_movimentacao }, index) => (
                                     <TableRow
-                                        key={row.code}
+                                        key={`${id}-${index}`}
                                         sx={{'&:last-child td, &:last-child th': {border: 0}}}
                                     >
                                         <TableCell component="th" scope="row">
-                                            {row.code}
+                                            {investimento?.code}
                                         </TableCell>
-                                        <TableCell align="right">{row.volume}</TableCell>
-                                        <TableCell align="right">{row.value}R$</TableCell>
-                                        <TableCell align="right">{row.date}</TableCell>
-                                        <TableCell align="right"><Delete color={"error"} cursor="pointer"/></TableCell>
+                                        <TableCell align="right">{volume}</TableCell>
+                                        <TableCell align="right">{valor_compra.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}R$</TableCell>
+                                        <TableCell align="right">{data_movimentacao}</TableCell>
+                                        <TableCell align="right"><Delete color={"error"} cursor="pointer" onClick={ async () => {
+                                            await onDelete(id)
+                                        }}/></TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

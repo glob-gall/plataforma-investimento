@@ -7,10 +7,8 @@ export interface InvestimentoFormModalProps {
 }
 
 export interface InvestimentoFormData{
-    id?: number;
-    instituicao: number;
-    agencia: string;
-    numero: string;
-    digito: string;
-    descricao: string;
+    investimento: number;
+    valor_compra: number;
+    volume: number;
+    data_movimentacao: string;
 }

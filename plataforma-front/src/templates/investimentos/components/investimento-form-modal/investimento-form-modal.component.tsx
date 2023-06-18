@@ -6,7 +6,7 @@ import {MenuItem, Modal, TextField, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import {Close} from "@mui/icons-material";
 import {LoadingButton} from "@mui/lab";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {Controller, useForm} from "react-hook-form";
 import {LocalizationProvider} from "@mui/x-date-pickers/LocalizationProvider";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
@@ -24,9 +24,20 @@ const style = {
     p: 4,
 };
 
-export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ open, onClose, onSubmit, loading }) => {
+export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ investimentos, open, onClose, onSubmit, loading }) => {
 
-    const { register, handleSubmit, control, formState: { errors } } = useForm<InvestimentoFormData>();
+    const [ selectedInvestimento, setSelectedInvestimento ] = useState<any>(null)
+
+    const { register, handleSubmit, getValues, control, formState: { errors }, watch } = useForm<InvestimentoFormData>();
+
+    const watchInvestimento = watch('investimento')
+
+    useEffect(() => {
+        if (watchInvestimento) {
+            console.log(getValues('investimento'))
+            setSelectedInvestimento(investimentos[getValues('investimento')])
+        }
+    }, [ watchInvestimento])
 
     return(
         <Modal
@@ -51,19 +62,19 @@ export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ op
                             label="Investimento"
                             error={!!errors.instituicao}
                             helperText={errors.instituicao?.message}
-                            {...register("instituicao", {
+                            {...register("investimento", {
                                 required: "Escolha um investimento",
                                 valueAsNumber: true
                             })}
                         >
-                            {[1,2,3,4].map((_, index) => (
-                                <MenuItem key={`${index}`} value={index}>
-                                    IBOV11 - Ibovespa
+                            {investimentos?.map(({ id, code, name }, index) => (
+                                <MenuItem key={`${id}-${index}`} value={index}>
+                                    {code} - {name}
                                 </MenuItem>
                             ))}
                         </TextField>
                         <Box mt={2}>
-                            <Typography>Cotação atual: 9,00R$</Typography>
+                            <Typography>Cotação atual: {selectedInvestimento?.value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}R$</Typography>
                         </Box>
                         <Box mt={2} sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
                             <TextField

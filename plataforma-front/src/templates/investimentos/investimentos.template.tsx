@@ -76,10 +76,10 @@ const saldos = [
     },
 ]
 
-const InvestimentosTemplate = () => {
+const InvestimentosTemplate = ({ investimentos }) => {
     return (
         <Containers.InvestimentosContainer>
-            {({ formOpen, movementOpen, loading, actions }) => (
+            {({ formOpen, investimentosFromUser, investimentoDetails, movementOpen, loading, actions }) => (
                 <>
                 <Box>
                     <Box mr={4}>
@@ -94,23 +94,26 @@ const InvestimentosTemplate = () => {
                     <Box sx={{ display: 'flex', flexFlow: 'row' }}>
                         <Box mt={3}>
                             <List dense sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                                {investimentosMock.map((investimento) => {
+                                {investimentosFromUser?.map(({investimento, volume}, index) => {
                                     return (
                                         <ListItem
                                             sx={{ mt: 1 }}
-                                            key={investimento.id}
+                                            key={`${investimento.id}-${index}`}
                                             disablePadding
                                         >
-                                            <ListItemButton onClick={() => actions.setMovementOpen(true)}>
+                                            <ListItemButton onClick={ async () => {
+                                                await actions.getInvestimentoDetails(investimento.id)
+                                                await actions.setMovementOpen(true)
+                                            }}>
                                                 <ListItemAvatar>
                                                     <Avatar
                                                         src={investimento.logo}
                                                     />
                                                 </ListItemAvatar>
-                                                <ListItemText primary={investimento.stock} />
+                                                <ListItemText primary={investimento.code} />
                                                 <ListItemText primary={investimento.name} sx={{ml: 2}} />
-                                                <ListItemText primary={`Valor atual: 9,00 R$`} sx={{ml: 2}} />
-                                                <ListItemText primary={`Volume: 1000`} sx={{ml: 2}} />
+                                                <ListItemText primary={`Valor atual: ${investimento.value?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`} sx={{ml: 2}} />
+                                                <ListItemText primary={`Volume: ${volume}`} sx={{ml: 2}} />
                                                 <ListItemText primary={`Variação da carteira: -5%`} sx={{ml: 2}} />
                                                 <Preview sx={{ml: 2}}/>
                                             </ListItemButton>
@@ -138,11 +141,18 @@ const InvestimentosTemplate = () => {
                     </Box>
                 </Box>
                 <InvestimentoFormModal
+                    investimentos={investimentos}
                     open={formOpen}
                     onClose={() => actions.setFormOpen(false)}
-                    onSubmit={() => null} loading={loading}
-                />
-                <InvestimentoMovimentacoesModal open={movementOpen} onClose={() => actions.setMovementOpen(false)} loading={loading}/>
+                    onSubmit={actions.addInvestimentoToUser}
+                    loading={loading}
+                />  
+                <InvestimentoMovimentacoesModal
+                    open={movementOpen}
+                    details={investimentoDetails}
+                    onDelete={actions.deleteFromUser}
+                    onClose={() => actions.setMovementOpen(false)}
+                    loading={loading}/>
                 </>
             )}
         </Containers.InvestimentosContainer>

@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'usuarios',
     'movimentacoes',
+    'investimentos',
     'drf_yasg',
     'middlewares',
     'instituicoes',
