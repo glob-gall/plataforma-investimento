@@ -2,6 +2,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+import pandas as pd 
 
 from itertools import groupby
 
@@ -291,3 +292,28 @@ def movimentacoes_categorias(request):
     formatedCategorias.append(formated)
   
   return Response(formatedCategorias)
+
+@api_view(['PUT'])
+def movimentacoes_upload_file(request):
+  print('arquivo')
+  data = {}
+  if request.FILES.get('file'):
+    #data['file']= request.FILES.get('file')
+    dados = request.FILES.get('file')
+
+    extrato = pd.read_csv(dados).drop('Identificador',axis=1)
+
+    for index, row in extrato.iterrows():
+      data=(row['Data'])
+      valor=(row['Valor'])
+      desc=(row['Descrição'])
+      print(f"{data,valor,desc}\n")
+
+         
+    
+    return Response(f"arquivo recebido {dados}")
+    
+
+  
+
+

@@ -12,4 +12,5 @@ urlpatterns = [
     path('saldos/distribuicao-categoria/', views.movimentacoes_saldos_by_categoria),
     path('saldos/distribuicao-tempo/', views.movimentacoes_saldos_by_tempo),
     path('categorias/', views.movimentacoes_categorias),
+    path('upload/',views.movimentacoes_upload_file),
 ]
