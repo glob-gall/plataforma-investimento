@@ -8,7 +8,7 @@ import { useToastHandler } from "@/hooks/toastHandler/use-toastHandler.hook";
 export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) => {
 
     const [loading, setLoading] = React.useState<boolean>(false)
-    const {handleSetErrors} = useToastHandler()
+    const {handleSetErrors,handleSetMessage} = useToastHandler()
 
     const { actions } = useAuth();
 
@@ -33,6 +33,7 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
             // @ts-ignore
             handleSetErrors(err)
         }finally {
+            handleSetMessage({message:'Logado com sucesso!',type:'success'})
             setLoading(false);
         }
     }

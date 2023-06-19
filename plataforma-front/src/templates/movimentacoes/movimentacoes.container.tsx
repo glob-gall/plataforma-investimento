@@ -26,7 +26,7 @@ export const MovimentacoesContainer = (
   const [formData, setFormData] = React.useState<InstituicoesFormData | null>(
     null
   )
-  const { handleSetErrors } = useToastHandler()
+  const { handleSetErrors,handleSetMessage } = useToastHandler()
   const movimentacoesService = new MovimentacoesService()
 
   useEffect(() => {
@@ -61,8 +61,11 @@ export const MovimentacoesContainer = (
       setLoading(true)
       if (formData.id) {
         await movimentacoesService.update(formData.id, formData)
+        handleSetMessage({message:'Movimentação editada com sucesso!',type:'success'})
+        
       } else {
         await movimentacoesService.create(formData)
+        handleSetMessage({message:'Movimentação cadastrada com sucesso!',type:'success'})
       }
       await getMovimentacoes()
     } catch (err) {
@@ -78,6 +81,7 @@ export const MovimentacoesContainer = (
     try {
       setLoading(true)
       await movimentacoesService.delete(id)
+      handleSetMessage({message:'Movimentação excluida com sucesso!',type:'success'})
       await getMovimentacoes()
     } catch (err) {
       handleSetErrors(err)

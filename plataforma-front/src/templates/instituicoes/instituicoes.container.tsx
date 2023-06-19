@@ -6,6 +6,7 @@ import {InstituicoesService} from "@/services/instituicoes/instituicoes.service"
 import {
     InstituicoesFormData
 } from "@templates/instituicoes/components/instituicoes-form-modal/instituicoes-form-modal.types";
+import { useToastHandler } from "@/hooks/toastHandler/use-toastHandler.hook";
 
 export const InstituicoesContainer = (props: ContainerWithProps<InstituicoesContainerArgs>) => {
 
@@ -14,7 +15,7 @@ export const InstituicoesContainer = (props: ContainerWithProps<InstituicoesCont
     const [formOpen, setFormOpen] = React.useState(false)
     const [formData, setFormData] = React.useState<InstituicoesFormData | null>(null)
     const [instituicoesFromUser, setInstituicoesFromUser] = React.useState<InstituicoesInterface[]>([])
-
+    const { handleSetErrors, handleSetMessage } = useToastHandler()
 
     useEffect(() => {
         getInstituicoesFromUser()
@@ -39,11 +40,13 @@ export const InstituicoesContainer = (props: ContainerWithProps<InstituicoesCont
             setLoading(true)
             if(formData?.id){
                 await instituicoesService.updateToUser(formData?.id, data)
+                handleSetMessage({message:'Conta alterada com sucesso!',type:'success'})
             }else{
                 await instituicoesService.addToUser(data)
+                handleSetMessage({message:'Conta cadastrada com sucesso!',type:'success'})
             }
         }catch(e){
-            console.error(e);
+            handleSetErrors(e)
         }finally {
             setLoading(false)
             setFormOpen(false)
@@ -57,6 +60,7 @@ export const InstituicoesContainer = (props: ContainerWithProps<InstituicoesCont
         try{
             setLoading(true)
             await instituicoesService.deleteToUser(formData?.id)
+            handleSetMessage({message:'Conta excluida com sucesso!',type:'success'})
         }catch (e){
 
         }finally {
@@ -67,7 +71,6 @@ export const InstituicoesContainer = (props: ContainerWithProps<InstituicoesCont
     }
 
     async function addFormData(item: any){
-        console.log(item)
         setFormData({
             id: item.id,
             instituicao: item.instituicao.id,

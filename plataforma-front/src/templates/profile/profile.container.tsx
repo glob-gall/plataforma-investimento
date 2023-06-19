@@ -16,7 +16,7 @@ export const ProfileContainer = (props: ContainerWithProps<ProfileContainerArgs>
 
     const userService = new UserService()
 
-    const {handleSetErrors} = useToastHandler()
+    const {handleSetErrors,handleSetMessage} = useToastHandler()
 
     const onFormSubmit = useCallback(async (data:EditUserFormData)=>{
       setLoading(true)
@@ -28,6 +28,7 @@ export const ProfileContainer = (props: ContainerWithProps<ProfileContainerArgs>
         handleSetErrors(err)
     }finally {
         setLoading(false);
+        handleSetMessage({message:'Perfil editado con sucesso!',type:'success'})
     }
     },[userService,handleSetErrors])
 

@@ -14,7 +14,7 @@ export const ToastHandlerProvider: React.FC<ProviderProps> = ({ children }) => {
       setMessages(state => ([...state,{message:"Ocorreu um erro inesperado! :(",type:'error'}]))
     }else{
       const error = err.response.data
-      const mapped = error.errors.map(err => ({message:err.message, type:'error'}))
+      const mapped = error.errors.map((err: { message: any }) => ({message:err.message, type:'error'}))
       setMessages(state => ([...state,...mapped]))
     }
     setTimeout(()=>{
