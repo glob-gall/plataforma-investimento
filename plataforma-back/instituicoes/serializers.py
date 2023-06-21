@@ -9,6 +9,5 @@ class InstituicoesSerializer(serializers.ModelSerializer):
       'nome',
       'thumb',
       'codigo',
-      'ispb',
-      'image_link'
+      'ispb'
     ]
