@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from itertools import groupby
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -7,6 +8,8 @@ from django.db.models import Count
 
 from .models import MeusInvestimentos
 from .serializers import MeusInvestimentosSerializer,MeusInvestimentosGroupSerializer
+from utils.errors import formatErrors 
+from rest_framework import status
 
 from investimentos.models import Investimentos
 from usuarios.models import Usuario
@@ -47,10 +50,46 @@ class MeusInvestimentosView(APIView):
         investimentos = MeusInvestimentos.objects.filter(usuario__id = payload['id'], investimento_id = id).select_related('investimento').all()  
         serializer = MeusInvestimentosSerializer(investimentos, many=True)
         return Response(serializer.data)  
-    else:
-        investimentos = MeusInvestimentos.objects.filter(usuario__id = payload['id']).select_related('investimento').annotate(volumes=Count("investimento"))
-        serializer = MeusInvestimentosSerializer(investimentos, many=True)
-        return Response(serializer.data)  
+    
+
+    investimentos = MeusInvestimentos.objects.filter(usuario__id = payload['id'])#.select_related('investimento').annotate(volumes=Count("investimento"))
+    serializer = MeusInvestimentosSerializer(investimentos, many=True)
+    investimentos = serializer.data
+
+    def investimentoGroup(compra):
+      return compra['investimento']['id']
+    
+    investimentosGroup=[]
+    for key, group in groupby(investimentos, investimentoGroup):
+      
+      volumeTotal = 0
+      valorTotal = 0
+      investimento = {
+        'name':'',
+        'logo':'',
+        'value':0.0
+      }
+      for compra in group:
+        valorTotal += float(compra['volume']) * float(compra['valor_compra'])
+        volumeTotal += int(compra['volume'])
+        investimento['name'] = compra['investimento']['name']
+        investimento['value'] = compra['investimento']['value']
+        investimento['logo'] = compra['investimento']['logo']
+
+
+      totalAtual = float(investimento['value']) * volumeTotal
+      totalPago = (valorTotal/volumeTotal)*volumeTotal
+
+      investimentosGroup.append({
+        'key': key,
+        'volume_total': volumeTotal,
+        'valor_medio_compra': valorTotal/volumeTotal,
+        'investimento':investimento,
+        'retorno':totalAtual - totalPago
+      })
+  
+
+    return Response(investimentosGroup)  
   
   def post(self, request):
       user = request.auth_payload
@@ -65,7 +104,8 @@ class MeusInvestimentosView(APIView):
       data['investimento'] = investimento
 
       serializer = MeusInvestimentosSerializer(data = data)
-      serializer.is_valid(raise_exception = True)
+      if not serializer.is_valid():
+        return Response(formatErrors(serializer.errors),status=status.HTTP_400_BAD_REQUEST)
 
       data['usuario'] = Usuario.objects.filter(id=user.get('id')).first()
       serializer.create(data)

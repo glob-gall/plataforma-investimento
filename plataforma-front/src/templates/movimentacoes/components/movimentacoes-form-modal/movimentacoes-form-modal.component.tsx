@@ -13,6 +13,7 @@ import {
 import { categoriasMOCK } from '@/services/movimentacoes/categorias.mock'
 import * as Styles from './movimentacoes-form-modal.styles'
 import moment from 'moment'
+import { formatCurrency } from '@/utils/currency/currency.util'
 
 const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({
   open,
@@ -167,7 +168,7 @@ const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({
                       disableFuture
                       value={moment(field.value)}
                       error={!!errors.date}
-                      onChange={(date) => field.onChange(date._d)}
+                      onChange={(date) => field.onChange(date?._d)}
                       helperText={errors.date?.message}
                     />
                   </LocalizationProvider>
