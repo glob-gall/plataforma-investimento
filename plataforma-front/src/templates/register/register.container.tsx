@@ -3,14 +3,14 @@ import {RegisterContainerArgs, RegisterFormData} from "@/templates/register/regi
 import React from "react";
 import {AuthService} from "@/services/auth/auth.service";
 import {useAuth} from "@hooks/auth/use-auth.hook";
-import { useErrorHandler } from "@/hooks/errorHandler/use-errorHandler.hook";
+import { useToastHandler } from "@/hooks/toastHandler/use-toastHandler.hook";
 
 
 export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArgs>) => {
     const { actions: authActions } = useAuth();
     const [loading, setLoading] = React.useState<boolean>(false)
 
-    const {handleSetErrors} = useErrorHandler()
+    const {handleSetErrors,handleSetMessage} = useToastHandler()
 
 
     const authService = new AuthService();
@@ -36,7 +36,7 @@ export const RegisterContainer = (props: ContainerWithProps<RegisterContainerArg
             const birth  = data.birth.getFullYear() + '-' + (data.birth.getMonth() + 1) + '-' + data.birth.getDate();
 
             await authService.register(data.email,fullname, data.password as string, birth);
-            
+            handleSetMessage({message:'Cadastro realizado com sucesso!',type:'success'})
             await authActions?.login(data.email, data.password);
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
