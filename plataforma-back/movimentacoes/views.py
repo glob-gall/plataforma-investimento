@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 import pandas as pd 
+from datetime import datetime
 
 from itertools import groupby
 
@@ -295,18 +296,42 @@ def movimentacoes_categorias(request):
 
 @api_view(['PUT'])
 def movimentacoes_upload_file(request):
-  print('arquivo')
   data = {}
-  if request.FILES.get('file'):
-    #data['file']= request.FILES.get('file')
-    dados = request.FILES.get('file')
 
+  payload = request.auth_payload
+  findedUser = Usuario.objects.filter(id = payload['id']).first()
+  if not findedUser:
+    return ResponseError('O usuário precia estar logado.')
+  
+  
+  findedAccount = None
+  contaId = request.data.get('conta')
+  if(contaId):
+    findedAccount = Contas.objects.filter(id =contaId).first()
+    if not findedAccount:
+      return ResponseError('A conta informada não pertence ao usuário logado.')
+    if findedUser.pk != findedAccount.usuario.pk:
+      return ResponseError('A conta informada não pertence ao usuário logado.')
+    
+  data = request.data
+  data['usuario'] = findedUser.pk
+  if findedAccount:
+    data['conta'] = findedAccount.pk
+  
+  if request.FILES.get('file'):
+    
+    dados = request.FILES.get('file')
     extrato = pd.read_csv(dados).drop('Identificador',axis=1)
 
     for index, row in extrato.iterrows():
-      data=(row['Data'])
+      date=(row['Data'])
+      date=datetime.strptime(date,'%d/%m/%Y')
+      date= date.strftime('%Y-%m-%d')
+      
       valor=(row['Valor'])
       desc=(row['Descrição'])
+      movimentacao= Movimentacoes(usuario=findedUser,conta=findedAccount,description=desc,date=date,value=valor)
+      movimentacao.save()
       print(f"{data,valor,desc}\n")
 
          
