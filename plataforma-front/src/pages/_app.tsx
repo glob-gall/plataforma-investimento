@@ -11,6 +11,8 @@ import {parseCookies} from "nookies";
 import {TOKEN_KEY} from "@constants/constants";
 import ContextComposer from "@contexts/context.composer";
 
+import NextNProgress from 'nextjs-progressbar';
+
 const theme = createTheme({
     palette: {
         primary: {
@@ -46,11 +48,13 @@ if( typeof window !== 'undefined' ) {
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-      <ContextComposer user={pageProps.user}>
+    <>
+        <NextNProgress height={6} color="#8080f0" />
+        <ContextComposer user={pageProps.user}>
           <ThemeProvider theme={theme}>
               <Component {...pageProps} />
           </ThemeProvider>
-      </ContextComposer>
-
+        </ContextComposer>
+    </>
   )
 }
