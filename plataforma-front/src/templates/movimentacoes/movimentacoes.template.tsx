@@ -1,5 +1,8 @@
 import Box from '@mui/material/Box'
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Button,
   Card,
   FormControl,
@@ -44,6 +47,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { formatDatetimeToDateString } from '@utils/date/date.util'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { categoriasMOCK } from '@/services/movimentacoes/categorias.mock'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const columns = [
   { id: 'type', label: 'Tipo', minWidth: 24, maxWidth: 24, align: 'left' },
@@ -255,19 +259,31 @@ const MovimentacoesTemplate = (props) => {
               </Styles.HeaderContainer>
             </Box>
 
-            <Box mb={2} mt={2} p={2} component={Card} variant='outlined' >
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-              >
-                <FilterAlt color="primary" />
-                <Typography variant="h6">Filtros</Typography>
-              </Box>
-              <Box mt={2}>
-                {renderFilterOptions(props, actions.handleFilters)}
-              </Box>
+            <Box mb={2} mt={2} p={2} >
+            <Accordion>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+
+                  <FilterAlt color="primary" />
+                    <Typography variant="h6">Filtros</Typography>
+                  </Box>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Box mt={2}>
+                    {renderFilterOptions(props, actions.handleFilters)}
+                  </Box>
+                </AccordionDetails>
+
+            </Accordion>
             </Box>
 
             <Box sx={{ width: '100%' }}>
