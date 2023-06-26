@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
 import {
   Button,
+  Card,
   FormControl,
   IconButton,
   InputLabel,
@@ -237,10 +238,6 @@ const MovimentacoesTemplate = (props) => {
                 
               </Box>
               <Styles.HeaderContainer>
-                <Styles.SearchMovimentacao>
-                  <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                  <TextField label="Buscar movimentação" variant="standard" onChange={(ev) => actions.handleFilters(ev.target.value, 'search')}/>
-                </Styles.SearchMovimentacao>
                 <Styles.AddMovimentacao
                     variant="outlined"
                     startIcon={<Add />}
@@ -251,10 +248,14 @@ const MovimentacoesTemplate = (props) => {
                   >
                   Adicionar movimentação
                 </Styles.AddMovimentacao>
+                <Styles.SearchMovimentacao>
+                  <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                  <TextField label="Buscar movimentação" variant="standard" onChange={(ev) => actions.handleFilters(ev.target.value, 'search')}/>
+                </Styles.SearchMovimentacao>
               </Styles.HeaderContainer>
             </Box>
 
-            <Box mb={2} mt={2} sx={{ boxShadow: 1 }} p={2}>
+            <Box mb={2} mt={2} p={2} component={Card} variant='outlined' >
               <Box
                 sx={{
                   display: 'flex',
