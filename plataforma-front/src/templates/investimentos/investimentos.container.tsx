@@ -50,7 +50,7 @@ export const InvestimentosContainer = (props: ContainerWithProps<InvestimentosCo
     async function getInvestimentoDetails(id: number){
         try{
             setLoading(true)
-            const { data } = await investimentosService.getFromUser(id)
+            const { data } = await investimentosService.getDetailsFromUser(id)
             setInvestimentoDetails(data)
         }catch(e){
             console.log(e)

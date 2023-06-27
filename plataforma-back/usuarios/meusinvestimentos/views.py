@@ -8,7 +8,7 @@ from django.db.models import Count
 
 from .models import MeusInvestimentos
 from .serializers import MeusInvestimentosSerializer,MeusInvestimentosGroupSerializer
-from utils.errors import formatErrors 
+from utils.errors import formatErrors,ResponseError 
 from rest_framework import status
 
 from investimentos.models import Investimentos
@@ -43,7 +43,9 @@ class MeusInvestimentosView(APIView):
 
   def get(self, request):
     payload = request.auth_payload
-
+    findedUser = Usuario.objects.filter(id = payload['id']).first()
+    if not findedUser:
+      return ResponseError('O usuário precia estar logado.')
     id = request.query_params.get('id')
 
     if id:
@@ -59,7 +61,11 @@ class MeusInvestimentosView(APIView):
     def investimentoGroup(compra):
       return compra['investimento']['id']
     
-    investimentosGroup=[]
+    items=[]
+    resumo = {
+      'carteira':0,
+      'retorno_total':0
+    }
     for key, group in groupby(investimentos, investimentoGroup):
       
       volumeTotal = 0
@@ -82,7 +88,9 @@ class MeusInvestimentosView(APIView):
       totalAtual = float(investimento['value']) * volumeTotal
       totalPago = (valorTotal/volumeTotal)*volumeTotal
 
-      investimentosGroup.append({
+      resumo['carteira']+= totalAtual
+      resumo['retorno_total']+= (totalAtual - totalPago)
+      items.append({
         'key': key,
         'volume_total': volumeTotal,
         'valor_medio_compra': valorTotal/volumeTotal,
@@ -91,17 +99,23 @@ class MeusInvestimentosView(APIView):
       })
   
 
-    return Response(investimentosGroup)  
+    return Response({
+      'resumo':resumo,
+      'items':items
+    })  
   
   def post(self, request):
-      user = request.auth_payload
+      payload = request.auth_payload
+      findedUser = Usuario.objects.filter(id = payload['id']).first()
+      if not findedUser:
+        return ResponseError('O usuário precia estar logado.')
       data = request.data
-      data['usuario'] = user.get('id')
+
 
       investimento = Investimentos.objects.filter(id=data['investimento']).first()
 
       if not investimento:
-        return HttpResponse('Investimento não encontrado', status=422)
+        return ResponseError('Investimento não encontrado', status=422)
 
       data['investimento'] = investimento
 
@@ -109,8 +123,8 @@ class MeusInvestimentosView(APIView):
       if not serializer.is_valid():
         return Response(formatErrors(serializer.errors),status=status.HTTP_400_BAD_REQUEST)
 
-      data['usuario'] = Usuario.objects.filter(id=user.get('id')).first()
+      data['usuario'] = Usuario.objects.filter(id=findedUser.pk).first()
       serializer.create(data)
 
-      InvestimentosView.associar_usuario(user.get('id'), investimento)
+      InvestimentosView.associar_usuario(findedUser.pk, investimento)
       return HttpResponse(status=201)

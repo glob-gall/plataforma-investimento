@@ -1,6 +1,6 @@
 
 export interface InvestimentosContainerArgs {
-    investimentosFromUser:Investimento[],
+    investimentosFromUser:InvertimentosInfo,
     loading:boolean
 }
 
@@ -15,4 +15,28 @@ export interface Investimento{
         code:string
     },
     retorno: number
+}
+export interface InvestimentoDetails{
+    id: number,
+    volume: number,
+    data_movimentacao: string,
+    investimento: {
+        id: number,
+        code:string
+        name: string,
+        logo: string,
+        value: string,
+    },
+    retorno: number
+}
+export interface Resumo{
+    
+    "carteira": number,
+    "retorno_total": number
+    
+}
+
+export interface InvertimentosInfo {
+    resumo:Resumo,
+    items: Investimento[]
 }

@@ -7,7 +7,6 @@ import {
     ListItem,
     ListItemAvatar,
     ListItemButton,
-    ListItemText,
     Tooltip,
     Typography
 } from "@mui/material";
@@ -22,6 +21,7 @@ import InvestimentoMovimentacoesModal
 import {VictoryAxis, VictoryBar, VictoryChart} from "victory";
 import * as Styles from './investimentos.styles'
 import { toBRL } from "@/utils/currency/currency.util";
+import ResumoInvestimentos from "./components/Resumo";
 const saldos = [
     {
         "categoria": "IBOV11",
@@ -52,10 +52,12 @@ const InvestimentosTemplate = ({ investimentos }) => {
                             Adicionar Novo investimento
                         </Button>
                     </Box>
+
                     <Box sx={{ display: 'flex', flexFlow: 'row' }}>
                         <Box mt={3}>
+                            {investimentosFromUser.resumo && <ResumoInvestimentos resumo={investimentosFromUser.resumo}/>}
                             <List dense sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                                {investimentosFromUser?.map((item, index) => {
+                                {investimentosFromUser?.items?.map((item, index) => {
                                     return (
                                         <>
                                         <ListItem
@@ -94,7 +96,7 @@ const InvestimentosTemplate = ({ investimentos }) => {
                                                 <Tooltip title="Retorno" arrow placement="top-start">
                                                     <Styles.ListItemMoney 
                                                         primary={item.retorno > 0 
-                                                            ?<Styles.Entrada style={{ fontWeight: 'bold', color: '#03AF0C' }}>{toBRL(item.retorno)}</Styles.Entrada>
+                                                            ?<Styles.Entrada style={{ fontWeight: 'bold', color: '#03AF0C' }}>+{toBRL(item.retorno)}</Styles.Entrada>
                                                             :<Styles.Saida style={{ fontWeight: 'bold', color: '#E40050' }}>{toBRL(item.retorno)}</Styles.Saida>
                                                             } 
                                                         secondary={
