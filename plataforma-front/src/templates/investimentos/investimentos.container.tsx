@@ -18,7 +18,7 @@ export const InvestimentosContainer = (props: ContainerWithProps<InvestimentosCo
 
 
     async function addInvestimentoToUser(data: InvestimentoFormData){
-        console.log({data});
+        
         
         try{
             setLoading(true)

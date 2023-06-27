@@ -68,7 +68,7 @@ export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ in
                             })}
                         >
                             {investimentos?.map(({ id, code, name }, index) => (
-                                <MenuItem key={`${id}-${index}`} value={index}>
+                                <MenuItem key={`${id}-${index}`} value={id}>
                                     {code} - {name}
                                 </MenuItem>
                             ))}
@@ -83,7 +83,7 @@ export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ in
                                 error={!!errors.instituicao}
                                 helperText={errors.instituicao?.message}
                                 placeholder={'Valor de compra'}
-                                {...register("descricao", { required: "Nome é obrigatório.", maxLength: {
+                                {...register("valor_compra", { required: "Nome é obrigatório.", maxLength: {
                                         value: 20,
                                         message: 'Digite no máximo 20 caracteres.'
                                     } })}
@@ -94,7 +94,7 @@ export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ in
                                 error={!!errors.instituicao}
                                 helperText={errors.instituicao?.message}
                                 placeholder={'Volume'}
-                                {...register("descricao", { required: "Nome é obrigatório.", maxLength: {
+                                {...register("volume", { required: "Nome é obrigatório.", maxLength: {
                                         value: 20,
                                         message: 'Digite no máximo 20 caracteres.'
                                     } })}
@@ -102,7 +102,7 @@ export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ in
                         </Box>
                         <Box mt={2}>
                             <Controller
-                                name="date"
+                                name="data_movimentacao"
                                 control={control}
                                 rules={{
                                     required: 'Este campo é obrigatório.',
