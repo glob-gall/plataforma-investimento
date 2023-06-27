@@ -1,6 +1,7 @@
 import { AxiosInstance } from "axios"
 import defaultApi from '@config/api.config'
 import { InvestimentoFormData } from "@/templates/investimentos/components/investimento-form-modal/investimento-form-modal.types"
+import { Investimento } from "@/templates/investimentos/investimentos.types"
 
 
 export class InvestimentosService {
@@ -18,7 +19,7 @@ export class InvestimentosService {
         console.log({data});
         return await this._api.post('/usuario/investimentos/', data)
     }
-    async getFromUser(id: number) {
+    async getFromUser(id: number): Promise<Investimento[]> {
         const params = new URLSearchParams()
         if(id) params.append('id', `${id}`)
         return await this._api.get('/usuario/investimentos/', { params })

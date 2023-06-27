@@ -2,15 +2,16 @@ import Box from "@mui/material/Box";
 import {
     Avatar,
     Button,
-    Checkbox,
+    Divider,
     List,
     ListItem,
     ListItemAvatar,
     ListItemButton,
     ListItemText,
+    Tooltip,
     Typography
 } from "@mui/material";
-import {Add, Preview} from "@mui/icons-material";
+import {Add, VisibilityOutlined} from "@mui/icons-material";
 import React from "react";
 import * as Containers from './investimentos.container'
 import {
@@ -19,48 +20,8 @@ import {
 import InvestimentoMovimentacoesModal
     from "@templates/investimentos/components/investimento-movimentacoes-modal/investimento-movimentacoes-modal.component";
 import {VictoryAxis, VictoryBar, VictoryChart} from "victory";
-
-const investimentosMock = [
-    {
-        id: 1,
-        stock: "IBOV11",
-        name: "Ibovespa",
-        logo: "https://s3-symbol-logo.tradingview.com/b3-on-nm--big.svg",
-        currentValue: 9.00,
-        movement: [
-            {
-                date: "2021-10-01",
-                volume: 1000,
-                value: 8.20
-            },
-            {
-                date: "2021-10-02",
-                volume: 1000,
-                value: 8.50
-            }
-        ]
-    },
-    {
-        id: 2,
-        stock: "PETR4",
-        name: "Petrobras",
-        logo: "https://s3-symbol-logo.tradingview.com/pactual-ibovci--big.svg",
-        currentValue: 9.00,
-        movement: [
-            {
-                date: "2021-10-01",
-                volume: 1000,
-                value: 8.20
-            },
-            {
-                date: "2021-10-02",
-                volume: 1000,
-                value: 8.50
-            }
-        ]
-    }
-]
-
+import * as Styles from './investimentos.styles'
+import { toBRL } from "@/utils/currency/currency.util";
 const saldos = [
     {
         "categoria": "IBOV11",
@@ -94,30 +55,61 @@ const InvestimentosTemplate = ({ investimentos }) => {
                     <Box sx={{ display: 'flex', flexFlow: 'row' }}>
                         <Box mt={3}>
                             <List dense sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                                {investimentosFromUser?.map(({investimento, volume}, index) => {
+                                {investimentosFromUser?.map((item, index) => {
                                     return (
+                                        <>
                                         <ListItem
                                             sx={{ mt: 1 }}
-                                            key={`${investimento.id}-${index}`}
+                                            key={`${item.key}-${index}`}
                                             disablePadding
                                         >
                                             <ListItemButton onClick={ async () => {
-                                                await actions.getInvestimentoDetails(investimento.id)
+                                                await actions.getInvestimentoDetails(item.key)
                                                 await actions.setMovementOpen(true)
                                             }}>
                                                 <ListItemAvatar>
                                                     <Avatar
-                                                        src={investimento.logo}
+                                                        src={item.investimento.logo}
                                                     />
                                                 </ListItemAvatar>
-                                                <ListItemText primary={investimento.code} />
-                                                <ListItemText primary={investimento.name} sx={{ml: 2}} />
-                                                <ListItemText primary={`Valor atual: ${investimento.value?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`} sx={{ml: 2}} />
-                                                <ListItemText primary={`Volume: ${volume}`} sx={{ml: 2}} />
-                                                <ListItemText primary={`Variação da carteira: -5%`} sx={{ml: 2}} />
-                                                <Preview sx={{ml: 2}}/>
+                                                <Styles.ListItem 
+                                                    primary={item.investimento.code} 
+                                                    secondary={
+                                                        <Styles.Code>
+                                                            {item.investimento.name}
+                                                        </Styles.Code>
+                                                        }
+                                                />
+                                                <Tooltip title="Preço médio" arrow placement="top-start">
+                                                    <Styles.ListItemMoney 
+                                                        primary={toBRL(item.volume_total*item.valor_medio_compra)} 
+                                                        secondary={
+                                                            <Styles.Code>
+                                                                {item.volume_total}x{toBRL(item.valor_medio_compra)}
+                                                            </Styles.Code>
+                                                        }
+                                                    />
+                                                </Tooltip>
+
+                                                <Tooltip title="Retorno" arrow placement="top-start">
+                                                    <Styles.ListItemMoney 
+                                                        primary={item.retorno > 0 
+                                                            ?<Styles.Entrada style={{ fontWeight: 'bold', color: '#03AF0C' }}>{toBRL(item.retorno)}</Styles.Entrada>
+                                                            :<Styles.Saida style={{ fontWeight: 'bold', color: '#E40050' }}>{toBRL(item.retorno)}</Styles.Saida>
+                                                            } 
+                                                        secondary={
+                                                            <Styles.Code>
+                                                                {item.volume_total}x{toBRL(item.investimento.value)}
+                                                            </Styles.Code>
+                                                        }
+                                                    />
+                                                </Tooltip>
+                                                
+                                                <VisibilityOutlined sx={{ml: 2}}/>
                                             </ListItemButton>
                                         </ListItem>
+                                        <Divider />
+                                        </>
                                     );
                                 })}
                             </List>

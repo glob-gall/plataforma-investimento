@@ -1,18 +1,20 @@
 import {ContainerWithProps} from "@/@common/types/container.types";
 import { InvestimentosService } from "@/services/investimentos/investimentos.service";
-import {InvestimentosContainerArgs} from "@templates/investimentos/investimentos.types";
+import {Investimento, InvestimentosContainerArgs} from "@templates/investimentos/investimentos.types";
 import React, { useEffect } from "react";
 import {
     InvestimentoFormData
 } from "@templates/investimentos/components/investimento-form-modal/investimento-form-modal.types";
+import { useToastHandler } from "@/hooks/toastHandler/use-toastHandler.hook";
 
 export const InvestimentosContainer = (props: ContainerWithProps<InvestimentosContainerArgs>) => {
 
     const [loading, setLoading] = React.useState<boolean>(false)
     const [formOpen, setFormOpen] = React.useState(false)
-    const [investimentosFromUser, setInvestimentosFromUser] = React.useState<any[]>([])
+    const [investimentosFromUser, setInvestimentosFromUser] = React.useState<Investimento[]>([])
     const [investimentoDetails, setInvestimentoDetails ] = React.useState<any>([])
     const [movementOpen, setMovementOpen] = React.useState(false)
+    const { handleSetErrors,handleSetMessage } = useToastHandler()
 
     const investimentosService = new InvestimentosService()
 
@@ -24,7 +26,9 @@ export const InvestimentosContainer = (props: ContainerWithProps<InvestimentosCo
             setLoading(true)
             await investimentosService.addInvestimentoToUser(data)
             await getInvestimentosFromUser()
+            handleSetMessage({message:'Investimento criado com sucesso',type:'success'})
         }catch(e){
+            handleSetErrors(e)
             console.log(e)
         }finally{
             setLoading(false)
