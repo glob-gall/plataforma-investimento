@@ -67,6 +67,7 @@ class MeusInvestimentosView(APIView):
       investimento = {
         'name':'',
         'logo':'',
+        'code':'',
         'value':0.0
       }
       for compra in group:
@@ -75,6 +76,7 @@ class MeusInvestimentosView(APIView):
         investimento['name'] = compra['investimento']['name']
         investimento['value'] = compra['investimento']['value']
         investimento['logo'] = compra['investimento']['logo']
+        investimento['code'] = compra['investimento']['code']
 
 
       totalAtual = float(investimento['value']) * volumeTotal
