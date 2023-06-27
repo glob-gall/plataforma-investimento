@@ -1,11 +1,9 @@
 import { ContainerWithProps } from "@/@common/types/container.types";
 import { EditUserFormData, ProfileContainerArgs } from "./profile.types";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { UserService } from "@/services/user/user.service";
 import pigMoneyEmoji from "@/utils/emojis/pigMoneyEmoji";
-import { watch } from "fs";
-import { useErrorHandler } from "@/hooks/errorHandler/use-errorHandler.hook";
-import { useRouter } from "next/router";
+import { useToastHandler } from "@/hooks/toastHandler/use-toastHandler.hook";
 import { useAuth } from "@/hooks/auth/use-auth.hook";
 
 
@@ -18,7 +16,7 @@ export const ProfileContainer = (props: ContainerWithProps<ProfileContainerArgs>
 
     const userService = new UserService()
 
-    const {handleSetErrors} = useErrorHandler()
+    const {handleSetErrors,handleSetMessage} = useToastHandler()
 
     const onFormSubmit = useCallback(async (data:EditUserFormData)=>{
       setLoading(true)
@@ -30,6 +28,7 @@ export const ProfileContainer = (props: ContainerWithProps<ProfileContainerArgs>
         handleSetErrors(err)
     }finally {
         setLoading(false);
+        handleSetMessage({message:'Perfil editado con sucesso!',type:'success'})
     }
     },[userService,handleSetErrors])
 
