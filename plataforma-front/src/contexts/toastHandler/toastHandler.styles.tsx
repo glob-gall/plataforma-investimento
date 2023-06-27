@@ -1,7 +1,7 @@
 import { Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-export const ErrorContainer = styled('div')`
+export const ToastContainer = styled('div')`
   z-index: 1101;
   position: fixed;
   top: 0;
@@ -19,6 +19,6 @@ export const ErrorContainer = styled('div')`
   max-width: 90%;
 `;
 
-export const ErrorCard = styled(Alert)`
+export const Toast = styled(Alert)`
   margin-top: 10px;
 `

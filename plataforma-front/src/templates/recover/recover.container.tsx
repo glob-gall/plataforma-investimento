@@ -6,7 +6,7 @@ import {
 } from '@/templates/recover/recover.types'
 import React from 'react'
 import { useAuth } from '@hooks/auth/use-auth.hook'
-import { useErrorHandler } from '@/hooks/errorHandler/use-errorHandler.hook'
+import { useToastHandler } from '@/hooks/toastHandler/use-toastHandler.hook'
 import { UserService } from '@/services/user/user.service'
 import { useRouter } from 'next/router'
 
@@ -15,7 +15,7 @@ export const RecoverContainer = (
 ) => {
   const [loading, setLoading] = React.useState<boolean>(false)
   const router = useRouter()
-  const { handleSetErrors } = useErrorHandler()
+  const { handleSetErrors } = useToastHandler()
   const [submitted, setSubmitted] = React.useState<boolean>(false)
 
   const userService = new UserService()

@@ -1,0 +1,2441 @@
+[
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "0",
+            "codigo": 1,
+            "nome": "Banco do Brasil S.A.",
+            "thumb": "https://www.bb.com.br/site/wp-content/themes/portal40/img/icn-am.ico"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "208",
+            "codigo": 70,
+            "nome": "BRB - BANCO DE BRASILIA S.A.",
+            "thumb": "https://novo.brb.com.br/wp-content/uploads/2022/05/cropped-MicrosoftTeams-image-12.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "38121",
+            "codigo": null,
+            "nome": "Banco Central do Brasil - Selic",
+            "thumb": "https://www.bcb.gov.br/assets/svg/logo-bcb.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "38166",
+            "codigo": null,
+            "nome": "Banco Central do Brasil",
+            "thumb": "https://www.bcb.gov.br/assets/svg/logo-bcb.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "250699",
+            "codigo": 272,
+            "nome": "AGK CORRETORA DE CAMBIO S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "315557",
+            "codigo": 136,
+            "nome": "CONFEDERAÇÃO NACIONAL DAS COOPERATIVAS CENTRAIS UNICRED LTDA. - UNICRED DO BRASIL",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "360305",
+            "codigo": 104,
+            "nome": "CAIXA ECONOMICA FEDERAL",
+            "thumb": "https: //www.caixa.gov.br/PublishingImages/nova-home/icones/x-volume-negativa-54.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "394460",
+            "codigo": null,
+            "nome": "Secretaria do Tesouro Nacional - STN",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "416968",
+            "codigo": 77,
+            "nome": "Banco Inter S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "517645",
+            "codigo": 741,
+            "nome": "BANCO RIBEIRAO PRETO S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "556603",
+            "codigo": 330,
+            "nome": "BANCO BARI DE INVESTIMENTOS E FINANCIAMENTOS S.A.",
+            "thumb": "https://bancobari.com.br/linha-de-credito/images/Logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "558456",
+            "codigo": 739,
+            "nome": "Banco Cetelem S.A.",
+            "thumb": "https://www.cetelem.com.br/image/layout_set_logo?img_id=705240112&t=1686730439237"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "795423",
+            "codigo": 743,
+            "nome": "Banco Semear S.A.",
+            "thumb": "https://www.bancosemear.com.br/wp-content/themes/semear/assets/images/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "806535",
+            "codigo": 100,
+            "nome": "Planner Corretora de Valores S.A.",
+            "thumb": "https://www.planner.com.br/wp-content/uploads/2018/07/logo_planner.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "997185",
+            "codigo": 96,
+            "nome": "Banco B3 S.A.",
+            "thumb": "https://www.b3.com.br/data/files/C3/03/26/EB/AAC9E51021E9C9E5790D8AA8/logob3-disclaimer.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1023570",
+            "codigo": 747,
+            "nome": "Banco Rabobank International Brasil S.A.",
+            "thumb": "https://media.rabobank.com/m/5c0d2c496819b02f/original/Rabobank-text-logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1027058",
+            "codigo": 362,
+            "nome": "CIELO S.A.",
+            "thumb": "https://www.cielo.com.br/_nuxt/img/logo_footer.2107839.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1073966",
+            "codigo": 322,
+            "nome": "Cooperativa de Crédito Rural de Abelardo Luz - Sulcredi/Crediluz",
+            "thumb": "https://sulcrediab.com.br/website/wp-content/themes/sulcredi/img/apple-touch-icon.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1181521",
+            "codigo": 748,
+            "nome": "BANCO COOPERATIVO SICREDI S.A.",
+            "thumb": "https://www.sicredi.com.br/static/site/assets/header/logo-svg2.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1330387",
+            "codigo": 350,
+            "nome": "COOPERATIVA DE CRÉDITO RURAL DE PEQUENOS AGRICULTORES E DA REFORMA AGRÁRIA DO CE",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1522368",
+            "codigo": 752,
+            "nome": "Banco BNP Paribas Brasil S.A.",
+            "thumb": "https://brasil.bnpparibas/app/themes/bnpp-pays-v2b/dist/assets/img/static/logo-bnp.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1634601",
+            "codigo": 91,
+            "nome": "CENTRAL DE COOPERATIVAS DE ECONOMIA E CRÉDITO MÚTUO DO ESTADO DO RIO GRANDE DO S",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1658426",
+            "codigo": 379,
+            "nome": "COOPERFORTE - COOPERATIVA DE ECONOMIA E CRÉDITO MÚTUO DOS FUNCIONÁRIOS DE INSTIT",
+            "thumb": "https://www.cf.coop.br/wp-content/themes/tema-base/images/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1701201",
+            "codigo": 399,
+            "nome": "Kirton Bank S.A. - Banco Múltiplo",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1800019",
+            "codigo": 108,
+            "nome": "PORTOCRED S.A. - CREDITO, FINANCIAMENTO E INVESTIMENTO",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "1852137",
+            "codigo": 378,
+            "nome": "BBC LEASING S.A. - ARRENDAMENTO MERCANTIL",
+            "thumb": "https://bancobbcdigital.com.br/img/banco-bbc-digital.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "2038232",
+            "codigo": 756,
+            "nome": "BANCO COOPERATIVO DO BRASIL S.A. - BANCOOB",
+            "thumb": "https://www.bancoob.com.br/templates/bancoob_2010/images/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "2276653",
+            "codigo": 360,
+            "nome": "TRINUS CAPITAL DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.",
+            "thumb": "https://trinusinvestimentos.com.br/wp-content/uploads/2020/02/TRINUSINVEST_LOGO_BR.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "2318507",
+            "codigo": 757,
+            "nome": "BANCO KEB HANA DO BRASIL S.A.",
+            "thumb": "https://bancokebhana.com.br/wp-content/uploads/2018/05/logo_keb_01.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "2332886",
+            "codigo": 102,
+            "nome": "XP INVESTIMENTOS CORRETORA DE CÂMBIO,TÍTULOS E VALORES MOBILIÁRIOS S/A",
+            "thumb": "https://web.xpi.com.br/xp-new/wp-content/uploads/sites/18/2023/03/logo-xpi.png?w=64&h=undefined&q=75"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "2398976",
+            "codigo": 84,
+            "nome": "UNIPRIME NORTE DO PARANÁ - COOPERATIVA DE CRÉDITO LTDA",
+            "thumb": "https://www.uniprime.com.br/themes/oficial/images/logo-uniprime-white.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "2685483",
+            "codigo": 180,
+            "nome": "CM CAPITAL MARKETS CORRETORA DE CÂMBIO, TÍTULOS E VALORES MOBILIÁRIOS LTDA",
+            "thumb": "https://eplus.cmcapital.com.br/assets/img/cadastro/Logo_Capital@300x.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "2801938",
+            "codigo": 66,
+            "nome": "BANCO MORGAN STANLEY S.A.",
+            "thumb": "https://www.morganstanley.com.br/etc.clientlibs/msdotcomr4/clientlibs/clientlib-site/resources/img/logo-black.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "2819125",
+            "codigo": 15,
+            "nome": "UBS Brasil Corretora de Câmbio, Títulos e Valores Mobiliários S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "2992317",
+            "codigo": 143,
+            "nome": "Treviso Corretora de Câmbio S.A.",
+            "thumb": "https://trevisocambio.com.br/wp-content/themes/treviso_degrau/assets/dist/img/logo/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "2992335",
+            "codigo": null,
+            "nome": "Câmara Interbancária de Pagamentos - CIP - LDL",
+            "thumb": "https://blog.atoscapital.com.br/wp-content/uploads/2017/11/cip.jpg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3012230",
+            "codigo": 62,
+            "nome": "Hipercard Banco Múltiplo S.A.",
+            "thumb": "https://www.hipercard.com.br/assets/images/hipercard.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3017677",
+            "codigo": 74,
+            "nome": "Banco J. Safra S.A.",
+            "thumb": "https://www.safra.com.br/lumis-theme/br/com/bancosafra/safranet/theme/safranet/assets/img/logo-safra.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3046391",
+            "codigo": 99,
+            "nome": "UNIPRIME CENTRAL - CENTRAL INTERESTADUAL DE COOPERATIVAS DE CREDITO LTDA.",
+            "thumb": "https://www.uniprime.com.br/themes/oficial/images/logo-uniprime-white.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3215790",
+            "codigo": 387,
+            "nome": "Banco Toyota do Brasil S.A.",
+            "thumb": "https://institucional.bancotoyota.com.br/assets/images/header/logo-toyota.jpg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3311443",
+            "codigo": 326,
+            "nome": "PARATI - CREDITO, FINANCIAMENTO E INVESTIMENTO S.A.",
+            "thumb": "https://www.parati-cfi.com.br/images/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3323840",
+            "codigo": 25,
+            "nome": "Banco Alfa S.A.",
+            "thumb": "https://bancoalfa.com.br/WFResources/Facelift/images/bancoalfa.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3502968",
+            "codigo": 315,
+            "nome": "PI Distribuidora de Títulos e Valores Mobiliários S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3532415",
+            "codigo": 75,
+            "nome": "Banco ABN Amro S.A.",
+            "thumb": "https://www.abnamro.com/assets/images/logo-clearing.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3609817",
+            "codigo": 40,
+            "nome": "Banco Cargill S.A.",
+            "thumb": "https://www.cargill.com.br/image/1432094128551/cargill-logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3751794",
+            "codigo": 307,
+            "nome": "Terra Investimentos Distribuidora de Títulos e Valores Mobiliários Ltda.",
+            "thumb": "https://www.terrainvestimentos.com.br/wp-content/uploads/2022/12/logo-terra-investimentos-branco.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "3973814",
+            "codigo": 190,
+            "nome": "SERVICOOP - COOPERATIVA DE CRÉDITO DOS SERVIDORES PÚBLICOS ESTADUAIS DO RIO GRAN",
+            "thumb": "https://servicoop.com.br/wp-content/uploads/2022/07/cropped-servicoop_novo_verde-310x69-1.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4062902",
+            "codigo": 296,
+            "nome": "VISION S.A. CORRETORA DE CAMBIO",
+            "thumb": "https://instagram.fmgf7-1.fna.fbcdn.net/v/t51.2885-19/51729551_617273118694546_1629289311092342784_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fmgf7-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=Spqt9kf6CZgAX_9IZGj&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfD-nLiN3_oD7zgnzWO6RS92bbv1j_oSDlr083s3BBa2vw&oe=648FDBC2&_nc_sid=f70a57"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4184779",
+            "codigo": 63,
+            "nome": "Banco Bradescard S.A.",
+            "thumb": "https://www.bradescard.com.br/bradescard/static_files/assets/images/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4257795",
+            "codigo": 191,
+            "nome": "Nova Futura Corretora de Títulos e Valores Mobiliários Ltda.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4307598",
+            "codigo": 382,
+            "nome": "FIDÚCIA SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E À EMPRESA DE PEQUENO PORTE L",
+            "thumb": "https://fiduciascm.com.br/_next/static/media/logo.6bb9e94b.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4332281",
+            "codigo": 64,
+            "nome": "GOLDMAN SACHS DO BRASIL BANCO MULTIPLO S.A.",
+            "thumb": "https://www.goldmansachs.com/a/pgs/images/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4391007",
+            "codigo": null,
+            "nome": "Câmara Interbancária de Pagamentos",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4632856",
+            "codigo": 97,
+            "nome": "Credisis - Central de Cooperativas de Crédito Ltda.",
+            "thumb": "https://credisis.com.br/wp-content/uploads/2021/01/Logo_Site.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4715685",
+            "codigo": 16,
+            "nome": "COOPERATIVA DE CRÉDITO MÚTUO DOS DESPACHANTES DE TRÂNSITO DE SANTA CATARINA E RI",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4814563",
+            "codigo": 299,
+            "nome": "SOROCRED   CRÉDITO, FINANCIAMENTO E INVESTIMENTO S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4866275",
+            "codigo": 12,
+            "nome": "Banco Inbursa S.A.",
+            "thumb": "https://www.inbursa.com/storage/logo-gfi.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4902979",
+            "codigo": 3,
+            "nome": "BANCO DA AMAZONIA S.A.",
+            "thumb": "https://www.bancoamazonia.com.br/images/basa-logo_do_site.webp"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4913129",
+            "codigo": 60,
+            "nome": "Confidence Corretora de Câmbio S.A.",
+            "thumb": "data:image/png;base64,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"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "4913711",
+            "codigo": 37,
+            "nome": "Banco do Estado do Pará S.A.",
+            "thumb": "https://www.banpara.b.br/PortalImagens/2uujzxtq/banpara-logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "5351887",
+            "codigo": 359,
+            "nome": "ZEMA CRÉDITO, FINANCIAMENTO E INVESTIMENTO S/A",
+            "thumb": "https://www.zemafinanceira.com/Style%20Library/shareprime/img/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "5442029",
+            "codigo": 159,
+            "nome": "Casa do Crédito S.A. Sociedade de Crédito ao Microempreendedor",
+            "thumb": "https://www.casadocredito.com.br/site/wp-content/uploads/2022/01/retina-casadocredito.webp"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "5463212",
+            "codigo": 85,
+            "nome": "Cooperativa Central de Crédito - Ailos",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "5790149",
+            "codigo": 114,
+            "nome": "Central Cooperativa de Crédito no Estado do Espírito Santo - CECOOP",
+            "thumb": "https://portal.ocbes.coop.br/pt/img/cooperativa/imagem/11/principal"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "6271464",
+            "codigo": 36,
+            "nome": "Banco Bradesco BBI S.A.",
+            "thumb": "https://www.bradescobbi.com.br/_inc/intervencao-ie/img/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "7207996",
+            "codigo": 394,
+            "nome": "Banco Bradesco Financiamentos S.A.",
+            "thumb": "https://financiamentos.bradesco/html/includes/intervencao-ie/img/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "7237373",
+            "codigo": 4,
+            "nome": "Banco do Nordeste do Brasil S.A.",
+            "thumb": "https://www.bnb.gov.br/o/bnb-dxp-theme/images/logo-bnb.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "7450604",
+            "codigo": 320,
+            "nome": "China Construction Bank (Brasil) Banco Múltiplo S/A",
+            "thumb": "https://www.br.ccb.com/templates/htm/ccb/img/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "7512441",
+            "codigo": 189,
+            "nome": "HS FINANCEIRA S/A CREDITO, FINANCIAMENTO E INVESTIMENTOS",
+            "thumb": "https://hsfinanceira.com.br/wp-content/uploads/2022/10/logo-hs-financeira-.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "7652226",
+            "codigo": 105,
+            "nome": "Lecca Crédito, Financiamento e Investimento S/A",
+            "thumb": "https://www.lecca.com.br/images/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "7656500",
+            "codigo": 76,
+            "nome": "Banco KDB do Brasil S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "7679404",
+            "codigo": 82,
+            "nome": "BANCO TOPÁZIO S.A.",
+            "thumb": "https://www.bancotopazio.com.br/storage/header/logo-banco-topazio.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "7853842",
+            "codigo": 286,
+            "nome": "COOPERATIVA DE CRÉDITO RURAL DE OURO   SULCREDI/OURO",
+            "thumb": "https://www.sulcredi.com.br/sistema/arquivos/imagens/d35f03444597b6faf04a873919f2f06e.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "7945233",
+            "codigo": 93,
+            "nome": "PÓLOCRED   SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E À EMPRESA DE PEQUENO PORT",
+            "thumb": "https://www.polocred.com.br/logo_polocred.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "8240446",
+            "codigo": 391,
+            "nome": "COOPERATIVA DE CREDITO RURAL DE IBIAM - SULCREDI/IBIAM",
+            "thumb": "https://www.sulcredi.com.br/sistema/arquivos/imagens/d35f03444597b6faf04a873919f2f06e.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "8253539",
+            "codigo": 273,
+            "nome": "Cooperativa de Crédito Rural de São Miguel do Oeste - Sulcredi/São Miguel",
+            "thumb": "https://sulcredi.coop.br/img/sulcredi.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "8357240",
+            "codigo": 368,
+            "nome": "Banco CSF S.A.",
+            "thumb": "https://www.carrefoursolucoes.com.br/image/layout_set_logo?img_id=3326629&t=1686663577178"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "8561701",
+            "codigo": 290,
+            "nome": "Pagseguro Internet S.A.",
+            "thumb": "https://assets.pagseguro.com.br/ps-website-assets/v15.122.0/ps-bootstrap/svg/pagbank/logo-pagbank-negative-filled.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "8609934",
+            "codigo": 259,
+            "nome": "MONEYCORP BANCO DE CÂMBIO S.A.",
+            "thumb": "https://www.bancomoneycorp.com.br/globalassets/logos/moneycorp_core_identity_digital_rgb.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "9089356",
+            "codigo": 364,
+            "nome": "GERENCIANET S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "9105360",
+            "codigo": 157,
+            "nome": "ICAP do Brasil Corretora de Títulos e Valores Mobiliários Ltda.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "9210106",
+            "codigo": 183,
+            "nome": "SOCRED S.A. - SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E À EMPRESA DE PEQUENO P",
+            "thumb": "https://www.socredsa.com.br/img/site/logo-big.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "9274232",
+            "codigo": 14,
+            "nome": "STATE STREET BRASIL S.A. ? BANCO COMERCIAL",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "9313766",
+            "codigo": 130,
+            "nome": "CARUANA S.A. - SOCIEDADE DE CRÉDITO, FINANCIAMENTO E INVESTIMENTO",
+            "thumb": "https://www.caruanafinanceira.com.br/wp-content/uploads/2017/01/caruana_padding2-223x60.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "9512542",
+            "codigo": 127,
+            "nome": "Codepe Corretora de Valores e Câmbio S.A.",
+            "thumb": "https://static.wixstatic.com/media/bc7d8f_437cb9ef06f1474d8bee155d997fff82~mv2.png/v1/crop/x_275,y_0,w_652,h_261/fill/w_540,h_216,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo_codepe_pq.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "9516419",
+            "codigo": 79,
+            "nome": "Banco Original do Agronegócio S.A.",
+            "thumb": "https://www.original.com.br/img/icons-svg/logo-branco.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "9554480",
+            "codigo": 340,
+            "nome": "Super Pagamentos e Administração de Meios Eletrônicos S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "10264663",
+            "codigo": 81,
+            "nome": "BancoSeguro S.A.",
+            "thumb": "https://www.bancoseguro.com.br/Resources/images/Logo_BancoSeguro-441w.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "10398952",
+            "codigo": 133,
+            "nome": "CONFEDERAÇÃO NACIONAL DAS COOPERATIVAS CENTRAIS DE CRÉDITO E ECONOMIA FAMILIAR E",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "10573521",
+            "codigo": 323,
+            "nome": "MERCADOPAGO.COM REPRESENTACOES LTDA.",
+            "thumb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABGlBMVEX///8An+MQDp8AAJwAn+IAAJoAAJ4AAJf///0AneIQDp7+/v8AouUAm+IAAKFkZMI3rObDw+PW1uzd3e5xcbvK7PomJqKZmNYxqOX5+f0QEKVhYLnC6Pjv7/mcnNMAmOHr+P0Ditnr6/jNzuaOjsdwu+uGxe4KOrGnp9OpqdsIfM4Akt7r6/UAp+jk5PUDfNMPIqV6esOl0vHm8/u3t981NKtHR61sbMSentKAf8QHYsUJTLu4uOIGc81QUK8JUbs8PKwIaMZhX8GKiswjIqNjxO673vVUtOmHzvGR1vQxMKoFTboALq0IW8JNTa8FM7EKQrcAtO+CgsF4d8lGRbXKyu1APrNWvevB3fSVzO+j2fR1yfA2t+mz5Pc9htoQAAAcDUlEQVR4nO1dCV/ayPsPGWZiLjQg0IRy0wpyGCqCKOABHsWz9WjV9v2/jf9cCQhB6boFf/vnu/vZFSYzme/MM88xF4KwwAILLLDAAgsssMACCyywwAILLLDA/x+o8UooSJFlYB9Clfi8a/avwMwarWbnXrEQkAYAAbG/tdw0sqF51+9NiBv5fD63JQYAhBAA0bbXKGxbAYB+J/YPt/Ezxrxr+g9gZgu53Gof4M6yry821tfXNzbwf9MU9BP+z3r77NxCkoS2crmEkZl3nf8Id926jYUSorWLg2JS17RyWRsF/sqfLKZ3dm0J4ifvGwlz3tWeFq3Y5ZYlSXY7XcTsZM3n8/n9ft8zyD72jebXk8ViMX2FJGBfdhrzrvsUuGv08CALnPn8MiXg98mEywhBAvKtn/1fk2XZv34FAIr0u++6J021gEVTsS/SZU9Sk4G5lrWDNVtE6DCrqvMm4g2zdHcrSWtrO0lN+0N+HHhobuyeW5IdDb1HjmrLggBda1il+GQZy+af8sNiLWOS8sEVgIHC+9OsRn4fnF/suN0n/4M+9JF20crpnTMRLL8z65HdDsCrg3WtPF1v8RYYVbAcmpZsnyGrmn9HHGt1KJ2nSf+9DGoHfbJjESd3dLm4gU1kYd68HJiJHrTTxdf4aeVke+9sl+Bs9+xsp13ENn/y0+vXaL/xPtw541ax2thtmSBzBGR4fdtbu7JFALnnjRT7fO06XfYTu+mVU0umz6T+zbzZYYRusU99/Q13x5jj8kzsriH2tSUpcNkoFBr3lCUAdhsLq99LWHGbaOvnAF3Om5+ZwPFBT0QSvC7KzEMb7w2frO9hRyBymR3OeteJ9BCU9oq6B0MNm47iHoAWvBfmahvVhoTyQrxZRwA72vZBkSiT5x2hyXpyB0GktPDzS0vkP/h/KvlDiN/YOGpE122mg/xECpgS0tNXEHcyvKnDQGKOBDMGUJoV3JPx6mrMgjBgXRTTad0NH3QSK+3algV7jRYlh8FoMpiFagezD1zTqKqYxKB/tc+J+9BZjcYrdRgrzY1gvCH1885MRDyRq26JOA6yd9o0FsQx4M4VFkMgitbltjkghjkOFRLK5ToRnA2i87M9jCsbkQ92LJcL0vQYimXnNd0RRbDAK05rHTcSHYCrh4N3G8fxkGqWW1EE9Tv8iNdwYmSDRqNvURXLNC20bqutEEteEkI3kp31yPv3YRp92BwJdcygYeSbfWcy5rBgZJcDsB5iw462hpHI5bZZ9QeoZA2jVssT1GqGYQSZO8MeCTWkxlw6MR+RPKVHjYeyQTadVlGFbRsdlmhdSXXN2uq+hQJiZ9UYEVaak8CjxOw+uJkDRbMKA556fGm44q0eQnH323i1x0w+AJHs8wdfwlLeRnNgWANSaKwXOIjGZCK5BSRVYH8vCSUL25SqEQzV+hJQ+vFJ2cfxHdb/pWpPDbUV6N29/AhmtS3BCCNIKBJfzR24OYCkuDA1x1UI3lDbf4LQFnxtQmVJCB4CpUKYLpHRWYVovxp0UrOxHgpkzWkp5hRptvM3ak2qB19+ZGkp1ID7NRP7L0RAW1uw1wxyASb0zVZMlKqVaTuxA27fWOc/Q+lWyr/W/GZC2nKiH7WLvbMW48cZYr0jQvBaO7mIBnozVTYlKWK8wnDJTMDbRAjLlpoxcrcwsD2cgTLN5yTUCU03GDM3aJbzjGpTjL7WoktLme8Sin3P5b43IhLaHgtmMUkzD2AnUZpKUuNSb4YxvxmYSrpCHeyBYccUm8CcV/tjis0AAK1pXrkkSKj6Z7V8C1Rp1VEZE0H1Z6m23AuIjWzJnPC0WcNxR2EqOW3CGTIsTP8yE2NyCIt5390Chdi6V0hioZc6s1tsPERdFu29tSBSQCYGwf3rBAVTsmYWC5sisg6NUqb0Qu9MCSrr1Z5k115UlGo8kwkhmHvr66ZFCykKcaDvozUaPyxN732NgWZsXQIxmlGHhWLJ8W4FsxIM1m5wWCyCmTHsAntnTSHL1BCKsVaF1egtIhsCEC1XuP8q8PLYn8HEcoDOy0Fxdn1YhWvldPugvWMjTNOObb99Ib71HaJqSRie6hBIkJ3PHwJE5gx22gfXs+vDG8yQLFPr6xvrB7uKBEH/e64VdzpyyI6wP14YrW6S2QXSakJ1suL/ZfPfm1sAAutqZ319XS77LmbHsIEZsllNTfMV27sillYUcf3qpWGJXXpZfnEiJ1lpIIjo7AbLEL3tkf0a0lo7LdMpSnmGDG8chnQ+Xk4Wi2kyIvfrWeG5znndnCy5Wko1sXe+xWPORKejkGm6g2KxSKaU6dLArjT7PiQrEmwuX9Y2yF4Du0k6o9/rXbpu68sqaMk0DNN5oGADJSYIRr0nIoTsdln2sfVIutwvr81S01zp/kEnkoUXv09Lr9kQSc3KLQ7lgWQbQqmwXK9WXglyg3VpMFWY7UNxudqDQFTsNlmM9A+Wkv2yPTuGTYjfP77UoGk7a6IkKfVOLNYB0MYaiOz0qnGKnkSXBGNfypZccd5XIFSuzje0sYU3vwxmNw4TQLzwWoORtW87EMWogEawnO1Xuw0bgpoaj0/wWIhmqnSkgPtR6EKwp3uuKyal2TE0AnCvPL6SRhYCdagkqPqIol4CW8l44Tvcz3ebiZq3ySSP1mypEHdCfzMGrouerZeGs2MobMFrfbwSZOvPAaxzF+feEJhkBhDbjLjtJajUdTFupKY7ZWBAa10bbz6/dg3Q7Bhegqu091LhDqjHmZ+67Syl1aWtgrGKR2R2hOGSO9Ufl2A9xAgLQcLQo+iyJNqzC/INqJx5rtv7izDSYnY/7jCs1UKqUArdgNtJwfySkJVAzGCetwEDG+NF+8tpPMIrM2OIQzXooU1pS6NDUg+z6T6sqmzJIgJiz0tpdu4chkLwBvVqxGcLRsCFPi6kWvoKotWZEcQMFdD22jvjL59LsIdHYOzedP0xji3QeT71cQm3Bh+yEgI1QVhWgHTgUXJ5zxLBLBkuAxF5daIfSxMgM09wecyb2ccMVXXYK78F+4MYOgssSKIkL1OLdfQ5EGc51yaUJBHsJj2GC9Z5xb0r20aR+OhU1T2yAr3oM8OYkGDU+bvSgLZtX1147nbQdpGCYrOc189YomgfeO8S8cvF9IYNRibQloQeRAiCwUZgonFjUowbF8JwZ2PDezuHllzDjtxMtw+ZXSiKsO1RGVaj8jUQ2Sq8S0hdzeVy3+tSLqsKpqMUsX1v1GhgqWK7n9Y8DCEpTj9DIurPkiAeNZihKE7cyYYjDbBlZMxgzJ0AXKIL17UtSVSFyiq3JbjnJKJgsFR0APC2sXgQ7iiiCGa8QzoTA4oIdybUCTtwBwEYWf1+CQcMqRdqNgP4qxBYDXIhzl6CTi6RyFURvEhOaK51G7cmmp0xpFArVYDfupactNFLTh8EEI4tqk70t8QdgRjsCmpe2ucejrqNH8OWAK6te5hBSjCN9agYmP1GxW0ip+jCwwPnFfOt71zs2ly4gm5EvAoPsXDWpfodo353C8hpBHtjwt5ULXlN2vJ+9hvc46v4xaJ15mEzKHDo78fuMgT3rUyrB9yVnFW21LktoRC1mDUktYs62dvmudsUhxRkxEvzOD3U6hOKYG2SfqCHKr7tkiAYOwFBrlrMBpZSIq85iF1xVa0FAEqSfY0TttOmJUIQ1uZAUIh3Rfryi6LPa4eozHZjFvfW7PNzG9biTrtIBap2avdioFmo9oCyM0HDYO9Bb5NWxJZiTgfAEqJFetFqy35PkqyW5XS6uHEObsh0TDzYAOAyFAxWQqGmYiE8/s7antv6yXkTvXjGCc5n1xdGn44RUTqYNBhZWKxp5R0AAkbW6CqATJOD/vI9ANLFwc7O+gQrT3aDbyiM4P7LyzZ/E7Uqo2jtbbywZRtLq5Y+EyHo2RK8PmhfI7I0DKwLuUx3envuEcYqpn3NCNrbczwolOnSSohkXUHzPt7E61tcb+/t7h2001hqN9bb7fbGuv7S8+WLNZGWDXr5uR41DUGocI6kG+m5F+8qa75ksaiTLdF0mtc3uc/JvvfkHmLiIaLWfE8IqZUcr4lor7VfOFHiZ6Sc8zQvnRnSysmzc4sVCqT5H7pQE4BwxD0JFftK4+Nq0rb9F5j52ey9Vt6wFd5oIjycdkfR30S8qTgSJcKA5v/zM10DkngsD+STLF7M2N2ehLtOxKmUKIGzdDEpv3S+ZCL0ZLF9LgGnKHG/8W5OPsVbASA6ooUksNtOapPsnDfoSuTOleS2lALB5XuQUBeJqkXbntG0rN319XV6KmEKmuSx9Pr6wZo16D4EIrn3cejJhVlrBoY4Agjsi4ODg3RRp+u3vmcalHjl1K7gFtCLGwcH7SsLANZ/CikA1BPvjB9BJtqHyBUyUk0A0NrexXoxqZXHT6vjr8oy9gNIDOmw4wCwHnyXx2TNUK0+pCdYZS3xfO16lxwV2dvZOdigODjYoV/s7a6d2+SRYSCIutl3okLHocZLhxaiPagM6kxujKA0FJuDSCKEaKTr6AhGl9nSuz6vjp0cG0e8EFqjdX8VFlkxRo13233DCDZ6kYEXMB2A2Ovddt+N/ZsCiVgEAeyUvM4Nkses/ej/ROc9Q6u6uhq7VQJEpZK4d4wYUaF4gPbrq6ur3blF8W9E5m47kct9r6426nYAEaqUF+m2Xj1WbTZzuUQr+x4tw59BjWcqd6389nauSZHb3s7na3ehuPm+teYfQxXMOMV/jNcCCyywwAILLLDAAv8Pke1OdSDzfxTmNrkb5HDe1fiLyNo4jAbL867G34NJl2P/ywwrpAv/0wxDAfE/zjC4YPhnyCa60dbQFOZdtJsoeE5pZgsYE7dLVJ4nxlv4s9cGJ/WukIh2vZIqd4UCXUn0YNhKdKvVbuKVe2Q8YPQjZC1dsbfYKmxlq2eLlqL0+tURkss9/CRGL9If31IQvI1EeopYd2ayC+Qje/j2+eJZnyTg6uOkrcbw1GnrstfDL7Dt6jjD5iXJBCGuZ2Trj/wAtdYHSGQ7uqRmHH/uAUg/QoS6Qx2impfkZCVZEQUQBUZ2FWQaZPsTFJHDEIgIQsuySDkgUHNnSdUKOS1q0ZUOCyfdDyZQK/vAYm8GaFTTFBA5QkszWRDYiel33cS7bIlMobnhfaUqwcFKklQ3nPebN5A86KYBUBu8pWRAttBmMYZxY2SxBgScvorSuX/Wh+RfJLHjb4JJjlwqzppr/1kfBm8heVZR+OuhdDv1oniU7ndkOcn+andJkJWFABfUyuHYogRYdlu/L7lfUoY3cFCE01hs3jR7i5xpfmc1R8rTlIQEhxsQiQOGoY5TK+juAzmccuWj1oOcCcagOvQjfRvcps+p3QBLQIGAFeCvgU6/GIrbY5Rhtg7404hsjmYP5wlFLMw0wepdxup8FRnaJmXBORG4rckYbiNenBLpW4htk5jy7pN4gOW1GrluYws57Y7qzVxzn29io+PKYE2POvQeuTzL5hwZCG0hp+ER2M8IlRgT/ECDPNutMx4KUU55Wj1Uz9eyoayRZ0mke80Eazawn8B5GgFeFcLQrF3Sx+zGdo1cZHcIeJNNw/COSheSEhXTrCSchgvc1uJm3GjS9V1IL+DI852RvNcKVCFwycvcOCv5nWg0WjDNBJe1BrUGpsFEGN27DN0zTXnoFBPk7VCnareSkAZ9GOKtu891WBAx8QoIU6ABaI+xHZ3E12X9X2E1p6mA7CqvxJBF3lHhI0+t0aoxSSn0GINusEJubxGyW6w5uAYRTLpHXIQ9nC9HLkuEEUdNhCTO0IwyOVc4CzMKXIZBJiG2O/AMmzXMNAwjgOzWcbZVMy2AOk5R7CAJusMKl4mde2wJtwZ7LZG8HNs3WXWWYAzaxLDvGsGsRFfZbHKJFLt/0Emp0axSXChZ9F3QNbNx6DA0m6z8odu/DFax7pQMRcm9o+s77VL3WBxuPDJoalw/WPaQN8FfQk4f0FzK4HA5799912MJHS4TNMZWDsktJ4xhhkmlNLhXoo84wzgbhXDIygfp02Ca6JjtUHMbO0Ht/oAhs5FRIcg0biRuOuBiCjrkoAKiXebUwCwAJ2kCcP6S0bDJb12InGGFMRxctaduOwwztBbAHrLxoVv6CmuKvZqUoTVgiCYwZKZi+IdVuJHp0EtVyV/uvrQ4lSplIsPKXYAWgFzrN2A4pDxKjsXPAFdaHGRu2KjZ/nOGk/pwZGeQiyGGMccfZYNWQd4MzVAn4Fpt7ghhhiE4xrAHhxmC4ZuwWSOK4hQD8V9k6ObiagnFRl9GUClsOWUBFMk1nXEYhNStGmZ4jzjDIbU9wrA5Vv5bGQbGcDlg6DqwTLciTz2QZ8KJHR0F229yOpUzlCYz9OjDKqtQdKz8f8yQjcOeMYbsOEOnD72kNMNMI6rjrMRkVByGofFxqPB2yrABOXzYq0LdA0uZ4jawKRmG6KEnGPEsY5ShyhyVIYah1SpBUxUMWlvF3S/kMuSaBrp51CizEU0hzrw0MGSqWIuj+yk2VU3JkNlD2PMscZQhN+Pg1rXrQRxpkitoMEOaZA/uNXV8GsceDhgyFx1sC/EGK28o2md6aXp7+DpDM8E8Q8+b/ccYGvxojaPpTNapoMedgSFZaAGHIXUuxMFhb5Or2SBxrZTnucxl6jVNdYZvSobkWieSMriqIouootnKeDAMcbHa5+VWuIsZddwd927SJrfzxC9lxl9xknjQA1RSDRaQOG6byY3MVJ73tAxxTEDCb2RFsVujmqUgkxxIzPAYw1KX7/++xCGKWcrwuCRy5zDkV+6Z8QDrOBwfqtl71ix1sncqXspyj4KEjpUGK6+XKJHySl3usk61pDE1w+w+olEu6FcLteg94qGr4MWQ+3HE4t02o/d81iBA3sI0jWg1sfttFHjAzjzOvBMAXyYKMeC4THQSJV7lQTSsd5s24uHhdOfZp2YoFBDiQSD92Tg2SFreDIVahD0sDmYOILXOQT6HASCAznwJ2KeSyWWbzS+IPBMPR7P7gzTuEIHedJvfp2dYqd2PbKkEVk6dwNDcVsCzSRoAmFOHQ9CR6R4IVrPM0hn7I54TgNWSU15kJBuwpjzENz1D/CkWGao2rhmfhvNgKJjZ5UF1FRFsbXPTkanVefey2S/U6zq/9mAGm0Ptgv2ehuH+EEQ822DZ2IwZVBrTHsOkVx4hl2GUBOCS68VnabLkaP1MzSKbumnrQrHhxukd+lTsefSXOQQSJA8jIIHbofoUEL0VjMbEEmhkh2oa725JLBFCCS0/my8s3QQk6qmTHw8JdDPT7lINUbgvKdGPrl03WbIbmKmZkHFjBwKoUQuW4q4fWnmey6luJVSr9gNoeTtbGd6Pb2ZCtcbhcmO5WwiGSs8ndrHiDRrNw+XDrhHKxJ+TiOOXR++xJ7yM0/7mjk715Yt0p3sYGxz8z4RS1BeSSHH/+3uMF1hggQUWWGCBuUM1N38flWV55XFzxFlR1VT499GPH0e/N0f8DpzwdUVOJn2/fm+OOiS4vCctWSwmtaPw22+1fzvU3yfkd5vJyWU9WTwKDyWlnso4SddxQrIoPw0lPR6RPDRTMnnyNTVc4OaPZJJdrUESv23OhsZkqMea7P46s98nlz+6SZtPSZnf4+z3+2W5/NNNYT94yC+RlvUvQ15z+IeOv/KzK5L9fv3XT2Gu+PnA2tvvXGMlJ3/yVv/5i17OIrv3P8nFjzQp9dMnO4fVGZIPx26BxZGrUeTi43yocZTdu3YHV3U9sSSNJclUTJnQ+b6ShEdNZhlkXeZXaOhFXl5KJrJLroDRnR+2lOV5CuoXVlmfntROZMbDL3+gA+5YY/y00y9fnk54B5+QlE8O9Q9PJxoTAVl/oOWFP7GfXZX1I5yLjlSMH8cvVOHvQl1hVUh+CYc3w2EssUQm5c8kDZPCf2sP4RTWqJsPOhXkFUL9A+vRz+FwajN8zLtRowV+ZuVpX2iuMG5AMhz1T3Nj+PsDvQxi5ZjpdPVxhfXUJmOI/3zgT27+YE+mBOFBJ61QPuV24CNtJVn77f49yCU8MP7leQ1F9YmJ5Rf3C9oH8gdSoQ9FAicpdST7GcPUJ9Kd+okzuNQHdlviUQoTYhcQlX87BYZXmNA+CPNBmPWTNmjhBzou5afU6KPHbOhhhuETajwHgvex7CQJn3XaQL8H+cJUKpKf/yaNF8AF7GRgysPsmw9DqsHEg+3xB1comAbNhPWP+8DmCU3C+in1ieYeHnUp1oif5qROP7JhN/T6FKst71U1HA4fn/74UXYVP2b4SHWs9nWQh4t2WNgcZyiwr07mxpC+fliEPrG+osPv45eyhp02mZg4v8vwC9WkHwauD/uGMMTl+ccY6iNiMlN4MaT11wnDxzJ3L7HDpjOT4DLUV4aq7DLkMu7Vh++R4XGZ227sR/96ejx5xlD2ZIilfrwPabfOmeGn1FCFmL/yiEcks/EydgbCm6nUEdWgdBySTMP68sFhuHkiy+MMyVc/5joO9aEG3mSqb+UjllHiWcsrv5lhx/aQ9yHt22ELM9A0qU9jDFX+1Xw1TXlgGx6Zk/PJxD4MuVTWVShh6sTp1B4S6dWe3DyOhQkTe+hn7TOUSCRBn6899OkDj4OabF/5Yek3SZIHNSNmHY8oZtYJ90FHHSddhg9++fkgJRaShFnz8ml4H8o/wtwvxf3jZzWkHqtf/uxMQhzTXxPSieeNWwH70yc8j7D5mepZyvCRX4c55JeSKPiZlzNTcIvvl5NfNjdTm5sP/IenPrnd6wzR8CdqEmn0dPyBzgeUH2meYx5/sZiLm1OcRrZ5bxKhl/0jume2DJ14XF75dfpjhbkuMvFX2LjzySyCePzFadDRx/StrK/8OP3xK8mvqWMMH9nloLL84eH4+GHFp9Mu1OYlpG6wQ6pExwuvOVZ86ikLgFcevnz5gv1xmpb8Qbv054oz0eSnEb0+6MPUo4/5P7I8uLFff0zNmeGHFarRHc+M0dhcYfMw2OLrrkfDdX6YGAzSObR1Pgx0KcapO3fhTPzopxMr8Nfh+DSnSdm9EFEuchpPup9dlOikJZOuivxddGSTREauxSdQy+xub9YGOHdSngs3BoehGV4h8xdkxjDpThuZp0Wd3llOv8e+2/HAaqubp+yWeTmpfVS/DDMUNsMan0rF/2CP7+c856G4T0OM3uOvMq5z+WloAls1H1fwlwTaymlqZPI69fVbWSv/+qoK5udhKWUZv2k027evo9lmjGeed/jr19+psSdOn05Pn76GxxIIUh/pRDCbwvF9GO4rdfPx69ev4blP6XvEFlMAG0ECt/bHTNEezZ2OB7jF/zOG6medWBZ3+iyFVRI2Gtqc4qOX8c/68IFYT1leOaYyGv6sUb/Fl/r36/d2/DOGJAr043/Kn7Ez8OWE6U396fWMcwBl6P/j0OYTn/0n6xl8jkoupv5GBd8MOnPk/+PJzM2j8Uvn5+i3vISPH7BH9sHbFLwE9Uh/dp05VjPvUZFihJ+Ojo7+kcshF3WZGQn8P714+k4JvgXmL3aZuV/zaaepedfmL0EN/8Z+y++5r9MvsMACCyywwAILLLDAAgsssMACCyywwAILLPBfwf8BrWUI75vkV7EAAAAASUVORK5CYII="
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "10664513",
+            "codigo": 121,
+            "nome": "Banco Agibank S.A.",
+            "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Agi_azul.png/400px-Agi_azul.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "10690848",
+            "codigo": 83,
+            "nome": "Banco da China Brasil S.A.",
+            "thumb": "https://www.bankofchina.com/images/boc2013_ovs_ft_logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "10853017",
+            "codigo": 138,
+            "nome": "Get Money Corretora de Câmbio S.A.",
+            "thumb": "https://www.getmoney.com.br/assets/images/logoget-1-192x192.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "10866788",
+            "codigo": 24,
+            "nome": "Banco Bandepe S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "11165756",
+            "codigo": 384,
+            "nome": "GLOBAL FINANÇAS SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E À EMPRESA DE PEQUENO",
+            "thumb": "https://globalscm.com.br/images/logo.jpg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "11476673",
+            "codigo": 88,
+            "nome": "BANCO RANDON S.A.",
+            "thumb": "https://bancorandon.com/_assets//images/logo-white.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "11495073",
+            "codigo": 319,
+            "nome": "OM DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "11581339",
+            "codigo": 274,
+            "nome": "MONEY PLUS SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E A EMPRESA DE PEQUENO PORT",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "11703662",
+            "codigo": 95,
+            "nome": "Travelex Banco de Câmbio S.A.",
+            "thumb": "https://www.travelexbank.com.br/wp-content/themes/travelex/assets/img/header-footer/Travelex_Bank@2x.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "11758741",
+            "codigo": 94,
+            "nome": "Banco Finaxis S.A.",
+            "thumb": "https://finaxis.com.br/wp-content/uploads/2016/08/logo-site.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "11970623",
+            "codigo": 276,
+            "nome": "Senff S.A. - Crédito, Financiamento e Investimento",
+            "thumb": "https://www.senff.com.br/wp-content/themes/senff_by_housecricket/images/logo-banco-senff.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "12865507",
+            "codigo": 92,
+            "nome": "BRK S.A. Crédito, Financiamento e Investimento",
+            "thumb": "https://brk.com.br/Content/images/top.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "13009717",
+            "codigo": 47,
+            "nome": "Banco do Estado de Sergipe S.A.",
+            "thumb": "https://cdn.privacytools.com.br/assets/36dd49e5-6c2f-4121-9149-62df5983dd48/banner/DC1FD719AC718B6FD77A76E458520998.jpeg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "13059145",
+            "codigo": 144,
+            "nome": "BEXS BANCO DE CÂMBIO S/A",
+            "thumb": "https://www.bexs.com.br/wp-content/themes/bexs-theme/assets/imgs/logo-bexs-branca.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "13140088",
+            "codigo": 332,
+            "nome": "Acesso Soluções de Pagamento S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "13220493",
+            "codigo": 126,
+            "nome": "BR Partners Banco de Investimento S.A.",
+            "thumb": "https://brpartners.com.br/wp-content/uploads/2020/07/BR-Partners-Digital.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "13293225",
+            "codigo": 325,
+            "nome": "Órama Distribuidora de Títulos e Valores Mobiliários S.A.",
+            "thumb": "https://www.orama.com.br/wp-content/uploads/sites/2/2022/03/logo-orama-investimentos.webp"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "13370835",
+            "codigo": 301,
+            "nome": "BPP Instituição de Pagamento S.A.",
+            "thumb": "https://bpp.com.br/wp-content/themes/site-bpp-2022/assets-2021/menu-footer/img/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "13486793",
+            "codigo": 173,
+            "nome": "BRL Trust Distribuidora de Títulos e Valores Mobiliários S.A.",
+            "thumb": "https://www.brltrust.com.br/wp-content/themes/brltrust/images/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "13673855",
+            "codigo": 331,
+            "nome": "Fram Capital Distribuidora de Títulos e Valores Mobiliários S.A.",
+            "thumb": "https://framcapital.com/wp-content/uploads/2022/01/logo-white-1.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "13720915",
+            "codigo": 119,
+            "nome": "Banco Western Union do Brasil S.A.",
+            "thumb": "https://www.westernunion.com/content/dam/wu/logo/logo.wu.big.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "13884775",
+            "codigo": 396,
+            "nome": "HUB PAGAMENTOS S.A",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "14190547",
+            "codigo": 309,
+            "nome": "CAMBIONET CORRETORA DE CÂMBIO LTDA.",
+            "thumb": "https://cambionet.com/wp-content/uploads/2022/05/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "14388334",
+            "codigo": 254,
+            "nome": "PARANÁ BANCO S.A.",
+            "thumb": "https://media.licdn.com/dms/image/C4E0BAQGd23iENnlnNw/company-logo_200_200/0/1561728203769?e=2147483647&v=beta&t=1BYXHwOF7DCUZMjF3GXlRH35rIaTpxPGNDFnOmqb50I"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "14511781",
+            "codigo": 268,
+            "nome": "BARI COMPANHIA HIPOTECÁRIA",
+            "thumb": "https://bancobari.com.br/linha-de-credito/images/Logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "15114366",
+            "codigo": 107,
+            "nome": "Banco Bocom BBM S.A.",
+            "thumb": "https://www.bocombbm.com.br/bbm-content./uploads/2018/12/bocom-bbm.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "15173776",
+            "codigo": 412,
+            "nome": "BANCO CAPITAL S.A.",
+            "thumb": "https://www.bancocapital.com/wp-content/uploads/2019/12/bcimage-09.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "15357060",
+            "codigo": 124,
+            "nome": "Banco Woori Bank do Brasil S.A.",
+            "thumb": "https://i0.wp.com/wooribank.com.br/wp-content/uploads/2022/05/logo-wooribank.png?w=2084&ssl=1"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "15581638",
+            "codigo": 149,
+            "nome": "Facta Financeira S.A. - Crédito Financiamento e Investimento",
+            "thumb": "https://www.factafinanceira.com.br/assets/img/logo_rodape.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "16501555",
+            "codigo": 197,
+            "nome": "Stone Pagamentos S.A.",
+            "thumb": "data:image/png;base64,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"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "16927221",
+            "codigo": 313,
+            "nome": "AMAZÔNIA CORRETORA DE CÂMBIO LTDA.",
+            "thumb": "https://amzcambio.com.br/wp-content/uploads/2019/12/logo-1.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "16944141",
+            "codigo": 142,
+            "nome": "Broker Brasil Corretora de Câmbio Ltda.",
+            "thumb": "https://btcambio.com.br/wp-content/uploads/2022/10/logo-bt.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "17184037",
+            "codigo": 389,
+            "nome": "Banco Mercantil do Brasil S.A.",
+            "thumb": "https://bancomercantil.com.br/Style%20Library/Images/logo/logo_banco_mercantil_inverse.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "17298092",
+            "codigo": 184,
+            "nome": "Banco Itaú BBA S.A.",
+            "thumb": "https://www.itau.com.br/media/dam/m/5fe5264751ae72d8/webimage-LogoIBBA-2.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "17351180",
+            "codigo": 634,
+            "nome": "BANCO TRIANGULO S.A.",
+            "thumb": "https://www.tribanco.com.br/wp-content/themes/tribanco/lp/portal-2022/assets/images/logo-header-novo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "17352220",
+            "codigo": 545,
+            "nome": "SENSO CORRETORA DE CAMBIO E VALORES MOBILIARIOS S.A",
+            "thumb": "https://sensoinvestimentos.com.br/wp-content/uploads/2019/09/logofinal-rgb-2.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "17453575",
+            "codigo": 132,
+            "nome": "ICBC do Brasil Banco Múltiplo S.A.",
+            "thumb": "https://www.br.icbc.com.cn/SiteCollectionDocuments/ICBC/Resources/ICBC/haiwai/Brazil/photo/2014/logo_baxi.jpg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "17772370",
+            "codigo": 298,
+            "nome": "Vip’s Corretora de Câmbio Ltda.",
+            "thumb": "https://vipscorretoradecambio.com.br/assets/images/logocolorsmall-2-180x85.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "17826860",
+            "codigo": 377,
+            "nome": "MS SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E À EMPRESA DE PEQUENO PORTE LTDA",
+            "thumb": "https://static.wixstatic.com/media/307b6d_bf2e6f89699648dd87d057b1352135fd~mv2.png/v1/fill/w_500,h_150,al_c,lg_1,q_85,enc_auto/307b6d_bf2e6f89699648dd87d057b1352135fd~mv2.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "18188384",
+            "codigo": 321,
+            "nome": "CREFAZ SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E A EMPRESA DE PEQUENO PORTE LT",
+            "thumb": "https://site.crefaz.com.br/public/site/images/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "18236120",
+            "codigo": 260,
+            "nome": "Nu Pagamentos S.A.",
+            "thumb": "https://nubank.com.br/images/open-graph-logo-large-br.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "18520834",
+            "codigo": 129,
+            "nome": "UBS Brasil Banco de Investimento S.A.",
+            "thumb": "https://www.ubs.com/etc/designs/fit/img/UBS_Logo_Semibold.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "19307785",
+            "codigo": 128,
+            "nome": "MS Bank S.A. Banco de Câmbio",
+            "thumb": "https://mstoken.msbank.com.br/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "20155248",
+            "codigo": 194,
+            "nome": "PARMETAL DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA",
+            "thumb": "https://www.parmetal.com.br/images/logo/parmetal/parmetal_logo.webp"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "21018182",
+            "codigo": 383,
+            "nome": "BOLETOBANCÁRIO.COM TECNOLOGIA DE PAGAMENTOS LTDA.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "21332862",
+            "codigo": 324,
+            "nome": "CARTOS SOCIEDADE DE CRÉDITO DIRETO S.A.",
+            "thumb": "data:image/png;base64,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"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "22610500",
+            "codigo": 310,
+            "nome": "VORTX DISTRIBUIDORA DE TITULOS E VALORES MOBILIARIOS LTDA.",
+            "thumb": "https://cdn.vortx.com.br/images/logo-expanded-dourado.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "22896431",
+            "codigo": 380,
+            "nome": "PICPAY SERVICOS S.A.",
+            "thumb": "https://cdn.cookielaw.org/logos/3ded1b65-c8c1-4786-bfc3-cc82081127ef/f21a9737-2313-4300-b2bc-4a9f65409a2d/b890a33b-6c72-4221-86f5-26fd6aac0be3/picpay-logo-2.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "23522214",
+            "codigo": 163,
+            "nome": "Commerzbank Brasil S.A. - Banco Múltiplo",
+            "thumb": "https://www.commerzbank.com.br/portal/media/system/images/logo_big_5-0_svg.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "23862762",
+            "codigo": 280,
+            "nome": "Avista S.A. Crédito, Financiamento e Investimento",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "24074692",
+            "codigo": 146,
+            "nome": "GUITTA CORRETORA DE CAMBIO LTDA.",
+            "thumb": "https://guitta.com.br/assets/images/logo-guitta.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "24537861",
+            "codigo": 343,
+            "nome": "FFA SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E À EMPRESA DE PEQUENO PORTE LTDA.",
+            "thumb": "https://ffafinanceira.com.br/wp-content/uploads/2020/03/logo-dark.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "26563270",
+            "codigo": 279,
+            "nome": "COOPERATIVA DE CREDITO RURAL DE PRIMAVERA DO LESTE",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "27098060",
+            "codigo": 335,
+            "nome": "Banco Digio S.A.",
+            "thumb": "https://www.digio.com.br/_next/image?url=https%3A%2F%2Fstatic.digio.com.br%2Fmedia%2Flogo_digio_484bdec325.png&w=256&q=75"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "27214112",
+            "codigo": 349,
+            "nome": "AL5 S.A. CRÉDITO, FINANCIAMENTO E INVESTIMENTO",
+            "thumb": "https://al5bank.com.br/www/wp-content/themes/al5/assets/images/sprite.svg#icon-logo"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "27351731",
+            "codigo": 374,
+            "nome": "REALIZE CRÉDITO, FINANCIAMENTO E INVESTIMENTO S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "27652684",
+            "codigo": 278,
+            "nome": "Genial Investimentos Corretora de Valores Mobiliários S.A.",
+            "thumb": "https://app.genialinvestimentos.com.br/static/media/logo_genial.8119ce15.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "27842177",
+            "codigo": 271,
+            "nome": "IB Corretora de Câmbio, Títulos e Valores Mobiliários S.A.",
+            "thumb": "data:image/png;base64,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"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "28127603",
+            "codigo": 21,
+            "nome": "BANESTES S.A. BANCO DO ESTADO DO ESPIRITO SANTO",
+            "thumb": "https://www.banestes.com.br/assets/img/logo-original-blue.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "28195667",
+            "codigo": 246,
+            "nome": "Banco ABC Brasil S.A.",
+            "thumb": "https://www.abcbrasil.com.br/media/2011/logoabc.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "28650236",
+            "codigo": 292,
+            "nome": "BS2 Distribuidora de Títulos e Valores Mobiliários S.A.",
+            "thumb": "https://www.bancobs2.com.br/wp-content/uploads/2020/05/Banco-BS2-Azul.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "28719664",
+            "codigo": null,
+            "nome": "B3 SA - Brasil, Bolsa, Balcão - Segmento Cetip UTVM",
+            "thumb": "https://www.b3.com.br/lumis-theme/br/com/bvmf/internet/theme/bvmf-internet/img/logo-b3-novo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "29011780",
+            "codigo": null,
+            "nome": "Câmara Interbancária de Pagamentos - CIP C3",
+            "thumb": "https://www2.cip-bancos.org.br/PublishingImages/Icones%20de%20Servicos/C3.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "29030467",
+            "codigo": 751,
+            "nome": "Scotiabank Brasil S.A. Banco Múltiplo",
+            "thumb": "https://www.br.scotiabank.com/gbm_menu/images/template/logoSB.gif"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "29162769",
+            "codigo": 352,
+            "nome": "TORO CORRETORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA",
+            "thumb": "https://www.toroinvestimentos.com.br/assets-next/logos/toro-logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "30306294",
+            "codigo": 208,
+            "nome": "Banco BTG Pactual S.A.",
+            "thumb": "https://www.btgpactualdigital.com/cadastro/"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "30723886",
+            "codigo": 746,
+            "nome": "Banco Modal S.A.",
+            "thumb": "https://www.modal.com.br/wp-content/uploads/2018/05/modal-logo-m2.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "31597552",
+            "codigo": 241,
+            "nome": "BANCO CLASSICO S.A.",
+            "thumb": "https://www.bancoclassico.com.br/assets/images/uploads/imgs/configuracoes/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "31872495",
+            "codigo": 336,
+            "nome": "Banco C6 S.A.",
+            "thumb": "https://www.c6bank.com.br/c6bank-logotipo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "31880826",
+            "codigo": 612,
+            "nome": "Banco Guanabara S.A.",
+            "thumb": "http://www.bancoguanabara.com.br/lumis-theme/br/com/bancoguanabara/institucional/theme/institucional/img/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "31895683",
+            "codigo": 604,
+            "nome": "Banco Industrial do Brasil S.A.",
+            "thumb": "https://www.bib.com.br/img/logo-bib.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "32062580",
+            "codigo": 505,
+            "nome": "Banco Credit Suisse (Brasil) S.A.",
+            "thumb": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQ4IiBoZWlnaHQ9IjgzIiB2aWV3Qm94PSIwIDAgNjQ4IDgzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMjY0Ljk3IDI1Ljc2MjdIMjIzLjIxMlYzNS4xNDRMMjI0LjQ3MSAzNS4wMjk2VjM0LjkxNTJDMjI0LjY5OSAzMy41NDIzIDIyNy4yMTYgMzAuOTExIDIzMC4zMDUgMzAuOTExQzIzMC4zMDUgMzAuOTExIDIzOS4yMjkgMzAuOTExIDIzOS41NzIgMzAuOTExQzIzOS41NzIgMzEuMzY4NiAyMzkuNTcyIDc5LjMwNDYgMjM5LjU3MiA3OS4zMDQ2SDI0OC43MjVDMjQ4LjcyNSA3OS4zMDQ2IDI0OC43MjUgMzEuMzY4NiAyNDguNzI1IDMxLjAyNTRDMjQ5LjE4MiAzMS4wMjU0IDI1OC4yMiAzMS4wMjU0IDI1OC4yMiAzMS4wMjU0QzI2MS40MjQgMzEuMDI1NCAyNjMuNDgzIDMyLjc0MTQgMjYzLjgyNiAzNC4zNDMxVjM0LjU3MTlIMjY1LjE5OUwyNjUuMDg1IDI1Ljk5MTVIMjY0Ljk3VjI1Ljc2MjdaIiBmaWxsPSIjMTgzOTY0Ii8+CjxwYXRoIGQ9Ik01Ni41MTYyIDI1Ljc2MjdINTYuMjg3NFYyNy4wMjEyTDU2LjQwMTggMjcuMTM1NkM1Ny4yMDI2IDI3LjU5MzIgNTguMDAzNCAyOS41MzgxIDU4LjAwMzQgMzEuOTQwNlY3OS4zMDQ2SDY2LjkyNzFDNjYuOTI3MSA3OS4zMDQ2IDY2LjkyNzEgNTUuMzkzOCA2Ni45MjcxIDU0LjkzNjJDNjcuMzg0NyA1NC45MzYyIDcwLjkzMTMgNTQuOTM2MiA3MC45MzEzIDU0LjkzNjJDNzQuNDc3OSA1NS4xNjUgNzUuODUwNyA1Ny40NTMxIDc3LjU2NjggNjAuNDI3Nkw3Ny43OTU2IDYwLjc3MDlMNzguOTM5NyA2Mi42MDEzQzgwLjg4NDYgNjUuODA0NyA4My41MTU5IDcwLjE1MjEgODYuMTQ3MyA3NC4yNzA3Qzg4LjA5MjIgNzcuMTMwOSA5MC40OTQ3IDc4Ljg0NyA5My41ODM2IDc5LjMwNDZDOTUuNzU3MyA3OS42NDc4IDEwMC4xMDUgNzkuNTMzNCAxMDEuODIxIDc5LjA3NThMMTAzLjc2NiA3OC42MTgxTDEwNC41NjcgNzguMzg5M0wxMDEuODIxIDc3LjU4ODVDMTAwLjY3NyA3Ny4yNDUzIDk4Ljk2MDcgNzYuNDQ0NCA5Ni42NzI2IDczLjgxMzFDOTUuMTg1MyA3Mi4yMTE0IDkyLjg5NzIgNjguNDM2IDg5LjM1MDYgNjIuOTQ0Nkw4NS45MTg0IDU3LjQ1MzFMODUuODA0IDU3LjMzODdDODQuODg4OCA1NS45NjU4IDgzLjI4NzEgNTMuNzkyMSA4MC42NTU4IDUyLjQxOTJDODUuNjg5NiA1MC44MTc2IDkwLjYwOTEgNDYuMjQxMyA5MC42MDkxIDM5LjM3N0M5MC42MDkxIDM3LjQzMjEgOTAuMTUxNSAzMy43NzExIDg2LjgzMzcgMzAuNTY3N0M4My41MTU5IDI3LjM2NDQgNzguMjUzMyAyNS43NjI3IDcxLjE2MDEgMjUuNzYyN0g1Ni41MTYyWk03MS44NDY1IDMwLjU2NzdDODAuOTk5IDMwLjkxMSA4MS4yMjc4IDM4LjY5MDUgODEuMjI3OCAzOS40OTE0QzgxLjIyNzggNDcuMjcxIDc1LjUwNzUgNTAuMDE2NyA3MC40NzM3IDUwLjAxNjdDNzAuNDczNyA1MC4wMTY3IDY3LjI3MDMgNDkuOTAyMyA2Ni45MjcxIDQ5LjkwMjNDNjYuOTI3MSA0OS40NDQ3IDY2LjkyNzEgMzEuMDI1NCA2Ni45MjcxIDMwLjU2NzdDNjcuOTU2NyAzMC41Njc3IDY5LjY3MjggMzAuNDUzMyA3MS44NDY1IDMwLjU2NzdaIiBmaWxsPSIjMTgzOTY0Ii8+CjxwYXRoIGQ9Ik0xNDguMDQyIDI1Ljc2MjhIMTQ3LjgxM0wxNDcuOTI3IDI3LjEzNTdIMTQ4LjA0MkMxNDguODQzIDI3LjQ3ODkgMTQ5LjUyOSAyOS40MjM4IDE0OS41MjkgMzEuMDI1NVY3OS4xOTAzSDE2NC44NTlDMTc0LjkyNyA3OS4xOTAzIDE4My4zOTMgNzYuMTAxNCAxODkuMTEzIDcwLjE1MjNDMTkzLjkxOSA2NS4yMzI4IDE5Ni41NSA1OC40ODI5IDE5Ni41NSA1MS42MTg1QzE5Ni41NSA0Ny40OTk5IDE5NS4xNzcgNDEuMjA3NiAxOTEuMTczIDM2LjA1OTRDMTg1LjkxIDI5LjE5NSAxNzcuNTU4IDI1LjY0ODQgMTY2LjIzMiAyNS42NDg0TDE0OC4wNDIgMjUuNzYyOFpNMTU4LjY4MiAzMC45MTExQzE1OS4xMzkgMzAuOTExMSAxNjMuNDg3IDMwLjkxMTEgMTYzLjQ4NyAzMC45MTExQzE2NC43NDUgMzAuOTExMSAxNjcuOTQ4IDMxLjAyNTUgMTcwLjIzNyAzMS4zNjg3QzE4NS4zMzggMzMuNjU2OCAxODYuOTQgNDYuMzU1OSAxODYuOTQgNTEuNjE4NUMxODYuOTQgNTUuOTY2IDE4Ni4xMzkgNjIuMjU4MyAxODIuMzY0IDY3LjA2MzNDMTc4LjcwMyA3MS43NTQgMTcyLjk4MiA3NC4xNTY1IDE2NS4yMDMgNzQuMTU2NUMxNjMuMzcyIDc0LjE1NjUgMTYxLjA4NCA3NC4xNTY1IDE1OC41NjcgNzQuMDQyMUMxNTguNjgyIDczLjY5ODkgMTU4LjY4MiAzMS4zNjg3IDE1OC42ODIgMzAuOTExMVoiIGZpbGw9IiMxODM5NjQiLz4KPHBhdGggZD0iTTIxNS4wODMgMjUuNzYyN0gyMDQuNTU3VjI3LjAyMTJMMjA0LjY3MiAyNy4xMzU2QzIwNS41ODcgMjcuNTkzMiAyMDYuMjczIDI5LjMwOTMgMjA2LjI3MyAzMS41OTc0Vjc5LjMwNDZIMjE1LjE5N1YyNS44NzcxTDIxNS4wODMgMjUuNzYyN1oiIGZpbGw9IiMxODM5NjQiLz4KPHBhdGggZD0iTTEzNi40OSAyNS43NjI3SDEwNi40MDFMMTA2LjUxNiAyNy4wMjEySDEwNi42M0MxMDcuNDMxIDI3LjQ3ODggMTA4LjM0NiAyOS4zMDkzIDEwOC4zNDYgMzEuODI2MlY3OS4xOTAySDEzOC4zMkwxNDAuNDk0IDY5LjY5NDVMMTM5LjIzNiA2OS4yMzY5TDEzOC44OTIgNjkuODA4OUMxMzYuMzc1IDczLjY5ODcgMTMzLjg1OSA3NC4xNTYzIDEyNS4xNjQgNzQuMTU2M0MxMjIuMDc1IDc0LjI3MDcgMTE4Ljk4NiA3My45Mjc1IDExNy4xNTUgNzMuODEzMUMxMTcuMTU1IDczLjQ2OTkgMTE3LjE1NSA1Mi40MTkyIDExNy4xNTUgNTEuOTYxNkMxMTcuNjEzIDUxLjk2MTYgMTMyLjM3MSA1MS45NjE2IDEzMi4zNzEgNTEuOTYxNlY0Ny4xNTY2QzEzMi4zNzEgNDcuMTU2NiAxMTcuNjEzIDQ3LjE1NjYgMTE3LjE1NSA0Ny4xNTY2QzExNy4xNTUgNDYuNjk5IDExNy4xNTUgMzAuOTExIDExNy4xNTUgMzAuNTY3N0MxMTcuNjEzIDMwLjU2NzcgMTI5LjUxMSAzMC42ODIxIDEyOS41MTEgMzAuNjgyMUMxMzIuMjU3IDMwLjY4MjEgMTM1LjM0NiAzMy4zMTM1IDEzNS41NzUgMzQuOTE1MlYzNS4xNDRIMTM2LjgzM0wxMzYuNDkgMjUuNzYyN1oiIGZpbG"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "32402502",
+            "codigo": 329,
+            "nome": "QI Sociedade de Crédito Direto S.A.",
+            "thumb": "https://www.qitech.com.br/_next/static/media/logo-qitech-color.3c03573b.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "32648370",
+            "codigo": 196,
+            "nome": "FAIR CORRETORA DE CAMBIO S.A.",
+            "thumb": "https://www.faircorretora.com.br/assets/images/logomarcafair-8-318x95.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "32997490",
+            "codigo": 342,
+            "nome": "Creditas Sociedade de Crédito Direto S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33042151",
+            "codigo": 300,
+            "nome": "Banco de la Nacion Argentina",
+            "thumb": "https://www.bna.com.ar/Images/Logo__BNA.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33042953",
+            "codigo": 477,
+            "nome": "Citibank N.A.",
+            "thumb": "https://corporateportal.brazil.citibank.com/resources-responsive/img/header/citi-logo-sticky.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33132044",
+            "codigo": 266,
+            "nome": "BANCO CEDULA S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33147315",
+            "codigo": 122,
+            "nome": "Banco Bradesco BERJ S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33172537",
+            "codigo": 376,
+            "nome": "BANCO J.P. MORGAN S.A.",
+            "thumb": "https://assets.jpmprivatebank.com/content/dam/jpm-wm-aem/socialicons/jpm-logo-generic.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33264668",
+            "codigo": 348,
+            "nome": "Banco XP S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33466988",
+            "codigo": 473,
+            "nome": "Banco Caixa Geral - Brasil S.A.",
+            "thumb": "https://www.bcgbrasil.com.br/_layouts/15/images/CaixatecBCGBRLayouts/header-BCGBrasil.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33479023",
+            "codigo": 745,
+            "nome": "Banco Citibank S.A.",
+            "thumb": "https://corporateportal.brazil.citibank.com/resources-responsive/img/header/citi-logo-sticky.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33603457",
+            "codigo": 120,
+            "nome": "BANCO RODOBENS S.A.",
+            "thumb": "https://sites.rodobens.com.br/PT-BR/images/logoRodobens.png?R=1"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33644196",
+            "codigo": 265,
+            "nome": "Banco Fator S.A.",
+            "thumb": "https://www.fator.com.br/wp-content/themes/mziq_banco_fator/img/header/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33657248",
+            "codigo": 7,
+            "nome": "BANCO NACIONAL DE DESENVOLVIMENTO ECONOMICO E SOCIAL",
+            "thumb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVkAAAAjCAMAAAAJ4on6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjY5MTE4QzIyODMxMTFFNjkwRUM5MDBFQ0UzREMxRTciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjY5MTE4QzMyODMxMTFFNjkwRUM5MDBFQ0UzREMxRTciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyNjkxMThDMDI4MzExMUU2OTBFQzkwMEVDRTNEQzFFNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyNjkxMThDMTI4MzExMUU2OTBFQzkwMEVDRTNEQzFFNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrujoH8AAAAwUExURQaQSmGMpiNa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"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33775974",
+            "codigo": 188,
+            "nome": "ATIVA INVESTIMENTOS S.A. CORRETORA DE TÍTULOS, CÂMBIO E VALORES",
+            "thumb": "https://www.ativainvestimentos.com.br/Content/themes/padrao/img/logo-ativa.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33862244",
+            "codigo": 134,
+            "nome": "BGC LIQUIDEZ DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA",
+            "thumb": "https://www.bgcliquidez.com/wp-content/uploads/2020/09/bgc-logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33885724",
+            "codigo": 29,
+            "nome": "Banco Itaú Consignado S.A.",
+            "thumb": "data:image/webp;base64,UklGRggTAABXRUJQVlA4WAoAAAAQAAAAnwAAnwAAQUxQSK4CAAABkATbtmk7++ZVfdu2bbMV27Zt27a7tm07PVvfSvKte4KH+15yV52XdCJiAkirhl6ZvVc9q2V/8W93ZndJclHQH6mIGLn/eTmTxZJHO3p5C7oWNONBLZPVr+cGOelS9oEKJsO560J1Je2UyGT6+1Z/XXDfWcdkvHCaqda6f2IyfztJO+Zbmfx/HSVowfsGg3CbmWTRrxmIJ+0lSshhMF51kiQqhwF52VYCz9cMykMmGpndYGCuEjTZzNCs761BZxEOlhuslvMnBugxA3W2M0TFPmok1kLCntmrEE4xUKeoSG1A5bWjsr0M1uFKfMtxuW382xSGa20mESnuA8NWElFIDTKPzYiGMWQrY4n2QMOGkMFTbLaR53dsrhukM2zfOHQDpzRoETjV2ffBqe9fDk7jFIbOLHREfGb+9zBD7zUdnml6r6n//EyBZzL3mcR9Juq9JnCf8dxnHPcZq/cag07jaN4jjuI9jSP1XiO4z3B4hnGfIXqvwdxnEDwD9V4D4OkPTz/u0xeePnqv3vD04j494enBfbpzn27wdIWnC/fpzH06cp8O3Kc9PO24Txvu0xqeVuXgNDS9D05NyiJwvgV0A+eLfTo4jw08v2NzkAyeYjOHaA82LYmGQVPsRhRSg8w5gUhxH5kxRERTgPnm95tvOS5HSOleWMSWylIbULlnqEw4hUoXUplYi8l1A1W0HZLaTFLT+RMim0jtziIez2zVo81wVGaQhmY30BhNGnu+xmI9SRiVg8QuAykoIQeHPcYkbfRrFHYYktTeNyBomCOQ9OZbAcjpSNrt/knujvuRtt131snZ+wFNSAfTTolyVbDQkXRTyD5QIUdv5rqTDgfNeFArL4WHuliSjisiRu57Xi4LjQW317V3pj/T0Cuj1/InVX8xseDkuHYx9gJpFVZQOCA0EAAAEEQAnQEqoACgAD4tFIhDIaEhE7m90BgCxLYAZVkqv3TrcvI9+/Cj9wv8Z82dk/pf3C/bv/HfhVkfdZ8ef3r+z/2D/af4////Wv/X+rbzAv0j/vf9P/bz/Fd0LzBfx7+if7f/Ce5t/oP97/ZvcB/Y/8B/wPcA/kH9O60D+qf9/2AP5H/W/S2/7P+t+DH9mf+//sv3/+gz+Sf0v/h/n53AHqM/wDrO+sP+PnRQJJ/xX9p/Kn8udcC9U/4f8oPyq5ufkP9A/1X3Ac83cdf7HlPaAf8i/rf/E9N/559GH5V/hP+z/lfgG/kv9N/4n9+/eHvQejH+0QhtUoyI8QJDg4ipo8mtNGharl9We0Px7d8VQlGZNcw1+qqr+2ZY3X+XqOuxnd+9ZiaLMAPVOSEx/qqrTsPD3kXy8+RVYaePUpfBPbN1xbPkhqZ/Tb5S2BkJei6P2hOD2UHmuepICPWRNRQvbfZMzdq2z1sMecffPjm551X73meEXMQbFkbIUQHVS7ZC/MBTU1AtNINfQ5BIhqodAiatTv4nPdI845mm4WRKdwrx8P+ObrU1qF5KkI1n66+eT7XJn11Q2hEVr28n7E4deScs0TI2s2dVKgp1gkyuTjNUtR8k3zAg7esPbUazacDe6fuljmhXGJobk8kjHTG9rYwqDMEdGlv3Hi8jJRYTIUCH8QWZ0xdpj5nCYmczKTb+6/9ifa1LaY+GUTvo8mvrxmkOvwyTAjEMAAD+//DFZMlaDQzJsTKAnDs/olD677YmJxYn3CWfM+3x/eXjJn++WTg1CI63jIFv9ftSb9Jueq7i4J5HFzrfNro++qs5ah3/pgRR8EyubWM6zmLexHU4lJ1oXqtTpCl/to/J6K5j9YDb79HGTk+HDAa6vOPA0Pln831vwRH98VPR3GKqa1d6/8Zo52uMMjQy47aitSk/2ATyOckHzNtStAkg90SJQ08XlPXAg5uPDMSEetsKYJdcRPnOuNXT+QWwF6k6THE5XrTVmDBjtDKfEBPsnAK8zWW0iKhHFwKNEoONBXd3/4mSAzlZCEelphLuk/v3xHDqpCzemMBTpl3RqVIazTpqopWtuh2KXTVpQQBdII3wICjC9r2ejA3/IxEI5SK0LhSB4g04OM/O36Rais/QTFduc4dvs6deop48ra2DjccFk3aQWjDPLwg6Nxu28RWxHtnrI5RJzEJn//4hyc4h47vkO011xhU6kTFED/+9l7mxX1vS2PF/zZw76jS+LbdINylCNkb2SrYmFeZw18OQpqH0hHDz8uCDVBEIUN8Yuf0L5D5aiCq1K9k7DDRV3Rn0zvJ90ssf0nq2ZWfQomWzupHgda54PDfhIJNpbVGt3SmqPxtxNDc5yMBXs+3AIV5+plCIj0eBk0tEaQX6S1tWAAmUKcTsED6vDrztN/FI2IO0etehy5pfAY5tTsKerliaL68MztlV8+sddJJppcncrtc1F0Nij3eakyE4YNcN+dwPwuFyxImqA/B35Rj8xH0kVNG6jnRkcXmaL3dOcaHucxC5BDRyPr9LOgNvgB8beVrfwMyHLC5nt6YNAhrj9oOf7Ph3HwtwtHQn/6YqaB3yVy5NkCmGoA/Jfd86P4osLz3CVBaf5eQ+B1h+jAP4GwAVUVx+tHjsxOkh2brhj/2pscxtgGL1WqatL5MgHSbuej3BWc+8Jd+OWT2SlZdZ6LpmdJ/jIM9aM8xtbjV2Q7xHgi2AAOMYBD3JzWY8h8vkjswMipVbaSNFmeZNtWCFXkGTtd02+j3NQHU9dUO7z9YM+Y6GQYuT06fV2GmB3SDpKUUuwDGRHCL1XSmE3kcXtF8IuJP2B7vBg3dtRYOnSfBARNn5xE0V3vUPDRMkM856CQAIhucd1o8r5hAIUx389ode9WI7/0qPn3Koy1AjsL2Z2lAhjfm7akbcI5CSJ4B52/+U4mn8Ym4ny0y4kl/peFE5nBP+OHoEpoxULa34IDhJtv1K311tV+vJmW5ErxqQI0vsAUvOlfrgPYqWpaPesD3+qPi+LnuNtGIb1O10UFcjXOpax/tWg/cIL2tN2QgYKVFG1MUX3jvEQ/Xt9DEXy1iqMpH3KtUIeNXsZnSKdg910eG6GbeJufLkbmAh0C+SFhiU4FIxnyvYyVoFaBQCETrHM5EOTx95srpHe7ZcMv3uX89hzN4JRaQKlBvg08Q2DRDP/lj3PVJOJtO7szdG7kOrtRPr2C5yVWRQk8tT50PB0SoUtEd2ZcsXr3cBbGsAAA9Z6DeVtZAK+5vfGFx87VFjoC2JDgaVZlJkgIqD0GPY32hUGjIoKM7rE1Wi/euhmrSfTF5LxZnGEOwJZ/7f+jIfn/zcfZNlrRAuddhv7ifgaf/h+GyVlou9jb6ugy53j3bunZb2MUbI6Ei+FJyNhliE0vweWlhldzf1xtlDzyoW9Eljtvm9U6z2QM6ONui3pJVPJumeYitzCwFH1LZiX5QGD62hfmbhw7+IaS5IeGf/9ogY3DN6fBEJCIbDSoPmrwbPj2tZqeHKwxb/glTQyyR8MjN/wt1UEGCfEI/4BRWX+tgF4YtLJb7TLBc931s9fZoUrAETRrXniktm85cYGwRf/Ce1miRupqqe41k9DQcxLpRlVPeqKO4Kvywm58OLoIpWeZcuCpmYrYksjF9wxGuGpnvyPlPt7Eva0wZy3Wtsi0XJdzEAjZFdiscgWl4P4REJ/NJ2kqgh6LeOOoK2XJFjpYAJmnU0Bkmy6rbiChcvRThAhM0f/Ng3J1ISGz9dNi1N1tHmrkLQWTiX/Ba+PK4AWxgdlebDv3tVJeL5tTuGYU/u7iLjrIjG8nhcxxkUv/XgOcM/y2vjjTv+TYOf2qEwBMEgRPCNf0COx3dGt5U0mEBFIY633/fEpCYh9pUF9TtHFLUxdF5ypZN8uay8pM6vpmkItPOyIOnjyVAJaRdn5uKd/5R3vF+46v7KcfUC6fczM+B/+h1tvyFPqL8cORqwPX2Hq99FvLC922HaHkg1wMWm1kdmPn2UM+Ax+6WGLm5gp2nrqaoABSiYJ1uk/jlQpKqPxPB7/YqLQy/+lzJdwm74X3tiRILoF3mNJq9M2EvMCAPywnn00ZiPNejz8FgGYb8Nsz+dNovcN5Kg3NlDHEcKfYEE8TAERL/PKTrqoFaXaF5c+IC0g/5b4JVXrTWhxh8BG8nHYjCOfilZkJg3ZBX8zHUa4JX/VriLlfins6r8AW3NTOskggRBFwmWri29aiEziX+tlDfhoNb8x7dJI1/Iv8YYpvK+D4jtt1AnUVuMp0LzqSOTxBOViS+jV0sbv5YE3za+fEeDXGAMwIb9ULLDDEuH3zSDs2P9RQgdMUnjzRg3q8lokFz5ILI4m6XjqRiW4u/FgOtbWlVau3u9FPxa9EfvXhl2nd+OILi7agddnNiuQ2c6bm3z+ja64xdZy6buog08LgWl6wPBiOtTf+/hXPoD6grOVvxkMOrmK3b0dh7qyN7vap9DVvbqgOwdxKKfqhsnYDnvgmjMR/6nBaoLX0XoC+P59J6Bhr8IkxTVHZCxtiRJv7ob+azllcKlzrIXgTmbNCJiWK/XYXq1K+fmX2K9JIE9S8KcVsNBDYkPYx+UDyVI33FCPOG9u14aPZeK61DLMkRTIY74/8QDNo+lwwuCqKcUh23rmTOL/xAwkfXYSXIZARMAAAD8q7y8df67Sah0xGFthtELi/mC2XBKRs2Ep3WCcKs6welf+cLeILSWChdzrgRJa4zhvCcp17E0bgsdKEDKUBBgtmfBZQ95g/n0IY8X8+P75P9FvuDKtWLnoH8/EilGu4ShM3tad3sXMhtfszEn1JTcaE32LKU9R4tolNT6XXCmamZpxQOylWy7VaDSLgbBDvKSZmMRvgwyl+Op1QG2hH4bQksyztJswVAo8VP56AR5BJJzor+z2bHJw6j2o+cYrLH6Er4aXrvL4miXQjqvGuWYIm/gccamiemfKUg2MAQpipO+BR0b+awAdhe9gP6xn9YL9TIkJfP5/NBL5FLbzdLeIObaq0BxNvhLKkLOmSDUm6Y8sMC+uCe5269nTaoPkauzp78n7sUWbm/eIJQSfn3ryv7C//PC2l0uc6F36Gu2jAuZzez//J7yxICMv7+nnlTSBjtOASL++SC1zgW8cbw2N+MCcWeeJYvmJopLOH9+mrSONPG+f4GHwh/nOKqIQ9HyznTUDmS0/kjN5YbeZBRp418NF1XeOwrd/Q+AtGjs9/HLcfKzOsS4jFheBzW/cI3JNhRfsv1TtM0JICn4x4EPYZmym9i16HcjSxC0wXgZYsEyAJr5hxM0CcvXwKMYarDEleaUe04ZRzojlAXTajd2lny/hHfLUVpXTzzAdPHCbBv3+RiX665bTiHAC8DnJATGwb6dKZoR+7VksKVfpeZW6p8NsagqGGSYtcFQ45hgOHeeBKPI4+HyM8snVK/9VGfE1ANQLZxCt/jVZc1NzhM7leaB2UFFu/KineUdg/eiqtMXB+ZrvHx0a34PDbn55KptBcspa/2WybmEuTtg7A3cUQvQb/gWg0ZCRRJbZ1Du+tqQ0eL6A+TDfqCFNFEEte2T8FFdYhHpZQtEw/OVgMfB+hXHIUvkEsGKuXgGcSH23pp2ob/dUASxantbZL2JdGYJ4wRFruxfWa5kDI+WxfMTt7PXy6+Pe3iJe3gahkFlxQOlPabj5B0yOr6zYO3XNkayByG7BWs9nBIoAe2oa71/vU83gl0oitkfsncN1hHEA8guMbvlxT2HGaICCVu1swg4hV0CrdUjCZPqpAsr0HaOpkl96uFSad/79dmAVLUs00GUZ0Hfz4wy9QqMqY0z+rtGNdPQ0fy6vsUcoL123JjK2UnOsj4g5XmwApwG2CTO+YeQA85xMm/iMiFFoWjZr0DnzsNoALfU45sVfT4bkIshSU3WYDNY0t/Z2vlpK6mKF4vFEpGyTAIAhohX6/KKKTUWGazMEgbkooUauvU2TPA2Zu4El3/6Uhvv2YiCjZeZYC+GFBmoPToMcNiw2XLA9AvqrNCXI5eZTLuBCgvrJvFYOvmVPwkD6BL/i/jkQ/S/GEatvsq99xKjeX+gOxLPY+cx+cQKci7XRLHe9RZhfS3REUNafgl7tqIP/WbwUfhj6RTHhFHDS+r8IMCjG7ZxxcwMWcEVtUqWDf6bU76f4iKR+TVxZEz0pe0rAxlGvX+QB7N5gSI3NFuFTVu7q0Qd02Os9WwTllCtZqC5Fi627HcaCdF4OvV+NGLFoYUWU6a0Ee0LMgDWak6+ajDz0Y7D5LxPtPUdrQl5pYJK5fctrxNmOLu5itQTCdyENJwsLWxu3MwDtjoAYdZYfoBIoPsfjfuYnIFGc9jde/5Y3yEiuCbeDKaF2Z4efr8HiUj74GkGja6aZGvMNPjC1zkIp6h49Q5EQR4DAdeLxRxEPFGnmfL8auz33mWUkJdCsH//i2l6tCD1Oorj7gHL/ek+U+JkRHf1cIohl8Gn1Eo7UnUMmn/iNcD54QaZy6Ue7HNioqUhFgg47gS9sPlM54YAAAA="
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "33923798",
+            "codigo": 243,
+            "nome": "Banco Máxima S.A.",
+            "thumb": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAB4AdwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAACAAMEBQYBBwj/xAA7EAACAQMCAwYDBAcJAAAAAAABAgMABBESIQUGMQcTIkFRYRSBkXGh0uEjQpSxwdHwFTIzNUVGUlNi/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAMFBP/EABwRAAMAAwADAAAAAAAAAAAAAAABAgMRIRITMf/aAAwDAQACEQMRAD8Aqe0Lnnme0514rZ2XGJ7a2t5hHFFEFAUBR7bnOapE5/5tPXj94fmv8qHtBt5bvtJ4xb26a5ZbwIi+pIWonHuEw8Nlhayn+ItZAUEo/wCxPC4+u/2GtDGo0k0cuR11ot4eeObpAxXjd6wRdTYxsMgZO3uK2XZZzZx3ifNSWXEeIy3NvJC5KSgHBAyCDjb86xPALe0hsYnv1/zKU28Z1EaEAIL7f+yo39K0HZLBJbc/xwTDEkccyMPcCqWocVwjLtXL39Pe2YKPEcVzWvh8Q8XTfrXJULgYOMHNN9znSveboowP4/d91ZZoDutckahkHB9jSDqW0hhmm2iGrWW05YE+/TaiRGU41DRvtjf60ASyIxwrAmippE0MmpwcDSoxjP8AWKcJABJOAOpNAdpUEUscy6opFceqnNNi8tiQBcQkk4A1igH6VNSXEETaZZo0OM4ZgKJZomjMiyIYx1YMMfWgDpU1HcQSnEU0bn0VgaVAfOXOs0fDeceZuIrKnxr3Rt7VAw1R5Qa5COowNgfUmqDgMkU9vPwm6ljiin/SQSSHCxTKNiT5AjKn5V61zb2PPx3mO94tbcaW3W6cOYpLbWVOADuGG23pVWvYZdj/AHDB+xH8ddkZI8eshcU3wwHHLqK4vhDatm0tEEEBHmq9W+ZyfpW+7Npo73nTht+HUzy2sqXCZGQ6rjVj0YYP1p5exK6X/X4f2M/jrScj9mz8scbHEp+KLclY2RI0g0bnzJ1Hy8qpeXF69J9Izjyee2j0InAyelVqMwkW/JOiRtJHoh2U/Xf51NuYzNC0YbTq2J9vOieNHiaJh4CunHtWedpGvF+KkFqGIULrcjy/4/fv8qetJTLCC+0i+Fx6MOtDaQNAjd4/eSMcs+MZ2wK73LJLK8bAd4vQjow8/wB30oCNcB5pZJ4sn4bZAP1m/W+7apMyi7tCI2GHUFSenrR28QghSMHOBufU+ZppbdkhaOOUoNeqMgf3R1x7jrQCtXRpH1RCOcABx6jyIPmK4qj+0X2H+Cvl7mjhhcTNNM6s5XSNK4AFEIsXLTZ2KBcfYSf40BHkZ1v30Q97+iXO4GN29aK7LHhs5ePuzobw5zRSQzfENLDJGuUCkOhPQn3HrRSxSTWkkUjrrdSNSrgfTNARX1XrBI4TCY28TsRldugx9tKpUkJ75ZomCvjS2Rsw/Ku0B//Z"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "34088029",
+            "codigo": 397,
+            "nome": "LISTO SOCIEDADE DE CREDITO DIRETO S.A.",
+            "thumb": "https://www.soulisto.com.br/assets/logo_listo_22a683e3e4.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "34111187",
+            "codigo": 78,
+            "nome": "Haitong Banco de Investimento do Brasil S.A.",
+            "thumb": "https://www.haitongib.com.br/cms/medianoticia/29"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "34335592",
+            "codigo": 355,
+            "nome": "ÓTIMO SOCIEDADE DE CRÉDITO DIRETO S.A.",
+            "thumb": "https://static.wixstatic.com/media/b38784_e05a60a9108b4dc5b173aa6ed352c33c~mv2.png/v1/fill/w_146,h_146,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/favicon.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "34711571",
+            "codigo": 367,
+            "nome": "VITREO DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "35977097",
+            "codigo": 373,
+            "nome": "UP.P SOCIEDADE DE EMPRÉSTIMO ENTRE PESSOAS S.A.",
+            "thumb": "https://upp.com.br/img/UPP_LOW__0008_LOGO_GRAY.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "36113876",
+            "codigo": 111,
+            "nome": "OLIVEIRA TRUST DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIARIOS S.A.",
+            "thumb": "https://www.oliveiratrust.com.br/wp-content/themes/OliveiraTrust_WP/assets/img/logotipo_padrao_grey.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "36586946",
+            "codigo": 408,
+            "nome": "BÔNUSCRED SOCIEDADE DE CRÉDITO DIRETO S.A.",
+            "thumb": "https://www.bonuscred.com.br/img/logo.png?1669436371"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "37241230",
+            "codigo": 404,
+            "nome": "SUMUP SOCIEDADE DE CRÉDITO DIRETO S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "37880206",
+            "codigo": 403,
+            "nome": "CORA SOCIEDADE DE CRÉDITO DIRETO S.A.",
+            "thumb": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA5MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbFJ1bGU9ImV2ZW5vZGQiIGNsaXBSdWxlPSJldmVub2RkIiBkPSJNODkuOTgzMyAxMi40Nzg5VjE5Ljg1MjhDODkuOTgzMyAyMC4xNzU3IDg5LjcyMTUgMjAuNDM3NSA4OS4zOTg2IDIwLjQzNzVIODcuMjAwM0M4Ni44Nzc0IDIwLjQzNzUgODYuNjE1NiAyMC4xNzU3IDg2LjYxNTYgMTkuODUyOFYxOC42OTI5Qzg1LjI0NiAxOS43MSA4My41NTU4IDIwLjMxMDYgODEuNzI3IDIwLjMxMDZDNzcuMTU4IDIwLjMxMDYgNzMuNDU0IDE2LjU2MTQgNzMuNDU0IDExLjkzNjZDNzMuNDU0IDcuMzExNjkgNzcuMTU4IDMuNTYyNSA4MS43MjcgMy41NjI1QzgzLjU1NTggMy41NjI1IDg1LjI0NiA0LjE2MzE1IDg2LjYxNTYgNS4xODAxOVY0LjE0NzE3Qzg2LjYxNTYgMy44MjQyNyA4Ni44Nzc0IDMuNTYyNSA4Ny4yMDAzIDMuNTYyNUg4OS4zOTg2Qzg5LjcyMTUgMy41NjI1IDg5Ljk4MzMgMy44MjQyNyA4OS45ODMzIDQuMTQ3MTdWMTEuMzk5OUM4OS45OTQ0IDExLjU3NzQgOTAgMTEuNzU2MyA5MCAxMS45MzY2QzkwIDEyLjExNyA4OS45OTQ0IDEyLjI5NiA4OS45ODMzIDEyLjQ3MzZMODkuOTgzMyAxMi40Nzg5Wk02Ny41MjA5IDE5LjY4MTVDNjcuNTIwOSAxOS45MTIyIDY3LjMzMzkgMjAuMDk5MiA2Ny4xMDMzIDIwLjA5OTJINjQuNTEyM0M2NC4yODE3IDIwLjA5OTIgNjQuMDk0NyAxOS45MTIyIDY0LjA5NDcgMTkuNjgxNVY0LjI3NjE4QzY0LjA5NDcgNC4wNDU1MyA2NC4yODE3IDMuODU4NTUgNjQuNTEyMyAzLjg1ODU1SDY3LjEwMzNDNjcuMzMzOSAzLjg1ODU1IDY3LjUyMDkgNC4wNDU1MyA2Ny41MjA5IDQuMjc2MThWNS4xNDkzNkM2OC43OTQgNC4yMTYyNyA3MC4zMzk5IDMuNjQxMTggNzIuMDE0NiAzLjU2OTk5QzcyLjAxOTMgMy41Njk3OSA3Mi4wMjQxIDMuNTY5NjkgNzIuMDI4OSAzLjU2OTY5QzcyLjIxNiAzLjU2OTY5IDcyLjM2NzcgMy43MjEzNCA3Mi4zNjc3IDMuOTA4NDJWNi43NjQwN0M3Mi4zNjc3IDYuOTA5NiA3Mi4yNTM5IDcuMDI5NjkgNzIuMTA4NSA3LjAzNzQ0QzY5LjU1MjIgNy4xNzM3NiA2Ny41MjA5IDkuMzE1MDQgNjcuNTIwOSAxMS45MzY2VjE5LjY4MTVaTTQzLjYzMzEgNS41NTc3MUM0My42MzUgNS41NTkyOCA0My42MzY4IDUuNTYwODcgNDMuNjM4NSA1LjU2MjQ3QzQzLjc2MDEgNS42NzI1IDQzLjc2OTUgNS44NjAyNCA0My42NTk0IDUuOTgxODFMNDEuODQ3MiA3Ljk4NDMyQzQxLjY4MzggOC4xNjQ5MSA0MS40MDg2IDguMTg4NiA0MS4yMTY3IDguMDM4NTlDNDEuMjEyMyA4LjAzNTE0IDQxLjIwOCA4LjAzMTggNDEuMjAzOCA4LjAyODU2QzQwLjM3MDMgNy4zODYzIDM5LjM1MDggNy4wMzA1NCAzOC4yNzMgNy4wMzA1NEMzNS41OTYyIDcuMDMwNTQgMzMuNDI2MiA5LjIyNzA0IDMzLjQyNjIgMTEuOTM2NkMzMy40MjYyIDE0LjY0NjEgMzUuNTk2MiAxNi44NDI2IDM4LjI3MyAxNi44NDI2QzM5LjIzMzYgMTYuODQyNiA0MC4xNDgzIDE2LjU2MDUgNDAuOTI4NSAxNi4wNDE2TDQwLjkzMjIgMTYuMDM5MkM0MS4xMjc4IDE1LjkwODYgNDEuMzkxMSAxNS45NTExIDQxLjUzNTYgMTYuMTM2OEw0My4xNTA1IDE4LjIxMjNDNDMuMTUzMyAxOC4yMTU5IDQzLjE1NjEgMTguMjE5NiA0My4xNTg4IDE4LjIyMzNDNDMuMjgyNiAxOC4zOTQ4IDQzLjI0NCAxOC42MzQyIDQzLjA3MjUgMTguNzU4MUM0MS42ODQ3IDE5Ljc2MDEgNDAuMDE4NCAyMC4zMTA2IDM4LjI3MyAyMC4zMTA2QzMzLjcwMzkgMjAuMzEwNiAzMCAxNi41NjE0IDMwIDExLjkzNjZDMzAgNy4zMTE2OSAzMy43MDM5IDMuNTYyNSAzOC4yNzMgMy41NjI1QzQwLjI2NTMgMy41NjI1IDQyLjE1MDkgNC4yODAyMyA0My42MzMxIDUuNTU3NzFaTTUzLjMxNDggMjAuMzEwNkM0OC43NDU3IDIwLjMxMDYgNDUuMDQxOCAxNi41NjE0IDQ1LjA0MTggMTEuOTM2NkM0NS4wNDE4IDcuMzExNjkgNDguNzQ1NyAzLjU2MjUgNTMuMzE0OCAzLjU2MjVDNTcuODgzOCAzLjU2MjUgNjEuNTg3NyA3LjMxMTY5IDYxLjU4NzcgMTEuOTM2NkM2MS41ODc3IDE2LjU2MTQgNTcuODgzOCAyMC4zMTA2IDUzLjMxNDggMjAuMzEwNlpNNTMuMzE0OCAxNi44NDI2QzU1Ljk5MTYgMTYuODQyNiA1OC4xNjE2IDE0LjY0NjEgNTguMTYxNiAxMS45MzY2QzU4LjE2MTYgOS4yMjcwNCA1NS45OTE2IDcuMDMwNTQgNTMuMzE0OCA3LjAzMDU0QzUwLjYzOCA3LjAzMDU0IDQ4LjQ2OCA5LjIyNzA0IDQ4LjQ2OCAxMS45MzY2QzQ4LjQ2OCAxNC42NDYxIDUwLjYzOCAxNi44NDI2IDUzLjMxNDggMTYuODQyNlpNODEuNzI3IDE2Ljg0MjZDODQuNDAzOCAxNi44NDI2IDg2LjU3MzggMTQuNjQ2MSA4Ni41NzM4IDExLjkzNjZDODYuNTczOCA5LjIyNzA0IDg0LjQwMzggNy4wMzA1NCA4MS43MjcgNy4wMzA1NEM3OS4wNTAyIDcuMDMwNTQgNzYuODgwMiA5LjIyNzA0IDc2Ljg4MDIgMTEuOTM2NkM3Ni44ODAyIDE0LjY0NjEgNzkuMDUwMiAxNi44NDI2IDgxLjcyNyAxNi44NDI2WiIgZmlsbD0iIzIwMjAyMCIvPgo8cGF0aCBmaWxsUnVsZT0iZXZlbm9kZCIgY2xpcFJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC41ODMgMC43NTAwNjVDMTAuMTQ4NSAwLjc1NTM3MiA5LjYyNDMyIDAuODI0MTk3IDkuMzU4OTcgMC44Njk5NzRDNy43NzA0MSAxLjE0MzY1IDYuMjM4IDEuNzU5MDUgNC45MDQwOSAyLjY3Mjc4QzIuODc0MTcgNC4wNjMxNCAxLjMxMjM4IDYuMTM5NTYgMC41NDgyOTkgOC40Nzk5MkMtMC4zNTA2MiAxMS4yMzM2IC0wLjEzNTI0MiAxNC4zMTkyIDEuMTI4MjggMTYuOTExOEMyLjMyODYzIDE5LjM3NDkgNC40NTA5MyAyMS4zNjkxIDYuOTgzNDggMjIuNDEwMUM5LjExMzcyIDIzLjI4NTcgMTEuNDk3OSAyMy40Nzk1IDEzLjcyOTcgMjIuOTc4MkMxNi40NDY0IDIyLjM2NzkgMTguODc5MyAyMC43MjE4IDIwLjQ2OSAxOC40NjQ0QzIxLjY2IDE2Ljc3MzEgMjIuMzY1NSAxNC43NDk3IDIyLjQ5ODkgMTIuNjgzN0MyMi41MDk0IDEyLjUwNiAyMi40NDYzIDEyLjMzMTYgMjIuMzI0NCAxMi4yMDE4Qz"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "40303299",
+            "codigo": 306,
+            "nome": "PORTOPAR DISTRIBUIDORA DE TITULOS E VALORES MOBILIARIOS LTDA.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "42272526",
+            "codigo": 17,
+            "nome": "BNY Mellon Banco S.A.",
+            "thumb": "https://www.bnymellon.com/etc.clientlibs/bnymellon/clientlibs/clientlib-site/resources/images/logos/bny_horizontal_blue.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "43180355",
+            "codigo": 174,
+            "nome": "PEFISA S.A. - CRÉDITO, FINANCIAMENTO E INVESTIMENTO",
+            "thumb": "https://www.pefisa.com.br/d216f4292e4a1bb9ee7c83cf887b78e1.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "44189447",
+            "codigo": 495,
+            "nome": "Banco de La Provincia de Buenos Aires",
+            "thumb": "https://www.bancoprovincia.com.ar/CDN/Get/logo_2021_S"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "45246410",
+            "codigo": 125,
+            "nome": "Plural S.A. Banco Múltiplo",
+            "thumb": "https://www.bancogenial.com/Content/Genialv3/Menu_topo/logo_genial_banco.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "46518205",
+            "codigo": 488,
+            "nome": "JPMorgan Chase Bank, National Association",
+            "thumb": "https://www.jpmorganchase.com/content/dam/shared/logos/jpmc-logo-290x20px.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "48795256",
+            "codigo": 65,
+            "nome": "Banco AndBank (Brasil) S.A.",
+            "thumb": "https://www.andbank.com/brasil/wp-content/themes/andbank/assets/images/andbank_pt.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "49336860",
+            "codigo": 492,
+            "nome": "ING Bank N.V.",
+            "thumb": "https://www.ing.com/static/ingdotcompresentation/static/img/logos/logo.hd.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "50579044",
+            "codigo": 145,
+            "nome": "LEVYCAM - CORRETORA DE CAMBIO E VALORES LTDA.",
+            "thumb": "https://cdn.vortx.com.br/images/logo-expanded-dourado.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "50585090",
+            "codigo": 250,
+            "nome": "BCV - BANCO DE CRÉDITO E VAREJO S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "52904364",
+            "codigo": 354,
+            "nome": "NECTON INVESTIMENTOS  S.A. CORRETORA DE VALORES MOBILIÁRIOS E COMMODITIES",
+            "thumb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAM/hJREFUeAHt3e2V1Ma6BlDhdf8bRwBEcHAEhgiMIzCOwBCBcQTgCLAjAEcARIBPBOAI4EQw1497CTRNT0+r9NEqaddaM/0pqWpXSfWqpJZuXPyTGmlWgb/+apqPH5umffz776Z5/36XhTy2z2fNlIURIEBgQoHbt5smf0l5vHWraW7ebJq7dz8//vuhf7MJ3BAATGedDj5/6dDfvNk96tyn8zZnAgTqFmiDhO++2wUJCQ7yJ00jIAAYyTUdezr7dPR5fP16pBmbDQECBDYucO/eLhBIYJDnGTmQhgsIAAoNM4SfTv7PP3eP9uwLIU1GgACBngIZKXjwoGkEBD3h9r4uANgDOfYynfzLl587/WPf9RkBAgQIzCOQUYHvv98FBQkOpNMEBADXOKXT/+23XcdvL/8aLB8TIEDgzAI5Z+DHHwUDp1SDAOCAUob3f/+9af74Y3c8/8BXvEWAAAECCxdog4GHD503cKiqBAAdlQzvp9PPo0SAAAEC6xFIEJCRgRwukHYCmw8A2r39DPMb4rdaECBAYN0COUfg55+bxqhA02w2AEhn/+uvu739BAESAQIECGxHID8lTBCQYCBBwRbT5gKAtuPPMX6JAAECBAgkEPjll+0FApsJAHT8VnICBAgQOCawtUBg9QGAjv9Yc/cZAQIECOwLbCUQWG0AkOP6z57tjvPvV67XBAgQIEDgmEDOEcj5AY8erfcnhKsMAHJ8//Hj3R33jlWwzwgQIECAwDGBBAJPn+5OGDz2vRo/W1UAkGvzp+PPzXgkAgQIECAwlkCuH5BAYE13J/xqLJxzzifD/en479/X+Z+zHiybAAECaxXIDua3365rdLn6EYBctS+df072kwgQIECAwNQCuW7A8+f1X1Ww2hGA7PX/9FPT/PCDzn/qxm7+BAgQIPBZIDucGXGu/VyzKkcAMhSTzt9e/+cG6RkBAgQIzC9Q82hAdSMAT57sIi+d//wN3RIJECBA4LJAOxqQvqm2VM0IQJAz3O8M/9qamPwSIEBgGwL5pcCLF/VcN6CKEYD27Eud/zZWIqUkQIBAjQLpq+7caZo81pAWHwDkan452cId+2poTvJIgACBbQukr0qflb5r6WmxhwDa3/a7a9/Sm5D8ESBAgMAhgdxTID8XXGpaZADQRlCG/JfabOSLAAECBE4RyJUDX71a5nkBizsEkE4/V1vS+Z/StHyHAAECBJYssOQ+bVEjAIFyvH/JTVneCBAgQKBEIDcVykjAku4lsJgRgBzrz56/k/1KmpZpCBAgQGDJAu2h7Vy+filpEQFAOv9c2U8iQIAAAQJrFUgQkOvZLOXk9rMHADr/tTZ15SJAgACBQwLZ4V1CEHDWAEDnf6hpeI8AAQIE1i6whCDgbAGAzn/tzVv5CBAgQOCYwLmDgLMEADr/Y03CZwQIECCwFYFzBgGz/wxQ57+VZq2cBAgQIHCqQG4i9ODBqd8e53uzBgDtBRHGybq5ECBAgACBdQic4zoBsx0CaC/ys46qUgoCBAgQIDCeQHudgPSVc6VZRgBSsFzk5/37uYplOQQIECBAoD6B27eb5u3bee4dMPkIQBvV6Pzra4hyTIAAAQLzCqSvzCXx50iTBwCPH7uxzxwVaRkECBAgsA6BHAbIrwOmTpMGAM+eLeNqR1Mjmj8BAgQIEBhTIL+YSx86ZZrsHIDXr+cbxpgSyLwJECBAgMC5BHIHwXv3pln6JAFAjmG4s980FWauBAgQILAdgfw88N27aU4KnOQQQO52lJP/JAIECBAgQKBcIH1p+tQp0ugBwJMnTvqboqLMkwABAgS2KZBD6ulbx06jHgJw3H/s6jE/AgQIECCwExj7fIDRAgAX+9FECRAgQIDAdAJjXyRotEMA+b2/i/1MV/HmTIAAAQLbFkgf++uv4xmMMgLw8uV0JymMV1RzIkCAAAEC9QuMdShgcABg6L/+xqQEBAgQIFCPwFiHAgYfAshwhKH/ehqOnBIgQIBA3QJjHQoYNALgrP+6G5HcEyBAgEC9Arlr4N275fkfNAKQE/8kAgQIECBAYH6BoX1wcQCQGxXkjkUSAQIECBAgML9ARuHTF5emokMAOfHvzh2X+y1FNx0BAgQIEBhDYMi9AopGAHKLwgQBEgECBAgQIHA+gfTFpbcN7j0CkLMPs/cvESBAgAABAucXyChATgjMzwP7pN4jAGNehahPRn2XAAECBAgQ+FIgowAlfXOvEQB7/1/Ce4cAAQIECCxB4N27fqMAvUYASiKMJaDIAwECBAgQWLtA3z765BEAe/9rbzrKR4AAAQK1C/QZBTh5BKBvZFE7ovwTIECAAIHaBPr01SeNANj7r60JyC8BAgQIbFXg1FGAk0YA+kQUWwVXbgIECBAgsASB3347LRfXjgC46t9pkL5FgAABAgSWIHDq1QGvHQHIdYZd9W8JVSoPBAgQIEDgeoH02afcI+DaEYBc9S/nAEgECBAgQIBAHQK5KmDOBTiWjo4AvHyp8z+G5zMCBAgQILBEgey4526Bx9LRAOCPP45N6jMCBAgQIEBgqQLX9eFXHgLIMYRvvllqseSLAAECBAgQuE7gw4emyUmBh9KVIwCnnEBwaIbeI0CAAAECBJYhcKwvvzIAuG7oYBlFkwsCBAgQIEDgKoFjffnBQwCu/HcVpfcJECBAgEBdAlddGfDgCMCpVxGqi0BuCRAgQIDA9gTyi75D6eAIgN/+H6LyHgECBAgQqE/g7t2mefv2y3x/EQAY/v8SyTsECBAgQKBmgUOHAb44BHDVUEHNBZd3AgQIECCwZYFDffsXAcCff26ZSNkJECBAgMD6BA717ZcOAbj4z/oqXYkIECBAgEAE9i8KdGkE4LrrBiMkQIAAAQIE6hTY7+MvBQCHhgjqLKZcEyBAgAABAl2BN2+6r5rm0iEAP/+7jOMVAQIECBBYi8D+LYI/BQB+/reWKlYOAgQIECBwWKB7HsCnQwB//XX4y94lQIAAAQIE1iHQPQ/gUwCwf2xgHUVVCgIECBAgQKAV6Pb1nwIAIwAtj0cCBAgQILBOgW5f/+kcgBs31llYpSJAgAABAgQ+C1xc7J7/OwLQjQg+f8UzAgQIECBAYG0CbZ8vAFhbzSoPAQIECBA4InApAMhPACUCBAgQIEBg/QJtn//vCED3rMD1F10JCRAgQIDAdgXaPv/fAKCNBrbLoeQECBAgQGAbAm2f/++vAPwCYBuVrpQECBAgQCAC+SXAV+3JAEgIECBAgACBbQik7//q48dtFFYpCRAgQIAAgZ1A+n4jAFoDAQIECBDYmIARgI1VuOISIECAAIEI/DsC8PffMAgQIECAAIEtCaTv/6r9OcCWCq6sBAgQIEBgywLp+/+9DsCWEZSdAAECBAhsUcAIwBZrXZkJECBAYNMCOQfgn5sAtzcG3LSFwhMgQIAAgU0JOASwqepWWAIECBAgsBMQAGgJBAgQIEBggwICgA1WuiITIECAAAEBgDZAgAABAgQ2KCAA2GClKzIBAgQIEBAAaAMECBAgQGCDAgKADVa6IhMgQIAAAQGANkCAAAECBDYoIADYYKUrMgECBAgQEABoAwQIECBAYIMCAoANVroiEyBAgAABAYA2QIAAAQIENiggANhgpSsyAQIECBAQAGgDBAgQIEBggwICgA1WuiITIECAAAEBgDZAgAABAgQ2KCAA2GClKzIBAgQIEBAAaAMECBAgQGCDAgKADVa6IhMgQIAAAQGANkCAAAECBDYoIADYYKUrMgECBAgQEABoAwQIECBAYIMCAoANVroiEyBAgAABAYA2QIAAAQIENiggANhgpSsyAQIECBAQAGgDBAgQIEBggwICgA1WuiITIECAAAEBgDZAgAABAgQ2KCAA2GClKzIBAgQIEBAAaAMECBAgQGCDAgKADVa6IhMgQIAAAQGANkCAAAECBDYoIADYYKUrMgECBAgQEABoAwQIECBAYIMCAoANVroiEyBAgAABAYA2QIAAAQIENiggANhgpSsyAQIECBAQAGgDBAgQIEBggwICgA1WuiITIECAAAEBgDZAgAABAgQ2KCAA2GClKzIBAgQIEBAAaAMECBAgQGCDAgKADVa6IhMgQIAAAQGANkCAAAECBDYoIADYYKUrMgECBAgQEABoAwQIECBAYIMCAoANVroiEyBAgAABAYA2QIAAAQIENiggANhgpSsyAQIECBAQAGgDBAgQIEBggwICgA1WuiITIECAAAEBgDZAgAABAgQ2KCAA2GClKzIBAgQIEBAAaAMECBAgQGCDAgKADVa6IhMgQIAAAQGANkCAAAECBDYoIADYYKUrMgECBAgQEABoAwQIECBAYIMCAoANVroiEyBAgAABAYA2QIAAAQIENiggANhgpSsyAQIECBAQAGgDBAgQIEBggwICgA1WuiITIECAAAEBgDZAgAABAgQ2KCAA2GClKzIBAgQIEBAAaAMECBAgQGCDAgKADVa6IhMgQIAAAQGANkCAAAECBDYoIADYYKUrMgECBAgQEABoAwQIECBAYIMCAoANVroiEyBAgAABAYA2QIAAAQIENiggANhgpSsyAQIECBAQAGgDBAgQIEBggwICgA1WuiITIECAAAEBgDZAgAABAgQ2KCAA2GClKzIBAgQIEBAAaAMECBAgQGCDAgKADVa6IhMgQIAAAQGANkCAAAECBDYoIADYYKUrMgECBAgQEABoAwQIECBAYIMCAoANVroiEyBAgAABAYA2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"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "52937216",
+            "codigo": 253,
+            "nome": "Bexs Corretora de Câmbio S/A",
+            "thumb": "https://www.bexs.com.br/wp-content/themes/bexs-theme/assets/imgs/logo-bexs-branca.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "53518684",
+            "codigo": 269,
+            "nome": "BANCO HSBC S.A.",
+            "thumb": "https://www.business.hsbc.com.br/-/media/project/common/logos/hsbc-logo.svg?iar=0&hash=C1B118550A1C5D448523270CF2A7A877"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "54403563",
+            "codigo": 213,
+            "nome": "Banco Arbi S.A.",
+            "thumb": "https://www.bancoarbi.com.br/images/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "54641030",
+            "codigo": null,
+            "nome": "BMF Bovespa S.A. - Bolsa de Valores, Mercadorias e Futuros - Camara BMFBOVESPA",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "55230916",
+            "codigo": 139,
+            "nome": "Intesa Sanpaolo Brasil S.A. - Banco Múltiplo",
+            "thumb": "https://www.intesasanpaolobrasil.com.br/content/dam/banche-estere/isp_brasile/immagini/homepage/logo_ISP%20BRASILE-colore.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "57839805",
+            "codigo": 18,
+            "nome": "Banco Tricury S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "58160789",
+            "codigo": 422,
+            "nome": "Banco Safra S.A.",
+            "thumb": "https://www.safra.com.br/lumis-theme/br/com/bancosafra/safranet/theme/safranet/assets/img/logo-safra.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "58497702",
+            "codigo": 630,
+            "nome": "Banco Smartbank S.A.",
+            "thumb": "https://www.smartbank.com/wp-content/uploads/SmartBank-logo-grey.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "58616418",
+            "codigo": 224,
+            "nome": "Banco Fibra S.A.",
+            "thumb": "https://www.bancofibra.com.br/wp-content/uploads/2021/06/bancofibra_logo-1.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "59109165",
+            "codigo": 393,
+            "nome": "Banco Volkswagen S.A.",
+            "thumb": "https://cliente.bancovw.com.br/cliente/favicon.ico"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "59118133",
+            "codigo": 600,
+            "nome": "Banco Luso Brasileiro S.A.",
+            "thumb": "https://bancoluso.com.br/wp-content/themes/bancoluso/img/logo-banco-luso.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "59274605",
+            "codigo": 390,
+            "nome": "BANCO GM S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "59285411",
+            "codigo": 623,
+            "nome": "Banco Pan S.A.",
+            "thumb": "https://www.bancopan.com.br/bancopan-institucional/conteudo/estrutura/assets/img/mh-icons/mh-icon--logo-desktop.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "59588111",
+            "codigo": 655,
+            "nome": "Banco Votorantim S.A.",
+            "thumb": "https://www.bv.com.br/site/icons/favicon-194x194.png?v=zX790m0Y3L"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "60394079",
+            "codigo": 479,
+            "nome": "Banco ItauBank S.A.",
+            "thumb": "https://www.itau.com.br/media/dam/m/29e03849e7f7054f/original/conta_itau.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "60498557",
+            "codigo": 456,
+            "nome": "Banco MUFG Brasil S.A.",
+            "thumb": "https://www.br.bk.mufg.jp/assets/img/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "60518222",
+            "codigo": 464,
+            "nome": "Banco Sumitomo Mitsui Brasileiro S.A.",
+            "thumb": "https://www.smbcgroup.com.br/SMBCB/media/SMBC/Brazil/SMBC-Logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "60701190",
+            "codigo": 341,
+            "nome": "ITAÚ UNIBANCO S.A.",
+            "thumb": "https://www.itau.com.br/media/dam/m/29e03849e7f7054f/original/conta_itau.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "60746948",
+            "codigo": 237,
+            "nome": "Banco Bradesco S.A.",
+            "thumb": "https://banco.bradesco/assets/classic/svg/logo-mobile.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "60814191",
+            "codigo": 381,
+            "nome": "BANCO MERCEDES-BENZ DO BRASIL S.A.",
+            "thumb": "https://www.bancomercedes-benz.com.br/custom/site-BMBInternet/images/logo/banco-mercedes-benz.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "60850229",
+            "codigo": 613,
+            "nome": "Omni Banco S.A.",
+            "thumb": "https://www.omni.com.br/assets/site/resources/images/logo_omni_footer.jpg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "60872504",
+            "codigo": 652,
+            "nome": "Itaú Unibanco Holding S.A.",
+            "thumb": "https://www.itau.com.br/media/dam/m/29e03849e7f7054f/original/conta_itau.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "60889128",
+            "codigo": 637,
+            "nome": "BANCO SOFISA S.A.",
+            "thumb": "https://www.sofisadireto.com.br/wp-content/uploads/2019/12/logo-sofisa-direto.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "60934221",
+            "codigo": null,
+            "nome": "BMF Bovespa S/A - Bolsa de Valores, Mercadorias e Futuros - Camara Cambio",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61024352",
+            "codigo": 653,
+            "nome": "BANCO INDUSVAL S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61033106",
+            "codigo": 69,
+            "nome": "Banco Crefisa S.A.",
+            "thumb": "https://www.crefisa.com.br/wp-content/uploads/2019/05/Logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61088183",
+            "codigo": 370,
+            "nome": "Banco Mizuho do Brasil S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61182408",
+            "codigo": 249,
+            "nome": "Banco Investcred Unibanco S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61186680",
+            "codigo": 318,
+            "nome": "Banco BMG S.A.",
+            "thumb": "https://www.bancobmg.com.br/lumis-theme/br/com/bmg/portal/theme/bmg-portal/img/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61348538",
+            "codigo": 626,
+            "nome": "BANCO C6 CONSIGNADO S.A.",
+            "thumb": "https://www.c6consig.com.br/favicon.ico"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61444949",
+            "codigo": 270,
+            "nome": "Sagitur Corretora de Câmbio Ltda.",
+            "thumb": "https://www.sagiturcorretora.com.br/wp-content/themes/sagitur/assets/dist/img/header/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61533584",
+            "codigo": 366,
+            "nome": "BANCO SOCIETE GENERALE BRASIL S.A.",
+            "thumb": "https://societegeneralebrasil.com.br/site/wp-content/uploads/2014/09/logo-top.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61723847",
+            "codigo": 113,
+            "nome": "Magliano S.A. Corretora de Cambio e Valores Mobiliarios",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61747085",
+            "codigo": 131,
+            "nome": "TULLETT PREBON BRASIL CORRETORA DE VALORES E CÂMBIO LTDA",
+            "thumb": "http://www.tullettprebon.com.br/Images/logos/tpbrasil_RGB_lo.jpg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61809182",
+            "codigo": 11,
+            "nome": "CREDIT SUISSE HEDGING-GRIFFO CORRETORA DE VALORES S.A",
+            "thumb": "https://www.credit-suisse.com/media/assets/aep/ot-cmp/consent/60304785-f4d0-4cc7-a9d6-413c83deaf41/d4bc5deb-99e6-4ff4-b7e5-77cdca16e870/logos/125deb98-29cf-4136-8b5a-4f6a57681235/e19a5354-4496-457c-a26f-58fb6e069b5c/61dd6d66-0443-45d9-9fa4-10e7fefa4d0b/cs-blue-logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "61820817",
+            "codigo": 611,
+            "nome": "Banco Paulista S.A.",
+            "thumb": "https://www.bancopaulista.com.br/Imagens/logo_banco_paulista.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "62073200",
+            "codigo": 755,
+            "nome": "Bank of America Merrill Lynch Banco Múltiplo S.A.",
+            "thumb": "https://www.bofabrasil.com.br/PHXcms/public/content/brazil/_assets/images/Header_images/bofa_lo1_rgb.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "62109566",
+            "codigo": 89,
+            "nome": "CREDISAN COOPERATIVA DE CRÉDITO",
+            "thumb": "https://portal.credisan.com.br/wp-content/uploads/2018/08/logo_credisan_cooperativa_de_credito-1.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "62144175",
+            "codigo": 643,
+            "nome": "Banco Pine S.A.",
+            "thumb": "https://www.pine.com/static/logo-bancopine-header.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "62169875",
+            "codigo": 140,
+            "nome": "Easynvest - Título Corretora de Valores SA",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "62232889",
+            "codigo": 707,
+            "nome": "Banco Daycoval S.A.",
+            "thumb": "https://www.daycoval.com.br/assets/img/logo/logo-daycoval-dark.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "62237649",
+            "codigo": 288,
+            "nome": "CAROL DISTRIBUIDORA DE TITULOS E VALORES MOBILIARIOS LTDA.",
+            "thumb": "https://www.caroldtvm.com.br/files/images/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "62285390",
+            "codigo": 363,
+            "nome": "SOCOPA SOCIEDADE CORRETORA PAULISTA S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "62287735",
+            "codigo": 101,
+            "nome": "RENASCENCA DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "62331228",
+            "codigo": 487,
+            "nome": "DEUTSCHE BANK S.A. - BANCO ALEMAO",
+            "thumb": "https://country.db.com/brazil/project/images/logo/Deutsche-Bank-Brasil.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "62421979",
+            "codigo": 233,
+            "nome": "Banco Cifra S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "65913436",
+            "codigo": 177,
+            "nome": "Guide Investimentos S.A. Corretora de Valores",
+            "thumb": "https://www.guide.com.br/wp-content/uploads/2022/10/novo-logo1.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "68757681",
+            "codigo": 365,
+            "nome": "SOLIDUS S.A. CORRETORA DE CAMBIO E VALORES MOBILIARIOS",
+            "thumb": "https://solidus.com.br/wp-content/uploads/2021/05/logo_simpaul.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "68900810",
+            "codigo": 633,
+            "nome": "Banco Rendimento S.A.",
+            "thumb": "https://www.rendimento.com.br/wp-content/themes/bancorendimento_2017/images/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "71027866",
+            "codigo": 218,
+            "nome": "Banco BS2 S.A.",
+            "thumb": "https://www.bancobs2.com.br/wp-content/uploads/2020/05/Banco-BS2-Azul.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "71371686",
+            "codigo": 169,
+            "nome": "BANCO OLÉ CONSIGNADO S.A.",
+            "thumb": "https://www.oleconsignado.com.br/images/base/whiteSquadLogo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "71590442",
+            "codigo": 293,
+            "nome": "Lastro RDV Distribuidora de Títulos e Valores Mobiliários Ltda.",
+            "thumb": "https://lastro.com.br/wp-content/themes/toco_themes/images/logo.jpg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "71677850",
+            "codigo": 285,
+            "nome": "Frente Corretora de Câmbio Ltda.",
+            "thumb": "https://frentecorretora.com.br/wp-content/uploads/2022/07/logo-frente-1.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "73622748",
+            "codigo": 80,
+            "nome": "B&T CORRETORA DE CAMBIO LTDA.",
+            "thumb": "https://btcambio.com.br/wp-content/uploads/2022/10/logo-bt.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "74828799",
+            "codigo": 753,
+            "nome": "Novo Banco Continental S.A. - Banco Múltiplo",
+            "thumb": "https://nbcbank.com.br/images/icons/ic-logo-02.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "75647891",
+            "codigo": 222,
+            "nome": "BANCO CRÉDIT AGRICOLE BRASIL S.A.",
+            "thumb": "https://www.ca-cib.com/themes/custom/ca_cib/logo.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "76461557",
+            "codigo": 281,
+            "nome": "Cooperativa de Crédito Rural Coopavel",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "76543115",
+            "codigo": 754,
+            "nome": "Banco Sistema S.A.",
+            "thumb": "https://img.freepik.com/fotos-gratis/superficie-abstrata-e-texturas-de-parede-de-pedra-branca-de-concreta_74190-8189.jpg?w=1800&t=st=1687328613~exp=1687329213~hmac=d751013e1e3d70e6b2603431ae1661a099688c502c0a954560c020aa485aefe3"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "78157146",
+            "codigo": 98,
+            "nome": "Credialiança Cooperativa de Crédito Rural",
+            "thumb": "https://www.credialianca.com.br/imagens/logo.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "78626983",
+            "codigo": 610,
+            "nome": "Banco VR S.A.",
+            "thumb": "https://bancovr.com.br/lumis-theme/br/com/vr/bancovr/theme/banco-vr/img/Logo_VR.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "78632767",
+            "codigo": 712,
+            "nome": "Banco Ourinvest S.A.",
+            "thumb": "https://global-uploads.webflow.com/5ee0f9ba2279153b29314b93/60c2812888978e6cc19fa9e8_logomarca_RGB_azul.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "81723108",
+            "codigo": 10,
+            "nome": "CREDICOAMO CREDITO RURAL COOPERATIVA",
+            "thumb": "https://www.credicoamo.com.br/admin/script/uploads/1672518141_1637949412_MicrosoftTeams-image.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "89960090",
+            "codigo": 283,
+            "nome": "RB CAPITAL INVESTIMENTOS DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LIMITADA",
+            "thumb": "https://www.rbinvestimentos.com/themes/rb/assets/img/home-v3/logo_rb.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "90400888",
+            "codigo": 33,
+            "nome": "BANCO SANTANDER (BRASIL) S.A.",
+            "thumb": "https://abrasuaconta.santander.com.br/landing/assets/img/logo/logo-santander-red.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "91884981",
+            "codigo": 217,
+            "nome": "Banco John Deere S.A.",
+            "thumb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAAAcCAMAAABs1NAhAAAAaVBMVEX///8AAAD7+/v19fWAgICJiYnLy8tZWVmampqgoKBRUVGtra2oqKg9PT3GxsbPz89LS0vW1ta2trYxMTG9vb3l5eVGRkbd3d0qKiqUlJTr6+t6enojIyNqamo2NjYbGxthYWEQEBBycnKe9yBoAAADIUlEQVRIicWWDdOjKAyAEy2iIqiIX9Va2///Iy8Rtbbbu+28c93NTAslgYdAEgrw34IsQ/Abq/9fsKQvef873EQC5GnVCQDh5pusAcq0K0iVTN09/Ap36PuhC+GMBLtamMcziApq2k+JgWgCUPiNW8BeqWQ6US8s3ZSBTABaBDHwCGBLTee+weVzDrAOtB5sStyMzhhh6L32TF+p+vnyUT/rahw7XQzq/Au3xTAuqO12rpr4Z1vZzeQn4uRVuMg4a50xUZaO4oFGLWWDGbESJSsBRbJwoZFZOtOGRHITP6PS3NLdcZcmzl23J07Lwp3QmiCsoaboDXigtMuwsed/Wfd3MucD4zTe9YYe2+qnq30umDMqRXd1u8+Fir+NzQfBpMy484OLpT7afJSgAcvn3Nh1xOGPq+1t4xo8mIQoP1ioWCZ2/YfsS7TY9xQvzcPfWLZH7rw0tb/0deHg2CNJ8STEQA7Uq+/kffDcWYzXri59KJ0osFm8y3dhXrhRxeOUMwaXu+8xChcGOEw8d1lX4QjJunuQvp39s4ZVCdmmunp/KUX99dpuCbNMPXMNMW2m6cSfuBgeuP6BGLDMcD6xEHfgNiEut4TbVVsUnyFMKz2irPnXpJJnbre4RguVkcfEzJ3wGrxyHaoMcz9TbmGC6OfUalNt3B1i33IxXRfNcqwKko65g8HpLVcXRSOYS5baMjeJ4/jK/q4qPmdxrBLh23NeuYa5oyYZmXshF2bz5pwrrfkRk0iWlYXtfnPYVRxXVXi7m4Ajlg9zfo0rhycYl6eHdE/nfAE4UQ4e48piR3H1yznTOyJoGdivYMmjzmwJpHjmI4/MkGVURksgq96q5iWuLn6bK3fPowQvgoW4J26zhUsZroi7qnzdQCVWsDSQd3vdWC77yg/7IY96zzVrXjd+Iz77K64b8ZYsqW9ToORabrDd82itk3goGvfzo06GbXveu0tIH+tGcBg41sk3dWMd31WAEb7K7L7/LoDM76/cazjVX+eW2Of28oDqPnf68nUsiaN/Ns5E9D/Hmsio+Sa+7+0qUXxpqmmqJnmyfwT6D1hALJYJILO5AAAAAElFTkSuQmCC"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "92702067",
+            "codigo": 41,
+            "nome": "Banco do Estado do Rio Grande do Sul S.A.",
+            "thumb": "https://www.banrisul.com.br/BOB/MULTIMIDIA/bobd99im_logo_banrisul.png?t=1"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "92856905",
+            "codigo": 117,
+            "nome": "ADVANCED CORRETORA DE CÂMBIO LTDA",
+            "thumb": "https://advancedcorretora.com.br/favicon.ico"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "92874270",
+            "codigo": 654,
+            "nome": "BANCO DIGIMAIS S.A.",
+            "thumb": "https://www.bancodigimais.com.br/assets/images/logos/logo-digimais.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "92875780",
+            "codigo": 371,
+            "nome": "WARREN CORRETORA DE VALORES MOBILIÁRIOS E CÂMBIO LTDA.",
+            "thumb": "https://warren.com.br/icon.png"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "92894922",
+            "codigo": 212,
+            "nome": "Banco Original S.A.",
+            "thumb": "https://www.original.com.br/img/nav/logo-nome-branco.svg"
+        }
+    },
+    {
+        "model": "instituicoes.instituicoes",
+        "fields": {
+            "ispb": "94968518",
+            "codigo": 289,
+            "nome": "DECYSEO CORRETORA DE CAMBIO LTDA.",
+            "thumb": "https://lh4.googleusercontent.com/-7VbBaqErmvQ/AAAAAAAAAAI/AAAAAAAAAAA/0uSOCr1n7sA/s44-p-k-no-ns-nd/photo.jpg"
+        }
+    }
+]
