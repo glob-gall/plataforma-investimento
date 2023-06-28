@@ -109,11 +109,11 @@ export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ in
                                     validate: (value) => {
                                         if (isNaN(value as unknown as number))
                                             return 'Digite uma data válida'
-                                        const date = value
+                                        const data_movimentacao = value
                                         const today = new Date()
-                                        if (date < new Date('1900-01-01'))
+                                        if (data_movimentacao < new Date('1900-01-01'))
                                             return 'A data de movimentação deve ser posterior a 01/01/1900'
-                                        if (date > today)
+                                        if (data_movimentacao > today)
                                             return 'A data de movimentação deve ser anterior a data atual'
                                         return true
                                     },
@@ -123,13 +123,13 @@ export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ in
                                         <Styles.DateInput
                                             label="Data da movimentação"
                                             required
-                                            format="DD-MM-YYYY HH:mm"
-                                            name={'date'}
+                                            format="DD/MM/YYYY HH:mm"
+                                            name={'data_movimentacao'}
                                             disableFuture
                                             value={moment(field.value)}
-                                            error={!!errors.date}
+                                            error={!!errors.data_movimentacao}
                                             onChange={(date) => field.onChange(date._d)}
-                                            helperText={errors.date?.message}
+                                            helperText={errors.data_movimentacao?.message}
                                         />
                                     </LocalizationProvider>
                                 )}

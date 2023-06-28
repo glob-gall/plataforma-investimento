@@ -13,7 +13,6 @@ import {
 import { categoriasMOCK } from '@/services/movimentacoes/categorias.mock'
 import * as Styles from './movimentacoes-form-modal.styles'
 import moment from 'moment'
-import { formatCurrency } from '@/utils/currency/currency.util'
 
 const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({
   open,
@@ -163,7 +162,7 @@ const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({
                     <Styles.DateInput
                       label="Data da movimentação"
                       required
-                      format="DD-MM-YYYY HH:mm"
+                      format="DD/MM/YYYY HH:mm"
                       name={'date'}
                       disableFuture
                       value={moment(field.value)}
