@@ -29,7 +29,6 @@ export const InvestimentosContainer = (props: ContainerWithProps<InvestimentosCo
             handleSetMessage({message:'Investimento criado com sucesso',type:'success'})
         }catch(e){
             handleSetErrors(e)
-            console.log(e)
         }finally{
             setLoading(false)
         }
@@ -41,7 +40,7 @@ export const InvestimentosContainer = (props: ContainerWithProps<InvestimentosCo
             const { data } = await investimentosService.getFromUser()
             setInvestimentosFromUser(data)
         }catch(e){
-            console.log(e)
+            handleSetErrors(e)
         }finally{
             setLoading(false)
         }
@@ -63,11 +62,13 @@ export const InvestimentosContainer = (props: ContainerWithProps<InvestimentosCo
         try{
             setLoading(true)
             await investimentosService.deleteFromUser(id)
-            await getInvestimentoDetails()
+            await getInvestimentosFromUser()
+            handleSetMessage({message:'Investimento deletado com sucesso',type:'success'})
         }catch(e){
-            console.log(e)
+            handleSetErrors(e)
         }finally{
             setLoading(false)
+            setMovementOpen(false)
         }
     }
 
