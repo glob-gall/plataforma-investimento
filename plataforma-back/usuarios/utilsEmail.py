@@ -14,7 +14,7 @@ def enviar_email_confirmacao(usuario):
     tokenCreate = secrets.token_urlsafe(20)
     contexto = {
         'tokenCreate': tokenCreate,
-        'settings.SITE_URL':settings.SITE_URL,
+        'siteURL':settings.SITE_URL,
         'name':usuario.data['name']
     }
     assunto = "Confirmação de conta"
@@ -38,7 +38,7 @@ def enviar_email_recuperacao_senha(usuario,email):
         assunto = "Recuperação de senha"
         contexto = {
             'name': usuario.name,
-            'settings.FRONT_URL': settings.FRONT_URL,
+            'frontURL': settings.FRONT_URL,
             'tokenCreate':tokenCreate
         }
         mensagem = render_to_string("recuperaSenhaTemplate.html",contexto)
