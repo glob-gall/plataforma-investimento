@@ -53,10 +53,9 @@ function DistribuicaoSaldo() {
       />
       
       <List dense={false}>
-        {saldos.map(saldo => (
-          <>
-            <Divider />
-              <ListItem>
+        <Divider/>
+        {saldos.map((saldo, index) => (
+              <ListItem key={index}>
                 <ListItemIcon>
                   <Payments />
                 </ListItemIcon>
@@ -64,7 +63,6 @@ function DistribuicaoSaldo() {
                   primary={`${saldo.conta}`}
                 />
               </ListItem>
-          </>
         ))}
         <Divider />
       </List>

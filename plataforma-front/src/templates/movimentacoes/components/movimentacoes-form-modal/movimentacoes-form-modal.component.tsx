@@ -162,12 +162,12 @@ const MovimentacoesFormModal: React.FC<MovimentacoesFormModalProps> = ({
                     <Styles.DateInput
                       label="Data da movimentação"
                       required
-                      format="DD-MM-YYYY HH:mm"
+                      format="DD/MM/YYYY HH:mm"
                       name={'date'}
                       disableFuture
                       value={moment(field.value)}
                       error={!!errors.date}
-                      onChange={(date) => field.onChange(date._d)}
+                      onChange={(date) => field.onChange(date?._d)}
                       helperText={errors.date?.message}
                     />
                   </LocalizationProvider>

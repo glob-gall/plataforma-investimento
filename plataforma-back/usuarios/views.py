@@ -30,11 +30,10 @@ def register_user(request):
     
   serializer = UsuarioSerializer(data = request.data)
   
-  try:
-    serializer.is_valid(raise_exception = True)
-    serializer.save()
-  except:
+  if not serializer.is_valid():
     return Response(formatErrors(serializer.errors),status=status.HTTP_400_BAD_REQUEST)
+  else:
+    serializer.save()
   
   
   enviar_email_confirmacao(serializer)

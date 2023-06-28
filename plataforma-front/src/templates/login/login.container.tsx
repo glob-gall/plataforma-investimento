@@ -2,6 +2,7 @@ import {ContainerWithProps} from "@/@common/types/container.types";
 import {LoginContainerArgs, LoginFormData} from "@/templates/login/login.types";
 import React from "react";
 import {useAuth} from "@hooks/auth/use-auth.hook";
+import { useRouter } from "next/router";
 import { useToastHandler } from "@/hooks/toastHandler/use-toastHandler.hook";
 
 
@@ -11,6 +12,7 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
     const {handleSetErrors,handleSetMessage} = useToastHandler()
 
     const { actions } = useAuth();
+    const router = useRouter();
 
     const randomBackground = () => {
         const backgrounds = [
@@ -28,12 +30,13 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
         setLoading(true);
         try{
             await actions?.login(email, password);
+            await router.reload();
+            handleSetMessage({message:'Logado com sucesso!',type:'success'})
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             handleSetErrors(err)
         }finally {
-            handleSetMessage({message:'Logado com sucesso!',type:'success'})
             setLoading(false);
         }
     }

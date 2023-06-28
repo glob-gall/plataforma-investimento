@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 import datetime
 
 from instituicoes.models import Instituicoes
+from investimentos.models import Investimentos
 
 # Create your models here.
 class Usuario(AbstractUser):
@@ -15,6 +16,8 @@ class Usuario(AbstractUser):
   is_email_verified = models.BooleanField(default=False)
   
   instituicoes = models.ManyToManyField(Instituicoes)
+
+  investimentos = models.ManyToManyField(Investimentos)
 
   USERNAME_FIELD = 'email'
   REQUIRED_FIELDS = ['name','password','birth']
