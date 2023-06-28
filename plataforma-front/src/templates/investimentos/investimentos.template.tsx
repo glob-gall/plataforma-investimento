@@ -26,7 +26,7 @@ const InvestimentosTemplate = ({ investimentos }) => {
         <Containers.InvestimentosContainer>
             {({ formOpen, investimentosFromUser, investimentoDetails, movementOpen, loading, actions }) => (
                 <>
-                <Styles.Container>
+                <Styles.Container sx={{ width: '90%' }}>
                     <Box mr={4}>
                         <Typography variant="h5" gutterBottom>Investimentos</Typography>
                         <Typography variant="subtitle1" gutterBottom>Aqui você consegue acompanhar todos os seus investimentos.</Typography>

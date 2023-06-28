@@ -49,7 +49,7 @@ class MeusInvestimentosView(APIView):
     id = request.query_params.get('id')
 
     if id:
-        investimentos = MeusInvestimentos.objects.filter(usuario__id = payload['id'], investimento_id = id).select_related('investimento').all()  
+        investimentos = MeusInvestimentos.objects.filter(usuario__id = payload['id'], investimento_id = id).select_related('investimento').all()
         serializer = MeusInvestimentosSerializer(investimentos, many=True)
         return Response(serializer.data)  
     

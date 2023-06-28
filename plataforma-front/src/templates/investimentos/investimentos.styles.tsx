@@ -5,8 +5,6 @@ import styled from 'styled-components'
 export const Container = styled(Box)`
   display: flex;
   flex-direction: column;
-  /* align-items: start; */
-  width: 90%;
   padding-right: 26px;
 `
 

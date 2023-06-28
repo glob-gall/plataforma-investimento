@@ -28,14 +28,18 @@ export const InvestimentoFormModal: React.FC<InvestimentoFormModalProps> = ({ in
 
     const [ selectedInvestimento, setSelectedInvestimento ] = useState<any>(null)
 
-    const { register, handleSubmit, getValues, control, formState: { errors }, watch } = useForm<InvestimentoFormData>();
+    const { register, reset, handleSubmit, getValues, control, formState: { errors }, watch } = useForm<InvestimentoFormData>();
 
     const watchInvestimento = watch('investimento')
 
     useEffect(() => {
+         reset({ data_movimentacao: moment() })
+    }, [open])
+
+    useEffect(() => {
         if (watchInvestimento) {
-            console.log(getValues('investimento'))
-            setSelectedInvestimento(investimentos[getValues('investimento')])
+            const investimento = investimentos.find(({id}) => id == getValues('investimento'))
+            setSelectedInvestimento(investimento)
         }
     }, [ watchInvestimento])
 
