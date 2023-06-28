@@ -31,12 +31,12 @@ export const LoginContainer = (props: ContainerWithProps<LoginContainerArgs>) =>
         try{
             await actions?.login(email, password);
             await router.reload();
+            handleSetMessage({message:'Logado com sucesso!',type:'success'})
         }catch(err: unknown){
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             handleSetErrors(err)
         }finally {
-            handleSetMessage({message:'Logado com sucesso!',type:'success'})
             setLoading(false);
         }
     }
