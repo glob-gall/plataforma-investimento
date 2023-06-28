@@ -118,6 +118,7 @@ class MeusInvestimentosView(APIView):
         return ResponseError('Investimento não encontrado', status=422)
 
       data['investimento'] = investimento
+      data['usuario'] = findedUser.pk
 
       serializer = MeusInvestimentosSerializer(data = data)
       if not serializer.is_valid():
