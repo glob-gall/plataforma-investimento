@@ -26,7 +26,7 @@ function MovimentacoesTempo() {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setTipo(event.target.value as unknown as SaldoTempoType);
   };
-  
+
   useEffect(()=>{
     setLoading(true)
     loadMovimentacoes()
@@ -40,8 +40,8 @@ function MovimentacoesTempo() {
     <Empty text="Você ainda não tem nenhum saldo!"/>
    )
 
-  return (
-    <Styled.Container>
+   return (
+   <Styled.Container>
       <Box>
         <TextField
           select
