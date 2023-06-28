@@ -32,7 +32,7 @@ export const InvestimentosContainer = (props: ContainerWithProps<InvestimentosCo
             console.log(e)
         }finally{
             setLoading(false)
-            setFormOpen(false)
+            // setFormOpen(false)
         }
     }
 

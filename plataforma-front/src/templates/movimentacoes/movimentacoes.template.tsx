@@ -185,7 +185,7 @@ const renderFilterOptions = (props, handleFilters) => {
             </Styles.DataFieldLabel>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <Styles.DataField
-                  format={'DD-MM/YYYY'}
+                  format={'DD/MM/YYYY'}
 
                   onChange={(ev) => handleFilters(ev?.$d, 'endDate')}
               />

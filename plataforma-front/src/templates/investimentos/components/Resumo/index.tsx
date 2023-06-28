@@ -19,7 +19,7 @@ function ResumoInvestimentos(props:ResumoProps){
         retorno: <Typography
           variant="h6"
           style={{ fontWeight: 'bold', color:retorno_total>0?'#03AF0C': '#E40050' }}
-          >{toBRL(retorno_total)}</Typography>
+          >{retorno_total>0 && '+'}{toBRL(retorno_total)}</Typography>
       </Styles.Values>
     </Styles.ResumoContainer>
   )

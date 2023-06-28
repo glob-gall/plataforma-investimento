@@ -10,5 +10,5 @@ export interface InvestimentoFormData{
     investimento: number;
     valor_compra: number;
     volume: number;
-    data_movimentacao: string;
+    data_movimentacao: Date;
 }
