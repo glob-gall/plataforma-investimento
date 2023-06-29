@@ -1,5 +1,5 @@
 import {ContainerWithProps} from "@/@common/types/container.types";
-import { cryptosService } from "@/services/cryptos/cryptos.service";
+import { CryptosService } from "@/services/cryptos/cryptos.service";
 import {crypto, cryptosContainerArgs} from "@templates/cryptos/cryptos.types";
 import { useEffect,useState } from "react";
 import {
@@ -16,7 +16,7 @@ export const cryptosContainer = (props: ContainerWithProps<cryptosContainerArgs>
     const [movementOpen, setMovementOpen] = useState(false)
     const { handleSetErrors,handleSetMessage } = useToastHandler()
 
-    const cryptosService = new cryptosService()
+    const cryptosService = new CryptosService()
 
 
     async function addcryptoToUser(data: cryptoFormData){

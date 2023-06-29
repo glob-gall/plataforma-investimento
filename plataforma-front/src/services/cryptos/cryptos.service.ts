@@ -4,7 +4,7 @@ import { cryptoFormData } from "@/templates/cryptos/components/cryptos-form-moda
 import { cryptosInfo, cryptoDetails, } from "@/templates/cryptos/cryptos.types"
 
 
-export class cryptosService {
+export class CryptosService {
     private _api: AxiosInstance
 
     constructor(api: AxiosInstance = defaultApi) {
