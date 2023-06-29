@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class MeusinvestimentosConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'meusinvestimentos'
+    name = 'usuarios.meusinvestimentos'

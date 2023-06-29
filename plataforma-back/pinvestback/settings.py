@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'instituicoes',
     'usuarios.contas',
     'usuarios.meusinvestimentos'
-    'usuarios.minhascryptos'
+    # 'usuarios.minhascryptos'
 ]
 
 MIDDLEWARE = [
