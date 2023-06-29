@@ -76,7 +76,7 @@ const MainDrawerComponent = () => {
         { name: 'Instituições', icon: () => <AccountBalance />, action: () => router.push('/instituicoes') },
         { name: 'Movimentações', icon: () => <PointOfSale />, action: () => router.push('/movimentacoes')},
         { name: 'Investimentos', icon: () => <ShowChart />, action: () => router.push('/investimentos')},
-        { name: 'Criptomoedas', icon: () => <CurrencyBitcoin />, action: () => router.push('/crypto')},
+        { name: 'cryptos', icon: () => <CurrencyBitcoin />, action: () => router.push('/crypto')},
     ]
 
     const handleDrawerClose = () => {

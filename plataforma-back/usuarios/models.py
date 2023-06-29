@@ -4,6 +4,7 @@ import datetime
 
 from instituicoes.models import Instituicoes
 from investimentos.models import Investimentos
+from crypto.models import Cryptos
 
 # Create your models here.
 class Usuario(AbstractUser):
@@ -18,6 +19,7 @@ class Usuario(AbstractUser):
   instituicoes = models.ManyToManyField(Instituicoes)
 
   investimentos = models.ManyToManyField(Investimentos)
+  cryptos = models.ManyToManyField(Cryptos)
 
   USERNAME_FIELD = 'email'
   REQUIRED_FIELDS = ['name','password','birth']
