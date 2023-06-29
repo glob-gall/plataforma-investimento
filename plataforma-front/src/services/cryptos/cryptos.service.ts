@@ -15,7 +15,7 @@ export class CryptosService {
         return await this._api.get('/cryptos/')
     }
 
-    async addInvestimentoToUser(data: cryptoFormData) {
+    async addcryptoToUser(data: cryptoFormData) {
         console.log({data});
         return await this._api.post('/usuario/cryptos/', data)
     }

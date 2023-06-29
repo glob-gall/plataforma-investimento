@@ -9,6 +9,6 @@ class MinhasCryptos(models.Model):
   valor_compra = models.DecimalField(decimal_places=2, max_digits=100)
   data_movimentacao = models.DateTimeField(default=datetime.date.today)
 
-  cryto = models.ForeignKey(Cryptos, on_delete= models.CASCADE)
+  crypto = models.ForeignKey(Cryptos, on_delete= models.CASCADE)
   usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
   REQUIRED_FIELDS = ['valor_compra','volume']

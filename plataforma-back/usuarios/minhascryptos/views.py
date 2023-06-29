@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from itertools import groupby
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -47,10 +48,55 @@ class MinhasCryptosView(APIView):
         cryptos = MinhasCryptos.objects.filter(usuario__id = payload['id'], crypto_id = id).select_related('crypto').all()  
         serializer = MinhasCryptosSerializer(cryptos, many=True)
         return Response(serializer.data)
-    else:
-        cryptos = MinhasCryptos.objects.filter(usuario__id = payload['id']).select_related('crypto').annotate(volumes=Count("crypto"))
-        serializer = MinhasCryptosSerializer(cryptos, many=True)
-        return Response(serializer.data)  
+
+    cryptos = MinhasCryptos.objects.filter(usuario__id = payload['id']).select_related('crypto').annotate(volumes=Count("crypto"))
+    serializer = MinhasCryptosSerializer(cryptos, many=True)
+    cryptos = serializer.data
+    def cryptosGroup(compra):
+      return compra['crypto']['id']
+    
+    items=[]
+    resumo = {
+      'carteira':0,
+      'retorno_total':0
+    }
+    for key, group in groupby(cryptos, cryptosGroup):
+      
+      volumeTotal = 0
+      valorTotal = 0
+      crypto = {
+        'name':'',
+        'logo':'',
+        'code':'',
+        'value':0.0
+      }
+      for compra in group:
+        valorTotal += float(compra['volume']) * float(compra['valor_compra'])
+        volumeTotal += int(compra['volume'])
+        crypto['name'] = compra['crypto']['name']
+        crypto['value'] = compra['crypto']['value']
+        crypto['logo'] = compra['crypto']['logo']
+        crypto['code'] = compra['crypto']['code']
+
+
+      totalAtual = float(crypto['value']) * volumeTotal
+      totalPago = (valorTotal/volumeTotal)*volumeTotal
+
+      resumo['carteira']+= totalAtual
+      resumo['retorno_total']+= (totalAtual - totalPago)
+      items.append({
+        'key': key,
+        'volume_total': volumeTotal,
+        'valor_medio_compra': valorTotal/volumeTotal,
+        'crypto':crypto,
+        'retorno':totalAtual - totalPago
+      })
+  
+
+    return Response({
+      'resumo':resumo,
+      'items':items
+    })  
   
   def post(self, request):
       user = request.auth_payload

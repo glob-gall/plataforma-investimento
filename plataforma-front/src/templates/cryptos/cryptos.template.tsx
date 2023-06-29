@@ -13,9 +13,9 @@ import {Add, VisibilityOutlined} from "@mui/icons-material";
 import React from "react";
 import * as Containers from './cryptos.container'
 import {
-    cryptoFormModal
+    CryptoFormModal
 } from "@templates/cryptos/components/cryptos-form-modal/cryptos-form-modal.component";
-import cryptoMovimentacoesModal
+import CryptoMovimentacoesModal
     from "@templates/cryptos/components/cryptos-movimentacoes-modal/cryptos-movimentacoes-modal.component";
 import * as Styles from './cryptos.styles'
 import { toBRL } from "@/utils/currency/currency.util";
@@ -23,7 +23,7 @@ import Resumocryptos from "./components/Resumo";
 
 const cryptosTemplate = ({ cryptos }) => {
     return (
-        <Containers.cryptosContainer>
+        <Containers.CryptosContainer>
             {({ formOpen, cryptosFromUser, cryptoDetails, movementOpen, loading, actions }) => (
                 <>
                 <Styles.Container sx={{ width: '90%' }}>
@@ -99,14 +99,14 @@ const cryptosTemplate = ({ cryptos }) => {
                         </List>
         
                 </Styles.Container>
-                <cryptoFormModal
+                <CryptoFormModal
                     cryptos={cryptos}
                     open={formOpen}
                     onClose={() => actions.setFormOpen(false)}
                     onSubmit={actions.addcryptoToUser}
                     loading={loading}
                 />  
-                <cryptoMovimentacoesModal
+                <CryptoMovimentacoesModal
                     open={movementOpen}
                     details={cryptoDetails}
                     onDelete={actions.deleteFromUser}
@@ -114,7 +114,7 @@ const cryptosTemplate = ({ cryptos }) => {
                     loading={loading}/>
                 </>
             )}
-        </Containers.cryptosContainer>
+        </Containers.CryptosContainer>
     )
 }
 

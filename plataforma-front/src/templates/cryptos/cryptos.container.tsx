@@ -7,7 +7,7 @@ import {
 } from "@templates/cryptos/components/cryptos-form-modal/cryptos-form-modal.types";
 import { useToastHandler } from "@/hooks/toastHandler/use-toastHandler.hook";
 
-export const cryptosContainer = (props: ContainerWithProps<cryptosContainerArgs>) => {
+export const CryptosContainer = (props: ContainerWithProps<cryptosContainerArgs>) => {
 
     const [loading, setLoading] = useState<boolean>(false)
     const [formOpen, setFormOpen] = useState(false)

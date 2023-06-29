@@ -24,7 +24,7 @@ const style = {
     p: 4,
 };
 
-export const cryptoFormModal: React.FC<cryptoFormModalProps> = ({ cryptos, open, onClose, onSubmit, loading }) => {
+export const CryptoFormModal: React.FC<cryptoFormModalProps> = ({ cryptos, open, onClose, onSubmit, loading }) => {
 
     const [ selectedcrypto, setSelectedcrypto ] = useState<any>(null)
 
