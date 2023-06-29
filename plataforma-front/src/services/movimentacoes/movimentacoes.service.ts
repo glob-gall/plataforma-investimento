@@ -66,12 +66,14 @@ export class MovimentacoesService {
   async getMovimentacoesCategorias(): Promise<{ data: SaldoCategoria[] }> {
     return this._api.get('/movimentacao/saldos/distribuicao-categoria/')
   }
+
   async getMovimentacoesTempo(tipo?:SaldoTempoType): Promise<{ data: DistribuicaoSaldoTempo}> {
     const params = new URLSearchParams([['tipo', `${tipo || 'month'}`]])
     return this._api.get('/movimentacao/saldos/distribuicao-tempo/',{
       params
     })
   }
+
   async getCategorias(): Promise<Categoria[]> {
     return this._api.get('/movimentacao/categorias/')
   }

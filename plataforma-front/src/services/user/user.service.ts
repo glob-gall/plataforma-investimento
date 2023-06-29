@@ -20,7 +20,6 @@ export class UserService {
             formData.append(key,data[key])
         }
         data.avatar ? formData.append('avatar',data.avatar[0]) : null
-        console.log(formData)
         return await this._api.put('/usuario/',formData, { headers: { 'Content-Type': 'multipart/form-data' } })
     }
 

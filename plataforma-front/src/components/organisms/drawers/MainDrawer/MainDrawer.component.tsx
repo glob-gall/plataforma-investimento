@@ -10,7 +10,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import React from "react";
-import {AccountBalance, Home, PointOfSale} from "@mui/icons-material";
+import {AccountBalance, CurrencyBitcoin, Home, PointOfSale, ShowChart} from "@mui/icons-material";
 import {useRouter} from "next/router";
 import { Tooltip } from '@mui/material';
 import Zoom from '@mui/material/Zoom';
@@ -75,6 +75,8 @@ const MainDrawerComponent = () => {
         { name: 'Início', icon: () => <Home />, action: () => router.push('/dashboard')},
         { name: 'Instituições', icon: () => <AccountBalance />, action: () => router.push('/instituicoes') },
         { name: 'Movimentações', icon: () => <PointOfSale />, action: () => router.push('/movimentacoes')},
+        { name: 'Investimentos', icon: () => <ShowChart />, action: () => router.push('/investimentos')},
+        { name: 'cryptos', icon: () => <CurrencyBitcoin />, action: () => router.push('/crypto')},
     ]
 
     const handleDrawerClose = () => {

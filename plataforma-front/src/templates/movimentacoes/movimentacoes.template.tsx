@@ -1,10 +1,13 @@
 import Box from '@mui/material/Box'
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Button,
+  Card,
   FormControl,
   IconButton,
   InputLabel,
-  NativeSelect,
   Skeleton,
   Table,
   TableCell,
@@ -43,9 +46,8 @@ import Zoom from '@mui/material/Zoom'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { formatDatetimeToDateString } from '@utils/date/date.util'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { DatePicker } from '@mui/x-date-pickers/DatePicker'
-import { DateRangePicker } from '@mui/lab'
 import { categoriasMOCK } from '@/services/movimentacoes/categorias.mock'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const columns = [
   { id: 'type', label: 'Tipo', minWidth: 24, maxWidth: 24, align: 'left' },
@@ -118,22 +120,13 @@ const renderCategoryIcon = (type: string) => {
 
 const renderFilterOptions = (props, handleFilters) => {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'flex-end',
-        justifyContent: 'space-between',
-        flexFlow: 'row',
-        width: '100%',
-      }}
-    >
-      <Box sx={{ display: 'flex', gap: 2}}>
-      <Box>
-        <FormControl fullWidth>
+    <Styles.FilterContainer>
+      <Styles.SelectFieldsContainer>
+        <Styles.SelectFieldWrapper>
           <InputLabel variant="standard" htmlFor="uncontrolled-native">
             Tipo
           </InputLabel>
-          <NativeSelect
+          <Styles.SelectField
             name="tipo"
             defaultValue={'all'}
             onChange={(ev) => handleFilters(ev.target.value, 'type')}
@@ -141,15 +134,13 @@ const renderFilterOptions = (props, handleFilters) => {
             <option value={'all'}>Todas</option>
             <option value={'ENTRADA'}>Entrada</option>
             <option value={'SAIDA'}>Saída</option>
-          </NativeSelect>
-        </FormControl>
-      </Box>
-      <Box>
-        <FormControl fullWidth>
+          </Styles.SelectField>
+        </Styles.SelectFieldWrapper>
+        <Styles.SelectFieldWrapper>
           <InputLabel variant="standard" htmlFor="uncontrolled-native">
             Categoria
           </InputLabel>
-          <NativeSelect
+          <Styles.SelectField
             name="categoria"
             defaultValue={'all'}
             onChange={(ev) => handleFilters(ev.target.value, 'category')}
@@ -160,15 +151,13 @@ const renderFilterOptions = (props, handleFilters) => {
                 {category.label}
               </option>
             ))}
-          </NativeSelect>
-        </FormControl>
-      </Box>
-      <Box>
-        <FormControl fullWidth>
+          </Styles.SelectField>
+        </Styles.SelectFieldWrapper>
+        <Styles.SelectFieldWrapper>
           <InputLabel variant="standard" htmlFor="uncontrolled-native">
             Conta
           </InputLabel>
-          <NativeSelect
+          <Styles.SelectField
             name="conta"
             defaultValue="all"
             onChange={(ev) => handleFilters(ev.target.value, 'account')}
@@ -179,38 +168,38 @@ const renderFilterOptions = (props, handleFilters) => {
                 {account.descricao}
               </option>
             ))}
-          </NativeSelect>
-        </FormControl>
-      </Box>
-      </Box>
+          </Styles.SelectField>
+        </Styles.SelectFieldWrapper>
+      </Styles.SelectFieldsContainer>
 
-      <Box sx={{ display: 'flex', gap: 4 }}>
-      <Box sx={{ display: 'flex', flexFlow: 'column' }}>
-        <Typography>Data de início:</Typography>
-        <Box sx={{ gap: 2, display: 'flex' }}>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker
-                format={'DD/MM/YYYY'}
-                onChange={(ev) => handleFilters(ev?.$d, 'startDate')}
-            />
-          </LocalizationProvider>
-        </Box>
-      </Box>
+      <Styles.DataFieldsContainer>
+        <div>
+            <Styles.DataFieldLabel variant="standard">
+              Data de início
+            </Styles.DataFieldLabel>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <Styles.DataField
+                  format={'DD/MM/YYYY'}
+                  onChange={(ev) => handleFilters(ev?.$d, 'startDate')}
+              />
+            </LocalizationProvider>
+        </div>
+        <div>
+            <Styles.DataFieldLabel variant="standard">
+              Data de fim
+            </Styles.DataFieldLabel>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <Styles.DataField
+                  format={'DD/MM/YYYY'}
 
-      <Box sx={{ display: 'flex', flexFlow: 'column' }}>
-        <Typography>Data de fim:</Typography>
-        <Box sx={{ gap: 2, display: 'flex' }}>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker
-                format={'DD/MM/YYYY'}
-                onChange={(ev) => handleFilters(ev?.$d, 'endDate')}
-            />
-          </LocalizationProvider>
-        </Box>
-      </Box>
-      </Box>
+                  onChange={(ev) => handleFilters(ev?.$d, 'endDate')}
+              />
+            </LocalizationProvider>
+        </div>
+      </Styles.DataFieldsContainer>
 
-    </Box>
+
+    </Styles.FilterContainer>
   )
 }
 
@@ -241,13 +230,7 @@ const MovimentacoesTemplate = (props) => {
       }) => (
         <>
           <Box sx={{ width: '90%' }}>
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-              }}
-            >
+            <Box>
               <Box>
                 <Typography variant="h5" gutterBottom>
                   Movimentações
@@ -256,38 +239,51 @@ const MovimentacoesTemplate = (props) => {
                   Aqui você consegue visualizar todas as movimentações de sua
                   conta
                 </Typography>
-                <Button
-                  variant="outlined"
-                  startIcon={<Add />}
-                  onClick={() => {
-                    actions.setFormData(null)
-                    actions.setFormOpen(true)
-                  }}
-                >
-                  Adicionar movimentação
-                </Button>
+                
               </Box>
-              <Box mr={8}>
-                <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+              <Styles.HeaderContainer>
+                <Styles.AddMovimentacao
+                    variant="outlined"
+                    startIcon={<Add />}
+                    onClick={() => {
+                      actions.setFormData(null)
+                      actions.setFormOpen(true)
+                    }}
+                  >
+                  Adicionar movimentação
+                </Styles.AddMovimentacao>
+                <Styles.SearchMovimentacao>
                   <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                   <TextField label="Buscar movimentação" variant="standard" onChange={(ev) => actions.handleFilters(ev.target.value, 'search')}/>
-                </Box>
-              </Box>
+                </Styles.SearchMovimentacao>
+              </Styles.HeaderContainer>
             </Box>
 
-            <Box mb={2} mt={2} sx={{ boxShadow: 1 }} p={2}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-              >
-                <FilterAlt color="primary" />
-                <Typography variant="h6">Filtros</Typography>
-              </Box>
-              <Box mt={2}>
-                {renderFilterOptions(props, actions.handleFilters)}
-              </Box>
+            <Box mb={2} mt={2} p={2} >
+            <Accordion>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+
+                  <FilterAlt color="primary" />
+                    <Typography variant="h6">Filtros</Typography>
+                  </Box>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Box mt={2}>
+                    {renderFilterOptions(props, actions.handleFilters)}
+                  </Box>
+                </AccordionDetails>
+
+            </Accordion>
             </Box>
 
             <Box sx={{ width: '100%' }}>

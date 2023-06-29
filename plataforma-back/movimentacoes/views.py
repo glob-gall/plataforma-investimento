@@ -250,8 +250,8 @@ def movimentacoes_saldos_by_tempo(request):
   for movimentacao in movimentacoes:
     movimentacoesTempo.append({
       'year':f'{movimentacao.date.year}',
-      'month':f'{movimentacao.date.month}/{movimentacao.date.year}',
-      'day':f'{movimentacao.date.day}/{movimentacao.date.month}/{movimentacao.date.year}',
+      'month':f'{movimentacao.date.year}/{movimentacao.date.month}',
+      'day':f'{movimentacao.date.year}/{movimentacao.date.month}/{movimentacao.date.day}',
       'value':movimentacao.value,
     })
   def movimentacoesKey(k):

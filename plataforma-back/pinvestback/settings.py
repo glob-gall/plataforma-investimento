@@ -53,10 +53,14 @@ INSTALLED_APPS = [
     'corsheaders',
     'usuarios',
     'movimentacoes',
+    'investimentos',
+    'crypto',
     'drf_yasg',
     'middlewares',
     'instituicoes',
     'usuarios.contas',
+    'usuarios.meusinvestimentos'
+    # 'usuarios.minhascryptos'
 ]
 
 MIDDLEWARE = [
@@ -76,9 +80,7 @@ ROOT_URLCONF = 'pinvestback.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR,"templates/"
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -183,7 +183,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit, loading }) => {
                                     <Styles.DateInput
                                         label="Data de Nascimento"
                                         required
-                                        format="DD-MM-YYYY"
+                                        format="DD/MM/YYYY"
                                         name={"birth"}
                                         disableFuture
                                         value={field.value}

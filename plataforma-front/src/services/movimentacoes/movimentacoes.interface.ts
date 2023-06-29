@@ -20,6 +20,7 @@ export interface SaldoCategoria {
     categoria:string
     saldo:number
 }
+
 export interface SaldoTempo {
     key:string
     saldo:number
