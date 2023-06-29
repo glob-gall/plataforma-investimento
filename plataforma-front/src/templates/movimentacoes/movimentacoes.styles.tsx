@@ -12,15 +12,15 @@ export const FilterContainer = styled.div`
   flex-wrap: wrap;
 `
 export const HeaderContainer = styled.div`
-  margin-left: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
 `
 export const SearchMovimentacao = styled.div`
   display: flex;
   align-items: flex-end;
-  margin:0 16px 16px auto;
+  margin:0 16px 16px;
 `
 export const AddMovimentacao = styled(Button)`
   margin-right:16px;
