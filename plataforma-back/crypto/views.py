@@ -18,7 +18,7 @@ class CryptosView(APIView):
     def get(self, _):
         cryptos = Cryptos.objects.all().order_by('name')
         serializer = CryptosSerializer(cryptos, many=True)
-        # self.sync()
+        self.sync()
         return Response(serializer.data)
     
     def sync(self):

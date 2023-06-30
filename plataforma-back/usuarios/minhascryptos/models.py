@@ -5,7 +5,7 @@ from usuarios.models import Usuario
 # Create your models here.
 
 class MinhasCryptos(models.Model):
-  volume = models.IntegerField()
+  volume = models.FloatField()
   valor_compra = models.DecimalField(decimal_places=2, max_digits=100)
   data_movimentacao = models.DateTimeField(default=datetime.date.today)
 
